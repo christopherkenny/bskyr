@@ -12,3 +12,5 @@ RoxygenNote: 7.2.3
 Imports: 
     cli,
     httr2
+URL: https://github.com/christopherkenny/bskyr
+BugReports: https://github.com/christopherkenny/bskyr/issues
