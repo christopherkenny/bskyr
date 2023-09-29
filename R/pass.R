@@ -1,0 +1,97 @@
+#' Check or Get Bluesky App Password
+#'
+#' @return logical if `has`, pass if `get`
+#' @export
+#'
+#' @name pass
+#'
+#' @examples
+#' has_bluesky_pass()
+has_bluesky_pass <- function() {
+  Sys.getenv('BLUESKY_APP_PASS') != ''
+}
+
+#' @rdname pass
+#' @export
+get_bluesky_pass <- function() {
+  pass <- Sys.getenv('BLUESKY_APP_PASS')
+
+  # if (pass == '') {
+  #   cli::cli_abort('Must set a pass as {.val BLUESKY_APP_PASS}.')
+  # }
+  pass
+}
+
+#' Add Entry to Renviron
+#'
+#' Adds Bluesky App Password to .Renviron.
+#'
+#' @param pass Character. App Password to add to add.
+#' @param overwrite Defaults to FALSE. Boolean. Should existing `BLUESKY_APP_PASS` in Renviron be overwritten?
+#' @param install Defaults to FALSE. Boolean. Should this be added '~/.Renviron' file?
+#'
+#' @return pass, invisibly
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' set_bluesky_pass('1234')
+#' }
+#'
+set_bluesky_pass <- function(pass, overwrite = FALSE, install = FALSE) {
+  if (missing(pass)) {
+    cli::cli_abort('Input {.arg pass} cannot be missing.')
+  }
+  name <- 'BLUESKY_APP_PASS'
+
+  pass <- list(pass)
+  names(pass) <- name
+
+  if (install) {
+    r_env <- file.path(Sys.getenv('HOME'), '.Renviron')
+
+    if (!file.exists(r_env)) {
+      file.create(r_env)
+    }
+
+    lines <- readLines(r_env)
+    newline <- paste0(name, "='", pass, "'")
+
+    exists <- stringr::str_detect(lines, paste0(name, '='))
+
+    if (any(exists)) {
+      if (sum(exists) > 1) {
+        cli::cli_abort('Multiple entries in .Renviron found.\nEdit manually with {.fn usethis::edit_r_environ}.')
+      }
+
+      if (overwrite) {
+        lines[exists] <- newline
+        writeLines(lines, r_env)
+        do.call(Sys.setenv, pass)
+      } else {
+        cli::cli_inform('{.arg BLUESKY_APP_PASS} already exists in .Renviron. \nEdit manually with {.fn usethis::edit_r_environ} or set {.code overwrite = TRUE}.')
+      }
+    } else {
+      lines[length(lines) + 1] <- newline
+      writeLines(lines, r_env)
+      do.call(Sys.setenv, pass)
+    }
+  } else {
+    do.call(Sys.setenv, pass)
+  }
+
+  invisible(pass)
+}
+
+#' @rdname pass
+#' @export
+bs_get_pass <- get_bluesky_pass
+
+
+#' @rdname set_bluesky_pass
+#' @export
+bs_set_pass <- set_bluesky_pass
+
+#' @rdname pass
+#' @export
+bs_has_pass <- has_bluesky_pass
