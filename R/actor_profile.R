@@ -11,6 +11,7 @@
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
 #' bs_get_profile('chriskenny.bsky.social')
+#' bs_get_profile(actors = c('chriskenny.bsky.social', 'simko.bsky.social'))
 bs_get_profile <- function(actors, user = get_bluesky_user(), pass = get_bluesky_pass()) {
   if (missing(actors)) {
     cli::cli_abort('{.arg actors} must list at least one user.')
@@ -37,8 +38,8 @@ bs_get_profile <- function(actors, user = get_bluesky_user(), pass = get_bluesky
   #   req <- req   |>
   #     httr2::req_url_query(actor = actors)
   # } else {
-  req <- req |>
-    httr2::req_url_query(actors = actors)
+  actors <- actors |> as.list() |> purrr::set_names('actors')
+  req <- rlang::inject(httr2::req_url_query(req, !!!actors))
   # }
 
   req <- req |>
@@ -49,5 +50,7 @@ bs_get_profile <- function(actors, user = get_bluesky_user(), pass = get_bluesky
     httr2::resp_body_json()
 
   resp |>
-    proc_profile()
+    purrr::pluck('profiles') |>
+    proc() |>
+    clean_names()
 }

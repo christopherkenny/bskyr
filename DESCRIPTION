@@ -11,8 +11,10 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports: 
     cli,
+    dplyr,
     httr2,
     purrr,
+    rlang,
     tibble
 URL: https://github.com/christopherkenny/bskyr
 BugReports: https://github.com/christopherkenny/bskyr/issues
