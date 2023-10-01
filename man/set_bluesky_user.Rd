@@ -2,9 +2,12 @@
 % Please edit documentation in R/user.R
 \name{set_bluesky_user}
 \alias{set_bluesky_user}
+\alias{bs_set_user}
 \title{Add Entry to Renviron}
 \usage{
 set_bluesky_user(user, overwrite = FALSE, install = FALSE)
+
+bs_set_user(user, overwrite = FALSE, install = FALSE)
 }
 \arguments{
 \item{user}{Character. User to add to add.}

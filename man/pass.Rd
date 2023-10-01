@@ -4,11 +4,17 @@
 \alias{pass}
 \alias{has_bluesky_pass}
 \alias{get_bluesky_pass}
+\alias{bs_get_pass}
+\alias{bs_has_pass}
 \title{Check or Get Bluesky App Password}
 \usage{
 has_bluesky_pass()
 
 get_bluesky_pass()
+
+bs_get_pass()
+
+bs_has_pass()
 }
 \value{
 logical if \code{has}, pass if \code{get}

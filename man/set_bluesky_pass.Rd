@@ -2,9 +2,12 @@
 % Please edit documentation in R/pass.R
 \name{set_bluesky_pass}
 \alias{set_bluesky_pass}
+\alias{bs_set_pass}
 \title{Add Entry to Renviron}
 \usage{
 set_bluesky_pass(pass, overwrite = FALSE, install = FALSE)
+
+bs_set_pass(pass, overwrite = FALSE, install = FALSE)
 }
 \arguments{
 \item{pass}{Character. App Password to add to add.}
