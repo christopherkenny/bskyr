@@ -11,7 +11,7 @@ bs_get_profile(actors, user = get_bluesky_user(), pass = get_bluesky_pass())
 
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 
-\item{pass}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
+\item{pass}{Character. App password to log in with. Defaults to \code{get_bluesky_pass()}.}
 }
 \value{
 a tibble with a row for each actor
@@ -19,6 +19,17 @@ a tibble with a row for each actor
 \description{
 Get Profile for a Bluesky Social User
 }
+\section{Lexicon references}{
+
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/actor/getProfiles.json}{actor/getProfiles.json (2023-10-01)}
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/actor/getProfile.json}{actor/getProfile.json (2023-10-01)}
+}
+
+\section{Function introduced}{
+
+\code{v0.0.1} (2023-10-01)
+}
+
 \examples{
 \dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 bs_get_profile('chriskenny.bsky.social')

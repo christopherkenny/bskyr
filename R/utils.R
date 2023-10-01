@@ -6,3 +6,13 @@ clean_names <- function(x) {
     tolower()
   stats::setNames(object = x, nm = out)
 }
+
+validate_pass <- function(x) {
+  if (nchar(x) != 19) {
+    cli::cli_abort('{.arg pass} must have 19 characters.')
+  }
+  if (!all(unlist(gregexpr('-', x)) == c(5, 10, 15))) {
+    cli::cli_abort('{.arg pass} must be of the form {.val "xxxx-xxxx-xxxx-xxxx"}.')
+  }
+  invisible(x)
+}

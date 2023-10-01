@@ -9,7 +9,7 @@ bs_get_suggestions(user = get_bluesky_user(), pass = get_bluesky_pass())
 \arguments{
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 
-\item{pass}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
+\item{pass}{Character. App password to log in with. Defaults to \code{get_bluesky_pass()}.}
 }
 \value{
 a tibble of suggested accounts to follow
@@ -17,9 +17,19 @@ a tibble of suggested accounts to follow
 \description{
 Get a list of actors suggested for following
 }
+\section{Lexicon references}{
+
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/actor/getSuggestions.json}{actor/getSuggestions.json (2023-10-01)}
+}
+
+\section{Function introduced}{
+
+\code{v0.0.1} (2023-10-01)
+}
+
 \examples{
 \dontshow{if (has_bluesky_pass() & has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-bs_get_suggestions
+bs_get_suggestions()
 \dontshow{\}) # examplesIf}
 }
 \concept{actor}
