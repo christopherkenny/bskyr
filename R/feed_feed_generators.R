@@ -17,10 +17,10 @@
 #' `v0.0.1` (2023-10-01)
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
-#' bs_get_feed_generator('at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/bsky-team')
-bs_get_feed_generator <- function(feeds,
-                                  user = get_bluesky_user(), pass = get_bluesky_pass(),
-                                  auth = bs_auth(user, pass)) {
+#' bs_get_feed_generators('at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/bsky-team')
+bs_get_feed_generators <- function(feeds,
+                                   user = get_bluesky_user(), pass = get_bluesky_pass(),
+                                   auth = bs_auth(user, pass)) {
   if (missing(feeds)) {
     cli::cli_abort('{.arg feeds} must list at least one user.')
   }
