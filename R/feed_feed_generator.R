@@ -3,6 +3,7 @@
 #' @param feed `r template_var_feed()`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
+#' @param auth `r template_var_auth()`
 #'
 #' @concept feed
 #'
@@ -17,7 +18,9 @@
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_feed_generator('at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/bsky-team')
-bs_get_feed_generator <- function(feed, user = get_bluesky_user(), pass = get_bluesky_pass()) {
+bs_get_feed_generator <- function(feed,
+                                  user = get_bluesky_user(), pass = get_bluesky_pass(),
+                                  auth = bs_auth(user, pass)) {
   if (missing(feed)) {
     cli::cli_abort('{.arg feed} must list at least one user.')
   }

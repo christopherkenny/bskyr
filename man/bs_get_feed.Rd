@@ -4,7 +4,12 @@
 \alias{bs_get_feed}
 \title{Build feed from user's feed generator}
 \usage{
-bs_get_feed(feed, user = get_bluesky_user(), pass = get_bluesky_pass())
+bs_get_feed(
+  feed,
+  user = get_bluesky_user(),
+  pass = get_bluesky_pass(),
+  auth = bs_auth(user, pass)
+)
 }
 \arguments{
 \item{feed}{Character, length 1. Feed to get.}
@@ -12,6 +17,8 @@ bs_get_feed(feed, user = get_bluesky_user(), pass = get_bluesky_pass())
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 
 \item{pass}{Character. App password to log in with. Defaults to \code{get_bluesky_pass()}.}
+
+\item{auth}{Authentication information. Defaults to \code{bs_auth(user, pass)}.}
 }
 \value{
 a tibble of posts

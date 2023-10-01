@@ -4,7 +4,12 @@
 \alias{bs_get_feeds}
 \title{Retrieve a list of feeds created by a given actor}
 \usage{
-bs_get_feeds(actor, user = get_bluesky_user(), pass = get_bluesky_pass())
+bs_get_feeds(
+  actor,
+  user = get_bluesky_user(),
+  pass = get_bluesky_pass(),
+  auth = bs_auth(user, pass)
+)
 }
 \arguments{
 \item{actor}{Character, length 1. name of 1 actor, such as \code{'chriskenny.bsky.social'}}
@@ -12,6 +17,8 @@ bs_get_feeds(actor, user = get_bluesky_user(), pass = get_bluesky_pass())
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 
 \item{pass}{Character. App password to log in with. Defaults to \code{get_bluesky_pass()}.}
+
+\item{auth}{Authentication information. Defaults to \code{bs_auth(user, pass)}.}
 }
 \value{
 a tibble of feeds

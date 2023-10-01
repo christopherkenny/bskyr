@@ -3,6 +3,7 @@
 #' @param actor `r template_var_actor()`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
+#' @param auth `r template_var_auth()`
 #'
 #' @concept feed
 #'
@@ -17,7 +18,9 @@
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_likes('chriskenny.bsky.social')
-bs_get_likes <- function(actor, user = get_bluesky_user(), pass = get_bluesky_pass()) {
+bs_get_likes <- function(actor,
+                         user = get_bluesky_user(), pass = get_bluesky_pass(),
+                         auth = bs_auth(user, pass)) {
  if (missing(actor)) {
    cli::cli_abort('{.arg actor} must list at least one user.')
  }
