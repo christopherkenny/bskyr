@@ -8,7 +8,7 @@
 #' @return a tibble of preferences
 #' @export
 #'
-#' @examplesIf has_bluesky_pass() & has_bluesky_user()
+#' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_preferences()
 bs_get_preferences <- function(user = get_bluesky_user(), pass = get_bluesky_pass()) {
   auth <- bs_auth(user, pass)

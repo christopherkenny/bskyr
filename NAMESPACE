@@ -3,6 +3,7 @@
 export(bs_get_pass)
 export(bs_get_preferences)
 export(bs_get_profile)
+export(bs_get_suggestions)
 export(bs_get_user)
 export(bs_has_pass)
 export(bs_has_user)

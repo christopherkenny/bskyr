@@ -9,7 +9,7 @@
 #' @return a tibble with a row for each actor
 #' @export
 #'
-#' @examplesIf has_bluesky_pass() & has_bluesky_user()
+#' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_profile('chriskenny.bsky.social')
 #' bs_get_profile(actors = c('chriskenny.bsky.social', 'simko.bsky.social'))
 bs_get_profile <- function(actors, user = get_bluesky_user(), pass = get_bluesky_pass()) {

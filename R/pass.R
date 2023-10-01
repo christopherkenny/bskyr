@@ -57,7 +57,7 @@ set_bluesky_pass <- function(pass, overwrite = FALSE, install = FALSE) {
     lines <- readLines(r_env)
     newline <- paste0(name, "='", pass, "'")
 
-    exists <- stringr::str_detect(lines, paste0(name, '='))
+    exists <- grepl(x = lines, paste0(name, '='))
 
     if (any(exists)) {
       if (sum(exists) > 1) {

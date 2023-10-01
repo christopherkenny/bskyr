@@ -14,7 +14,8 @@ Imports:
     dplyr,
     httr2,
     purrr,
-    rlang,
-    tibble
+    rlang
+Suggests: 
+    jsonlite
 URL: https://github.com/christopherkenny/bskyr
 BugReports: https://github.com/christopherkenny/bskyr/issues

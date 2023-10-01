@@ -1,7 +1,8 @@
 clean_names <- function(x) {
-  out <- names(x) |>
-    stringr::str_replace_all('\\.', '_') |>
-    stringr::str_replace_all('([a-z])([A-Z])', '\\1_\\2') |>
-    stringr::str_to_lower()
+  out <- x |>
+    names() |>
+    gsub('\\.', '_', x = _) |>
+    gsub('([a-z])([A-Z])', '\\1_\\2', x = _) |>
+    tolower()
   stats::setNames(object = x, nm = out)
 }

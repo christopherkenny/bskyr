@@ -4,22 +4,25 @@
 \alias{bs_get_profile}
 \title{Get Profile for a Bluesky Social User}
 \usage{
-bs_get_profile(profile, user = get_bluesky_user(), pass = get_bluesky_pass())
+bs_get_profile(actors, user = get_bluesky_user(), pass = get_bluesky_pass())
 }
 \arguments{
+\item{actors}{character vector of actor(s), such as \code{'chriskenny.bsky.social'}}
+
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 
 \item{pass}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 }
 \value{
-a tibble with a row for each profile
+a tibble with a row for each actor
 }
 \description{
 Get Profile for a Bluesky Social User
 }
 \examples{
-\dontshow{if (has_bluesky_pass() & has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 bs_get_profile('chriskenny.bsky.social')
+bs_get_profile(actors = c('chriskenny.bsky.social', 'simko.bsky.social'))
 \dontshow{\}) # examplesIf}
 }
 \concept{actor}
