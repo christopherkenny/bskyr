@@ -1,4 +1,8 @@
-bs_get_profile <- function(profile = 'chriskenny.bsky.social', user = get_bluesky_user(), pass = get_bluesky_pass()) {
+bs_get_profile <- function(profile, user = get_bluesky_user(), pass = get_bluesky_pass()) {
+
+  if (missing(profile)) {
+    cli::cli_abort('{.arg profile} must list at least one user.')
+  }
 
   auth <- bs_auth(user, pass)
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.actor.getProfiles') |>
