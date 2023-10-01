@@ -3,6 +3,7 @@
 export(bs_auth)
 export(bs_get_author_feed)
 export(bs_get_feed)
+export(bs_get_feed_generator)
 export(bs_get_feeds)
 export(bs_get_likes)
 export(bs_get_pass)

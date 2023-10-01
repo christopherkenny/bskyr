@@ -14,14 +14,14 @@ bs_get_feed(feed, user = get_bluesky_user(), pass = get_bluesky_pass())
 \item{pass}{Character. App password to log in with. Defaults to \code{get_bluesky_pass()}.}
 }
 \value{
-a tibble of feeds
+a tibble of posts
 }
 \description{
 Build feed from user's feed generator
 }
 \section{Lexicon references}{
 
-\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/getActorFeeds.json}{feed/getActorFeeds.json (2023-10-01)}
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/getFeed.json}{feed/getFeed.json (2023-10-01)}
 }
 
 \section{Function introduced}{

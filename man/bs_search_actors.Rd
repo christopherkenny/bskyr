@@ -8,7 +8,8 @@ bs_search_actors(
   query,
   typeahead = FALSE,
   user = get_bluesky_user(),
-  pass = get_bluesky_pass()
+  pass = get_bluesky_pass(),
+  auth = bs_auth(user, pass)
 )
 }
 \arguments{
@@ -19,6 +20,8 @@ bs_search_actors(
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 
 \item{pass}{Character. App password to log in with. Defaults to \code{get_bluesky_pass()}.}
+
+\item{auth}{Authentication information. Defaults to \code{bs_auth(user, pass)}.}
 }
 \value{
 a tibble of suggested accounts to follow
