@@ -2,7 +2,10 @@ Package: bskyr
 Title: Interact with Bluesky Social
 Version: 0.0.0.9000
 Authors@R: 
-    person("Christopher T.", "Kenny", , "christopherkenny@fas.harvard.edu", role = c("aut", "cre"),
+    person(given = "Christopher T.",
+           family = "Kenny",
+           role = c("aut", "cre"),
+           email = "christopherkenny@fas.harvard.edu",
            comment = c(ORCID = "0000-0002-9386-6860"))
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
