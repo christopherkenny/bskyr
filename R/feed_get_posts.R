@@ -43,15 +43,16 @@ bs_get_posts <- function(uris,
     purrr::pluck('posts')
 
   out <- lapply(resp, function(x) {
-    y <- unlist(x, recursive = FALSE)
-    y <- lapply(y, function(z) {
-      if (length(z) != 1) {
-        list(z)
-      } else {
-        z
-      }
-    })
-    tibble::as_tibble_row(y)
+    x |>
+      unlist(recursive = FALSE) |>
+      lapply(function(z) {
+        if (length(z) != 1) {
+          list(z)
+        } else {
+          z
+        }
+      }) |>
+      tibble::as_tibble_row()
   }) |>
     dplyr::bind_rows() |>
     clean_names()

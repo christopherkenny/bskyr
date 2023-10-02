@@ -14,7 +14,7 @@
 #' [feed/getRepostedBy.json (2023-10-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/getRepostedBy.json)
 #'
 #' @section Function introduced:
-#' `v0.0.1` (2023-10-01)
+#' `v0.0.1` (2023-10-02)
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_reposts('at://did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/app.bsky.feed.post/3kaa2gxjhzr2a')

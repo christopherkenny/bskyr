@@ -16,8 +16,8 @@
 #' @export
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
-#' bs_get_suggestions()
-bs_get_suggestions <- function(user = get_bluesky_user(), pass = get_bluesky_pass(),
+#' bs_get_actor_suggestions()
+bs_get_actor_suggestions <- function(user = get_bluesky_user(), pass = get_bluesky_pass(),
                                auth = bs_auth(user, pass)) {
 
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.actor.getSuggestions') |>

@@ -1,8 +1,14 @@
+# devtools
 lrj <- function() {
   httr2::last_response() |>
     httr2::resp_body_json()
 }
 
+.gl <- function(x) {
+  dplyr::glimpse(x)
+}
+
+# general utils
 clean_names <- function(x) {
   out <- x |>
     names() |>
