@@ -38,10 +38,23 @@ bs_get_posts <- function(uris,
   resp <- req |>
     httr2::req_perform() |>
     httr2::resp_body_json()
-  return(resp)
 
-  resp |>
-    purrr::pluck('posts') |>
-    proc() |>
+  resp <- resp |>
+    purrr::pluck('posts')
+
+  out <- lapply(resp, function(x) {
+    y <- unlist(x, recursive = FALSE)
+    y <- lapply(y, function(z) {
+      if (length(z) != 1) {
+        list(z)
+      } else {
+        z
+      }
+    })
+    tibble::as_tibble_row(y)
+  }) |>
+    dplyr::bind_rows() |>
     clean_names()
+
+  out
 }
