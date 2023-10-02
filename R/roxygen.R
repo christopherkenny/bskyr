@@ -23,5 +23,13 @@ template_var_feed <- function() {
 }
 
 template_var_feeds <- function() {
-  "Character, length 1. Vector of feeds to get."
+  "Character. Vector of feeds to get."
+}
+
+template_var_uri <- function() {
+  "Character, length 1. URI for post to get."
+}
+
+template_var_uris <- function() {
+  "Character. Vector of URIs for posts to get."
 }

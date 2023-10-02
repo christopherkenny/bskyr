@@ -56,5 +56,14 @@ bs_get_posts <- function(uris,
     dplyr::bind_rows() |>
     clean_names()
 
+  out <- out |>
+    dplyr::mutate(
+      dplyr::across(where(is.list) & where(~purrr::pluck_depth(.x) > 2),
+                    function(x) lapply(x, function(x) clean_names(proc(x))))
+    )
+
+  # out$record_embed <- lapply(out$record_embed, proc)
+  # out$embed_images <- lapply(out$embed_images, proc)
+
   out
 }

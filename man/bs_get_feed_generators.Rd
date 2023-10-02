@@ -12,7 +12,7 @@ bs_get_feed_generators(
 )
 }
 \arguments{
-\item{feeds}{Character, length 1. Vector of feeds to get.}
+\item{feeds}{Character. Vector of feeds to get.}
 
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 
@@ -39,6 +39,13 @@ Get information about a list of feed generators
 \examples{
 \dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 bs_get_feed_generators('at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/bsky-team')
+bs_get_feed_generators(c(
+  'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/bsky-team',
+  'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/whats-hot'
+  ))
 \dontshow{\}) # examplesIf}
+}
+\seealso{
+\code{\link[=bs_get_feed_generators]{bs_get_feed_generators()}} for more detailed information about one feed generator.
 }
 \concept{feed}
