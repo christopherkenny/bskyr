@@ -1,4 +1,4 @@
-# 2023-10-01 skipped as not listed at https://atproto.com/lexicons/app-bsky#appbskyfeed
+# 2023-10-02 skipped as not listed at https://atproto.com/lexicons/app-bsky#appbskyfeed
 
 # #' Retrieve recent posts from actors in a list
 # #'
@@ -29,7 +29,7 @@
 #   if (!is.character(actors)) {
 #     cli::cli_abort('{.arg actors} must be a character vector.')
 #   }
-#   
+#
 #   req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.getListFeed') |>
 #     httr2::req_url_query(list = actors) |>
 #     httr2::req_auth_bearer_token(token = auth$accessJwt)
