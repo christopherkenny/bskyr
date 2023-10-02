@@ -27,7 +27,7 @@ bs_get_author_feed <- function(actor,
  if (!is.character(actor)) {
    cli::cli_abort('{.arg actor} must be a character vector.')
  }
- auth <- bs_auth(user, pass)
+ 
  req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.getAuthorFeed') |>
    httr2::req_url_query(actor = actor) |>
    httr2::req_auth_bearer_token(token = auth$accessJwt)
@@ -37,6 +37,6 @@ bs_get_author_feed <- function(actor,
 
  resp |>
    purrr::pluck('feed') |>
-   proc() |>
+   list_hoist() |>
    clean_names()
 }

@@ -6,6 +6,7 @@
 #' @param auth `r template_var_auth()`
 #'
 #' @concept feed
+#' @seealso [bs_get_feed_generators()] for less detailed information about multiple feed generators.
 #'
 #' @return a tibble of feeds
 #' @export
@@ -15,6 +16,7 @@
 #'
 #' @section Function introduced:
 #' `v0.0.1` (2023-10-01)
+#'
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_feed_generator('at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/bsky-team')
@@ -28,7 +30,7 @@ bs_get_feed_generator <- function(feed,
     cli::cli_abort('{.arg feed} must be a character vector.')
   }
 
-  auth <- bs_auth(user, pass)
+  
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.getFeedGenerator') |>
     httr2::req_url_query(feed = feed) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt)

@@ -1,3 +1,8 @@
+lrj <- function() {
+  httr2::last_response() |>
+    httr2::resp_body_json()
+}
+
 clean_names <- function(x) {
   out <- x |>
     names() |>
@@ -5,6 +10,18 @@ clean_names <- function(x) {
     gsub('([a-z])([A-Z])', '\\1_\\2', x = _) |>
     tolower()
   stats::setNames(object = x, nm = out)
+}
+
+widen <- function(x) {
+  x |>
+    tibble::enframe() |>
+    tidyr::pivot_wider() |>
+    tidyr::unnest_wider(col = where(~purrr::pluck_depth(.x) < 4), simplify = TRUE, names_sep = '_') |>
+    dplyr::rename_with(.fn = function(x) substr(x, start = 1, stop = nchar(x) - 2), .cols = dplyr::ends_with('_1'))
+}
+
+list_hoist <- function(l) {
+  dplyr::bind_rows(lapply(l, function(x) dplyr::bind_rows(unlist(x))))
 }
 
 validate_pass <- function(x) {

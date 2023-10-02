@@ -28,7 +28,7 @@ bs_get_feeds <- function(actor,
     cli::cli_abort('{.arg actor} must be a character vector.')
   }
 
-  auth <- bs_auth(user, pass)
+  
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.getActorFeeds') |>
     httr2::req_url_query(actor = actor) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt)

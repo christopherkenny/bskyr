@@ -18,7 +18,8 @@ Imports:
     httr2,
     purrr,
     rlang,
-    tibble
+    tibble,
+    tidyr
 Suggests: 
     httptest2,
     jsonlite,

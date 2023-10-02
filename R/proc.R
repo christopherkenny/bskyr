@@ -43,3 +43,28 @@
 proc <- function(l) {
   lapply(l, function(z) unlist(z)) |> dplyr::bind_rows() |> clean_names()
 }
+
+proc_record <- function(l) {
+  lapply(l, function(k) {
+    tibble::tibble(
+      text = k$text,
+      embed = list(proc(k$embed)),
+      langs = list(k$langs),
+      facets = list(proc(k$facets)),
+      createdAt = k$createdAt
+    )
+  })
+}
+
+proc_embed <- function(l) {
+  lapply(l, proc)
+}
+
+add_singletons <- function(tb, l) {
+  r1 <- purrr::keep(l, \(x) purrr::pluck_depth(x) == 1)
+  if (length(r1) > 0) {
+    dplyr::bind_cols(tb, tibble::as_tibble_row(r1))
+  } else {
+    tb
+  }
+}
