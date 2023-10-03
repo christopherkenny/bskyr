@@ -42,13 +42,12 @@ bs_get_timeline <- function(user = get_bluesky_user(), pass = get_bluesky_pass()
     }) |>
     dplyr::bind_rows() |>
     clean_names()
-  return(out)
 
   out <- out |>
     dplyr::mutate(
-      post_author = proc(post_author),
-      post_record = proc_record(post_record),
-      post_embed = proc_embed(post_embed)
+      post_author = proc(.data$post_author),
+      post_record = lapply(.data$post_record, widen),
+      post_embed = lapply(.data$post_embed, widen)
     ) |>
     add_singletons(resp)
 
