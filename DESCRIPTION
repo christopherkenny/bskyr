@@ -16,6 +16,7 @@ Imports:
     cli,
     dplyr,
     httr2,
+    lubridate,
     purrr,
     rlang,
     tibble,

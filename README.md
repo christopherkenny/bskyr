@@ -32,8 +32,16 @@ remotes::install_github('christopherkenny/bskyr')
 
 ## Posting with `bskyr`
 
+Posting capabilities are still under development.
+
 ``` r
 library(bskyr)
+```
+
+Text posts can be made as follows:
+
+``` r
+bs_post('Your text goes here.')
 ```
 
 ## Authentication

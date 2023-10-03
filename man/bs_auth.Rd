@@ -17,6 +17,16 @@ a list of authentication information
 \description{
 Authenticate a user
 }
+\section{Lexicon references}{
+
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/server/createSession.json}{server/createSession.json (2023-09-30)}
+}
+
+\section{Function introduced}{
+
+\code{v0.0.1} (2023-09-30)
+}
+
 \examples{
 \dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 bs_auth(user = get_bluesky_user(), pass = get_bluesky_pass())
