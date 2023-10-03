@@ -4,6 +4,9 @@
 # bskyr <img src="man/figures/logo.png" align="right" height="136" alt="" />
 
 <!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
 bskyr provides an interface to the Bluesky API, allowing you to interact
@@ -12,6 +15,10 @@ with the [AT Protocol’s Lexicon](https://atproto.com/guides/lexicon),
 which is like using regular HTTP requests. Outputs from `bskyr`’s
 functions are primarily `tibble`s, allowing for easy analysis of the
 outputs from the API calls.
+
+`bskyr` is currently under development. The first set of functions were
+focused on getting information. The second (and current) set of work is
+handling posts in a friendly way.
 
 ## Installation
 
@@ -32,8 +39,8 @@ library(bskyr)
 ## Authentication
 
 To authenticate, you first need to make an App Password. To do this, go
-to \<bsky.app/settings\>. Under “Advanced” click App passwords and then
-“Add App Password.”
+to <https://bsky.app/settings>. Under “Advanced” click App passwords and
+then “Add App Password.”
 
 Once you have a password, you need to run:
 
@@ -44,3 +51,9 @@ set_bluesky_pass('the-app-password')
 
 If you want this to persist across sessions, set `install = TRUE`. This
 will save your credentials in your R environment file.
+
+Alternatively, you can set them manually using
+`usethis::edit_r_environ()` and adding lines like so:
+
+    BLUESKY_APP_USER='YOUR-USERNAME.bsky.social'
+    BLUESKY_APP_PASS='your-apps-pass-word'

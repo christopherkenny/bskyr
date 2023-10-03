@@ -8,6 +8,12 @@
 #' @return a list of authentication information
 #' @export
 #'
+#' @section Lexicon references:
+#' [server/createSession.json (2023-09-30)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/server/createSession.json)
+#'
+#' @section Function introduced:
+#' `v0.0.1` (2023-09-30)
+#'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_auth(user = get_bluesky_user(), pass = get_bluesky_pass())
 bs_auth <- function(user, pass) {
