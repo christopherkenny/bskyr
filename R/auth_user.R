@@ -1,5 +1,7 @@
 #' Check or Get Bluesky User
 #'
+#' @concept auth
+#'
 #' @return logical if `has`, user if `get`
 #' @export
 #'
@@ -22,9 +24,10 @@ get_bluesky_user <- function() {
   user
 }
 
-#' Add Entry to Renviron
-#'
+
 #' Adds Bluesky User to .Renviron.
+#'
+#' @concept auth
 #'
 #' @param user Character. User to add to add.
 #' @param overwrite Defaults to FALSE. Boolean. Should existing `BLUESKY_APP_USER` in Renviron be overwritten?

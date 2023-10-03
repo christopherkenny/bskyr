@@ -25,3 +25,4 @@ Check or Get Bluesky App Password
 \examples{
 has_bluesky_pass()
 }
+\concept{auth}

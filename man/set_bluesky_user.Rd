@@ -3,7 +3,7 @@
 \name{set_bluesky_user}
 \alias{set_bluesky_user}
 \alias{bs_set_user}
-\title{Add Entry to Renviron}
+\title{Adds Bluesky User to .Renviron.}
 \usage{
 set_bluesky_user(user, overwrite = FALSE, install = FALSE)
 
@@ -28,3 +28,4 @@ set_bluesky_user('1234')
 }
 
 }
+\concept{auth}

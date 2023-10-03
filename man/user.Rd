@@ -25,3 +25,4 @@ Check or Get Bluesky User
 \examples{
 has_bluesky_user()
 }
+\concept{auth}

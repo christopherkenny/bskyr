@@ -1,5 +1,7 @@
 #' Check or Get Bluesky App Password
 #'
+#' @concept auth
+#'
 #' @return logical if `has`, pass if `get`
 #' @export
 #'
@@ -29,6 +31,8 @@ get_bluesky_pass <- function() {
 #' @param pass Character. App Password to add to add.
 #' @param overwrite Defaults to FALSE. Boolean. Should existing `BLUESKY_APP_PASS` in Renviron be overwritten?
 #' @param install Defaults to FALSE. Boolean. Should this be added '~/.Renviron' file?
+#'
+#' @concept auth
 #'
 #' @return pass, invisibly
 #' @export
