@@ -18,7 +18,7 @@ reference:
   desc: "Functions which describe the relationships between users"
 - contents:
   - has_concept("graph")
-- title: "NBotifications"
+- title: "Notifications"
   desc: "Interact with your own notifications"
 - contents:
   - has_concept("notification")
