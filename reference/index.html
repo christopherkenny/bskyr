@@ -44,9 +44,40 @@
     </div>
 
     <div class="section level2">
-      <h2 id="all-functions">All functions<a class="anchor" aria-label="anchor" href="#all-functions"></a></h2>
+      <h2 id="actor">Actor<a class="anchor" aria-label="anchor" href="#actor"></a></h2>
+      
+      <p class="section-desc"></p><p>Functions related to an actor (a user)</p>
+
+      
+    </div><div id="" class="section level2">
       
       
+      
+
+      <dl><dt>
+          
+          <code><a href="bs_get_actor_suggestions.html">bs_get_actor_suggestions()</a></code> 
+        </dt>
+        <dd>Get a list of actors suggested for following</dd>
+      </dl><dl><dt>
+          
+          <code><a href="bs_get_preferences.html">bs_get_preferences()</a></code> 
+        </dt>
+        <dd>Get (Self) Preferences</dd>
+      </dl><dl><dt>
+          
+          <code><a href="bs_get_profile.html">bs_get_profile()</a></code> 
+        </dt>
+        <dd>Get Profile for a Bluesky Social User</dd>
+      </dl><dl><dt>
+          
+          <code><a href="bs_search_actors.html">bs_search_actors()</a></code> 
+        </dt>
+        <dd>Find profiles matching search criteria</dd>
+      </dl></div><div class="section level2">
+      <h2 id="authentication">Authentication<a class="anchor" aria-label="anchor" href="#authentication"></a></h2>
+      
+      <p class="section-desc"></p><p>Functions for authenticating <code>bskyr</code> users</p>
 
       
     </div><div id="" class="section level2">
@@ -61,29 +92,40 @@
         <dd>Authenticate a user</dd>
       </dl><dl><dt>
           
-          <code><a href="bs_get_actor_lists.html">bs_get_actor_lists()</a></code> 
+          <code><a href="pass.html">has_bluesky_pass()</a></code> <code><a href="pass.html">get_bluesky_pass()</a></code> <code><a href="pass.html">bs_get_pass()</a></code> <code><a href="pass.html">bs_has_pass()</a></code> 
         </dt>
-        <dd>Get a list of lists that belong to an actor.</dd>
+        <dd>Check or Get Bluesky App Password</dd>
       </dl><dl><dt>
           
-          <code><a href="bs_get_actor_suggestions.html">bs_get_actor_suggestions()</a></code> 
+          <code><a href="set_bluesky_pass.html">set_bluesky_pass()</a></code> <code><a href="set_bluesky_pass.html">bs_set_pass()</a></code> 
         </dt>
-        <dd>Get a list of actors suggested for following</dd>
+        <dd>Add Entry to Renviron</dd>
       </dl><dl><dt>
+          
+          <code><a href="set_bluesky_user.html">set_bluesky_user()</a></code> <code><a href="set_bluesky_user.html">bs_set_user()</a></code> 
+        </dt>
+        <dd>Adds Bluesky User to .Renviron.</dd>
+      </dl><dl><dt>
+          
+          <code><a href="user.html">has_bluesky_user()</a></code> <code><a href="user.html">get_bluesky_user()</a></code> <code><a href="user.html">bs_get_user()</a></code> <code><a href="user.html">bs_has_user()</a></code> 
+        </dt>
+        <dd>Check or Get Bluesky User</dd>
+      </dl></div><div class="section level2">
+      <h2 id="feed">Feed<a class="anchor" aria-label="anchor" href="#feed"></a></h2>
+      
+      <p class="section-desc"></p><p>Functions which describe feeds (essentially timelines filled with posts)</p>
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      <dl><dt>
           
           <code><a href="bs_get_author_feed.html">bs_get_author_feed()</a></code> 
         </dt>
         <dd>Retrieve posts on an actor's feed</dd>
-      </dl><dl><dt>
-          
-          <code><a href="bs_get_blocked_lists.html">bs_get_blocked_lists()</a></code> 
-        </dt>
-        <dd>Retrieve a user's (self) muted lists</dd>
-      </dl><dl><dt>
-          
-          <code><a href="bs_get_blocks.html">bs_get_blocks()</a></code> 
-        </dt>
-        <dd>Retrieve user (self) blocks</dd>
       </dl><dl><dt>
           
           <code><a href="bs_get_feed.html">bs_get_feed()</a></code> 
@@ -111,44 +153,9 @@
         <dd>Retrieve a list of feeds created by a given actor</dd>
       </dl><dl><dt>
           
-          <code><a href="bs_get_follow_suggestions.html">bs_get_follow_suggestions()</a></code> 
-        </dt>
-        <dd>Get suggested follows related to a given actor</dd>
-      </dl><dl><dt>
-          
-          <code><a href="bs_get_followers.html">bs_get_followers()</a></code> 
-        </dt>
-        <dd>Retrieve an actor's followers</dd>
-      </dl><dl><dt>
-          
-          <code><a href="bs_get_follows.html">bs_get_follows()</a></code> 
-        </dt>
-        <dd>Retrieve an actor's follows</dd>
-      </dl><dl><dt>
-          
           <code><a href="bs_get_likes.html">bs_get_likes()</a></code> 
         </dt>
         <dd>Retrieve posts liked by an actor</dd>
-      </dl><dl><dt>
-          
-          <code><a href="bs_get_muted_lists.html">bs_get_muted_lists()</a></code> 
-        </dt>
-        <dd>Retrieve a user's (self) muted lists</dd>
-      </dl><dl><dt>
-          
-          <code><a href="bs_get_mutes.html">bs_get_mutes()</a></code> 
-        </dt>
-        <dd>Retrieve a user's (self) muted accounts</dd>
-      </dl><dl><dt>
-          
-          <code><a href="bs_get_notification_count.html">bs_get_notification_count()</a></code> 
-        </dt>
-        <dd>Get the user's (self) number of unread notifications</dd>
-      </dl><dl><dt>
-          
-          <code><a href="bs_get_notifications.html">bs_get_notifications()</a></code> 
-        </dt>
-        <dd>Get the user's (self) notifications</dd>
       </dl><dl><dt>
           
           <code><a href="bs_get_post_likes.html">bs_get_post_likes()</a></code> 
@@ -166,16 +173,6 @@
         <dd>Retrieve thread of posts</dd>
       </dl><dl><dt>
           
-          <code><a href="bs_get_preferences.html">bs_get_preferences()</a></code> 
-        </dt>
-        <dd>Get (Self) Preferences</dd>
-      </dl><dl><dt>
-          
-          <code><a href="bs_get_profile.html">bs_get_profile()</a></code> 
-        </dt>
-        <dd>Get Profile for a Bluesky Social User</dd>
-      </dl><dl><dt>
-          
           <code><a href="bs_get_reposts.html">bs_get_reposts()</a></code> 
         </dt>
         <dd>Retrieve actors who reposted a post</dd>
@@ -184,43 +181,114 @@
           <code><a href="bs_get_timeline.html">bs_get_timeline()</a></code> 
         </dt>
         <dd>Retrieve the user's home timeline</dd>
+      </dl></div><div class="section level2">
+      <h2 id="graph">Graph<a class="anchor" aria-label="anchor" href="#graph"></a></h2>
+      
+      <p class="section-desc"></p><p>Functions which describe the relationships between users</p>
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      <dl><dt>
+          
+          <code><a href="bs_get_actor_lists.html">bs_get_actor_lists()</a></code> 
+        </dt>
+        <dd>Get a list of lists that belong to an actor.</dd>
       </dl><dl><dt>
+          
+          <code><a href="bs_get_blocked_lists.html">bs_get_blocked_lists()</a></code> 
+        </dt>
+        <dd>Retrieve a user's (self) muted lists</dd>
+      </dl><dl><dt>
+          
+          <code><a href="bs_get_blocks.html">bs_get_blocks()</a></code> 
+        </dt>
+        <dd>Retrieve user (self) blocks</dd>
+      </dl><dl><dt>
+          
+          <code><a href="bs_get_follow_suggestions.html">bs_get_follow_suggestions()</a></code> 
+        </dt>
+        <dd>Get suggested follows related to a given actor</dd>
+      </dl><dl><dt>
+          
+          <code><a href="bs_get_followers.html">bs_get_followers()</a></code> 
+        </dt>
+        <dd>Retrieve an actor's followers</dd>
+      </dl><dl><dt>
+          
+          <code><a href="bs_get_follows.html">bs_get_follows()</a></code> 
+        </dt>
+        <dd>Retrieve an actor's follows</dd>
+      </dl><dl><dt>
+          
+          <code><a href="bs_get_muted_lists.html">bs_get_muted_lists()</a></code> 
+        </dt>
+        <dd>Retrieve a user's (self) muted lists</dd>
+      </dl><dl><dt>
+          
+          <code><a href="bs_get_mutes.html">bs_get_mutes()</a></code> 
+        </dt>
+        <dd>Retrieve a user's (self) muted accounts</dd>
+      </dl></div><div class="section level2">
+      <h2 id="nbotifications">NBotifications<a class="anchor" aria-label="anchor" href="#nbotifications"></a></h2>
+      
+      <p class="section-desc"></p><p>Interact with your own notifications</p>
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      <dl><dt>
+          
+          <code><a href="bs_get_notification_count.html">bs_get_notification_count()</a></code> 
+        </dt>
+        <dd>Get the user's (self) number of unread notifications</dd>
+      </dl><dl><dt>
+          
+          <code><a href="bs_get_notifications.html">bs_get_notifications()</a></code> 
+        </dt>
+        <dd>Get the user's (self) notifications</dd>
+      </dl></div><div class="section level2">
+      <h2 id="repo">Repo<a class="anchor" aria-label="anchor" href="#repo"></a></h2>
+      
+      <p class="section-desc"></p><p>Procedures for adding and otherwise interacting with records on Bluesky Social</p>
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      <dl><dt>
           
           <code><a href="bs_post.html">bs_post()</a></code> 
         </dt>
         <dd>Make a post on Bluesky Social</dd>
       </dl><dl><dt>
           
-          <code><a href="bs_search_actors.html">bs_search_actors()</a></code> 
-        </dt>
-        <dd>Find profiles matching search criteria</dd>
-      </dl><dl><dt>
-          
           <code><a href="bs_upload_blob.html">bs_upload_blob()</a></code> 
         </dt>
         <dd>Upload a blob to a repo</dd>
-      </dl><dl><dt>
-          
-          <code><a href="pass.html">has_bluesky_pass()</a></code> <code><a href="pass.html">get_bluesky_pass()</a></code> <code><a href="pass.html">bs_get_pass()</a></code> <code><a href="pass.html">bs_has_pass()</a></code> 
-        </dt>
-        <dd>Check or Get Bluesky App Password</dd>
-      </dl><dl><dt>
-          
-          <code><a href="set_bluesky_pass.html">set_bluesky_pass()</a></code> <code><a href="set_bluesky_pass.html">bs_set_pass()</a></code> 
-        </dt>
-        <dd>Add Entry to Renviron</dd>
-      </dl><dl><dt>
-          
-          <code><a href="set_bluesky_user.html">set_bluesky_user()</a></code> <code><a href="set_bluesky_user.html">bs_set_user()</a></code> 
-        </dt>
-        <dd>Adds Bluesky User to .Renviron.</dd>
-      </dl><dl><dt>
-          
-          <code><a href="user.html">has_bluesky_user()</a></code> <code><a href="user.html">get_bluesky_user()</a></code> <code><a href="user.html">bs_get_user()</a></code> <code><a href="user.html">bs_has_user()</a></code> 
-        </dt>
-        <dd>Check or Get Bluesky User</dd>
-      </dl></div>
-  </main></div>
+      </dl></div><div class="section level2">
+      <h2 id="other">Other<a class="anchor" aria-label="anchor" href="#other"></a></h2>
+      
+      <p class="section-desc"></p><p>Other Functions</p>
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      
+    </div>
+  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+    </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">
