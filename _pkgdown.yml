@@ -1,4 +1,33 @@
 url: http://christophertkenny.com/bskyr/
 template:
   bootstrap: 5
+reference:
+- title: "Actor"
+  desc: "Functions related to an actor (a user)"
+- contents:
+  - has_concept("actor")
+- title: "Authentication"
+  desc: "Functions for authenticating `bskyr` users"
+- contents:
+  - has_concept("auth")
+- title: "Feed"
+  desc: "Functions which describe feeds (essentially timelines filled with posts)"
+- contents:
+  - has_concept("feed")
+- title: "Graph"
+  desc: "Functions which describe the relationships between users"
+- contents:
+  - has_concept("graph")
+- title: "NBotifications"
+  desc: "Interact with your own notifications"
+- contents:
+  - has_concept("notification")
+- title: "Repo"
+  desc: "Procedures for adding and otherwise interacting with records on Bluesky Social"
+- contents:
+  - has_concept("repo")
+- title: "Other"
+  desc: "Other Functions"
+- contents:
+  - lacks_concepts(c("actor", "auth", "feed", "graph", "notification", "repo"))
 
