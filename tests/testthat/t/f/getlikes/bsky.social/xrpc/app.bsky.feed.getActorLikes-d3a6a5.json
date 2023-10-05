@@ -1,0 +1,281 @@
+{
+    "feed": [
+        {
+            "post": {
+                "uri": "at://did:plc:tow5upxpae7fhzjnxnvj2pha/app.bsky.feed.post/3kawtvxw7252j",
+                "cid": "bafyreicjuoasdykfc5w37xwtrd4ch4ioxjnhfm6ldpwinlegzhknbviaj4",
+                "author": {
+                    "did": "did:plc:tow5upxpae7fhzjnxnvj2pha",
+                    "handle": "benfifield.bsky.social",
+                    "displayName": "Ben Fifield",
+                    "avatar": "https://av-cdn.bsky.app/img/avatar/plain/did:plc:tow5upxpae7fhzjnxnvj2pha/bafkreia5fe5ziufivddr7ze2ee4b6v53dhs7dnfbmchlyxmkfe2gf2j6x4@jpeg",
+                    "viewer": {
+                        "muted": false,
+                        "blockedBy": false,
+                        "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaskygnlqr2y",
+                        "followedBy": "at://did:plc:tow5upxpae7fhzjnxnvj2pha/app.bsky.graph.follow/3kasleepxwa2y"
+                    },
+                    "labels": [
+
+                    ]
+                },
+                "record": {
+                    "text": "Peng Ding's causal inference course book draft, this looks like a killer book to complement hernan and robins, imbens and rubin, etc",
+                    "$type": "app.bsky.feed.post",
+                    "embed": {
+                        "$type": "app.bsky.embed.record",
+                        "record": {
+                            "cid": "bafyreihjimdfxqy4rm4hhzfvrsrrbu7vfffgnviff6ee2fzwqshudw2aiq",
+                            "uri": "at://did:plc:wu4d37o7ukir2jieaxdh6qhc/app.bsky.feed.post/3kawnjkwifp2j"
+                        }
+                    },
+                    "langs": [
+                        "en"
+                    ],
+                    "createdAt": "2023-10-04T16:26:21.298Z"
+                },
+                "embed": {
+                    "$type": "app.bsky.embed.record#view",
+                    "record": {
+                        "$type": "app.bsky.embed.record#viewRecord",
+                        "uri": "at://did:plc:wu4d37o7ukir2jieaxdh6qhc/app.bsky.feed.post/3kawnjkwifp2j",
+                        "cid": "bafyreihjimdfxqy4rm4hhzfvrsrrbu7vfffgnviff6ee2fzwqshudw2aiq",
+                        "author": {
+                            "did": "did:plc:wu4d37o7ukir2jieaxdh6qhc",
+                            "handle": "paperposterbot.bsky.social",
+                            "displayName": "ArXiv Paperboy (Stat.ME+Econ.EM)",
+                            "avatar": "https://av-cdn.bsky.app/img/avatar/plain/did:plc:wu4d37o7ukir2jieaxdh6qhc/bafkreiepu6hhsvv4vpsfvbqjfklqzd5yucpfqq7ms5ewubip426gy22axq@jpeg",
+                            "viewer": {
+                                "muted": false,
+                                "blockedBy": false
+                            },
+                            "labels": [
+
+                            ]
+                        },
+                        "value": {
+                            "text": "A First Course in Causal Inference http://arxiv.org/abs/2305.18793 I developed the lecture notes based on my ``Causal Inference'' course at the University of California Berkeley over the past seven years. Since half of the students were undergraduates, my lecture notes only required basic knowle\n📈🤖",
+                            "$type": "app.bsky.feed.post",
+                            "facets": [
+                                {
+                                    "index": {
+                                        "byteEnd": 66,
+                                        "byteStart": 35
+                                    },
+                                    "features": [
+                                        {
+                                            "uri": "http://arxiv.org/abs/2305.18793",
+                                            "$type": "app.bsky.richtext.facet#link"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "createdAt": "2023-10-04T14:32:04.537778Z"
+                        },
+                        "labels": [
+
+                        ],
+                        "indexedAt": "2023-10-04T14:32:04.537Z",
+                        "embeds": [
+
+                        ]
+                    }
+                },
+                "replyCount": 0,
+                "repostCount": 1,
+                "likeCount": 1,
+                "indexedAt": "2023-10-04T16:26:21.298Z",
+                "viewer": {
+                    "like": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.feed.like/3kawvjhkneh24"
+                },
+                "labels": [
+
+                ]
+            }
+        },
+        {
+            "post": {
+                "uri": "at://did:plc:nnvf4hwrvrixzogemf23ntcp/app.bsky.feed.post/3ka5xoaingk2c",
+                "cid": "bafyreialmdd6rbjmb5ubg76wijtlkyiej7fjlmz2cgjkbjhakx4o77bfxa",
+                "author": {
+                    "did": "did:plc:nnvf4hwrvrixzogemf23ntcp",
+                    "handle": "mikemahoney218.com",
+                    "displayName": "Mike Mahoney",
+                    "avatar": "https://av-cdn.bsky.app/img/avatar/plain/did:plc:nnvf4hwrvrixzogemf23ntcp/bafkreifjkqnoafpxz2vimv4k5pme4wo2abylppleaqeulmgzir3g75cjsa@jpeg",
+                    "viewer": {
+                        "muted": false,
+                        "blockedBy": false,
+                        "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasd6kuuo62x"
+                    },
+                    "labels": [
+
+                    ]
+                },
+                "record": {
+                    "text": "A brief thread on mechanics of my #rstats feed for anyone wondering\n\ntl;dr the feed picks up:\n- top-level posts (so no replies, but yes quote posts)\n- containing rstats, rladies, or rspatial (# optional)\n- that are standalone words (so \"awesome-rstats\" yes, \"cyberladies\" no)\nbsky.app/profile/mike...",
+                    "$type": "app.bsky.feed.post",
+                    "langs": [
+                        "en"
+                    ],
+                    "facets": [
+                        {
+                            "index": {
+                                "byteEnd": 300,
+                                "byteStart": 276
+                            },
+                            "features": [
+                                {
+                                    "uri": "https://bsky.app/profile/mikemahoney218.com/feed/rstats-latest",
+                                    "$type": "app.bsky.richtext.facet#link"
+                                }
+                            ]
+                        }
+                    ],
+                    "createdAt": "2023-09-24T18:57:04.560Z"
+                },
+                "replyCount": 4,
+                "repostCount": 0,
+                "likeCount": 6,
+                "indexedAt": "2023-09-24T18:57:04.560Z",
+                "viewer": {
+                    "like": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.feed.like/3kav7zkdxae2j"
+                },
+                "labels": [
+
+                ]
+            }
+        },
+        {
+            "post": {
+                "uri": "at://did:plc:eijqdygh72wuei7faamrclpc/app.bsky.feed.post/3kau6tviybe2w",
+                "cid": "bafyreifgfdy5cshrzr2j3iwevel6du47rdwfrkep4c66ugwrvhowhhn6wq",
+                "author": {
+                    "did": "did:plc:eijqdygh72wuei7faamrclpc",
+                    "handle": "hansilowang.bsky.social",
+                    "displayName": "Hansi Lo Wang (he/him)",
+                    "avatar": "https://av-cdn.bsky.app/img/avatar/plain/did:plc:eijqdygh72wuei7faamrclpc/bafkreid7i7y76y32ag5vcd4ugnzm62tttxc5wvvo4isu7l3kkbettecfi4@jpeg",
+                    "viewer": {
+                        "muted": false,
+                        "blockedBy": false,
+                        "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaskzug6qm2j"
+                    },
+                    "labels": [
+
+                    ]
+                },
+                "record": {
+                    "text": "NEW: The final report of the National Academies panel on 2020 census warns that the widening racial and ethnic gaps in how accurately different populations are counted threatens the equitable distribution of political representation and federal funding in the U.S.\nwww.npr.org/2023/10/03/1...",
+                    "$type": "app.bsky.feed.post",
+                    "langs": [
+                        "en"
+                    ],
+                    "facets": [
+                        {
+                            "index": {
+                                "byteEnd": 292,
+                                "byteStart": 265
+                            },
+                            "features": [
+                                {
+                                    "uri": "https://www.npr.org/2023/10/03/1202678747/2020-census-national-academies-panel",
+                                    "$type": "app.bsky.richtext.facet#link"
+                                }
+                            ]
+                        }
+                    ],
+                    "createdAt": "2023-10-03T15:04:05.821Z"
+                },
+                "replyCount": 0,
+                "repostCount": 2,
+                "likeCount": 2,
+                "indexedAt": "2023-10-03T15:04:05.821Z",
+                "viewer": {
+                    "repost": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.feed.repost/3kaugbslemf2r",
+                    "like": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.feed.like/3kaug7m4dwl2a"
+                },
+                "labels": [
+
+                ]
+            }
+        },
+        {
+            "post": {
+                "uri": "at://did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/app.bsky.feed.post/3ka7ysuouk42g",
+                "cid": "bafyreifankztzfvmdokm3zzwkuqe5zaxf647xeoukjpzg66uhg7gfz4afe",
+                "author": {
+                    "did": "did:plc:ic6zqvuw5ulmfpjiwnhsr2ns",
+                    "handle": "soubhikbarari.bsky.social",
+                    "displayName": "Soubhik Barari",
+                    "avatar": "https://av-cdn.bsky.app/img/avatar/plain/did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/bafkreifozdfqf6zxfwwuvubjwudwet7fourxl33vtpam7gzeshnn3cjgwm@jpeg",
+                    "viewer": {
+                        "muted": false,
+                        "blockedBy": false,
+                        "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3k7roxrp2p723",
+                        "followedBy": "at://did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/app.bsky.graph.follow/3k7rox2vsqv2v"
+                    },
+                    "labels": [
+
+                    ]
+                },
+                "record": {
+                    "text": "American politics is currently stuck in a state way more paranormal than the Twilight Zone: the Polarization Paradox😵‍💫.\n\nThe inaugural piece (and first of a series!) in my newsletter, Somewhat Unlikely:\n\nsomewhatunlikely.substack.com/p/polarizati...",
+                    "$type": "app.bsky.feed.post",
+                    "embed": {
+                        "$type": "app.bsky.embed.external",
+                        "external": {
+                            "uri": "https://somewhatunlikely.substack.com/p/polarization-paradox?utm_campaign=post",
+                            "thumb": {
+                                "$type": "blob",
+                                "ref": {
+                                    "$link": "bafkreighfxuugw5wmjyxyomdsz437natvjgmzfdhpopwuqpefk5u5vrmda"
+                                },
+                                "mimeType": "image/jpeg",
+                                "size": 494159
+                            },
+                            "title": "The polarization paradox",
+                            "description": "Most political outcomes in our polarized era are extremely predictable. Yet politics today deeply feels like a chaotic unpredictable mess. Which story is true?"
+                        }
+                    },
+                    "langs": [
+                        "en"
+                    ],
+                    "facets": [
+                        {
+                            "index": {
+                                "byteEnd": 258,
+                                "byteStart": 213
+                            },
+                            "features": [
+                                {
+                                    "uri": "https://somewhatunlikely.substack.com/p/polarization-paradox",
+                                    "$type": "app.bsky.richtext.facet#link"
+                                }
+                            ]
+                        }
+                    ],
+                    "createdAt": "2023-09-25T14:22:54.090Z"
+                },
+                "embed": {
+                    "$type": "app.bsky.embed.external#view",
+                    "external": {
+                        "uri": "https://somewhatunlikely.substack.com/p/polarization-paradox?utm_campaign=post",
+                        "title": "The polarization paradox",
+                        "description": "Most political outcomes in our polarized era are extremely predictable. Yet politics today deeply feels like a chaotic unpredictable mess. Which story is true?",
+                        "thumb": "https://av-cdn.bsky.app/img/feed_thumbnail/plain/did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/bafkreighfxuugw5wmjyxyomdsz437natvjgmzfdhpopwuqpefk5u5vrmda@jpeg"
+                    }
+                },
+                "replyCount": 0,
+                "repostCount": 1,
+                "likeCount": 5,
+                "indexedAt": "2023-09-25T14:22:54.090Z",
+                "viewer": {
+                    "like": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.feed.like/3kaa55thyn52e"
+                },
+                "labels": [
+
+                ]
+            }
+        }
+    ],
+    "cursor": "1695651774090::bafyreifankztzfvmdokm3zzwkuqe5zaxf647xeoukjpzg66uhg7gfz4afe"
+}

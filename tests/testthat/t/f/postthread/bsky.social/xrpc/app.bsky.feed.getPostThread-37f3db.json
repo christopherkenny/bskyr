@@ -1,0 +1,100 @@
+{
+    "thread": {
+        "$type": "app.bsky.feed.defs#threadViewPost",
+        "post": {
+            "uri": "at://did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/app.bsky.feed.post/3k7qmjev5lr2s",
+            "cid": "bafyreifk6pyilxkm7vcingnkdbzueaftqg54i3al4zbh5p3jy3pryfkc3a",
+            "author": {
+                "did": "did:plc:ic6zqvuw5ulmfpjiwnhsr2ns",
+                "handle": "soubhikbarari.bsky.social",
+                "displayName": "Soubhik Barari",
+                "avatar": "https://av-cdn.bsky.app/img/avatar/plain/did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/bafkreifozdfqf6zxfwwuvubjwudwet7fourxl33vtpam7gzeshnn3cjgwm@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false,
+                    "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3k7roxrp2p723",
+                    "followedBy": "at://did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/app.bsky.graph.follow/3k7rox2vsqv2v"
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "Excited to be a speaker for the \n@rstatsai conf on Oct 19 @Georgetown! 📈 I'll be debuting a new version (and applications) of LocalView (localview.net), a local civic data platform I co-built. Come say hi if you’re around the beltway!✨#rstats #rgov\n\nrstats.ai/gov.html",
+                "$type": "app.bsky.feed.post",
+                "embed": {
+                    "$type": "app.bsky.embed.images",
+                    "images": [
+                        {
+                            "alt": "",
+                            "image": {
+                                "$type": "blob",
+                                "ref": {
+                                    "$link": "bafkreictkyws7qbruuupes52t6k5o5o5qfggf7pm6urzz7dyty53gzu3h4"
+                                },
+                                "mimeType": "image/jpeg",
+                                "size": 851799
+                            }
+                        }
+                    ]
+                },
+                "langs": [
+                    "en"
+                ],
+                "facets": [
+                    {
+                        "index": {
+                            "byteEnd": 153,
+                            "byteStart": 140
+                        },
+                        "features": [
+                            {
+                                "uri": "http://localview.net",
+                                "$type": "app.bsky.richtext.facet#link"
+                            }
+                        ]
+                    },
+                    {
+                        "index": {
+                            "byteEnd": 275,
+                            "byteStart": 257
+                        },
+                        "features": [
+                            {
+                                "uri": "https://rstats.ai/gov.html",
+                                "$type": "app.bsky.richtext.facet#link"
+                            }
+                        ]
+                    }
+                ],
+                "createdAt": "2023-09-19T11:32:54.574Z"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.images#view",
+                "images": [
+                    {
+                        "thumb": "https://av-cdn.bsky.app/img/feed_thumbnail/plain/did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/bafkreictkyws7qbruuupes52t6k5o5o5qfggf7pm6urzz7dyty53gzu3h4@jpeg",
+                        "fullsize": "https://av-cdn.bsky.app/img/feed_fullsize/plain/did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/bafkreictkyws7qbruuupes52t6k5o5o5qfggf7pm6urzz7dyty53gzu3h4@jpeg",
+                        "alt": ""
+                    }
+                ]
+            },
+            "replyCount": 0,
+            "repostCount": 0,
+            "likeCount": 4,
+            "indexedAt": "2023-09-19T11:32:54.574Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        "replies": [
+
+        ],
+        "viewer": {
+            "canReply": true
+        }
+    }
+}
