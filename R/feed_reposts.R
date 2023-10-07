@@ -19,8 +19,8 @@
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_reposts('at://did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/app.bsky.feed.post/3kaa2gxjhzr2a')
 bs_get_reposts <- function(uri,
-                         user = get_bluesky_user(), pass = get_bluesky_pass(),
-                         auth = bs_auth(user, pass)) {
+                           user = get_bluesky_user(), pass = get_bluesky_pass(),
+                           auth = bs_auth(user, pass)) {
   if (missing(uri)) {
     cli::cli_abort('{.arg uri} must list at least one user.')
   }

@@ -1,12 +1,12 @@
 # devtools
-lrj <- function() {
+lrj <- function() { # nocov start
   httr2::last_response() |>
     httr2::resp_body_json()
-}
+} # nocov end
 
-.gl <- function(x) {
+.gl <- function(x) { # nocov start
   dplyr::glimpse(x)
-}
+} # nocov end
 
 # general utils
 clean_names <- function(x) {
