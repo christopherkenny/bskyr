@@ -1,0 +1,32 @@
+{
+    "preferences": [
+        {
+            "hideReplies": false,
+            "hideRepliesByUnfollowed": false,
+            "hideRepliesByLikeCount": 2,
+            "hideReposts": false,
+            "hideQuotePosts": false,
+            "$type": "app.bsky.actor.defs#feedViewPref",
+            "feed": "home"
+        },
+        {
+            "$type": "app.bsky.actor.defs#savedFeedsPref",
+            "saved": [
+                "at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/bsky-team",
+                "at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/with-friends",
+                "at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/whats-hot",
+                "at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/hot-classic",
+                "at://did:plc:kyttpb6um57f4c2wep25lqhq/app.bsky.feed.generator/aaaevewijfbqy",
+                "at://did:plc:2zcfjzyocp6kapg6jc4eacok/app.bsky.feed.generator/aaaeckvqc3gzg",
+                "at://did:plc:nnvf4hwrvrixzogemf23ntcp/app.bsky.feed.generator/rstats-latest"
+            ],
+            "pinned": [
+                "at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/whats-hot",
+                "at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/with-friends",
+                "at://did:plc:kyttpb6um57f4c2wep25lqhq/app.bsky.feed.generator/aaaevewijfbqy",
+                "at://did:plc:2zcfjzyocp6kapg6jc4eacok/app.bsky.feed.generator/aaaeckvqc3gzg",
+                "at://did:plc:nnvf4hwrvrixzogemf23ntcp/app.bsky.feed.generator/rstats-latest"
+            ]
+        }
+    ]
+}
