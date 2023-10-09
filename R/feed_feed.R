@@ -36,6 +36,7 @@ bs_get_feed <- function(feed,
   resp <- req |>
     httr2::req_perform() |>
     httr2::resp_body_json()
+  # TODO clean tibble output
   return(resp)
 
   resp |>
