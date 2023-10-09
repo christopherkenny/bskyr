@@ -28,7 +28,7 @@ bs_get_feed <- function(feed,
     cli::cli_abort('{.arg feed} must be a character vector.')
   }
 
-  
+
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.getFeed') |>
     httr2::req_url_query(feed = feed) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt)
@@ -36,6 +36,7 @@ bs_get_feed <- function(feed,
   resp <- req |>
     httr2::req_perform() |>
     httr2::resp_body_json()
+  return(resp)
 
   resp |>
     purrr::pluck('feed') |>
