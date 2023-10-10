@@ -1,0 +1,828 @@
+{
+    "follows": [
+        {
+            "did": "did:plc:su6h3l66pw5rdjg45fzoebr5",
+            "handle": "sabrinamkarim.bsky.social",
+            "displayName": "Sabrina Karim ",
+            "description": "Cornell Assistant Professor specializing in security sector reform, policing, peacekeeping, and gender. Director of the Gender and Security Sector Lab sabrinamkarim.com",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:su6h3l66pw5rdjg45fzoebr5/bafkreif3ru7ghg6kufrzkhskpfld673usjknxoatd5wookqqbrxnwzp2eq@jpeg",
+            "indexedAt": "2023-09-27T13:56:57.492Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kb42h6v7cf25",
+                "followedBy": "at://did:plc:su6h3l66pw5rdjg45fzoebr5/app.bsky.graph.follow/3kb47j2yqpy2l"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:2mzhdtn7n3n7z5apjrzqtd2r",
+            "handle": "khoavuumn.bsky.social",
+            "displayName": "Khoa Vu",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2mzhdtn7n3n7z5apjrzqtd2r/bafkreicaslbf65mhuhxl7jxdazbfwqn6ddrancib322p4ksjp7t45zvjuq@jpeg",
+            "indexedAt": "2023-10-01T20:47:49.452Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kb3x625nws2n"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:ojgsaom655we5gtub6srkll3",
+            "handle": "mamalik.bsky.social",
+            "displayName": "Mashail Malik ",
+            "description": "Asst. Prof at Harvard. Research interests include identity politics, violence, politics of migration.",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:ojgsaom655we5gtub6srkll3/bafkreigb5sws2jllbkfarnafn6zx7ruixzluqm45ugx3gqrwgph3kzed34@jpeg",
+            "indexedAt": "2023-09-23T18:34:23.560Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kb3x5x5hvr25",
+                "followedBy": "at://did:plc:ojgsaom655we5gtub6srkll3/app.bsky.graph.follow/3kb3ymeqdwt2x"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:75ysbjxlntm4ilkm3bm625ly",
+            "handle": "hannohilbig.bsky.social",
+            "displayName": "Hanno Hilbig",
+            "description": "Political Science @UC Davis",
+            "indexedAt": "2023-09-22T14:46:43.838Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kb3x5vnopr2h",
+                "followedBy": "at://did:plc:75ysbjxlntm4ilkm3bm625ly/app.bsky.graph.follow/3kb6l5a6v7h24"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:6hltmljgp3hlz5bo5rfucgt3",
+            "handle": "mierkezat.bsky.social",
+            "displayName": "Alex Mierke-Zatwarnicki",
+            "description": "Political scientist studying parties and group identities in advanced democracies. Current Max Weber Fellow @ EUI, recent Harvard PhD.",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:6hltmljgp3hlz5bo5rfucgt3/bafkreiczxoqvriyhbigomvimqagkjpufc5noxaxs7qmyx5jrakcw6vrt2u@jpeg",
+            "indexedAt": "2023-09-21T14:00:22.598Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kb3x5sw7xl2w"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:2t7dtedbkrfqdfq5l6um5n62",
+            "handle": "feyaadallie.bsky.social",
+            "displayName": "Feyaad Allie",
+            "description": "Post-doc (2023-2024), then Assistant Professor of Government (2024-) at Harvard. Researching democracy, identity, intergroup relations, and India.",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2t7dtedbkrfqdfq5l6um5n62/bafkreiem5krqfiqad4jmp3zptl5kt4c6dxmhugvnq4kqs7m5a7mbz2pyfe@jpeg",
+            "indexedAt": "2023-09-20T22:50:14.892Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kb3x5pghwz27",
+                "followedBy": "at://did:plc:2t7dtedbkrfqdfq5l6um5n62/app.bsky.graph.follow/3kb63jdskgc2a"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:pjobbjntbn3eei4wxvczgkkh",
+            "handle": "noahdasanaike.bsky.social",
+            "displayName": "Noah Dasanaike",
+            "indexedAt": "2023-10-06T16:59:39.774Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kb3x5hrohp2a",
+                "followedBy": "at://did:plc:pjobbjntbn3eei4wxvczgkkh/app.bsky.graph.follow/3kb3wrzgp232w"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:sospp7z4c7nkmbwmzqwinbit",
+            "handle": "angelaxocampo.bsky.social",
+            "displayName": "Angela X. Ocampo",
+            "description": "Prof at UT-Austin researching and teaching on race, ethnicity and politics & Latina/o/x politics.",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:sospp7z4c7nkmbwmzqwinbit/bafkreigchga6wipl4yv6mvdnmalv7sdj5743pxetpgusrmunawjkqqiezq@jpeg",
+            "indexedAt": "2023-09-26T20:23:18.395Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kazh6ebgg325"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:dcbbpup73qyoy465ivi365w7",
+            "handle": "darinself.bsky.social",
+            "displayName": "Assistant to the Professor",
+            "description": "Assistant Professor of Political Science -- Researching democratization, autocratic regime durability, the military,  and political parties. Unsure of what to post on BlueSky when its cloudy outside. ",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:dcbbpup73qyoy465ivi365w7/bafkreie3srjgg6bt7bl36vdhrgq6vzplcyrizvh53v7dpgp3xtrooqfera@jpeg",
+            "indexedAt": "2023-07-31T15:35:25.750Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaxrqa26tg2d"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:z6eqi35afcyt2u5ffig5s4uj",
+            "handle": "gustavodiaz.org",
+            "displayName": "Gustavo Diaz",
+            "description": "Funkático\nPostdoc at McMaster University Political Science\nPhD from UIUC\nhttps://gustavodiaz.org/",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:z6eqi35afcyt2u5ffig5s4uj/bafkreidnp4h2f7ddx2pviy7fnvwo5cqil2roi4tbov4kpm57bugnvzopdu@jpeg",
+            "indexedAt": "2023-08-21T19:19:01.709Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaumvbefzo2g",
+                "followedBy": "at://did:plc:z6eqi35afcyt2u5ffig5s4uj/app.bsky.graph.follow/3kauoxpyxek2p"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:s4aekwkk6jiik6uq4yfjac4l",
+            "handle": "allisonhorst.bsky.social",
+            "displayName": "Allison Horst",
+            "description": "Data Scientist Advocate at Observable. Data science | education | art. www.allisonhorst.com",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:s4aekwkk6jiik6uq4yfjac4l/bafkreigunccqdz2qpiih7vp6ixzntu4knirprwzbzop63t66oirexlsar4@jpeg",
+            "indexedAt": "2023-07-26T00:22:25.768Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasok722ji23",
+                "followedBy": "at://did:plc:s4aekwkk6jiik6uq4yfjac4l/app.bsky.graph.follow/3kb5tyn7ter2x"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:mg6k6llb5ruhhf5vxh3pvqkz",
+            "handle": "urisohn.bsky.social",
+            "displayName": "Uri Simonsohn ",
+            "description": "Pragmatic Methodologist and behavioral scientist at Esade business school. Barcelona \n\nDataColada.org\n",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mg6k6llb5ruhhf5vxh3pvqkz/bafkreidkxxlzm4czdb5wehja67vz5whcerlanwqoikbwpgtfawynczzy7q@jpeg",
+            "indexedAt": "2023-09-27T21:18:54.802Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasojkvhmn2y"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:wk4ks4sjxkducttvaawps2wb",
+            "handle": "sophieehill.bsky.social",
+            "displayName": "Sophie E. Hill",
+            "description": "PoliSci PhD student @ Harvard / 🇬🇧🏳️‍🌈 / Creator of MyLittleCrony.com",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:wk4ks4sjxkducttvaawps2wb/bafkreihqnndl5fcrgcyddu5itewquekqalwgykuasr6prfidak42e33zf4@jpeg",
+            "indexedAt": "2023-10-08T09:43:10.806Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl6qmv7i22",
+                "followedBy": "at://did:plc:wk4ks4sjxkducttvaawps2wb/app.bsky.graph.follow/3kawir2psix2e"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:5prledmu36imun2zjc26v5nl",
+            "handle": "mattyglesias.bsky.social",
+            "displayName": "Matthew Yglesias ",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5prledmu36imun2zjc26v5nl/bafkreig3gokbwqggydwqdvj66ewsdj3y6dkxmtg6fqzzhnphezfwtsnbtq@jpeg",
+            "indexedAt": "2023-07-03T03:49:40.891Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl6dgsxg2j"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:4klvcjju2m7msicq6kw7i7d6",
+            "handle": "joshmccrain.bsky.social",
+            "displayName": "Josh McCrain",
+            "description": "Political scientist at the University of Utah",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:4klvcjju2m7msicq6kw7i7d6/bafkreih24rbqmtbzdob7cuhdn777n243667epqjzhejj5uwtqclqxgg5z4@jpeg",
+            "indexedAt": "2023-08-18T19:41:25.961Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl65wqbj2y",
+                "followedBy": "at://did:plc:4klvcjju2m7msicq6kw7i7d6/app.bsky.graph.follow/3kaslldqn6i2k"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:u3caexngjqnuat3f5vfgp57m",
+            "handle": "sarahbinder.bsky.social",
+            "displayName": "Sarah Binder ",
+            "description": "Political scientist by day (and night). GWU and Brookings. Co-editor, https:/goodauthority.org/ \n\nsarahbinder.weebly.com",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:u3caexngjqnuat3f5vfgp57m/bafkreicembaunoh3uvwn3xyn3vbe7zunezud655ok64m26dtcse5oqycri@jpeg",
+            "indexedAt": "2023-09-21T00:56:51.976Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl62tw4u2u"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:z7u3774mks7ea2q6smcljefm",
+            "handle": "dthompson.bsky.social",
+            "displayName": "Dan Thompson",
+            "description": "Researcher studying US elections. Asst Prof of Political Science, UCLA.",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:z7u3774mks7ea2q6smcljefm/bafkreie3tsavqywxbmbva433n3tfnuiqq6fgvifwrmpuptt4x2pvuqxvx4@jpeg",
+            "indexedAt": "2023-08-22T23:40:30.428Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl5z3fo42r",
+                "followedBy": "at://did:plc:z7u3774mks7ea2q6smcljefm/app.bsky.graph.follow/3kat2vntwto2d"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:mmzzps7ujtzias5cph45wkd6",
+            "handle": "mirya.bsky.social",
+            "displayName": "Mirya Holman",
+            "description": "Public policy professor at the Hobby School. Enthusiastic about food, dogs, travel, and research. I think a lot about sheriffs. I'm 'writing' a book about how local boards and commissions are bad for democracy.",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:mmzzps7ujtzias5cph45wkd6/bafkreibt2ewildxaxjmtxlrellcdrvhw4y6bhox5bvfsqvkmnfe626izdq@jpeg",
+            "indexedAt": "2023-09-25T17:00:08.545Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl5uimex2y"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:czimosxzwoxtufbullrzlxwn",
+            "handle": "trounstine.bsky.social",
+            "displayName": "Jessica Trounstine",
+            "description": "Professor of Political Science at Vanderbilt University. Author of Segregation by Design and Political Monopolies in American Cities. 2022 Carnegie Fellow. ",
+            "indexedAt": "2023-08-21T00:55:09.299Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl5n7rgy22",
+                "followedBy": "at://did:plc:czimosxzwoxtufbullrzlxwn/app.bsky.graph.follow/3kasm2om5oz2i"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:x3b2hkjvuelnbni47cl77dwf",
+            "handle": "jonrobinson2.bsky.social",
+            "displayName": "Jonathan Robinson",
+            "description": "Director of Research @Catalist_US. Proud Buckeye & Marylander. Dems are good. Affordable MD PAC YIMBY. Dad. Views my own.",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:x3b2hkjvuelnbni47cl77dwf/bafkreif5dxh3se6lvd46pgcaoo4uwfjl3wfwpgde6ydajvqcmzibbqgxmu@jpeg",
+            "indexedAt": "2023-07-03T14:36:21.251Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl5ffaim2u"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:4jfxf2l746clfprbqp5yscud",
+            "handle": "persily.bsky.social",
+            "displayName": "Nate Persily",
+            "description": "McClatchy Professor of Law, Stanford Law School; Co-Director, Stanford Cyber Policy Center",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:4jfxf2l746clfprbqp5yscud/bafkreihzqd5cfzous2agshfl77th5na3x4taodez7wi2f3iew5x7zo5m5i@jpeg",
+            "indexedAt": "2023-07-03T02:11:25.746Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl57qp4f2y"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:kxuuqxfng53gmoqbfufjmjrs",
+            "handle": "bfschaffner.bsky.social",
+            "displayName": "Brian Schaffner",
+            "description": "Political scientist ~ Newhouse Professor of Civic Studies at Tufts ~ CES Whisperer ~ he/him ~ #COYS #GoDawgs",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:kxuuqxfng53gmoqbfufjmjrs/bafkreiafbmn654mmgdag2r7wpb52ggstn6mz2xkwp6snppgra4w3i52x7m@jpeg",
+            "indexedAt": "2023-08-18T20:22:42.615Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl4xtqjd2x",
+                "followedBy": "at://did:plc:kxuuqxfng53gmoqbfufjmjrs/app.bsky.graph.follow/3kasroqmuve27"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:3i2632savpmt6di6i3gy5len",
+            "handle": "jdbk.bsky.social",
+            "displayName": "Justin de Benedictis-Kessner",
+            "description": "Assistant Professor of Public Policy at Harvard Kennedy School. Urban and local politics + policy; cyclist; 🏳️‍🌈; he/him.",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:3i2632savpmt6di6i3gy5len/bafkreif7jozdx5vaaowmhtcw4swkb2fkt2haozuagkdjhzoyretufimjiq@jpeg",
+            "indexedAt": "2023-09-03T17:41:50.051Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl4vld242u",
+                "followedBy": "at://did:plc:3i2632savpmt6di6i3gy5len/app.bsky.graph.follow/3kawjpmagb324"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:ldqy3ougrkxtlitplzci6e7b",
+            "handle": "jnkatz.bsky.social",
+            "displayName": "Jonathan N. Katz",
+            "description": "Professor at Caltech. Social Sciences and Statistics.",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:ldqy3ougrkxtlitplzci6e7b/bafkreifvs5ku5lmk3r5pmff5yolpx4odi5rvh2anrrbpczthzkesjqh7sa@jpeg",
+            "indexedAt": "2023-08-22T18:21:26.078Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl4satue2m"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:slxqefkicmcxs6ee2isihnxc",
+            "handle": "jpayson.bsky.social",
+            "displayName": "Julia Payson",
+            "description": "UCLA Political Scientist. Representation & public policy in state/ local/ urban politics. City enthusiast. https://www.juliapayson.com/",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:slxqefkicmcxs6ee2isihnxc/bafkreic3anme7vssqpdqwcqqrbinnb7r6naxs4s3chfli2jwkhmexscvw4@jpeg",
+            "indexedAt": "2023-09-22T04:31:22.518Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl4pcvus2d"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:umw7nfwzdd4hukztqjo5wowo",
+            "handle": "eitanhersh.bsky.social",
+            "displayName": "Eitan Hersh",
+            "description": "Political scientist at Tufts. Elections, civic engagement, voting rights. Author of Politics is for Power http://tinyurl.com/politics-hersh",
+            "indexedAt": "2023-09-22T12:56:07.036Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl4mvmb32x"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:dasfmg3tozgwq7466m2gph6s",
+            "handle": "povertyscholar.bsky.social",
+            "displayName": "Jamila Michener",
+            "description": "Prof @Cornell studying: power, poverty, racism, policy, health, housing |Author: Fragmented Democracy: Medicaid, Federalism & Unequal Politics |#QueensNY |Believer",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:dasfmg3tozgwq7466m2gph6s/bafkreici2mokuniiyt46hh5gratow4upq72mu3nw2fjmld3uclekxv3iqu@jpeg",
+            "indexedAt": "2023-09-20T00:54:19.298Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl4f2svo2d"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:cskzb36jeiwmrnwlkhm3j4mo",
+            "handle": "jkastellec.bsky.social",
+            "displayName": "John Kastellec",
+            "description": "Professor of Politics at Princeton University @Princeton . http://www.makingthesupremecourt.com",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:cskzb36jeiwmrnwlkhm3j4mo/bafkreidwncisvjikr2wbto26lzsu35id6byzryfhkfbgfarb4gcf4mzede@jpeg",
+            "indexedAt": "2023-08-26T17:47:56.100Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl45fmhm2i"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:b2yh7pcbcq6nh4lhpueffwp2",
+            "handle": "owasow.bsky.social",
+            "displayName": "Omar Wasow",
+            "description": "Asst Prof, UC Berkeley, Political Science. Study protests, stats & race: 1/ Agenda Seeding http://j.mp/agenda-seeding 2/ Race as a Bundle of Sticks http://j.mp/bundle-of\n",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:b2yh7pcbcq6nh4lhpueffwp2/bafkreibhst27g4fwbtilj6dpy332kth4pe7ov7xo62eztchhr5klt6e4wm@jpeg",
+            "indexedAt": "2023-09-26T15:44:43.316Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl3t4d5e2u",
+                "followedBy": "at://did:plc:b2yh7pcbcq6nh4lhpueffwp2/app.bsky.graph.follow/3kasnys2gxt2d"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:jxizeknbi7lgfye4jylypraz",
+            "handle": "solmg.bsky.social",
+            "displayName": "Sol Messing",
+            "description": "Social Scientist/Research Prof at NYU CSMaP, formerly Twitter. http://solomonmg.github.io",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:jxizeknbi7lgfye4jylypraz/bafkreicbssajlvr53ngspwlp6hbahnl7twemun2rtaxapwp353sgpt6xha@jpeg",
+            "indexedAt": "2023-07-03T02:11:18.218Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl3sbjst2x"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:b3psimnw5xxta2n4h5qzxu55",
+            "handle": "stephenwolf.bsky.social",
+            "displayName": "Stephen Wolf",
+            "description": "Daily Kos Elections writer covering voting rights, redistricting, election reform, demographics, maps, & political science.\nTwitter: @PoliticsWolf\nWebsite: https://www.dailykos.com/blogs/elections/",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:b3psimnw5xxta2n4h5qzxu55/bafkreiax5kat2xp5p4vk6zzimytzh3n63jtcirfm4unuo5q35q4v7pxrdu@jpeg",
+            "indexedAt": "2023-07-07T23:39:17.055Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl36op7z2y"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:7sv3d2ex5vy5bkwb2dppv5v5",
+            "handle": "kabirkhanna.bsky.social",
+            "displayName": "Kabir K.",
+            "description": "Elections & Data Analytics @ CBS",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7sv3d2ex5vy5bkwb2dppv5v5/bafkreibkcfa3jhgsb7zcz3daxpf4xfvp57wgycvu6tw7uymjq743lconym@jpeg",
+            "indexedAt": "2023-09-26T23:33:33.700Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasl23jv3j2y"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:eijqdygh72wuei7faamrclpc",
+            "handle": "hansilowang.bsky.social",
+            "displayName": "Hansi Lo Wang (he/him)",
+            "description": "NPR correspondent trying to make sense of the census and the rest of U.S. democracy • email: hwang@npr.org • signal: 917-397-2639",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:eijqdygh72wuei7faamrclpc/bafkreid7i7y76y32ag5vcd4ugnzm62tttxc5wvvo4isu7l3kkbettecfi4@jpeg",
+            "indexedAt": "2023-07-29T12:08:38.436Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaskzug6qm2j"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:hcorr4yvkfpcqsie5se73ojd",
+            "handle": "donnermaps.bsky.social",
+            "displayName": "Daniel Donner",
+            "description": "Daily Kos Elections. Focusing on data, maps, and demographics. ",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:hcorr4yvkfpcqsie5se73ojd/bafkreic5vvsf6x5pkvsv5uzqwrkwaud747fzgftf4uhs5ooa5a5fyv2fti@jpeg",
+            "indexedAt": "2023-07-25T19:13:00.700Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaskztszi62p"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:e6sll2wtjd2bz5xu35m7s5s2",
+            "handle": "jkalla.bsky.social",
+            "displayName": "Josh Kalla",
+            "description": "Assistant Professor of Political Science and Data Science at Yale. Pittsburgh native. ",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e6sll2wtjd2bz5xu35m7s5s2/bafkreicyjxrbg4tdvw46ji4aqgfciowafvqh2ocu3jjf64bp2apnxz4ox4@jpeg",
+            "indexedAt": "2023-07-03T00:15:40.637Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaskziq2ft2r"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:qcbppvjp4va2ovv6bjsmsgax",
+            "handle": "baseballot.bsky.social",
+            "displayName": "Nathaniel Rakich",
+            "description": "Sabermetric-minded politics writer, social-science-minded baseball writer. Elections at FiveThirtyEight.",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:qcbppvjp4va2ovv6bjsmsgax/bafkreichb3rexsk6pvpuoodovukvfyala3ijugzubngjcjg5d2nci5i5fi@jpeg",
+            "indexedAt": "2023-07-03T00:55:28.584Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaskzgmt242i"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:j5hxppoqwtnzyltkyht2msjf",
+            "handle": "rickhasen.bsky.social",
+            "displayName": "Rick Hasen ",
+            "description": "Professor, UCLA Law; Director, http://SafeguardingDemocracyProject.org; 2020 CNN, 2022 NBC/MSNBC Election Law Analyst; electionlawblog.org",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:j5hxppoqwtnzyltkyht2msjf/bafkreiemlm7fzneu3724ocq4mou4erabtuvj7fnvb5p6awcblxgdhh25lu@jpeg",
+            "indexedAt": "2023-07-03T00:15:00.601Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaskzfg3jn2w"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:5wrv6ingxoupoi7kvyzmgqsp",
+            "handle": "peterenns.bsky.social",
+            "displayName": "Peter K. Enns",
+            "description": "https://peterenns.org/ Professor of Government & Public Policy, Cornell University; Robert S. Harrison Director of https://socialsciences.cornell.edu/; Co-founder, https://www.verasight.io/ ",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5wrv6ingxoupoi7kvyzmgqsp/bafkreifkvdufy2nqxhyox2ixdxu2bld3i6b26acfhbetumc7gbxofjkqzu@jpeg",
+            "indexedAt": "2023-09-28T02:45:04.975Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaskzc5a7k2y"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:b2d7legjemduxlrnhnk3nsex",
+            "handle": "jkaslovsky.bsky.social",
+            "displayName": "Jaclyn Kaslovsky",
+            "description": "Assistant Professor in the Department of Political Science at Rice University studying the U.S. Congress and representation",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:b2d7legjemduxlrnhnk3nsex/bafkreibtzxfk7hi6omvukjy2aacotvbk5ristyt6tukfk7wvhdybqr2gzm@jpeg",
+            "indexedAt": "2023-09-21T20:39:02.918Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaskz7peys2y"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:f5gfx2t6at2p7wojt4dum7sz",
+            "handle": "electionsmith.bsky.social",
+            "displayName": "daniel a. smith",
+            "description": "political science professor; state politics scholar (direct democracy, voting, elections); cynic, skeptic, & part-time africanist; personal musings",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:f5gfx2t6at2p7wojt4dum7sz/bafkreid22w724p3bhdlegi2sriy6zzoka6iwrhqheowlo6p3ixltpbpkze@jpeg",
+            "indexedAt": "2023-09-04T14:45:37.937Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaskytcrie2u"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:xzobzduk6hmqmoikltixin5n",
+            "handle": "cwolbrecht.bsky.social",
+            "displayName": "Christina Wolbrecht",
+            "description": "Political scientist @ Notre Dame. Gender, parties, suffrage, role models.\n\nhttps://christinawolbrecht.com",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:xzobzduk6hmqmoikltixin5n/bafkreiblgz5u4npursbhsu7xku7nckgbypovd5ik6wa5wluccijax3fyh4@jpeg",
+            "indexedAt": "2023-07-03T00:45:18.700Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaskypmefe2j"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:qigftpfjt2mrkq23skrcuedw",
+            "handle": "leahstokes.bsky.social",
+            "displayName": "Leah Stokes",
+            "description": "Prof climate + energy policy UCSB, Fellow Harvard Radcliffe Institute, Advises Rewiring America, Alum @MIT @Columbia @UofT, Hosts \"A Matter of Degrees,\" Cuts carbon pollution!",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:qigftpfjt2mrkq23skrcuedw/bafkreibaszkdjhxfhbdjayqpf5fnwgrss3iqqcyzbpkvs7ziysfjmmlcpq@jpeg",
+            "indexedAt": "2023-10-07T17:53:58.891Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaskymu6dz2e"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:ntgwob62xdhrsff4vljrhecq",
+            "handle": "ispsyale.bsky.social",
+            "displayName": "Yale ISPS",
+            "description": "The Institution for Social and Policy Studies at Yale advances interdisciplinary research to shape public policy and inform democratic deliberation.",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:ntgwob62xdhrsff4vljrhecq/bafkreifmmtjo5pakgvtuikfjwhqibger6344aurtawets4yi6arbuc6tne@jpeg",
+            "indexedAt": "2023-09-22T19:47:42.265Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaskyjvmo52u"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:tow5upxpae7fhzjnxnvj2pha",
+            "handle": "benfifield.bsky.social",
+            "displayName": "Ben Fifield",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:tow5upxpae7fhzjnxnvj2pha/bafkreia5fe5ziufivddr7ze2ee4b6v53dhs7dnfbmchlyxmkfe2gf2j6x4@jpeg",
+            "indexedAt": "2023-09-19T15:02:47.531Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaskygnlqr2y",
+                "followedBy": "at://did:plc:tow5upxpae7fhzjnxnvj2pha/app.bsky.graph.follow/3kasleepxwa2y"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:bt7zpvykiu4ebcfp76kh7p5r",
+            "handle": "chriswarshaw.bsky.social",
+            "displayName": "Chris Warshaw",
+            "description": "Professor of Political Science at George Washington University. Focus on representation, elections, & public opinion. Co-author of ‘Dynamic Democracy’\n",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:bt7zpvykiu4ebcfp76kh7p5r/bafkreiazxipyxmureetdmvud3tqbzlwvkp2xwd5mi4p2pf5k2otwch44ai@jpeg",
+            "indexedAt": "2023-09-26T14:22:16.788Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kaskvyfd2327",
+                "followedBy": "at://did:plc:bt7zpvykiu4ebcfp76kh7p5r/app.bsky.graph.follow/3kasksgmv4p2k"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:ifhjx2iaa47ptb45lymwwey3",
+            "handle": "kierisi.bsky.social",
+            "displayName": "Jesse Mostipak ",
+            "description": "never was a cornflake girl",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:ifhjx2iaa47ptb45lymwwey3/bafkreidain2ri2ghz7fntt7jpxmo2jlm5qedxqku56keyk27fncsylv7qu@jpeg",
+            "indexedAt": "2023-07-03T01:26:32.611Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasdfylwgr2y"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:bxlsoyskndt7yn4jrm6splxg",
+            "handle": "romainfrancois.bsky.social",
+            "displayName": "Romain François",
+            "description": "Looking for #rstats opportunities. ",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:bxlsoyskndt7yn4jrm6splxg/bafkreig6dcuxckuzdg73w25nv77zpca5mvb53ov2j4ic4z65vk32i3cpnm@jpeg",
+            "indexedAt": "2023-07-03T16:34:52.879Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasdfuwza22u"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:nnvf4hwrvrixzogemf23ntcp",
+            "handle": "mikemahoney218.com",
+            "displayName": "Mike Mahoney",
+            "description": "PhD candidate, environmental science and technology.\n#rstats, ML, Boston and spatial data.\nRTs imply causation.\nany pronouns / 🏳️‍🌈",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:nnvf4hwrvrixzogemf23ntcp/bafkreifjkqnoafpxz2vimv4k5pme4wo2abylppleaqeulmgzir3g75cjsa@jpeg",
+            "indexedAt": "2023-07-03T02:13:46.644Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasd6kuuo62x"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:hgyzg2hn6zxpqokmp5c2xrdo",
+            "handle": "hrbrmstr.dev",
+            "displayName": "hrbrmstr",
+            "description": "a.k.a. boB Rudis • 🇺🇦 Pampa • Don't look at me…I do what he does—just slower. #rstats #javascript #datascience avuncular•👨‍🍳•✝️• 💤• Varaforseti í Gögn Vísindi @ @GreyNoise-Intelligence",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:hgyzg2hn6zxpqokmp5c2xrdo/bafkreiboe65hphjq2fdxc6vw4esbsnnhprguw346h2o7txfnogpe7rxnce@jpeg",
+            "indexedAt": "2023-07-11T09:46:12.440Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasd45ll5h2u"
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "did": "did:plc:i3kttcfvatcgakyi7ddumbq6",
+            "handle": "themockup.blog",
+            "displayName": "Thomas Mock",
+            "description": "He/Him | Workbench Product Manager @posit.co👨‍💻 \nI ❤️ Data, 🌮, R, IDEs, and Quarto\nProductive with #tidyverse & #RStats \n@thomas_mock@fosstodon.org + @thomas_mock",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:i3kttcfvatcgakyi7ddumbq6/bafkreicuk4nwyf52kuu7it47syc4x5fg3cgd4l2dfwo5p6sw2v4vwqws3m@jpeg",
+            "indexedAt": "2023-07-03T04:18:24.069Z",
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kasczpo54i2r"
+            },
+            "labels": [
+
+            ]
+        }
+    ],
+    "subject": {
+        "did": "did:plc:wpe35pganb6d4pg4ekmfy6u5",
+        "handle": "chriskenny.bsky.social",
+        "displayName": "Chris Kenny",
+        "description": "PhD Candidate in Government @Harvard. Studies redistricting in #rstats.\nhttps://christophertkenny.com/",
+        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:wpe35pganb6d4pg4ekmfy6u5/bafkreibbgv73dk7lk4qrij5xm7vri3m6hfgfxqylxbal6yau7ssieqav3a@jpeg",
+        "indexedAt": "2023-10-03T03:23:09.666Z",
+        "viewer": {
+            "muted": false,
+            "blockedBy": false
+        },
+        "labels": [
+
+        ]
+    },
+    "cursor": "1696281216593::bafyreiasq3kb6ox64y5gfjrecmq7ah6kkzj6hkzvrzphkucu3dpd66kdam"
+}
