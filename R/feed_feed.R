@@ -36,11 +36,11 @@ bs_get_feed <- function(feed,
   resp <- req |>
     httr2::req_perform() |>
     httr2::resp_body_json()
-  # TODO clean tibble output
-  return(resp)
 
-  resp |>
-    purrr::pluck('feed') |>
-    proc() |>
-    clean_names()
+  lapply(resp$feed, function(x) {
+    dplyr::bind_cols(widen(x$post), widen(x$reply))
+  }) |>
+    dplyr::bind_rows() |>
+    clean_names() |>
+    add_singletons(resp)
 }
