@@ -21,7 +21,7 @@ bs_post(
 \item{auth}{Authentication information. Defaults to \code{bs_auth(user, pass)}.}
 }
 \value{
-TODO
+a tibble of post information
 }
 \description{
 Make a post on Bluesky Social
