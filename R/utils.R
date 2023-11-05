@@ -30,6 +30,15 @@ list_hoist <- function(l) {
   dplyr::bind_rows(lapply(l, function(x) dplyr::bind_rows(unlist(x))))
 }
 
+validate_user <- function(x) {
+  # regex adapted from https://atproto.com/specs/handle#handle-identifier-syntax
+  if (!stringr::str_detect(x,
+                           '^([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\\.)+[a-zA-Z]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?$')) {
+    cli::cli_abort('{.arg user} must be a valid handle.')
+  }
+  invisible(x)
+}
+
 validate_pass <- function(x) {
   if (nchar(x) != 19) {
     cli::cli_abort('{.arg pass} must have 19 characters.')

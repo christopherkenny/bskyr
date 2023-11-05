@@ -23,6 +23,7 @@ bs_auth <- function(user, pass) {
   if (missing(pass)) {
     cli::cli_abort('{.arg pass} must not be missing.')
   }
+  validate_user(user)
   validate_pass(pass)
   req <- httr2::request('https://bsky.social/xrpc/com.atproto.server.createSession') |>
     httr2::req_body_json(
