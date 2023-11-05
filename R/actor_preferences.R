@@ -27,5 +27,12 @@ bs_get_preferences <- function(user = get_bluesky_user(), pass = get_bluesky_pas
     httr2::req_perform() |>
     httr2::resp_body_json()
 
-  resp
+  dplyr::bind_cols(
+    resp$preferences[[1]] |> unlist() |> clean_names() |> tibble::as_tibble_row(),
+    resp$preferences[[2]] |>
+      lapply(unlist) |>
+      lapply(function(x) if (length(x) > 1) list(x) else x) |>
+      tibble::as_tibble() |>
+      dplyr::rename('$type2' = '$type'),
+  )
 }
