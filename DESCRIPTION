@@ -1,6 +1,6 @@
 Package: bskyr
 Title: Interact with 'Bluesky' Social
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person(given = "Christopher T.",
            family = "Kenny",
@@ -8,7 +8,7 @@ Authors@R:
            email = "christopherkenny@fas.harvard.edu",
            comment = c(ORCID = "0000-0002-9386-6860"))
 Description: Tools for collecting data from and posting to 'Bluesky' Social
-    via the Hypertext Transfer Protocol (HTTP) Applicaiton Programming 
+    via the Hypertext Transfer Protocol (HTTP) Application Programming 
     Interface (API), as documented at <https://atproto.com/specs/xrpc>. This 
     further supports broader queries to the Authenticated Transfer (AT) Protocol
     <https://atproto.com/> which 'Bluesky' Social relies on.
@@ -29,7 +29,9 @@ Imports:
 Suggests: 
     httptest2,
     jsonlite,
+    spelling,
     testthat (>= 3.0.0)
 URL: https://github.com/christopherkenny/bskyr, http://christophertkenny.com/bskyr/
 BugReports: https://github.com/christopherkenny/bskyr/issues
 Config/testthat/edition: 3
+Language: en-US
