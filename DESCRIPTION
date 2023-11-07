@@ -7,11 +7,12 @@ Authors@R:
            role = c("aut", "cre"),
            email = "christopherkenny@fas.harvard.edu",
            comment = c(ORCID = "0000-0002-9386-6860"))
-Description: Tools for collecting data from and posting to 'Bluesky' Social
+Description: Collecting data from and make posts on 'Bluesky' Social
     via the Hypertext Transfer Protocol (HTTP) Application Programming 
     Interface (API), as documented at <https://atproto.com/specs/xrpc>. This 
     further supports broader queries to the Authenticated Transfer (AT) Protocol
-    <https://atproto.com/> which 'Bluesky' Social relies on.
+    <https://atproto.com/> which 'Bluesky' Social relies on. Data is returned in a
+    tidy format and posts can be made using a simple interface.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
