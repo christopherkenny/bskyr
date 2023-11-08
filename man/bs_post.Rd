@@ -24,7 +24,8 @@ bs_post(
 a tibble of post information
 }
 \description{
-Make a post on Bluesky Social
+Note: This function currently only supports text posts. Further support
+planned for version 0.1.0
 }
 \section{Lexicon references}{
 
@@ -39,7 +40,7 @@ Make a post on Bluesky Social
 
 \examples{
 \dontshow{if (has_bluesky_pass() & has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-#bs_post('Test post from rstats package `bskyr`')
+bs_post('Test post from R CMD Check for r package `bskyr`')
 \dontshow{\}) # examplesIf}
 }
 \concept{repo}

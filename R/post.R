@@ -1,5 +1,8 @@
 #' Make a post on Bluesky Social
 #'
+#' Note: This function currently only supports text posts. Further support
+#' planned for version 0.1.0
+#'
 #' @param text text of post
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
@@ -18,7 +21,7 @@
 #' @export
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
-#' #bs_post('Test post from rstats package `bskyr`')
+#' bs_post('Test post from R CMD Check for r package `bskyr`')
 bs_post <- function(text,
                     user = get_bluesky_user(), pass = get_bluesky_pass(),
                     auth = bs_auth(user, pass)) {

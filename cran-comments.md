@@ -2,10 +2,8 @@
 
 This is a resubmission. In this version, I have:
 
-- Fixed the spelling of "Application" in the description file.
-- Added a spell check unit test, using the spelling package. This also adds a 
-word list to the package, which includes several words describing the upstream 
-API that this package interacts with.
+- Removes disallowed phrase "Tools for" from the start of the description.
+- Removes commented out line in `bs_post.Rd`
 
 ## Test environments
 
