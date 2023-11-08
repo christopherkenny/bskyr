@@ -5,9 +5,9 @@
 \alias{bs_set_user}
 \title{Adds Bluesky User to .Renviron.}
 \usage{
-set_bluesky_user(user, overwrite = FALSE, install = FALSE)
+set_bluesky_user(user, overwrite = FALSE, install = FALSE, r_env = NULL)
 
-bs_set_user(user, overwrite = FALSE, install = FALSE)
+bs_set_user(user, overwrite = FALSE, install = FALSE, r_env = NULL)
 }
 \arguments{
 \item{user}{Character. User to add to add.}
@@ -15,6 +15,8 @@ bs_set_user(user, overwrite = FALSE, install = FALSE)
 \item{overwrite}{Defaults to FALSE. Boolean. Should existing \code{BLUESKY_APP_USER} in Renviron be overwritten?}
 
 \item{install}{Defaults to FALSE. Boolean. Should this be added '~/.Renviron' file?}
+
+\item{r_env}{Path to install to if \code{install} is \code{TRUE}.}
 }
 \value{
 user, invisibly
@@ -23,9 +25,8 @@ user, invisibly
 Adds Bluesky User to .Renviron.
 }
 \examples{
-\dontrun{
-set_bluesky_user('1234')
-}
-
+example_env <- tempfile(fileext = '.Renviron')
+set_bluesky_user('CRAN_EXAMPLE.bsky.social', r_env = example_env)
+# r_env should likely be: file.path(Sys.getenv('HOME'), '.Renviron')
 }
 \concept{auth}

@@ -31,6 +31,7 @@ get_bluesky_pass <- function() {
 #' @param pass Character. App Password to add to add.
 #' @param overwrite Defaults to FALSE. Boolean. Should existing `BLUESKY_APP_PASS` in Renviron be overwritten?
 #' @param install Defaults to FALSE. Boolean. Should this be added '~/.Renviron' file?
+#' @param r_env Path to install to if `install` is `TRUE`.
 #'
 #' @concept auth
 #'
@@ -38,11 +39,11 @@ get_bluesky_pass <- function() {
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' set_bluesky_pass('1234')
-#' }
-#'
-set_bluesky_pass <- function(pass, overwrite = FALSE, install = FALSE) {
+#' example_env <- tempfile(fileext = '.Renviron')
+#' set_bluesky_pass('1234-1234-1234-1234', r_env = example_env)
+#' # r_env should likely be: file.path(Sys.getenv('HOME'), '.Renviron')
+set_bluesky_pass <- function(pass, overwrite = FALSE, install = FALSE,
+                             r_env = NULL) {
   if (missing(pass)) {
     cli::cli_abort('Input {.arg pass} cannot be missing.')
   }
@@ -51,8 +52,22 @@ set_bluesky_pass <- function(pass, overwrite = FALSE, install = FALSE) {
   pass <- list(pass)
   names(pass) <- name
 
+  if (pass == '1234-1234-1234-1234') {
+    cli::cli_inform('No password set when invalid test password is provided.')
+    return(invisible(pass))
+  }
+
   if (install) {
-    r_env <- file.path(Sys.getenv('HOME'), '.Renviron')
+
+    if (is.null(r_env)) {
+      r_env <- file.path(Sys.getenv('HOME'), '.Renviron')
+      if (interactive()) {
+        utils::askYesNo(paste0('Install to',  r_env, '?'))
+      } else {
+        cli::cli_abort(c('No path set and not run interactively.',
+                         i = 'Rerun with {.arg r_env} set, possibly to {.file {r_env}}'))
+      }
+    }
 
     if (!file.exists(r_env)) {
       file.create(r_env)

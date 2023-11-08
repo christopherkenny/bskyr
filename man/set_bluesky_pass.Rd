@@ -5,9 +5,9 @@
 \alias{bs_set_pass}
 \title{Add Entry to Renviron}
 \usage{
-set_bluesky_pass(pass, overwrite = FALSE, install = FALSE)
+set_bluesky_pass(pass, overwrite = FALSE, install = FALSE, r_env = NULL)
 
-bs_set_pass(pass, overwrite = FALSE, install = FALSE)
+bs_set_pass(pass, overwrite = FALSE, install = FALSE, r_env = NULL)
 }
 \arguments{
 \item{pass}{Character. App Password to add to add.}
@@ -15,6 +15,8 @@ bs_set_pass(pass, overwrite = FALSE, install = FALSE)
 \item{overwrite}{Defaults to FALSE. Boolean. Should existing \code{BLUESKY_APP_PASS} in Renviron be overwritten?}
 
 \item{install}{Defaults to FALSE. Boolean. Should this be added '~/.Renviron' file?}
+
+\item{r_env}{Path to install to if \code{install} is \code{TRUE}.}
 }
 \value{
 pass, invisibly
@@ -23,9 +25,8 @@ pass, invisibly
 Adds Bluesky App Password to .Renviron.
 }
 \examples{
-\dontrun{
-set_bluesky_pass('1234')
-}
-
+example_env <- tempfile(fileext = '.Renviron')
+set_bluesky_pass('1234-1234-1234-1234', r_env = example_env)
+# r_env should likely be: file.path(Sys.getenv('HOME'), '.Renviron')
 }
 \concept{auth}

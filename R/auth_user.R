@@ -10,7 +10,7 @@
 #' @examples
 #' has_bluesky_user()
 has_bluesky_user <- function() {
-  Sys.getenv('BLUESKY_APP_USER') != ''
+  !Sys.getenv('BLUESKY_APP_USER') %in% ''
 }
 
 #' @rdname user
@@ -32,16 +32,17 @@ get_bluesky_user <- function() {
 #' @param user Character. User to add to add.
 #' @param overwrite Defaults to FALSE. Boolean. Should existing `BLUESKY_APP_USER` in Renviron be overwritten?
 #' @param install Defaults to FALSE. Boolean. Should this be added '~/.Renviron' file?
+#' @param r_env Path to install to if `install` is `TRUE`.
 #'
 #' @return user, invisibly
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' set_bluesky_user('1234')
-#' }
-#'
-set_bluesky_user <- function(user, overwrite = FALSE, install = FALSE) {
+#' example_env <- tempfile(fileext = '.Renviron')
+#' set_bluesky_user('CRAN_EXAMPLE.bsky.social', r_env = example_env)
+#' # r_env should likely be: file.path(Sys.getenv('HOME'), '.Renviron')
+set_bluesky_user <- function(user, overwrite = FALSE, install = FALSE,
+                             r_env = NULL) {
   if (missing(user)) {
     cli::cli_abort('Input {.arg user} cannot be missing.')
   }
@@ -50,8 +51,22 @@ set_bluesky_user <- function(user, overwrite = FALSE, install = FALSE) {
   user <- list(user)
   names(user) <- name
 
+  if (user == 'CRAN_EXAMPLE.bsky.social') {
+    cli::cli_inform('No username set when invalid test username is provided.')
+    return(invisible(user))
+  }
+
   if (install) {
-    r_env <- file.path(Sys.getenv('HOME'), '.Renviron')
+
+    if (is.null(r_env)) {
+      r_env <- file.path(Sys.getenv('HOME'), '.Renviron')
+      if (interactive()) {
+        utils::askYesNo(paste0('Install to',  r_env, '?'))
+      } else {
+        cli::cli_abort(c('No path set and not run interactively.',
+                         i = 'Rerun with {.arg r_env} set, possibly to {.file {r_env}}'))
+      }
+    }
 
     if (!file.exists(r_env)) {
       file.create(r_env)
