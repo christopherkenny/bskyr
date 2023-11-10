@@ -2,9 +2,7 @@
 
 This is a resubmission. In this version, I have:
 
-- Removes disallowed phrase "Tools for" from the start of the description.
-- Removes commented out line in `bs_post.Rd`.
-* Removed the default writing to the home directory for `set_bluesky_pass()` and `set_bluesky_user()`. If interactive and no path is included, it suggests a default path, but doesn't write unless interactively accepted.
+- Fixed a typo in the description. (Sorry, I introduced it when making updates in the previous version.)
 
 ## Test environments
 

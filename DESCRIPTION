@@ -1,13 +1,13 @@
 Package: bskyr
 Title: Interact with 'Bluesky' Social
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: 
     person(given = "Christopher T.",
            family = "Kenny",
            role = c("aut", "cre"),
            email = "christopherkenny@fas.harvard.edu",
            comment = c(ORCID = "0000-0002-9386-6860"))
-Description: Collecting data from and make posts on 'Bluesky' Social
+Description: Collect data from and make posts on 'Bluesky' Social
     via the Hypertext Transfer Protocol (HTTP) Application Programming 
     Interface (API), as documented at <https://atproto.com/specs/xrpc>. This 
     further supports broader queries to the Authenticated Transfer (AT) Protocol
