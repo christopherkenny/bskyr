@@ -1,3 +1,7 @@
+# bskyr 0.0.5
+
+* Fixes testing issues on CRAN when token is not available.
+
 # bskyr 0.0.1
 
 * Initial package version, implementing features for accessing details about actors (user profiles), making posts, and more.
