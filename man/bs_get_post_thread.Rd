@@ -21,7 +21,7 @@ bs_get_post_thread(
 \item{auth}{Authentication information. Defaults to \code{bs_auth(user, pass)}.}
 }
 \value{
-a tibble of posts
+a \link[tibble:tibble]{tibble::tibble} of posts
 }
 \description{
 Retrieve thread of posts

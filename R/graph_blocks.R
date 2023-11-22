@@ -7,7 +7,7 @@
 #'
 #' @concept graph
 #'
-#' @return a tibble of blocked accounts
+#' @return a [tibble::tibble] of blocked accounts
 #' @export
 #'
 #' @section Lexicon references:

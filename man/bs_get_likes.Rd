@@ -24,7 +24,7 @@ bs_get_likes(
 \item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
-a tibble of likes
+a \link[tibble:tibble]{tibble::tibble} of likes
 }
 \description{
 Retrieve posts liked by an actor

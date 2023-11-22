@@ -14,7 +14,7 @@
 #' @section Function introduced:
 #' `v0.0.1` (2023-10-02)
 #'
-#' @return a tibble of actors
+#' @return a [tibble::tibble] of actors
 #' @export
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()

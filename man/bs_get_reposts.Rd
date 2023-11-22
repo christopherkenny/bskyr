@@ -24,7 +24,7 @@ bs_get_reposts(
 \item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
-a tibble of actors
+a \link[tibble:tibble]{tibble::tibble} of actors
 }
 \description{
 Retrieve actors who reposted a post

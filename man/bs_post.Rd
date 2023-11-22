@@ -24,7 +24,7 @@ bs_post(
 \item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
-a tibble of post information
+a \link[tibble:tibble]{tibble::tibble} of post information
 }
 \description{
 Note: This function currently only supports text posts. Further support

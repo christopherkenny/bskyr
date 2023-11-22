@@ -7,7 +7,7 @@
 #'
 #' @concept actor
 #'
-#' @return a tibble of preferences
+#' @return a [tibble::tibble] of preferences
 #' @export
 #'
 #' @section Lexicon references:

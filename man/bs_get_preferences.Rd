@@ -21,7 +21,7 @@ bs_get_preferences(
 \item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
-a tibble of preferences
+a \link[tibble:tibble]{tibble::tibble} of preferences
 }
 \description{
 Get (Self) Preferences

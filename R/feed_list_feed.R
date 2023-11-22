@@ -10,7 +10,7 @@
 # #'
 # #' @concept feed
 # #'
-# #' @return a tibble of likes
+# #' @return a [tibble::tibble] of likes
 # #' @export
 # #'
 # #' @section Lexicon references:

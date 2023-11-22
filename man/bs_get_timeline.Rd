@@ -21,7 +21,7 @@ bs_get_timeline(
 \item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
-a tibble of posts
+a \link[tibble:tibble]{tibble::tibble} of posts
 }
 \description{
 Retrieve the user's home timeline

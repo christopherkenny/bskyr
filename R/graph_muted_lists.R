@@ -7,7 +7,7 @@
 #'
 #' @concept graph
 #'
-#' @return a tibble of actors
+#' @return a [tibble::tibble] of actors
 #' @export
 #'
 #' @section Lexicon references:

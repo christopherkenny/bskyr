@@ -21,7 +21,7 @@ bs_get_blocks(
 \item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
-a tibble of blocked accounts
+a \link[tibble:tibble]{tibble::tibble} of blocked accounts
 }
 \description{
 Retrieve user (self) blocks

@@ -24,7 +24,7 @@ bs_get_posts(
 \item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
-a tibble of posts
+a \link[tibble:tibble]{tibble::tibble} of posts
 }
 \description{
 Retrieve thread of posts

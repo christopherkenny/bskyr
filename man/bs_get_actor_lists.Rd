@@ -24,7 +24,7 @@ bs_get_actor_lists(
 \item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
-a tibble of lists
+a \link[tibble:tibble]{tibble::tibble} of lists
 }
 \description{
 Get a list of lists that belong to an actor.

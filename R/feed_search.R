@@ -16,7 +16,7 @@
 # #' @section Function introduced:
 # #' `v0.0.1` (2023-10-02)
 # #'
-# #' @return a tibble of suggested accounts to follow
+# #' @return a [tibble::tibble] of suggested accounts to follow
 # #' @export
 # #'
 # #' @examplesIf has_bluesky_pass() & has_bluesky_user()

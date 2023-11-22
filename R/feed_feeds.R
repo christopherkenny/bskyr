@@ -8,7 +8,7 @@
 #'
 #' @concept feed
 #'
-#' @return a tibble of feeds
+#' @return a [tibble::tibble] of feeds
 #' @export
 #'
 #' @section Lexicon references:

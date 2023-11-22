@@ -9,7 +9,7 @@
 #' @concept feed
 #' @seealso [bs_get_feed_generators()] for less detailed information about multiple feed generators.
 #'
-#' @return a tibble of feeds
+#' @return a [tibble::tibble] of feeds
 #' @export
 #'
 #' @section Lexicon references:

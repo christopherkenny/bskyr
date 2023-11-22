@@ -24,7 +24,7 @@ bs_get_feed_generator(
 \item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
-a tibble of feeds
+a \link[tibble:tibble]{tibble::tibble} of feeds
 }
 \description{
 Get specific information about one feed generator

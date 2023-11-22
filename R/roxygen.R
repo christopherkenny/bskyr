@@ -19,21 +19,29 @@ template_var_actors <- function() { # nocov start
 } # nocov end
 
 template_var_feed <- function() { # nocov start
-  "Character, length 1. Feed to get."
+  'Character, length 1. Feed to get.'
 } # nocov end
 
 template_var_feeds <- function() { # nocov start
-  "Character. Vector of feeds to get."
+  'Character. Vector of feeds to get.'
 } # nocov end
 
 template_var_uri <- function() { # nocov start
-  "Character, length 1. URI for post to get."
+  'Character, length 1. URI for post to get.'
 } # nocov end
 
 template_var_uris <- function() { # nocov start
-  "Character. Vector of URIs for posts to get."
+  'Character. Vector of URIs for posts to get.'
 } # nocov end
 
 template_var_clean <- function() { # nocov start
-  "Logical. Should output be cleaned into a `tibble`? Default: `TRUE`."
+  'Logical. Should output be cleaned into a `tibble`? Default: `TRUE`.'
+} # nocov end
+
+template_var_limit <- function(val = NULL) { # nocov start
+  if (is.null(val)) {
+    'Integer. Maximum number to request.'
+  } else {
+    paste0('Integer. Maximum number to request. Maximum: `', val, '`')
+  }
 } # nocov end

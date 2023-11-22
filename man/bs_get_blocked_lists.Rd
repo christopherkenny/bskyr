@@ -21,7 +21,7 @@ bs_get_blocked_lists(
 \item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
-a tibble of actors
+a \link[tibble:tibble]{tibble::tibble} of actors
 }
 \description{
 Retrieve a user's (self) muted lists

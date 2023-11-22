@@ -21,7 +21,7 @@ bs_get_feed_suggestions(
 \item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
-a tibble of suggested feeds
+a \link[tibble:tibble]{tibble::tibble} of suggested feeds
 }
 \description{
 Get a list of feed suggestions

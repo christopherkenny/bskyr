@@ -5,6 +5,7 @@
 \title{Get a list of actors suggested for following}
 \usage{
 bs_get_actor_suggestions(
+  limit = NULL,
   user = get_bluesky_user(),
   pass = get_bluesky_pass(),
   auth = bs_auth(user, pass),
@@ -12,6 +13,8 @@ bs_get_actor_suggestions(
 )
 }
 \arguments{
+\item{limit}{Integer. Maximum number to request. Maximum: \code{100}}
+
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 
 \item{pass}{Character. App password to log in with. Defaults to \code{get_bluesky_pass()}.}
@@ -21,7 +24,7 @@ bs_get_actor_suggestions(
 \item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
-a tibble of suggested accounts to follow
+a \link[tibble:tibble]{tibble::tibble} of suggested accounts to follow
 }
 \description{
 Get a list of actors suggested for following

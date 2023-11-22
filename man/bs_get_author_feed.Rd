@@ -24,7 +24,7 @@ bs_get_author_feed(
 \item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
-a tibble of posts
+a \link[tibble:tibble]{tibble::tibble} of posts
 }
 \description{
 Retrieve posts on an actor's feed

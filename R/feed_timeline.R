@@ -7,7 +7,7 @@
 #'
 #' @concept feed
 #'
-#' @return a tibble of posts
+#' @return a [tibble::tibble] of posts
 #' @export
 #'
 #' @section Lexicon references:

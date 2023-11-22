@@ -18,7 +18,7 @@
 #' @section Function introduced:
 #' `v0.0.1` (2023-10-02)
 #'
-#' @return a tibble of post information
+#' @return a [tibble::tibble] of post information
 #' @export
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()

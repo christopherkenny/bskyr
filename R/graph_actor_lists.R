@@ -8,7 +8,7 @@
 #'
 #' @concept graph
 #'
-#' @return a tibble of lists
+#' @return a [tibble::tibble] of lists
 #' @export
 #'
 #' @section Lexicon references:

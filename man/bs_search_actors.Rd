@@ -27,7 +27,7 @@ bs_search_actors(
 \item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
-a tibble of suggested accounts to follow
+a \link[tibble:tibble]{tibble::tibble} of suggested accounts to follow
 }
 \description{
 Find profiles matching search criteria
