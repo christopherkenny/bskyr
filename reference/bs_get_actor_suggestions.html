@@ -52,6 +52,7 @@
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">bs_get_actor_suggestions</span><span class="op">(</span></span>
+<span>  limit <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  user <span class="op">=</span> <span class="fu"><a href="user.html">get_bluesky_user</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  pass <span class="op">=</span> <span class="fu"><a href="pass.html">get_bluesky_pass</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  auth <span class="op">=</span> <span class="fu"><a href="bs_auth.html">bs_auth</a></span><span class="op">(</span><span class="va">user</span>, <span class="va">pass</span><span class="op">)</span>,</span>
@@ -61,7 +62,11 @@
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <dl><dt>user</dt>
+    <dl><dt>limit</dt>
+<dd><p>Integer. Maximum number to request. Maximum: <code>100</code></p></dd>
+
+
+<dt>user</dt>
 <dd><p>Character. User name to log in with. Defaults to <code><a href="user.html">get_bluesky_user()</a></code>.</p></dd>
 
 
@@ -81,7 +86,7 @@
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>a tibble of suggested accounts to follow</p>
+<p>a <a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble::tibble</a> of suggested accounts to follow</p>
     </div>
     <div class="section level2">
     <h2 id="lexicon-references">Lexicon references<a class="anchor" aria-label="anchor" href="#lexicon-references"></a></h2>
