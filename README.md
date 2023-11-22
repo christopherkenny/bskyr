@@ -9,6 +9,7 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![Codecov test
 coverage](https://codecov.io/gh/christopherkenny/bskyr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/christopherkenny/bskyr?branch=main)
+[![R-CMD-check](https://github.com/christopherkenny/bskyr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/christopherkenny/bskyr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 bskyr provides an interface to the Bluesky API, allowing you to interact
