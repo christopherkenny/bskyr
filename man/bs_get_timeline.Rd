@@ -7,7 +7,8 @@
 bs_get_timeline(
   user = get_bluesky_user(),
   pass = get_bluesky_pass(),
-  auth = bs_auth(user, pass)
+  auth = bs_auth(user, pass),
+  clean = TRUE
 )
 }
 \arguments{
@@ -16,6 +17,8 @@ bs_get_timeline(
 \item{pass}{Character. App password to log in with. Defaults to \code{get_bluesky_pass()}.}
 
 \item{auth}{Authentication information. Defaults to \code{bs_auth(user, pass)}.}
+
+\item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
 a tibble of posts

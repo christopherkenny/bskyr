@@ -4,6 +4,7 @@
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
+#' @param clean `r template_var_clean()`
 #'
 #' @concept graph
 #'
@@ -20,7 +21,7 @@
 #' bs_get_follows('chriskenny.bsky.social')
 bs_get_follows <- function(actor,
                              user = get_bluesky_user(), pass = get_bluesky_pass(),
-                             auth = bs_auth(user, pass)) {
+                             auth = bs_auth(user, pass), clean = TRUE) {
 
   if (missing(actor)) {
     cli::cli_abort('{.arg actor} must list one user.')
@@ -35,6 +36,8 @@ bs_get_follows <- function(actor,
   resp <- req |>
     httr2::req_perform() |>
     httr2::resp_body_json()
+
+  if (!clean) return(resp)
 
   dplyr::bind_cols(
     resp |>

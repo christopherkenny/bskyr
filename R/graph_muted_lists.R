@@ -3,6 +3,7 @@
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
+#' @param clean `r template_var_clean()`
 #'
 #' @concept graph
 #'
@@ -18,13 +19,15 @@
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_muted_lists()
 bs_get_muted_lists <- function(user = get_bluesky_user(), pass = get_bluesky_pass(),
-                         auth = bs_auth(user, pass)) {
+                         auth = bs_auth(user, pass), clean = TRUE) {
 
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.graph.getListMutes') |>
     httr2::req_auth_bearer_token(token = auth$accessJwt)
   resp <- req |>
     httr2::req_perform() |>
     httr2::resp_body_json()
+
+  if (!clean) return(resp)
 
   resp |>
     purrr::pluck('lists') |>

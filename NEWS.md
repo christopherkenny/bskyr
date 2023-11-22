@@ -1,6 +1,7 @@
 # bskyr 0.0.5
 
 * Fixes testing issues on CRAN when token is not available.
+* Adds `clean` argument to decide if a response should be cleaned into a `tibble` before returning. If FALSE, you receive the json as a list.
 
 # bskyr 0.0.1
 

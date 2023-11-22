@@ -7,6 +7,7 @@
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
+#' @param clean `r template_var_clean()`
 #'
 #' @concept repo
 #'
@@ -24,7 +25,7 @@
 #' bs_post('Test post from R CMD Check for r package `bskyr`')
 bs_post <- function(text,
                     user = get_bluesky_user(), pass = get_bluesky_pass(),
-                    auth = bs_auth(user, pass)) {
+                    auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(text)) {
     cli::cli_abort('{.arg text} must not be missing.')
   }
@@ -48,6 +49,8 @@ bs_post <- function(text,
   resp <- req |>
     httr2::req_perform() |>
     httr2::resp_body_json()
+
+  if (!clean) return(resp)
 
   resp |>
     dplyr::bind_rows() |>

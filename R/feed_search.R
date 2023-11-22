@@ -6,6 +6,7 @@
 # #' @param user `r template_var_user()`
 # #' @param pass `r template_var_pass()`
 # #' @param auth `r template_var_auth()`
+# #' @param clean `r template_var_clean()`
 # #'
 # #' @concept feed
 # #'
@@ -22,7 +23,7 @@
 # #' bs_search_posts('redistricting')
 # bs_search_posts <- function(query,
 #                              user = get_bluesky_user(), pass = get_bluesky_pass(),
-#                              auth = bs_auth(user, pass)) {
+#                              auth = bs_auth(user, pass), clean = TRUE) {
 #
 #   req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.searchPosts') |>
 #     httr2::req_url_query(q = query) |>
@@ -31,6 +32,8 @@
 #   resp <- req |>
 #     httr2::req_perform() |>
 #     httr2::resp_body_json()
+#
+#   if (!clean) return(resp)
 #
 #   resp |>
 #     purrr::pluck('posts') |>

@@ -4,6 +4,7 @@
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
+#' @param clean `r template_var_clean()`
 #'
 #' @concept feed
 #'
@@ -20,7 +21,7 @@
 #' bs_get_feed('at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/bsky-team')
 bs_get_feed <- function(feed,
                         user = get_bluesky_user(), pass = get_bluesky_pass(),
-                        auth = bs_auth(user, pass)) {
+                        auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(feed)) {
     cli::cli_abort('{.arg feed} must list at least one user.')
   }
@@ -36,6 +37,8 @@ bs_get_feed <- function(feed,
   resp <- req |>
     httr2::req_perform() |>
     httr2::resp_body_json()
+
+  if (!clean) return(resp)
 
   lapply(resp$feed, function(x) {
     dplyr::bind_cols(widen(x$post), widen(x$reply))

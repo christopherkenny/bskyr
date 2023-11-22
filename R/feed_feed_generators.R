@@ -4,6 +4,7 @@
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
+#' @param clean `r template_var_clean()`
 #'
 #' @concept feed
 #' @seealso [bs_get_feed_generators()] for more detailed information about one feed generator.
@@ -26,7 +27,7 @@
 #'   ))
 bs_get_feed_generators <- function(feeds,
                                    user = get_bluesky_user(), pass = get_bluesky_pass(),
-                                   auth = bs_auth(user, pass)) {
+                                   auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(feeds)) {
     cli::cli_abort('{.arg feeds} must list at least one user.')
   }
@@ -34,7 +35,7 @@ bs_get_feed_generators <- function(feeds,
     cli::cli_abort('{.arg feeds} must be a character vector.')
   }
 
-  
+
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.getFeedGenerators')
 
   feeds <- feeds |> as.list() |> purrr::set_names('feeds')
@@ -46,6 +47,8 @@ bs_get_feed_generators <- function(feeds,
   resp <- req |>
     httr2::req_perform() |>
     httr2::resp_body_json()
+
+  if (!clean) return(resp)
 
   resp |>
     purrr::pluck('feeds') |>

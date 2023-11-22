@@ -4,6 +4,7 @@
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
+#' @param clean `r template_var_clean()`
 #'
 #' @concept actor
 #'
@@ -22,7 +23,7 @@
 #' bs_get_profile(actors = c('chriskenny.bsky.social', 'simko.bsky.social'))
 bs_get_profile <- function(actors,
                            user = get_bluesky_user(), pass = get_bluesky_pass(),
-                           auth = bs_auth(user, pass)) {
+                           auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(actors)) {
     cli::cli_abort('{.arg actors} must list at least one user.')
   }
@@ -57,6 +58,8 @@ bs_get_profile <- function(actors,
   resp <- req |>
     httr2::req_perform() |>
     httr2::resp_body_json()
+
+  if (!clean) return(resp)
 
   resp |>
     purrr::pluck('profiles') |>

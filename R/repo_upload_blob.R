@@ -4,6 +4,7 @@
 # #' @param user `r template_var_user()`
 # #' @param pass `r template_var_pass()`
 # #' @param auth `r template_var_auth()`
+# #' @param clean `r template_var_clean()`
 # #'
 # #' @concept repo
 # #'
@@ -20,6 +21,6 @@
 # #' bs_upload_blob()
 # bs_upload_blob <- function(blob,
 #                            user = get_bluesky_user(), pass = get_bluesky_pass(),
-#                            auth = bs_auth(user, pass)) {
+#                            auth = bs_auth(user, pass), clean = TRUE) {
 #
 # }

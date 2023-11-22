@@ -4,6 +4,7 @@
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
+#' @param clean `r template_var_clean()`
 #'
 #' @concept feed
 #'
@@ -20,7 +21,7 @@
 #' bs_get_reposts('at://did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/app.bsky.feed.post/3kaa2gxjhzr2a')
 bs_get_reposts <- function(uri,
                            user = get_bluesky_user(), pass = get_bluesky_pass(),
-                           auth = bs_auth(user, pass)) {
+                           auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(uri)) {
     cli::cli_abort('{.arg uri} must list at least one user.')
   }
@@ -34,6 +35,8 @@ bs_get_reposts <- function(uri,
   resp <- req |>
     httr2::req_perform() |>
     httr2::resp_body_json()
+
+  if (!clean) return(resp)
 
   resp |>
     purrr::pluck('repostedBy') |>

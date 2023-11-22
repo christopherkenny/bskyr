@@ -4,6 +4,7 @@
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
+#' @param clean `r template_var_clean()`
 #'
 #' @concept graph
 #'
@@ -19,8 +20,8 @@
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_actor_lists('chriskenny.bsky.social')
 bs_get_actor_lists <- function(actor,
-                           user = get_bluesky_user(), pass = get_bluesky_pass(),
-                           auth = bs_auth(user, pass)) {
+                               user = get_bluesky_user(), pass = get_bluesky_pass(),
+                               auth = bs_auth(user, pass), clean = TRUE) {
 
   if (missing(actor)) {
     cli::cli_abort('{.arg actor} must list at least one user.')
@@ -36,8 +37,10 @@ bs_get_actor_lists <- function(actor,
     httr2::req_perform() |>
     httr2::resp_body_json()
 
-    resp |>
-      purrr::pluck('lists') |>
-      proc() |>
-      clean_names()
+  if (!clean) return(resp)
+
+  resp |>
+    purrr::pluck('lists') |>
+    proc() |>
+    clean_names()
 }

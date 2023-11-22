@@ -5,6 +5,7 @@
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
+#' @param clean `r template_var_clean()`
 #'
 #' @concept actor
 #'
@@ -22,7 +23,7 @@
 #' bs_search_actors('political science')
 bs_search_actors <- function(query, typeahead = FALSE,
                              user = get_bluesky_user(), pass = get_bluesky_pass(),
-                             auth = bs_auth(user, pass)) {
+                             auth = bs_auth(user, pass), clean = TRUE) {
 
   base_url <- ifelse(
     typeahead,
@@ -36,6 +37,8 @@ bs_search_actors <- function(query, typeahead = FALSE,
   resp <- req |>
     httr2::req_perform() |>
     httr2::resp_body_json()
+
+  if (!clean) return(resp)
 
   resp |>
     purrr::pluck('actors') |>
