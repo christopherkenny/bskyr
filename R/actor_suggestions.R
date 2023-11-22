@@ -24,6 +24,15 @@ bs_get_actor_suggestions <- function(
     user = get_bluesky_user(), pass = get_bluesky_pass(),
                                auth = bs_auth(user, pass), clean = TRUE) {
 
+  if (!is.null(limit)) {
+    if (!is.numeric(limit)) {
+      cli::cli_abort('{.arg limit} must be numeric.')
+    }
+    limit <- as.integer(limit)
+    limit <- max(limit, 1L)
+    limit <- min(limit, 100L)
+  }
+
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.actor.getSuggestions') |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(
