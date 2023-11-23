@@ -56,12 +56,13 @@ then “Add App Password.”
 Once you have a password, you need to run:
 
 ``` r
-set_bluesky_user('yourhandle.bsky.social')
-set_bluesky_pass('the-app-password')
+set_bluesky_user('YOUR-USERNAME.bsky.social')
+set_bluesky_pass('your-apps-pass-word')
 ```
 
-If you want this to persist across sessions, set `install = TRUE`. This
-will save your credentials in your R environment file.
+If you want this to persist across sessions, set `install = TRUE` and
+`r_env = file.path(Sys.getenv('HOME'), '.Renviron')`. This will save
+your credentials in your R environment file.
 
 Alternatively, you can set them manually using
 `usethis::edit_r_environ()` and adding lines like so:
