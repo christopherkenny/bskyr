@@ -53,6 +53,8 @@
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">bs_get_post_thread</span><span class="op">(</span></span>
 <span>  <span class="va">uri</span>,</span>
+<span>  depth <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  parent_height <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  user <span class="op">=</span> <span class="fu"><a href="user.html">get_bluesky_user</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  pass <span class="op">=</span> <span class="fu"><a href="pass.html">get_bluesky_pass</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  auth <span class="op">=</span> <span class="fu"><a href="bs_auth.html">bs_auth</a></span><span class="op">(</span><span class="va">user</span>, <span class="va">pass</span><span class="op">)</span></span>
@@ -63,6 +65,14 @@
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>uri</dt>
 <dd><p>Character, length 1. URI for post to get.</p></dd>
+
+
+<dt>depth</dt>
+<dd><p>Integer. Maximum depth to request. Maximum: <code>1000</code></p></dd>
+
+
+<dt>parent_height</dt>
+<dd><p>Integer. Maximum parent height to request.</p></dd>
 
 
 <dt>user</dt>
