@@ -45,3 +45,19 @@ template_var_limit <- function(val = NULL) { # nocov start
     paste0('Integer. Maximum number to request. Maximum: `', val, '`')
   }
 } # nocov end
+
+template_var_depth <- function(val = NULL) { # nocov start
+  if (is.null(val)) {
+    'Integer. Maximum depth to request.'
+  } else {
+    paste0('Integer. Maximum depth to request. Maximum: `', val, '`')
+  }
+} # nocov end
+
+template_var_parent_height <- function(val = NULL) { # nocov start
+  if (is.null(val)) {
+    'Integer. Maximum parent height to request.'
+  } else {
+    paste0('Integer. Maximum parent height to request. Maximum: `', val, '`')
+  }
+} # nocov end

@@ -5,6 +5,7 @@
 \title{Retrieve a user's (self) muted accounts}
 \usage{
 bs_get_mutes(
+  limit = NULL,
   user = get_bluesky_user(),
   pass = get_bluesky_pass(),
   auth = bs_auth(user, pass),
@@ -12,6 +13,8 @@ bs_get_mutes(
 )
 }
 \arguments{
+\item{limit}{Integer. Maximum number to request. Maximum: \code{100}}
+
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 
 \item{pass}{Character. App password to log in with. Defaults to \code{get_bluesky_pass()}.}
