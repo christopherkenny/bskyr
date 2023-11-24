@@ -1,36 +1,44 @@
-#
-# #txt <- '\u2728 example mentioning @atproto.com to share the URL \ud83d\udc68\u200d\u2764\ufe0f\u200d\ud83d\udc68 https://en.wikipedia.org/wiki/CBOR.
-# parse_mentions <- function(txt) {
-#
-#   # regex adapted from https://github.com/bluesky-social/atproto-website/blob/main/examples/create_bsky_post.py
-#   locs <- stringr::str_locate_all(
-#     string = txt,
-#     pattern = '[$|\\W](@([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\\.)+[a-zA-Z]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)'
-#   )
-#
-#   lapply(locs, function(x) str_sub(txt, locs[[1]][, 1] + 1, locs[[1]][, 2]))
-# }
-#
+parse_mentions <- function(txt) {
+  # regex based on: https://atproto.com/specs/handle#handle-identifier-syntax
+  mention_regex <- '[$|\\W](@([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\\.)+[a-zA-Z]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)'
 
-# library(stringr)
-#
-# parse_mentions <- function(text) {
-#   spans <- list()
-#   # regex based on: https://atproto.com/specs/handle#handle-identifier-syntax
-#   mention_regex <- "[$|\\W](@([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\\.)+[a-zA-Z]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)"
-#   matches <- str_locate_all(text, mention_regex)
-#
-#   for (m in matches[[1]]) {
-#     spans <- append(spans, list(
-#       start = m[1,],
-#       end = m[2,],
-#       handle = str_sub(m[2,], 2)
-#     ))
-#   }
-#   spans
-# }
-#
-# # Example usage
-# text <- 'Check out this @example.com and also $mention@sample.xyz'
-# parse_mentions(text)
+  # drop_n = whitespace + @
+  parse_regex(txt, regex = mention_regex, drop_n = 2L)
+}
 
+parse_urls <- function(txt) {
+  # regex base on: https://atproto.com/blog/create-post
+  url_regex <- '[$|\\W](https?://(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*[-a-zA-Z0-9@%_\\+~#//=])?)'
+
+  # drop_n = whitespace
+  parse_regex(txt, regex = url_regex, drop_n = 1L)
+}
+
+parse_regex <- function(txt, regex, drop_n = 0L) {
+  matches <- stringr::str_locate_all(txt, regex)
+  txt_cum_wts <- weight_by_bytes(txt)
+
+  lapply(seq_along(matches), function(m) {
+    lapply(seq_len(nrow(matches[[m]])), function(r) {
+      list(
+        start = txt_cum_wts[[m]][unname(matches[[m]][r, 1, drop = TRUE])],
+        end = txt_cum_wts[[m]][unname(matches[[m]][r, 2, drop = TRUE])],
+        text = stringr::str_sub(
+          string = txt[[m]],
+          start = matches[[m]][r, 1, drop = TRUE] + drop_n,
+          end = matches[[m]][r, 2, drop = TRUE]
+        )
+      )
+    })
+  })
+}
+
+weight_by_bytes <- function(txt) {
+  txt |>
+    stringr::str_split(pattern = '') |>
+    lapply(function(x) {
+      x |>
+        stringi::stri_numbytes() |>
+        cumsum()
+    })
+}
