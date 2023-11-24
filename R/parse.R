@@ -42,3 +42,51 @@ weight_by_bytes <- function(txt) {
         cumsum()
     })
 }
+
+
+parse_facets <- function(txt, auth) {
+  mens <- parse_mentions(txt)
+  urls <- parse_urls(txt)
+
+  mens_ok <- lapply(mens, function(m_l) {
+    lapply(m_l, function(m) {
+      bs_resolve_handle(m$text, auth = auth, clean = FALSE)
+    })
+  })
+
+  facet_mens <- lapply(seq_along(mens), function(i) {
+    lapply(seq_along(mens[[i]]), function(j) {
+      if (is.na(mens_ok[[i]][[j]]$did)) return(NULL)
+      list(
+        index = list(
+          byteStart = mens[[i]][[j]]$start,
+          byteEnd = mens[[i]][[j]]$end
+        ),
+        features = list(
+          "$type" = "app.bsky.richtext.facet#mention",
+          did = mens_ok[[i]][[j]]$did,
+        )
+      )
+    })
+  }) |>
+    purrr::discard(is.null)
+
+  facet_urls <- lapply(seq_along(urls), function(i) {
+    lapply(seq_along(urls[[i]]), function(j) {
+      list(
+        index = list(
+          byteStart = urls[[i]][[j]]$start,
+          byteEnd = urls[[i]][[j]]$end
+        ),
+        features = list(
+          "$type" = "app.bsky.richtext.facet#link",
+          uri = urls[[i]][[j]]$text,
+        )
+      )
+    })
+  }) |>
+    purrr::discard(is.null)
+
+  purrr::list_c(facet_mens, facet_urls) |>
+    purrr::discard(is.null)
+}
