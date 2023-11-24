@@ -10,7 +10,8 @@ bs_get_post_thread(
   parent_height = NULL,
   user = get_bluesky_user(),
   pass = get_bluesky_pass(),
-  auth = bs_auth(user, pass)
+  auth = bs_auth(user, pass),
+  clean = TRUE
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ bs_get_post_thread(
 \item{pass}{Character. App password to log in with. Defaults to \code{get_bluesky_pass()}.}
 
 \item{auth}{Authentication information. Defaults to \code{bs_auth(user, pass)}.}
+
+\item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
 a \link[tibble:tibble]{tibble::tibble} of posts

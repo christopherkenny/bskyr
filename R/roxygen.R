@@ -14,6 +14,10 @@ template_var_actor <- function() { # nocov start
   "Character, length 1. name of 1 actor, such as `'chriskenny.bsky.social'`"
 } # nocov end
 
+template_var_handle <- function() { # nocov start
+  "Character, length 1. Handle, such as `'chriskenny.bsky.social'`"
+} # nocov end
+
 template_var_actors <- function() { # nocov start
   "Character. Vector of names of actor(s), such as `'chriskenny.bsky.social'`"
 } # nocov end
