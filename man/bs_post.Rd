@@ -6,6 +6,9 @@
 \usage{
 bs_post(
   text,
+  images,
+  images_alt,
+  langs,
   user = get_bluesky_user(),
   pass = get_bluesky_pass(),
   auth = bs_auth(user, pass),
@@ -14,6 +17,12 @@ bs_post(
 }
 \arguments{
 \item{text}{text of post}
+
+\item{images}{character vector of paths to images to attach to post}
+
+\item{images_alt}{character vector of alt text for images. Must be same length as \code{images} if used.}
+
+\item{langs}{character vector of languages in BCP-47 format}
 
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 

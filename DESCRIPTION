@@ -1,6 +1,6 @@
 Package: bskyr
 Title: Interact with 'Bluesky' Social
-Version: 0.0.5
+Version: 0.1.0
 Authors@R: 
     person(given = "Christopher T.",
            family = "Kenny",
@@ -20,8 +20,10 @@ RoxygenNote: 7.2.3
 Imports: 
     cli,
     dplyr,
+    fs,
     httr2,
     lubridate,
+    mime,
     purrr,
     rlang,
     stringr,

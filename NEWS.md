@@ -1,3 +1,11 @@
+# bskyr 0.1.0
+
+* Adds support for additional posting features.
+  * Language for posts can be specified with the `langs` argument.
+  * Images can be specified with the `images` argument.
+  * Alt text for images can be specified with the `images_alt` argument.
+* Adds support for direct blob uploads with `bs_upload_blob()`. This powers the ability to add media to posts.
+
 # bskyr 0.0.5
 
 * Fixes testing issues on CRAN when token is not available.

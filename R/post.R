@@ -4,6 +4,9 @@
 #' planned for version 0.1.0
 #'
 #' @param text text of post
+#' @param images character vector of paths to images to attach to post
+#' @param images_alt character vector of alt text for images. Must be same length as `images` if used.
+#' @param langs character vector of languages in BCP-47 format
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
@@ -23,11 +26,34 @@
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
 #' bs_post('Test post from R CMD Check for r package `bskyr`')
-bs_post <- function(text,
+bs_post <- function(text, images, images_alt, langs,
                     user = get_bluesky_user(), pass = get_bluesky_pass(),
                     auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(text)) {
     cli::cli_abort('{.arg text} must not be missing.')
+  }
+
+  if (length(images) > 4) {
+    cli::cli_abort('You can only attach up to 4 images to a post.')
+  }
+
+  if (!missing(images)) {
+    if (is.list(images)) { #any(fs::path_ext(images) == '')
+      # then we assume it's a blob
+      blob <- images
+    } else {
+      # otherwise it's a set of paths
+      blob <- bs_upload_blob(images, auth = auth, clean = FALSE)
+      if (length(blob) == 1) {
+        blob <- blob[[1]]
+      }
+    }
+  }
+
+  if (!missing(images_alt)) {
+    if (length(blob) != length(images_alt)) {
+      cli::cli_abort('{.arg images_alt} must be the same length as {.arg images}.')
+    }
   }
 
   post <- list(
@@ -35,6 +61,32 @@ bs_post <- function(text,
     text = text,
     createdAt = format(lubridate::now('UTC'), format = '%Y-%m-%dT%H:%M:%OS6Z')
   )
+
+  if (!missing(langs)) {
+    post$langs <- as.list(langs)
+  }
+
+  if (!missing(images)) {
+    if (!missing(images_alt)) {
+      img_incl <- lapply(seq_along(images), function(i) {
+        list(
+          image  = blob[[i]]$blob,
+          alt = images_alt[[i]]
+        )
+      })
+    } else {
+      img_incl <- lapply(blob, function(x) {
+        list(
+          image = x$blob
+        )
+      })
+    }
+
+    post$embed <- list(
+      '$type' = 'app.bsky.embed.images',
+      images = img_incl
+    )
+  }
 
   req <- httr2::request('https://bsky.social/xrpc/com.atproto.repo.createRecord') |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
@@ -45,6 +97,8 @@ bs_post <- function(text,
         record = post
       )
     )
+
+  #return(httr2::req_dry_run(req))
 
   resp <- req |>
     httr2::req_perform() |>
