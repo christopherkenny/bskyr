@@ -32,9 +32,16 @@ bs_resolve_handle <- function(handle,
     httr2::req_url_query(
       handle = handle
     )
+  resp <- NULL
+  try({
   resp <- req |>
     httr2::req_perform() |>
     httr2::resp_body_json()
+  }, silent = TRUE)
+
+  if (is.null(resp)) {
+    resp <- list(did = NA_character_)
+  }
   if (!clean) {
     return(resp)
   }
