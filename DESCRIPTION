@@ -26,6 +26,7 @@ Imports:
     mime,
     purrr,
     rlang,
+    stringi,
     stringr,
     tibble,
     tidyr
