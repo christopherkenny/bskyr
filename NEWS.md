@@ -5,6 +5,7 @@
   * Images can be specified with the `images` argument.
   * Alt text for images can be specified with the `images_alt` argument.
 * Adds support for direct blob uploads with `bs_upload_blob()`. This powers the ability to add media to posts.
+* Adds `bs_uri_to_url()` which formats a given `uri` as an HTTPS URL.
 
 # bskyr 0.0.5
 
