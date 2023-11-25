@@ -56,14 +56,16 @@ parse_facets <- function(txt, auth) {
 
   facet_mens <- lapply(seq_along(mens), function(i) {
     lapply(seq_along(mens[[i]]), function(j) {
-      if (is.na(mens_ok[[i]][[j]]$did)) return(NULL)
+      if (is.na(mens_ok[[i]][[j]]$did)) {
+        return(NULL)
+      }
       list(
         index = list(
           byteStart = mens[[i]][[j]]$start,
           byteEnd = mens[[i]][[j]]$end
         ),
         features = list(list(
-          "$type" = "app.bsky.richtext.facet#mention",
+          '$type' = 'app.bsky.richtext.facet#mention',
           did = mens_ok[[i]][[j]]$did
         ))
       )
@@ -78,7 +80,7 @@ parse_facets <- function(txt, auth) {
           byteEnd = urls[[i]][[j]]$end
         ),
         features = list(list(
-          "$type" = "app.bsky.richtext.facet#link",
+          '$type' = 'app.bsky.richtext.facet#link',
           uri = urls[[i]][[j]]$text
         ))
       )
@@ -87,9 +89,9 @@ parse_facets <- function(txt, auth) {
 
   lapply(seq_along(mens), function(i) {
     out <- c(
-        facet_mens[[i]],
-        facet_urls[[i]]
-      ) |>
+      facet_mens[[i]],
+      facet_urls[[i]]
+    ) |>
       purrr::discard(is.null) |>
       purrr::discard(purrr::is_empty)
     if (purrr::is_empty(out)) {
@@ -97,4 +99,34 @@ parse_facets <- function(txt, auth) {
     }
     out
   })
+}
+
+parse_uri <- function(uri) {
+  if (length(uri) > 1) {
+    uri <- uri[[1]]
+    cli::cli_warn('Only the first URI will be parsed.')
+  }
+  spl <- stringr::str_split(uri, '/')[[1]]
+  if (stringr::str_starts(uri, 'at://')) {
+    repo <- spl[3]
+    collection <- spl[4]
+    rkey <- spl[5]
+  } else if (stringr::str_starts(uri, 'https://')) {
+    repo <- spl[5]
+    collection <- spl[6]
+    rkey <- spl[7]
+    collection <- dplyr::case_when(
+      collection == 'post' ~ 'app.bsky.feed.post',
+      collection == 'lists' ~ 'app.bsky.graph.list',
+      collection == 'feed' ~ 'app.bsky.feed.generator',
+      TRUE ~ collection
+    )
+  } else {
+    cli::cli_alert('URI must start with "at://" or "https://".')
+  }
+  list(
+    repo = repo,
+    collection = collection,
+    rkey = rkey
+  )
 }

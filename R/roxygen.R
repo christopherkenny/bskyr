@@ -65,3 +65,15 @@ template_var_parent_height <- function(val = NULL) { # nocov start
     paste0('Integer. Maximum parent height to request. Maximum: `', val, '`')
   }
 } # nocov end
+
+template_var_repo <- function() { # nocov start
+  "Character, length 1. The handle or DID of the repo."
+} # nocov end
+
+template_var_collection <- function() { # nocov start
+  "Character, length 1. The NSID of the record collection."
+} # nocov end
+
+template_var_rkey <- function() { # nocov start
+  "Character, length 1. The CID of the version of the record. If not specified, then return the most recent version."
+} # nocov end
