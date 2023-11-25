@@ -62,14 +62,13 @@ parse_facets <- function(txt, auth) {
           byteStart = mens[[i]][[j]]$start,
           byteEnd = mens[[i]][[j]]$end
         ),
-        features = list(
+        features = list(list(
           "$type" = "app.bsky.richtext.facet#mention",
           did = mens_ok[[i]][[j]]$did
-        )
+        ))
       )
     })
-  }) |>
-    purrr::discard(is.null)
+  })
 
   facet_urls <- lapply(seq_along(urls), function(i) {
     lapply(seq_along(urls[[i]]), function(j) {
@@ -78,15 +77,24 @@ parse_facets <- function(txt, auth) {
           byteStart = urls[[i]][[j]]$start,
           byteEnd = urls[[i]][[j]]$end
         ),
-        features = list(
+        features = list(list(
           "$type" = "app.bsky.richtext.facet#link",
           uri = urls[[i]][[j]]$text
-        )
+        ))
       )
     })
-  }) |>
-    purrr::discard(is.null)
+  })
 
-  c(facet_mens, facet_urls) |>
-    purrr::discard(is.null)
+  lapply(seq_along(mens), function(i) {
+    out <- c(
+        facet_mens[[i]],
+        facet_urls[[i]]
+      ) |>
+      purrr::discard(is.null) |>
+      purrr::discard(purrr::is_empty)
+    if (purrr::is_empty(out)) {
+      return(NULL)
+    }
+    out
+  })
 }

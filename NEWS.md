@@ -4,6 +4,7 @@
   * Language for posts can be specified with the `langs` argument.
   * Images can be specified with the `images` argument.
   * Alt text for images can be specified with the `images_alt` argument.
+  * Mentions and URLs are now parsed and passed as richtext facets, automatically.
 * Adds support for direct blob uploads with `bs_upload_blob()`. This powers the ability to add media to posts.
 * Adds `bs_uri_to_url()` which formats a given `uri` as an HTTPS URL.
 * Adds `bs_resolve_handle()` to convert handles to decentralized identifiers (DIDs).

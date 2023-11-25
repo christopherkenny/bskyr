@@ -33,9 +33,13 @@ bs_post <- function(text, images, images_alt, langs,
     cli::cli_abort('{.arg text} must not be missing.')
   }
 
-  if (length(images) > 4) {
-    cli::cli_abort('You can only attach up to 4 images to a post.')
+  if (!missing(images)) {
+    if (length(images) > 4) {
+      cli::cli_abort('You can only attach up to 4 images to a post.')
+    }
   }
+
+  facets_l <- parse_facets(txt = text, auth = auth)
 
   if (!missing(images)) {
     if (is.list(images)) { #any(fs::path_ext(images) == '')
@@ -64,6 +68,10 @@ bs_post <- function(text, images, images_alt, langs,
 
   if (!missing(langs)) {
     post$langs <- as.list(langs)
+  }
+
+  if (!purrr::is_empty(facets_l)) {
+    post$facets <- facets_l[[1]]
   }
 
   if (!missing(images)) {
