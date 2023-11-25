@@ -81,3 +81,7 @@ template_var_collection <- function() { # nocov start
 template_var_rkey <- function() { # nocov start
   "Character, length 1. The CID of the version of the record. If not specified, then return the most recent version."
 } # nocov end
+
+template_var_post <- function() { # nocov start
+  'Character vector, length 1. Link to a post.'
+} # nocov end

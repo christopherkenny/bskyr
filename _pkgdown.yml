@@ -2,6 +2,10 @@ url: http://christophertkenny.com/bskyr/
 template:
   bootstrap: 5
 reference:
+- title: "Interact with posts"
+  desc: "Create, edit, and delete records including posts, reposts, and likes"
+- contents:
+  - has_concept("record")
 - title: "Actor"
   desc: "Functions related to an actor (a user)"
 - contents:

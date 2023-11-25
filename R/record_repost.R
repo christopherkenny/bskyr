@@ -1,12 +1,12 @@
 #' Repost an existing post
 #'
-#' @param post Character vector, length 1. Link to a post to repost.
+#' @param post `r template_var_post()`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
 #' @param clean `r template_var_clean()`
 #'
-#' @concept feed
+#' @concept record
 #'
 #' @section Lexicon references:
 #' [feed/post.json (2023-11-25)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/repost.json)
@@ -19,6 +19,7 @@
 #' @export
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
+#' bs_repost('https://bsky.app/profile/bskyr.bsky.social/post/3kf2577exva2x')
 bs_repost <- function(post,
                       user = get_bluesky_user(), pass = get_bluesky_pass(),
                       auth = bs_auth(user, pass), clean = TRUE) {

@@ -14,7 +14,7 @@
 #' @param auth `r template_var_auth()`
 #' @param clean `r template_var_clean()`
 #'
-#' @concept repo
+#' @concept record
 #'
 #' @section Lexicon references:
 #' [feed/post.json (2023-10-02)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/post.json)
