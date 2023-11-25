@@ -6,18 +6,18 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![Codecov test
 coverage](https://codecov.io/gh/christopherkenny/bskyr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/christopherkenny/bskyr?branch=main)
 [![R-CMD-check](https://github.com/christopherkenny/bskyr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/christopherkenny/bskyr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-bskyr provides an interface to the Bluesky API, allowing you to interact
-with Bluesky Social from R. To do this, we provide functions which match
-with the [AT Protocol’s Lexicon](https://atproto.com/guides/lexicon),
-which is like using regular HTTP requests. Outputs from `bskyr`’s
-functions are primarily `tibble`s, allowing for easy analysis of the
-outputs from the API calls.
+`bskyr` provides an interface to the Bluesky API, allowing you to
+interact with Bluesky Social from R. To do this, we provide functions
+which match with the [AT Protocol’s
+Lexicon](https://atproto.com/guides/lexicon), which is like using
+regular HTTP requests. Outputs from `bskyr`’s functions are primarily
+`tibble`s, allowing for easy analysis of the outputs from the API calls.
 
 `bskyr` is currently under development. The first set of functions were
 focused on getting information. The second (and current) set of work is
