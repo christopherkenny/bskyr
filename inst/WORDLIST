@@ -1,7 +1,12 @@
+BCP
 Bluesky
+CMD
 Codecov
+DIDs
+HTTPS
 Lifecycle
 Lucene
+NSID
 Renviron
 URI
 URIs
@@ -25,6 +30,7 @@ getPostThread
 getPreferences
 getProfile
 getProfiles
+getRecord
 getRepostedBy
 getSuggestedFeeds
 getSuggestedFollowsByActor
@@ -35,6 +41,8 @@ json
 listNotifications
 repo
 reposted
+resolveHandle
+richtext
 searchActors
 searchActorsTypeahead
 tibble
