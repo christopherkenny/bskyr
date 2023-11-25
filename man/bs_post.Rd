@@ -52,7 +52,7 @@ planned for version 0.1.0
 
 \examples{
 \dontshow{if (has_bluesky_pass() & has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-bs_post('Test post from R CMD Check for r package `bskyr`')
+bs_post('Test post from R CMD Check for r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)')
 \dontshow{\}) # examplesIf}
 }
 \concept{repo}

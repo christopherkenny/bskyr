@@ -64,7 +64,7 @@ parse_facets <- function(txt, auth) {
         ),
         features = list(
           "$type" = "app.bsky.richtext.facet#mention",
-          did = mens_ok[[i]][[j]]$did,
+          did = mens_ok[[i]][[j]]$did
         )
       )
     })
@@ -80,13 +80,13 @@ parse_facets <- function(txt, auth) {
         ),
         features = list(
           "$type" = "app.bsky.richtext.facet#link",
-          uri = urls[[i]][[j]]$text,
+          uri = urls[[i]][[j]]$text
         )
       )
     })
   }) |>
     purrr::discard(is.null)
 
-  purrr::list_c(facet_mens, facet_urls) |>
+  c(facet_mens, facet_urls) |>
     purrr::discard(is.null)
 }

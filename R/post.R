@@ -25,7 +25,7 @@
 #' @export
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
-#' bs_post('Test post from R CMD Check for r package `bskyr`')
+#' bs_post('Test post from R CMD Check for r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)')
 bs_post <- function(text, images, images_alt, langs,
                     user = get_bluesky_user(), pass = get_bluesky_pass(),
                     auth = bs_auth(user, pass), clean = TRUE) {
