@@ -1,6 +1,6 @@
 #' Upload a blob to a repo
 #'
-#' @param blob files to upload to a repo
+#' @param blob `r template_var_blob()`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`

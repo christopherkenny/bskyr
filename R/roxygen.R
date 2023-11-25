@@ -66,6 +66,10 @@ template_var_parent_height <- function(val = NULL) { # nocov start
   }
 } # nocov end
 
+template_var_blob <- function() { # nocov start
+  'Character, files to upload to a repo.'
+} # nocov end
+
 template_var_repo <- function() { # nocov start
   "Character, length 1. The handle or DID of the repo."
 } # nocov end

@@ -13,7 +13,7 @@ bs_upload_blob(
 )
 }
 \arguments{
-\item{blob}{files to upload to a repo}
+\item{blob}{Character, files to upload to a repo.}
 
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 
