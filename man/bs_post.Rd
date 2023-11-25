@@ -9,6 +9,8 @@ bs_post(
   images,
   images_alt,
   langs,
+  reply,
+  quote,
   user = get_bluesky_user(),
   pass = get_bluesky_pass(),
   auth = bs_auth(user, pass),
@@ -23,6 +25,10 @@ bs_post(
 \item{images_alt}{character vector of alt text for images. Must be same length as \code{images} if used.}
 
 \item{langs}{character vector of languages in BCP-47 format}
+
+\item{reply}{character vector with link to the parent post to reply to}
+
+\item{quote}{character vector with link to a post to quote}
 
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 
@@ -53,6 +59,13 @@ planned for version 0.1.0
 \examples{
 \dontshow{if (has_bluesky_pass() & has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 bs_post('Test post from R CMD Check for r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)')
+bs_post('Test self-reply from r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
+        reply = 'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g')
+bs_post('Test quoting from r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
+        quote = 'https://bsky.app/profile/bskyr.bsky.social/post/3kf24wd6cmb2a')
+bs_post('Test quote and reply from r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
+        reply = 'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g',
+        quote = 'https://bsky.app/profile/bskyr.bsky.social/post/3kf24wd6cmb2a')
 \dontshow{\}) # examplesIf}
 }
 \concept{repo}

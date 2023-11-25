@@ -23,6 +23,37 @@
 bs_get_record <- function(repo = NULL, collection = NULL, rkey = NULL,
                           user = get_bluesky_user(), pass = get_bluesky_pass(),
                           auth = bs_auth(user, pass), clean = TRUE) {
+
+
+  if (is.null(repo)) {
+    cli::cli_abort('You must provide a {.arg repo}.')
+  }
+
+  # we can convert these
+  if (stringr::str_starts(repo, 'https://') || stringr::str_starts(repo, 'at://')) {
+    repo <- parse_uri(repo)
+  }
+
+  # allow it to be passed as a list from parse_uri for re-use
+  if (is.list(repo)) {
+    if (all(c('repo', 'collection', 'rkey') %in% names(repo))) {
+      rkey <- repo$rkey
+      collection <- repo$collection
+      repo <- repo$repo
+    } else {
+      cli::cli_abort('If {.arg repo} is a list, it must have named objects: {.val repo}, {.val collection}, and {.val rkey}.')
+    }
+  }
+
+  # but then we need these elements
+  if (is.null(collection)) {
+    cli::cli_abort('You must provide a {.arg collection}.')
+  }
+  if (is.null(rkey)) {
+    cli::cli_abort('You must provide a {.arg rkey}.')
+  }
+
+  # make the request once we've collected everything
   req <- httr2::request('https://bsky.social/xrpc/com.atproto.repo.getRecord') |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(

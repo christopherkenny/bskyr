@@ -5,6 +5,8 @@
   * Images can be specified with the `images` argument.
   * Alt text for images can be specified with the `images_alt` argument.
   * Mentions and URLs are now parsed and passed as richtext facets, automatically.
+  * Replies can be made by specifying the `reply` argument with a link of a post to reply to.
+  * Quotes can be made by specifying the `quote` argument with a link of a post to quote.
 * Adds support for direct blob uploads with `bs_upload_blob()`. This powers the ability to add media to posts.
 * Adds `bs_uri_to_url()` which formats a given `uri` as an HTTPS URL.
 * Adds `bs_resolve_handle()` to convert handles to decentralized identifiers (DIDs).

@@ -7,6 +7,8 @@
 #' @param images character vector of paths to images to attach to post
 #' @param images_alt character vector of alt text for images. Must be same length as `images` if used.
 #' @param langs character vector of languages in BCP-47 format
+#' @param reply character vector with link to the parent post to reply to
+#' @param quote character vector with link to a post to quote
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
@@ -26,7 +28,14 @@
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
 #' bs_post('Test post from R CMD Check for r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)')
-bs_post <- function(text, images, images_alt, langs,
+#' bs_post('Test self-reply from r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
+#'         reply = 'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g')
+#' bs_post('Test quoting from r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
+#'         quote = 'https://bsky.app/profile/bskyr.bsky.social/post/3kf24wd6cmb2a')
+#' bs_post('Test quote and reply from r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
+#'         reply = 'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g',
+#'         quote = 'https://bsky.app/profile/bskyr.bsky.social/post/3kf24wd6cmb2a')
+bs_post <- function(text, images, images_alt, langs, reply, quote,
                     user = get_bluesky_user(), pass = get_bluesky_pass(),
                     auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(text)) {
@@ -94,6 +103,27 @@ bs_post <- function(text, images, images_alt, langs,
       '$type' = 'app.bsky.embed.images',
       images = img_incl
     )
+  }
+
+  if (!missing(reply)) {
+    post$reply <- get_reply_refs(reply, auth = auth)
+  }
+
+  if (!missing(quote)) {
+    quote_rcd <- bs_get_record(quote, auth = auth, clean = FALSE)
+    quote_inc <- list(
+      '$type' = 'app.bsky.embed.record',
+      record = list(
+        uri = quote_rcd$uri,
+        cid = quote_rcd$cid
+      )
+    )
+
+    if (!is.null(post$embed)) {
+      post$embed <- append(post$embed, quote_inc)
+    } else {
+      post$embed <- quote_inc
+    }
   }
 
   req <- httr2::request('https://bsky.social/xrpc/com.atproto.repo.createRecord') |>
