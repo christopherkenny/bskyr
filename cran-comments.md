@@ -1,9 +1,3 @@
-## Resubmission
-
-This is a resubmission. In this version, I have:
-
-- Fixed a typo in the description. (Sorry, I introduced it when making updates in the previous version.)
-
 ## Test environments
 
 * local R installation (Windows 11), R 4.3.1
@@ -15,6 +9,8 @@ This is a resubmission. In this version, I have:
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+0 errors | 0 warnings | 0 notes
 
-* This is a new release.
+## Additional notes
+
+* This release resolves the testing issue flagged in the previous release.
