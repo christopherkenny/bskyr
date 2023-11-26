@@ -122,7 +122,7 @@ parse_uri <- function(uri) {
       TRUE ~ collection
     )
   } else {
-    cli::cli_alert('URI must start with "at://" or "https://".')
+    cli::cli_abort('URI must start with "at://" or "https://".')
   }
   list(
     repo = repo,

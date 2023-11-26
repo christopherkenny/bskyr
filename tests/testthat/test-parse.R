@@ -71,3 +71,30 @@ test_that('parse url matches bluesky python', {
     list(list(list(start = 5L, end = 21L, text = 'https://bsky.app')))
   )
 })
+
+test_that('parse uri functions okay', {
+  expect_equal(
+    parse_uri('https://bsky.app/profile/bskyr.bsky.social/post/3kf2577exva2x'),
+    list(
+      repo = 'bskyr.bsky.social', collection = 'app.bsky.feed.post',
+      rkey = '3kf2577exva2x'
+    )
+  )
+
+  expect_equal(
+    parse_uri('at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/bsky-team'),
+    list(
+      repo = 'did:plc:z72i7hdynmk6r22z27h6tvur', collection = 'app.bsky.feed.generator',
+      rkey = 'bsky-team'
+    )
+  )
+
+
+  expect_warning(
+    parse_uri(c('https://bsky.app/profile/bskyr.bsky.social/post/3kf2577exva2x', ''))
+  )
+
+  expect_error(
+    parse_uri(uri = 'abc:/')
+  )
+})
