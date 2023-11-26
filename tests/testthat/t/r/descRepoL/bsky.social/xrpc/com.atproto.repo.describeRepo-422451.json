@@ -1,0 +1,38 @@
+{
+    "handle": "chriskenny.bsky.social",
+    "did": "did:plc:wpe35pganb6d4pg4ekmfy6u5",
+    "didDoc": {
+        "@context": [
+            "https://www.w3.org/ns/did/v1",
+            "https://w3id.org/security/multikey/v1",
+            "https://w3id.org/security/suites/secp256k1-2019/v1"
+        ],
+        "id": "did:plc:wpe35pganb6d4pg4ekmfy6u5",
+        "alsoKnownAs": [
+            "at://chriskenny.bsky.social"
+        ],
+        "verificationMethod": [
+            {
+                "id": "did:plc:wpe35pganb6d4pg4ekmfy6u5#atproto",
+                "type": "Multikey",
+                "controller": "did:plc:wpe35pganb6d4pg4ekmfy6u5",
+                "publicKeyMultibase": "zQ3shuzn5j7gpn83dEgNEormVfUF1NCPWUs9U3F5eg9PEYF4V"
+            }
+        ],
+        "service": [
+            {
+                "id": "#atproto_pds",
+                "type": "AtprotoPersonalDataServer",
+                "serviceEndpoint": "https://inkcap.us-east.host.bsky.network"
+            }
+        ]
+    },
+    "collections": [
+        "app.bsky.actor.profile",
+        "app.bsky.feed.like",
+        "app.bsky.feed.post",
+        "app.bsky.feed.repost",
+        "app.bsky.graph.follow"
+    ],
+    "handleIsCorrect": true
+}
