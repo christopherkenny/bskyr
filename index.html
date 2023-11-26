@@ -102,20 +102,41 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/christopherkenny/bskyr" class="external-link">bskyr</a></span><span class="op">)</span></span></code></pre></div>
 <p>Text posts can be made as follows:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/bs_post.html">bs_post</a></span><span class="op">(</span><span class="st">'Your text goes here.'</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/bs_post.html">bs_post</a></span><span class="op">(</span><span class="st">'text = Your text goes here.'</span><span class="op">)</span></span></code></pre></div>
+<p>If you have images to include, up to four can be included with the <code>images</code> argument:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/bs_post.html">bs_post</a></span><span class="op">(</span></span>
+<span>  text <span class="op">=</span> <span class="st">'Your text goes here.'</span>, </span>
+<span>  images <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'path/to/image1.jpg'</span>, <span class="st">'path/to/image2.png'</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>Alt text can be added to images with the <code>images_alt</code> argument:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/bs_post.html">bs_post</a></span><span class="op">(</span></span>
+<span>  text <span class="op">=</span> <span class="st">'Your text goes here.'</span>, </span>
+<span>  images <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'path/to/image1.jpg'</span>, <span class="st">'path/to/image2.png'</span><span class="op">)</span>, </span>
+<span>  images_alt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'Alt text for image 1'</span>, <span class="st">'Alt text for image 2'</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>To quote or reply to a post, use the <code>quote</code> and/or <code>reply</code> argument, respectively. These can take the link of an existing post. You can quote and reply to the same post, if you want.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/bs_post.html">bs_post</a></span><span class="op">(</span></span>
+<span>  text <span class="op">=</span> <span class="st">'Your text goes here.'</span>, </span>
+<span>  quote <span class="op">=</span> <span class="st">'https://bsky.app/profile/chriskenny.bsky.social/post/3kepscxiljc22'</span>,</span>
+<span>  reply <span class="op">=</span> <span class="st">'https://bsky.app/profile/chriskenny.bsky.social/post/3kepscxiljc22'</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>See the reference for additional features, including likes with <code><a href="reference/bs_like.html">bs_like()</a></code> and reposts with <code><a href="reference/bs_repost.html">bs_repost()</a></code>.</p>
 </div>
 <div class="section level2">
 <h2 id="authentication">Authentication<a class="anchor" aria-label="anchor" href="#authentication"></a>
 </h2>
 <p>To authenticate, you first need to make an App Password. To do this, go to <a href="https://bsky.app/settings" class="external-link uri">https://bsky.app/settings</a>. Under “Advanced” click App passwords and then “Add App Password.”</p>
 <p>Once you have a password, you need to run:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/set_bluesky_user.html">set_bluesky_user</a></span><span class="op">(</span><span class="st">'YOUR-USERNAME.bsky.social'</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/set_bluesky_pass.html">set_bluesky_pass</a></span><span class="op">(</span><span class="st">'your-apps-pass-word'</span><span class="op">)</span></span></code></pre></div>
 <p>If you want this to persist across sessions, set <code>install = TRUE</code> and <code>r_env = file.path(Sys.getenv('HOME'), '.Renviron')</code>. This will save your credentials in your R environment file.</p>
 <p>Alternatively, you can set them manually using <code>usethis::edit_r_environ()</code> and adding lines like so:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>BLUESKY_APP_USER<span class="ot">=</span><span class="st">'YOUR-USERNAME.bsky.social'</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>BLUESKY_APP_PASS<span class="ot">=</span><span class="st">'your-apps-pass-word'</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>BLUESKY_APP_USER<span class="ot">=</span><span class="st">'YOUR-USERNAME.bsky.social'</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>BLUESKY_APP_PASS<span class="ot">=</span><span class="st">'your-apps-pass-word'</span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
