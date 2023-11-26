@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">bskyr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.4</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,8 +54,7 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">bs_get_preferences</span><span class="op">(</span></span>
 <span>  user <span class="op">=</span> <span class="fu"><a href="user.html">get_bluesky_user</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  pass <span class="op">=</span> <span class="fu"><a href="pass.html">get_bluesky_pass</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>  auth <span class="op">=</span> <span class="fu"><a href="bs_auth.html">bs_auth</a></span><span class="op">(</span><span class="va">user</span>, <span class="va">pass</span><span class="op">)</span>,</span>
-<span>  clean <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  auth <span class="op">=</span> <span class="fu"><a href="bs_auth.html">bs_auth</a></span><span class="op">(</span><span class="va">user</span>, <span class="va">pass</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -72,16 +71,12 @@
 <dt>auth</dt>
 <dd><p>Authentication information. Defaults to <code>bs_auth(user, pass)</code>.</p></dd>
 
-
-<dt>clean</dt>
-<dd><p>Logical. Should output be cleaned into a <code>tibble</code>? Default: <code>TRUE</code>.</p></dd>
-
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>a <a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble::tibble</a> of preferences</p>
+<p>a tibble of preferences</p>
     </div>
     <div class="section level2">
     <h2 id="lexicon-references">Lexicon references<a class="anchor" aria-label="anchor" href="#lexicon-references"></a></h2>

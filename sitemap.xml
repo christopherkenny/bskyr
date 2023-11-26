@@ -22,18 +22,6 @@
     <loc>http://christophertkenny.com/bskyr/reference/bs_auth.html</loc>
   </url>
   <url>
-    <loc>http://christophertkenny.com/bskyr/reference/bs_create_record.html</loc>
-  </url>
-  <url>
-    <loc>http://christophertkenny.com/bskyr/reference/bs_created_at.html</loc>
-  </url>
-  <url>
-    <loc>http://christophertkenny.com/bskyr/reference/bs_delete_record.html</loc>
-  </url>
-  <url>
-    <loc>http://christophertkenny.com/bskyr/reference/bs_describe_repo.html</loc>
-  </url>
-  <url>
     <loc>http://christophertkenny.com/bskyr/reference/bs_get_actor_lists.html</loc>
   </url>
   <url>
@@ -103,37 +91,16 @@
     <loc>http://christophertkenny.com/bskyr/reference/bs_get_profile.html</loc>
   </url>
   <url>
-    <loc>http://christophertkenny.com/bskyr/reference/bs_get_record.html</loc>
-  </url>
-  <url>
     <loc>http://christophertkenny.com/bskyr/reference/bs_get_reposts.html</loc>
   </url>
   <url>
     <loc>http://christophertkenny.com/bskyr/reference/bs_get_timeline.html</loc>
   </url>
   <url>
-    <loc>http://christophertkenny.com/bskyr/reference/bs_like.html</loc>
-  </url>
-  <url>
-    <loc>http://christophertkenny.com/bskyr/reference/bs_list_records.html</loc>
-  </url>
-  <url>
     <loc>http://christophertkenny.com/bskyr/reference/bs_post.html</loc>
   </url>
   <url>
-    <loc>http://christophertkenny.com/bskyr/reference/bs_repost.html</loc>
-  </url>
-  <url>
-    <loc>http://christophertkenny.com/bskyr/reference/bs_resolve_handle.html</loc>
-  </url>
-  <url>
     <loc>http://christophertkenny.com/bskyr/reference/bs_search_actors.html</loc>
-  </url>
-  <url>
-    <loc>http://christophertkenny.com/bskyr/reference/bs_upload_blob.html</loc>
-  </url>
-  <url>
-    <loc>http://christophertkenny.com/bskyr/reference/bs_uri_to_url.html</loc>
   </url>
   <url>
     <loc>http://christophertkenny.com/bskyr/reference/index.html</loc>

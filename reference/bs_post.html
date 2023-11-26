@@ -12,7 +12,7 @@ planned for version 0.1.0"><meta property="og:image" content="http://christopher
     
     <a class="navbar-brand me-2" href="../index.html">bskyr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.4</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +43,7 @@ planned for version 0.1.0"><meta property="og:image" content="http://christopher
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Make a post on Bluesky Social</h1>
-      <small class="dont-index">Source: <a href="https://github.com/christopherkenny/bskyr/blob/HEAD/R/record_post.R" class="external-link"><code>R/record_post.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/christopherkenny/bskyr/blob/HEAD/R/post.R" class="external-link"><code>R/post.R</code></a></small>
       <div class="d-none name"><code>bs_post.Rd</code></div>
     </div>
 
@@ -56,15 +56,9 @@ planned for version 0.1.0</p>
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">bs_post</span><span class="op">(</span></span>
 <span>  <span class="va">text</span>,</span>
-<span>  <span class="va">images</span>,</span>
-<span>  <span class="va">images_alt</span>,</span>
-<span>  <span class="va">langs</span>,</span>
-<span>  <span class="va">reply</span>,</span>
-<span>  <span class="va">quote</span>,</span>
 <span>  user <span class="op">=</span> <span class="fu"><a href="user.html">get_bluesky_user</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  pass <span class="op">=</span> <span class="fu"><a href="pass.html">get_bluesky_pass</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>  auth <span class="op">=</span> <span class="fu"><a href="bs_auth.html">bs_auth</a></span><span class="op">(</span><span class="va">user</span>, <span class="va">pass</span><span class="op">)</span>,</span>
-<span>  clean <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  auth <span class="op">=</span> <span class="fu"><a href="bs_auth.html">bs_auth</a></span><span class="op">(</span><span class="va">user</span>, <span class="va">pass</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -72,26 +66,6 @@ planned for version 0.1.0</p>
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>text</dt>
 <dd><p>text of post</p></dd>
-
-
-<dt>images</dt>
-<dd><p>character vector of paths to images to attach to post</p></dd>
-
-
-<dt>images_alt</dt>
-<dd><p>character vector of alt text for images. Must be same length as <code>images</code> if used.</p></dd>
-
-
-<dt>langs</dt>
-<dd><p>character vector of languages in BCP-47 format</p></dd>
-
-
-<dt>reply</dt>
-<dd><p>character vector with link to the parent post to reply to</p></dd>
-
-
-<dt>quote</dt>
-<dd><p>character vector with link to a post to quote</p></dd>
 
 
 <dt>user</dt>
@@ -105,16 +79,12 @@ planned for version 0.1.0</p>
 <dt>auth</dt>
 <dd><p>Authentication information. Defaults to <code>bs_auth(user, pass)</code>.</p></dd>
 
-
-<dt>clean</dt>
-<dd><p>Logical. Should output be cleaned into a <code>tibble</code>? Default: <code>TRUE</code>.</p></dd>
-
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>a <a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble::tibble</a> of post information</p>
+<p>a tibble of post information</p>
     </div>
     <div class="section level2">
     <h2 id="lexicon-references">Lexicon references<a class="anchor" aria-label="anchor" href="#lexicon-references"></a></h2>
@@ -133,18 +103,7 @@ planned for version 0.1.0</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># has_bluesky_pass() &amp; has_bluesky_user()</span></span></span>
-<span class="r-in"><span><span class="fu">bs_post</span><span class="op">(</span><span class="st">'Test post from R CMD Check for r package `bskyr`</span></span></span>
-<span class="r-in"><span><span class="st">via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)'</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu">bs_post</span><span class="op">(</span><span class="st">'Test self-reply from r package `bskyr`</span></span></span>
-<span class="r-in"><span><span class="st">via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)'</span>,</span></span>
-<span class="r-in"><span>        reply <span class="op">=</span> <span class="st">'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g'</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu">bs_post</span><span class="op">(</span><span class="st">'Test quoting from r package `bskyr`</span></span></span>
-<span class="r-in"><span><span class="st">via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)'</span>,</span></span>
-<span class="r-in"><span>        quote <span class="op">=</span> <span class="st">'https://bsky.app/profile/bskyr.bsky.social/post/3kf24wd6cmb2a'</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu">bs_post</span><span class="op">(</span><span class="st">'Test quote and reply from r package `bskyr`</span></span></span>
-<span class="r-in"><span><span class="st">via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)'</span>,</span></span>
-<span class="r-in"><span>        reply <span class="op">=</span> <span class="st">'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g'</span>,</span></span>
-<span class="r-in"><span>        quote <span class="op">=</span> <span class="st">'https://bsky.app/profile/bskyr.bsky.social/post/3kf24wd6cmb2a'</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">bs_post</span><span class="op">(</span><span class="st">'Test post from R CMD Check for r package `bskyr`'</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
