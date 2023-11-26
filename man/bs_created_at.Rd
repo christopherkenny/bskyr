@@ -18,7 +18,6 @@ Get current time in Bluesky format
 }
 
 \examples{
-.
 bs_created_at()
 }
 \concept{helper}

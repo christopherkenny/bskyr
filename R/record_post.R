@@ -27,12 +27,16 @@
 #' @export
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
-#' bs_post('Test post from R CMD Check for r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)')
-#' bs_post('Test self-reply from r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
+#' bs_post('Test post from R CMD Check for r package `bskyr`
+#' via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)')
+#' bs_post('Test self-reply from r package `bskyr`
+#' via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
 #'         reply = 'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g')
-#' bs_post('Test quoting from r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
+#' bs_post('Test quoting from r package `bskyr`
+#' via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
 #'         quote = 'https://bsky.app/profile/bskyr.bsky.social/post/3kf24wd6cmb2a')
-#' bs_post('Test quote and reply from r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
+#' bs_post('Test quote and reply from r package `bskyr`
+#' via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
 #'         reply = 'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g',
 #'         quote = 'https://bsky.app/profile/bskyr.bsky.social/post/3kf24wd6cmb2a')
 bs_post <- function(text, images, images_alt, langs, reply, quote,
