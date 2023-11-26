@@ -19,10 +19,6 @@ Lexicon](https://atproto.com/guides/lexicon), which is like using
 regular HTTP requests. Outputs from `bskyr`’s functions are primarily
 `tibble`s, allowing for easy analysis of the outputs from the API calls.
 
-`bskyr` is currently under development. The first set of functions were
-focused on getting information. The second (and current) set of work is
-handling posts in a friendly way.
-
 ## Installation
 
 You can install the development version of `bskyr` from
