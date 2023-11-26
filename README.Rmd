@@ -45,9 +45,42 @@ library(bskyr)
 Text posts can be made as follows:
 
 ```r
-bs_post('Your text goes here.')
+bs_post('text = Your text goes here.')
 ```
 
+If you have images to include, up to four can be included with the `images` argument:
+
+```r
+bs_post(
+  text = 'Your text goes here.', 
+  images = c('path/to/image1.jpg', 'path/to/image2.png')
+)
+```
+
+Alt text can be added to images with the `images_alt` argument:
+
+```r
+bs_post(
+  text = 'Your text goes here.', 
+  images = c('path/to/image1.jpg', 'path/to/image2.png'), 
+  images_alt = c('Alt text for image 1', 'Alt text for image 2')
+)
+```
+
+
+To quote or reply to a post, use the `quote` and/or `reply` argument, respectively.
+These can take the link of an existing post. 
+You can quote and reply to the same post, if you want.
+
+```r
+bs_post(
+  text = 'Your text goes here.', 
+  quote = 'https://bsky.app/profile/chriskenny.bsky.social/post/3kepscxiljc22',
+  reply = 'https://bsky.app/profile/chriskenny.bsky.social/post/3kepscxiljc22'
+)
+```
+
+See the reference for additional features, including likes with `bs_like()` and reposts with `bs_repost()`.
 
 ## Authentication
 
