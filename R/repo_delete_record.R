@@ -1,11 +1,10 @@
 #' Delete a record in a repo
 #'
 #' @param collection `r template_var_collection()`
-#' @param record `r template_var_record()`
+#' @param rkey `r template_var_rkey()`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
-#' @param clean `r template_var_clean()`
 #'
 #' @concept repo
 #'
@@ -15,7 +14,7 @@
 #' @section Function introduced:
 #' `v0.1.0` (2023-11-25)
 #'
-#' @return a [tibble::tibble] of record information
+#' @return an `httr2` status code
 #' @export
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
@@ -31,28 +30,23 @@
 #' )
 #'
 #' rec <- bs_create_record(collection = 'app.bsky.feed.like', record = like)
-bs_create_record <- function(collection, record,
+#' bs_delete_record(collection = 'app.bsky.feed.like',
+#' rkey = stringr::str_split_i(rec$uri, '/', i = 5))
+bs_delete_record <- function(collection, rkey,
                              user = get_bluesky_user(), pass = get_bluesky_pass(),
-                             auth = bs_auth(user, pass), clean = TRUE) {
+                             auth = bs_auth(user, pass)) {
 
-  req <- httr2::request('https://bsky.social/xrpc/com.atproto.repo.createRecord') |>
+  req <- httr2::request('https://bsky.social/xrpc/com.atproto.repo.deleteRecord') |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_body_json(
       data = list(
         repo = auth$did,
         collection = collection,
-        record = record
+        rkey = rkey
       )
     )
 
   resp <- req |>
-    httr2::req_perform() |>
-    httr2::resp_body_json()
-
-  if (!clean) return(resp)
-
-  resp |>
-    tibble::as_tibble() |>
-    clean_names()
+    httr2::req_perform()
 
 }
