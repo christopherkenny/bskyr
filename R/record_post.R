@@ -76,7 +76,7 @@ bs_post <- function(text, images, images_alt, langs, reply, quote,
   post <- list(
     `$type` = 'app.bsky.feed.post',
     text = text,
-    createdAt = format(lubridate::now('UTC'), format = '%Y-%m-%dT%H:%M:%OS6Z')
+    createdAt = bs_created_at()
   )
 
   if (!missing(langs)) {

@@ -30,7 +30,7 @@ bs_repost <- function(post,
       uri = post_rcd$uri,
       cid = post_rcd$cid
     ),
-    createdAt = format(lubridate::now('UTC'), format = '%Y-%m-%dT%H:%M:%OS6Z')
+    createdAt = bs_created_at()
   )
 
 
