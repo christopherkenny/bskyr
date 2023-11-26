@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">bskyr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,12 +45,46 @@
     </div>
 
     <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.1.0" id="bskyr-010">bskyr 0.1.0<a class="anchor" aria-label="anchor" href="#bskyr-010"></a></h2>
+<ul><li>Adds support for additional posting features.
+<ul><li>Language for posts can be specified with the <code>langs</code> argument.</li>
+<li>Images can be specified with the <code>images</code> argument.</li>
+<li>Alt text for images can be specified with the <code>images_alt</code> argument.</li>
+<li>Mentions and URLs are now parsed and passed as richtext facets, automatically.</li>
+<li>Replies can be made by specifying the <code>reply</code> argument with a link of a post to reply to.</li>
+<li>Quotes can be made by specifying the <code>quote</code> argument with a link of a post to quote.</li>
+</ul></li>
+<li>Adds support for direct blob uploads with <code><a href="../reference/bs_upload_blob.html">bs_upload_blob()</a></code>. This powers the ability to add media to posts.</li>
+<li>Adds <code><a href="../reference/bs_uri_to_url.html">bs_uri_to_url()</a></code> which formats a given <code>uri</code> as an HTTPS URL.</li>
+<li>Adds <code><a href="../reference/bs_resolve_handle.html">bs_resolve_handle()</a></code> to convert handles to decentralized identifiers (DIDs).</li>
+<li>Adds support for working with arbitrary records.
+<ul><li>
+<code><a href="../reference/bs_create_record.html">bs_create_record()</a></code> creates a record.</li>
+<li>
+<code><a href="../reference/bs_delete_record.html">bs_delete_record()</a></code> deletes a record.</li>
+<li>
+<code><a href="../reference/bs_get_record.html">bs_get_record()</a></code> gets an existing record.</li>
+<li>
+<code><a href="../reference/bs_list_records.html">bs_list_records()</a></code> lists existing records for a user and collection.</li>
+<li>
+<code><a href="../reference/bs_describe_repo.html">bs_describe_repo()</a></code> provides a list of types of collections that a user has.</li>
+<li>Use helper function <code><a href="../reference/bs_created_at.html">bs_created_at()</a></code> to get the specific time formatting.</li>
+</ul></li>
+</ul></div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.0.5" id="bskyr-005">bskyr 0.0.5<a class="anchor" aria-label="anchor" href="#bskyr-005"></a></h2>
+<ul><li>Fixes testing issues on CRAN when token is not available.</li>
+<li>Adds <code>clean</code> argument to decide if a response should be cleaned into a <code>tibble</code> before returning. If <code>FALSE</code>, you receive the json as a list.</li>
+<li>Adds support for changing limits on the number of results returned.</li>
+</ul></div>
+    <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.1" id="bskyr-001">bskyr 0.0.1<a class="anchor" aria-label="anchor" href="#bskyr-001"></a></h2>
 <ul><li>Initial package version, implementing features for accessing details about actors (user profiles), making posts, and more.</li>
 <li>Implements testing with <code>testthat</code> and <code>httptest2</code>.</li>
 <li>Limited posting abilities, as the initial version is focused on collecting data over creating data.</li>
 </ul></div>
-  </main></div>
+  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+    </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">
