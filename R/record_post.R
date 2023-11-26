@@ -1,8 +1,5 @@
 #' Make a post on Bluesky Social
 #'
-#' Note: This function currently only supports text posts. Further support
-#' planned for version 0.1.0
-#'
 #' @param text text of post
 #' @param images character vector of paths to images to attach to post
 #' @param images_alt character vector of alt text for images. Must be same length as `images` if used.

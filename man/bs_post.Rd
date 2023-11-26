@@ -42,8 +42,7 @@ bs_post(
 a \link[tibble:tibble]{tibble::tibble} of post information
 }
 \description{
-Note: This function currently only supports text posts. Further support
-planned for version 0.1.0
+Make a post on Bluesky Social
 }
 \section{Lexicon references}{
 

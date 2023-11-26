@@ -19,11 +19,15 @@
 #' @export
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
-#' bs_like('https://bsky.app/profile/bskyr.bsky.social/post/3kf2577exva2x')
+#' bs_like(post = 'https://bsky.app/profile/bskyr.bsky.social/post/3kf2577exva2x')
 bs_like <- function(post,
                       user = get_bluesky_user(), pass = get_bluesky_pass(),
                       auth = bs_auth(user, pass), clean = TRUE) {
-  post_rcd <- bs_get_record(post, auth = auth, clean = FALSE)
+  if (is.list(post) && all(c('uri', 'cid') %in% names(post))) {
+    post_rcd <- post
+  } else {
+    post_rcd <- bs_get_record(post, auth = auth, clean = FALSE)
+  }
 
   like <- list(
     subject = list(
