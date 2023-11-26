@@ -85,3 +85,8 @@ template_var_rkey <- function() { # nocov start
 template_var_post <- function() { # nocov start
   'Character vector, length 1. Link to a post.'
 } # nocov end
+
+template_var_record <- function() { # nocov start
+  'List, length 1. Description of a record.'
+} # nocov end
+
