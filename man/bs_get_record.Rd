@@ -47,6 +47,7 @@ Get an arbitrary record from a repo
 
 \examples{
 \dontshow{if (has_bluesky_pass() & has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+bs_get_record('https://bsky.app/profile/bskyr.bsky.social/post/3kf2577exva2x')
 \dontshow{\}) # examplesIf}
 }
 \concept{repo}

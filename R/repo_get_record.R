@@ -20,6 +20,7 @@
 #' @export
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
+#' bs_get_record('https://bsky.app/profile/bskyr.bsky.social/post/3kf2577exva2x')
 bs_get_record <- function(repo = NULL, collection = NULL, rkey = NULL,
                           user = get_bluesky_user(), pass = get_bluesky_pass(),
                           auth = bs_auth(user, pass), clean = TRUE) {

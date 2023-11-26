@@ -10,6 +10,12 @@
 * Adds support for direct blob uploads with `bs_upload_blob()`. This powers the ability to add media to posts.
 * Adds `bs_uri_to_url()` which formats a given `uri` as an HTTPS URL.
 * Adds `bs_resolve_handle()` to convert handles to decentralized identifiers (DIDs).
+* Adds support for working with arbitrary records.
+  * `bs_create_record()` creates a record.
+  * `bs_delete_record()` deletes a record.
+  * `bs_get_record()` gets an existing record.
+  * `bs_list_records()` lists existing records for a user and collection.
+  * Use helper function `bs_created_at()` to get the specific time formatting.
 
 # bskyr 0.0.5
 
