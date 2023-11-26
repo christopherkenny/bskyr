@@ -15,6 +15,7 @@
   * `bs_delete_record()` deletes a record.
   * `bs_get_record()` gets an existing record.
   * `bs_list_records()` lists existing records for a user and collection.
+  * `bs_describe_repo()` provides a list of types of collections that a user has.
   * Use helper function `bs_created_at()` to get the specific time formatting.
 
 # bskyr 0.0.5
