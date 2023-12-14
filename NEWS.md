@@ -1,3 +1,7 @@
+# bskyr 0.1.1
+
+* Provides support for new post search endpoint with `bs_search_posts()`
+
 # bskyr 0.1.0
 
 * Adds support for additional posting features.

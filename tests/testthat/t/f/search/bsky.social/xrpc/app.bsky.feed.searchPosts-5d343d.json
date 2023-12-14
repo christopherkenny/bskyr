@@ -1,0 +1,1545 @@
+{
+    "posts": [
+        {
+            "uri": "at://did:plc:xrs7uicyfcp5qbnhnqy7kucb/app.bsky.feed.post/3kghpycppiw2n",
+            "cid": "bafyreibccfd6k4umkeaaoav5ssv6njdilk56koikmkzeniazrovm3pbsy4",
+            "author": {
+                "did": "did:plc:xrs7uicyfcp5qbnhnqy7kucb",
+                "handle": "planetcarnival.bsky.social",
+                "displayName": "PlanetCarnival",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:xrs7uicyfcp5qbnhnqy7kucb/bafkreidaevktvunwutrj74gvh7cfuz3zygcteqvm2ncerm75l6cunjqqva@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "I was upset last year when redistricting meant he was no longer my representative.\n\n(Athough, TBH, the district was pretty Gerrymandered...or Jerrymandered, as it were).",
+                "$type": "app.bsky.feed.post",
+                "langs": [
+                    "en"
+                ],
+                "reply": {
+                    "root": {
+                        "cid": "bafyreiblr764wymbvoqvcnjzjzbjbyy3s6kydvvkgu4gqfbpdzfggaaimu",
+                        "uri": "at://did:plc:4ypydtsxlmkfyoyoxb26o4wd/app.bsky.feed.post/3kghpqjiodr2t"
+                    },
+                    "parent": {
+                        "cid": "bafyreiblr764wymbvoqvcnjzjzbjbyy3s6kydvvkgu4gqfbpdzfggaaimu",
+                        "uri": "at://did:plc:4ypydtsxlmkfyoyoxb26o4wd/app.bsky.feed.post/3kghpqjiodr2t"
+                    }
+                },
+                "createdAt": "2023-12-14T00:37:20.615Z"
+            },
+            "replyCount": 0,
+            "repostCount": 0,
+            "likeCount": 1,
+            "indexedAt": "2023-12-14T00:37:20.615Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:tb6kdi6xp44xmafqow5wqqd7/app.bsky.feed.post/3kgho46gd7q2h",
+            "cid": "bafyreiedh3hsd6gmcz5f6la53ivpdkvjoy6tbjummtzne2jien6lgggya4",
+            "author": {
+                "did": "did:plc:tb6kdi6xp44xmafqow5wqqd7",
+                "handle": "lwvsf.bsky.social",
+                "displayName": "League of Women Voters of San Francisco",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:tb6kdi6xp44xmafqow5wqqd7/bafkreiejxixpkreqpvprwbubg7alddeubu4x5zthdvrnwtfrxq5mynnsbe@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "San Francisco deserves the best possible redistricting process!\n\n“We really see this as an important step forward for building a stronger, more inclusive democracy in San Francisco. One that all residents can trust and have faith in.” Sietse Goffard, Asian Law Caucus\nmissionlocal.org/2023/12/redi...",
+                "$type": "app.bsky.feed.post",
+                "embed": {
+                    "$type": "app.bsky.embed.external",
+                    "external": {
+                        "uri": "https://missionlocal.org/2023/12/redistricting-reform-elections-commission-report-supervisors/",
+                        "thumb": {
+                            "$type": "blob",
+                            "ref": {
+                                "$link": "bafkreidhs7f2ct5zobr4a33npgyrrx6qeydxzslyamwk5rhnjpdcrxcuiy"
+                            },
+                            "mimeType": "image/jpeg",
+                            "size": 421589
+                        },
+                        "title": "Raft of redistricting reforms to be sent to supervisors",
+                        "description": "Last night, the Elections Commission provisionally approved a 62-page report packed with recommendations on how to improve the city’s redistricting"
+                    }
+                },
+                "langs": [
+                    "en"
+                ],
+                "facets": [
+                    {
+                        "index": {
+                            "byteEnd": 304,
+                            "byteStart": 272
+                        },
+                        "features": [
+                            {
+                                "uri": "https://missionlocal.org/2023/12/redistricting-reform-elections-commission-report-supervisors/",
+                                "$type": "app.bsky.richtext.facet#link"
+                            }
+                        ]
+                    }
+                ],
+                "createdAt": "2023-12-14T00:03:42.314Z"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.external#view",
+                "external": {
+                    "uri": "https://missionlocal.org/2023/12/redistricting-reform-elections-commission-report-supervisors/",
+                    "title": "Raft of redistricting reforms to be sent to supervisors",
+                    "description": "Last night, the Elections Commission provisionally approved a 62-page report packed with recommendations on how to improve the city’s redistricting",
+                    "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:tb6kdi6xp44xmafqow5wqqd7/bafkreidhs7f2ct5zobr4a33npgyrrx6qeydxzslyamwk5rhnjpdcrxcuiy@jpeg"
+                }
+            },
+            "replyCount": 0,
+            "repostCount": 0,
+            "likeCount": 0,
+            "indexedAt": "2023-12-14T00:03:42.314Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:qvcro2x63rhyll7npfzbulex/app.bsky.feed.post/3kghnlgjhwg2e",
+            "cid": "bafyreihqczkd2noecnmxa37rg2ul3wju4bvpzai2wf63qobz4imad4z7ie",
+            "author": {
+                "did": "did:plc:qvcro2x63rhyll7npfzbulex",
+                "handle": "jonnypants.bsky.social",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:qvcro2x63rhyll7npfzbulex/bafkreieqaztx6cpd27rore5utvx7h4bfspu7ihbocfboiecmzrojxi5nwe@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+                    {
+                        "src": "did:plc:qvcro2x63rhyll7npfzbulex",
+                        "uri": "at://did:plc:qvcro2x63rhyll7npfzbulex/app.bsky.actor.profile/self",
+                        "cid": "bafyreih5nj6bwgitw2z7467zbdqsfk3ilfn6npp7o5f6ec3wkquauzghou",
+                        "val": "!no-unauthenticated",
+                        "cts": "1970-01-01T00:00:00.000Z",
+                        "neg": false
+                    }
+                ]
+            },
+            "record": {
+                "text": "Andrew Cuomo with the state Senate is probably an example of the broader argument. From redistricting to encouraging a bipartisan coalition after dems won, he actively worked to prop up the opposition.",
+                "$type": "app.bsky.feed.post",
+                "langs": [
+                    "en"
+                ],
+                "reply": {
+                    "root": {
+                        "cid": "bafyreicgn7ctcjtkjy77i5phekehqlt6p6ttwiahsgxraexd6dafvod6zy",
+                        "uri": "at://did:plc:nvfposmpmhegtyvhbs75s3pw/app.bsky.feed.post/3kghcv6bmpf23"
+                    },
+                    "parent": {
+                        "cid": "bafyreig2ae6bcudl2e6ned7mxpeigaphkw2lpi5iuk5ahihfekcmzys6ii",
+                        "uri": "at://did:plc:nvfposmpmhegtyvhbs75s3pw/app.bsky.feed.post/3kghmxiorrw2s"
+                    }
+                },
+                "createdAt": "2023-12-13T23:54:19.978Z"
+            },
+            "replyCount": 0,
+            "repostCount": 0,
+            "likeCount": 3,
+            "indexedAt": "2023-12-13T23:54:19.978Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:ewzmk6cknma562phoo4cq7ym/app.bsky.feed.post/3kghn5wldoc2i",
+            "cid": "bafyreibz37xxgkln7dy4xe3olhexzk6maqc4in4cexx3tjwkcz6vo7gdo4",
+            "author": {
+                "did": "did:plc:ewzmk6cknma562phoo4cq7ym",
+                "handle": "aubreygilleran.bsky.social",
+                "displayName": "Aubrey Gilleran",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:ewzmk6cknma562phoo4cq7ym/bafkreiboueorpqa6llwmvdu3ddy36uxztawnkgxgw5dosrhja6ujayav6y@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "She will possibly be in a more competitive district in 2024, thanks to GOP redistricting. Watching her voting record shift accordingly will be sad.",
+                "$type": "app.bsky.feed.post",
+                "langs": [
+                    "en"
+                ],
+                "reply": {
+                    "root": {
+                        "cid": "bafyreifum6ahv6mfd2rzhrtzeptdtcdjo43o2xj4lr4toyt2xhkhap3mqu",
+                        "uri": "at://did:plc:6ma4ud7ovt2cpuj6bncaf6gw/app.bsky.feed.post/3kghml4plb422"
+                    },
+                    "parent": {
+                        "cid": "bafyreie25weqcecpi5mfndo35bzo76brt3hlmr6f6nshk2pqhj72ylx6xa",
+                        "uri": "at://did:plc:df6kbanv5vooni5rdhuw4tar/app.bsky.feed.post/3kghmpxipy524"
+                    }
+                },
+                "createdAt": "2023-12-13T23:46:48.024Z"
+            },
+            "replyCount": 2,
+            "repostCount": 0,
+            "likeCount": 4,
+            "indexedAt": "2023-12-13T23:46:48.024Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:xv3r6yq34g7msmcxp7tnzl2r/app.bsky.feed.post/3kghlo37zal2d",
+            "cid": "bafyreieuzhodg4xh4voyrpmggqaxhhm6clnsgjgoa754jrdxgfqjtfou4i",
+            "author": {
+                "did": "did:plc:xv3r6yq34g7msmcxp7tnzl2r",
+                "handle": "mister67.bsky.social",
+                "displayName": "mister67",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:xv3r6yq34g7msmcxp7tnzl2r/bafkreibzfpyvnlvd4dmsxvtlqw7qsnauoebphkjewnmbt3wqoyftqxp75m@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "Dearest NY redistricting, please feel free the gerrymander every fucking rethuglikkkan outta congress especially Elise Stefanik 😁🇺🇸\nThanks, signed 75% of America and 99% of the world 🌎✅💙",
+                "$type": "app.bsky.feed.post",
+                "langs": [
+                    "en"
+                ],
+                "createdAt": "2023-12-13T23:20:02.228Z"
+            },
+            "replyCount": 1,
+            "repostCount": 0,
+            "likeCount": 2,
+            "indexedAt": "2023-12-13T23:20:02.228Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:b2nvxgipvmqraxogjxaaugzf/app.bsky.feed.post/3kghldak2fz2o",
+            "cid": "bafyreifo7zmqq3nbduhp3sv5pcsklzw7aejmg7itihobcvok6pll2kpj2y",
+            "author": {
+                "did": "did:plc:b2nvxgipvmqraxogjxaaugzf",
+                "handle": "kagrox.bsky.social",
+                "displayName": "David Waldman",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:b2nvxgipvmqraxogjxaaugzf/bafkreighkv3575alk3n4qaf3vajeeicb2i6nnjojpy5ljiejnn47ng3vwq@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "On today's Kagro in the Morning #KITM: @demfromct.bsky.social reminds us that election news is court news & vice versa. See redistricting, abortion, fake electors, fake immunity & real insurrection. Bad news for those who missed the other weirdo classified document stealer.",
+                "$type": "app.bsky.feed.post",
+                "embed": {
+                    "$type": "app.bsky.embed.external",
+                    "external": {
+                        "uri": "https://www.patreon.com/posts/kagro-in-morning-94613611",
+                        "thumb": {
+                            "$type": "blob",
+                            "ref": {
+                                "$link": "bafkreiee3jdeyy6uixenl5de3pwlcidxxmo7w4douthfitn7kongzyjjm4"
+                            },
+                            "mimeType": "image/png",
+                            "size": 102468
+                        },
+                        "title": "Kagro in the Morning - December 13, 2023 | David Waldman",
+                        "description": "Get more from David Waldman on Patreon"
+                    }
+                },
+                "langs": [
+                    "en"
+                ],
+                "facets": [
+                    {
+                        "index": {
+                            "byteEnd": 37,
+                            "byteStart": 32
+                        },
+                        "features": [
+                            {
+                                "tag": "KITM",
+                                "$type": "app.bsky.richtext.facet#tag"
+                            }
+                        ]
+                    },
+                    {
+                        "index": {
+                            "byteEnd": 61,
+                            "byteStart": 39
+                        },
+                        "features": [
+                            {
+                                "did": "did:plc:djsxzf5ivvqy5rwz7w7zyypw",
+                                "$type": "app.bsky.richtext.facet#mention"
+                            }
+                        ]
+                    }
+                ],
+                "createdAt": "2023-12-13T23:13:58.740Z"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.external#view",
+                "external": {
+                    "uri": "https://www.patreon.com/posts/kagro-in-morning-94613611",
+                    "title": "Kagro in the Morning - December 13, 2023 | David Waldman",
+                    "description": "Get more from David Waldman on Patreon",
+                    "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:b2nvxgipvmqraxogjxaaugzf/bafkreiee3jdeyy6uixenl5de3pwlcidxxmo7w4douthfitn7kongzyjjm4@jpeg"
+                }
+            },
+            "replyCount": 0,
+            "repostCount": 2,
+            "likeCount": 4,
+            "indexedAt": "2023-12-13T23:13:58.740Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:hb5o2tn6meau5p4pqd5jqkas/app.bsky.feed.post/3kghfbl3ynd2j",
+            "cid": "bafyreih4xweicvyljj6jfvbb3aljzgqdkffjrzv5jsda2nnj3y34edv2bm",
+            "author": {
+                "did": "did:plc:hb5o2tn6meau5p4pqd5jqkas",
+                "handle": "anodynesix.bsky.social",
+                "displayName": "Anodyne",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:hb5o2tn6meau5p4pqd5jqkas/bafkreigzfikemqat5dhyrzqoff2gl2dgqae5rt5etyhgcf7cxngtcvh2yi@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "\"Of course, the redistricting process won't be perfect ... But it could be taken as a signal to the state Democratic establishment that, hey, maybe progressive legislators are worth listening to and shouldn't be systematically pushed out of office? Just a thought.\"",
+                "$type": "app.bsky.feed.post",
+                "embed": {
+                    "$type": "app.bsky.embed.record",
+                    "record": {
+                        "cid": "bafyreifbstj4pfehvih7afi2m5vfbgsiux5fqbr7lx7dmoymaaaiafklsa",
+                        "uri": "at://did:plc:ivseckn32uuldbxyt3qqlsyv/app.bsky.feed.post/3kggoq6wah62h"
+                    }
+                },
+                "langs": [
+                    "en"
+                ],
+                "createdAt": "2023-12-13T21:25:40.472Z"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.record#view",
+                "record": {
+                    "$type": "app.bsky.embed.record#viewRecord",
+                    "uri": "at://did:plc:ivseckn32uuldbxyt3qqlsyv/app.bsky.feed.post/3kggoq6wah62h",
+                    "cid": "bafyreifbstj4pfehvih7afi2m5vfbgsiux5fqbr7lx7dmoymaaaiafklsa",
+                    "author": {
+                        "did": "did:plc:ivseckn32uuldbxyt3qqlsyv",
+                        "handle": "hellgateny.bsky.social",
+                        "displayName": "Hell Gate *subscribe today!*",
+                        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:ivseckn32uuldbxyt3qqlsyv/bafkreigeifm7dhzrpxofyb623uggcnwaro7nbdpcjbu7kewv2z73flx5y4@jpeg",
+                        "viewer": {
+                            "muted": false,
+                            "blockedBy": false
+                        },
+                        "labels": [
+
+                        ]
+                    },
+                    "value": {
+                        "text": "Without the rejection of Hochul nominee Hector LaSalle, the responsibility for drawing new congressional districts in the state could very well have stayed in the hands of its court system. hellgatenyc.com/thank-progre...",
+                        "$type": "app.bsky.feed.post",
+                        "langs": [
+                            "en"
+                        ],
+                        "facets": [
+                            {
+                                "index": {
+                                    "byteEnd": 221,
+                                    "byteStart": 190
+                                },
+                                "features": [
+                                    {
+                                        "uri": "https://hellgatenyc.com/thank-progressives-for-new-congressional-districts",
+                                        "$type": "app.bsky.richtext.facet#link"
+                                    }
+                                ]
+                            }
+                        ],
+                        "createdAt": "2023-12-13T14:42:14.703Z"
+                    },
+                    "labels": [
+
+                    ],
+                    "indexedAt": "2023-12-13T14:42:14.703Z",
+                    "embeds": [
+
+                    ]
+                }
+            },
+            "replyCount": 0,
+            "repostCount": 0,
+            "likeCount": 0,
+            "indexedAt": "2023-12-13T21:25:40.366Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:alqdxbp33ceoyly2o46nvcrc/app.bsky.feed.post/3kghfbaw4xr2u",
+            "cid": "bafyreie7r6ujtaqjtzf6vfgk3ek5p6yw22qloicbbbj2sumlpfkj5xwz5e",
+            "author": {
+                "did": "did:plc:alqdxbp33ceoyly2o46nvcrc",
+                "handle": "dailykoselections.bsky.social",
+                "displayName": "Daily Kos Elections",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:alqdxbp33ceoyly2o46nvcrc/bafkreiaga4yqas7rhs35fy7esj3crfah3lwbnaxerecahhokey6iiocrru@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "Former Rep. Carolyn Maloney wants to return to Congress, but the \"district I could win in\" is a  Schrödinger’s Seat that may or may not come into being after NY finishes redistricting",
+                "$type": "app.bsky.feed.post",
+                "embed": {
+                    "$type": "app.bsky.embed.external",
+                    "external": {
+                        "uri": "https://www.dailykos.com/stories/2023/12/13/2211571/-Schr-dinger-s-seat-could-entice-ex-congresswoman-to-make-a-comeback",
+                        "thumb": {
+                            "$type": "blob",
+                            "ref": {
+                                "$link": "bafkreia3iiud6oqfp6tagxs743kcjvozdziq7b3w6z4mrhb4h7u37xbray"
+                            },
+                            "mimeType": "image/jpeg",
+                            "size": 244312
+                        },
+                        "title": "Schrödinger's seat could entice ex-congresswoman to make a comeback",
+                        "description": "Former Rep. Carolyn Maloney told NBC 4 New York on Tuesday that she'd like to return to the House , a declaration that came hours after New York's highest court ordered the state's bipartisan ..."
+                    }
+                },
+                "langs": [
+                    "en"
+                ],
+                "createdAt": "2023-12-13T21:25:29.545Z"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.external#view",
+                "external": {
+                    "uri": "https://www.dailykos.com/stories/2023/12/13/2211571/-Schr-dinger-s-seat-could-entice-ex-congresswoman-to-make-a-comeback",
+                    "title": "Schrödinger's seat could entice ex-congresswoman to make a comeback",
+                    "description": "Former Rep. Carolyn Maloney told NBC 4 New York on Tuesday that she'd like to return to the House , a declaration that came hours after New York's highest court ordered the state's bipartisan ...",
+                    "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:alqdxbp33ceoyly2o46nvcrc/bafkreia3iiud6oqfp6tagxs743kcjvozdziq7b3w6z4mrhb4h7u37xbray@jpeg"
+                }
+            },
+            "replyCount": 0,
+            "repostCount": 0,
+            "likeCount": 0,
+            "indexedAt": "2023-12-13T21:25:29.545Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:y4zs4cabaezzwx3bz2e5nnj2/app.bsky.feed.post/3kghcs4a2by23",
+            "cid": "bafyreidbka5p7odjjaayaf2ukn6bhuk625nqxjnhlmwfhfeqnxqv5k6x4u",
+            "author": {
+                "did": "did:plc:y4zs4cabaezzwx3bz2e5nnj2",
+                "handle": "georgetakei.bsky.social",
+                "displayName": "George Takei",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:y4zs4cabaezzwx3bz2e5nnj2/bafkreihyuljtklac6pgvt4kbndezofm23wswyhdqmh77bgedrxhuigwbh4@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "In fact, the Independent Bipartisan Redistricting Commission in New York failed to produce a map, so the legislature created one, and a judge threw it out and ordered a special master to draw one, which isn’t what the state Constitution says should happen. The Commission must do its job.",
+                "$type": "app.bsky.feed.post",
+                "embed": {
+                    "$type": "app.bsky.embed.images",
+                    "images": [
+                        {
+                            "alt": "@RpsAgainstTrump: \"NEW: By a four-to-three vote, New York's high court ruled today that the state must redraw congressional maps. This ruling could help Democrats gain as many as 6 House seats.\"",
+                            "image": {
+                                "$type": "blob",
+                                "ref": {
+                                    "$link": "bafkreifuheprar3hhf7jfp5t4vpp4adgoiamjlz47oqrrgkgiqpvpdms4y"
+                                },
+                                "mimeType": "image/jpeg",
+                                "size": 575791
+                            },
+                            "aspectRatio": {
+                                "width": 1531,
+                                "height": 1069
+                            }
+                        }
+                    ]
+                },
+                "langs": [
+                    "en"
+                ],
+                "createdAt": "2023-12-13T20:41:13.826Z"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.images#view",
+                "images": [
+                    {
+                        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:y4zs4cabaezzwx3bz2e5nnj2/bafkreifuheprar3hhf7jfp5t4vpp4adgoiamjlz47oqrrgkgiqpvpdms4y@jpeg",
+                        "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:y4zs4cabaezzwx3bz2e5nnj2/bafkreifuheprar3hhf7jfp5t4vpp4adgoiamjlz47oqrrgkgiqpvpdms4y@jpeg",
+                        "alt": "@RpsAgainstTrump: \"NEW: By a four-to-three vote, New York's high court ruled today that the state must redraw congressional maps. This ruling could help Democrats gain as many as 6 House seats.\"",
+                        "aspectRatio": {
+                            "width": 1531,
+                            "height": 1069
+                        }
+                    }
+                ]
+            },
+            "replyCount": 3,
+            "repostCount": 19,
+            "likeCount": 130,
+            "indexedAt": "2023-12-13T20:41:13.826Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:7sgclcermjo3y4b3625fyvld/app.bsky.feed.post/3kghckngg4a22",
+            "cid": "bafyreih6qqboeoew4brvurzeupfpklssyv4rxhywarwblh7l2injczvgly",
+            "author": {
+                "did": "did:plc:7sgclcermjo3y4b3625fyvld",
+                "handle": "progressivepower.bsky.social",
+                "displayName": "Progressive Power ",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7sgclcermjo3y4b3625fyvld/bafkreifwvqdq7so522epwc4k6yw2thaiu5xqxlgpuddcjxhnyweb3rcjdy@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "These House Republicans Could Be the Targets of New York Redistricting https://www.nytimes.com/2023/12/13/nyregion/ny-redistricting-republicans-democrats.html http://dlvr.it/T05vy3",
+                "$type": "app.bsky.feed.post",
+                "facets": [
+                    {
+                        "index": {
+                            "byteEnd": 158,
+                            "byteStart": 71
+                        },
+                        "features": [
+                            {
+                                "uri": "https://www.nytimes.com/2023/12/13/nyregion/ny-redistricting-republicans-democrats.html",
+                                "$type": "app.bsky.richtext.facet#link"
+                            }
+                        ]
+                    }
+                ],
+                "createdAt": "2023-12-13T20:37:03Z"
+            },
+            "replyCount": 0,
+            "repostCount": 0,
+            "likeCount": 0,
+            "indexedAt": "2023-12-13T20:37:03.000Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:y4vk2n4vk4ppcderc75uenhh/app.bsky.feed.post/3kghalgdcpd2j",
+            "cid": "bafyreifwqqr6iti2q7f5swmk6skqvc6hnzle52wlp7cqymkov2nrzhghia",
+            "author": {
+                "did": "did:plc:y4vk2n4vk4ppcderc75uenhh",
+                "handle": "samwang.bsky.social",
+                "displayName": "Sam Wang",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:y4vk2n4vk4ppcderc75uenhh/bafkreifissuvxnszplcfh3ebinzlh3yps4qsagalql6xmhmay7ztq5nv3q@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "Democrats think they scored a win with yesterday's redistricting decision in New York. But the win is marginal at best - and may come at the expense of New York voters' interests. samwang.substack.com/p/what-is-ga...",
+                "$type": "app.bsky.feed.post",
+                "embed": {
+                    "$type": "app.bsky.embed.images",
+                    "images": [
+                        {
+                            "alt": "",
+                            "image": {
+                                "$type": "blob",
+                                "ref": {
+                                    "$link": "bafkreibpt5jr3q6ih4jrybbhl5t4bouljoegyutafb72guv7uppd54nwg4"
+                                },
+                                "mimeType": "image/jpeg",
+                                "size": 294624
+                            },
+                            "aspectRatio": {
+                                "width": 800,
+                                "height": 1422
+                            }
+                        }
+                    ]
+                },
+                "langs": [
+                    "en"
+                ],
+                "facets": [
+                    {
+                        "index": {
+                            "byteEnd": 216,
+                            "byteStart": 180
+                        },
+                        "features": [
+                            {
+                                "uri": "https://samwang.substack.com/p/what-is-gained-from-re-re-drawing",
+                                "$type": "app.bsky.richtext.facet#link"
+                            }
+                        ]
+                    }
+                ],
+                "createdAt": "2023-12-13T20:01:42.062Z"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.images#view",
+                "images": [
+                    {
+                        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:y4vk2n4vk4ppcderc75uenhh/bafkreibpt5jr3q6ih4jrybbhl5t4bouljoegyutafb72guv7uppd54nwg4@jpeg",
+                        "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:y4vk2n4vk4ppcderc75uenhh/bafkreibpt5jr3q6ih4jrybbhl5t4bouljoegyutafb72guv7uppd54nwg4@jpeg",
+                        "alt": "",
+                        "aspectRatio": {
+                            "width": 800,
+                            "height": 1422
+                        }
+                    }
+                ]
+            },
+            "replyCount": 0,
+            "repostCount": 1,
+            "likeCount": 2,
+            "indexedAt": "2023-12-13T20:01:42.062Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:dm2vvmgvpwqvbpzi3lnp276l/app.bsky.feed.post/3kgh6sqvesz2k",
+            "cid": "bafyreiedtvkmvt6mcu6l63a55gycffubxhwn5iqmbdndlyrp3ykhibdeou",
+            "author": {
+                "did": "did:plc:dm2vvmgvpwqvbpzi3lnp276l",
+                "handle": "omnipoprecords.bsky.social",
+                "displayName": "omnipoprecords",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:dm2vvmgvpwqvbpzi3lnp276l/bafkreif5e22drln7akank47wj3panc3sy42sdnaruvhkabj72u5a3qdsou@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "Because of redistricting  ( ironically made by the NY Democratic Party) I wound up with Ms Stefanik as my congressperson . Been hanging my head in sorrow since",
+                "$type": "app.bsky.feed.post",
+                "langs": [
+                    "en"
+                ],
+                "reply": {
+                    "root": {
+                        "cid": "bafyreibwgjgx57oqhqc64xk7w6ehzqe6zdvh6c3yrxd2wxblgnn27ilccq",
+                        "uri": "at://did:plc:zwlj2d6nr2yun2poyvokffjy/app.bsky.feed.post/3kgaoasqv6o27"
+                    },
+                    "parent": {
+                        "cid": "bafyreibwgjgx57oqhqc64xk7w6ehzqe6zdvh6c3yrxd2wxblgnn27ilccq",
+                        "uri": "at://did:plc:zwlj2d6nr2yun2poyvokffjy/app.bsky.feed.post/3kgaoasqv6o27"
+                    }
+                },
+                "createdAt": "2023-12-13T19:30:00.386Z"
+            },
+            "replyCount": 0,
+            "repostCount": 0,
+            "likeCount": 0,
+            "indexedAt": "2023-12-13T19:30:00.386Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:4mohxged7oc6wjnc5zhxyk3n/app.bsky.feed.post/3kgh6fw327j24",
+            "cid": "bafyreiezsop6nyhrdjmwujtxzytshwajm7wjulg5xnlj3obbt4dx6xlnai",
+            "author": {
+                "did": "did:plc:4mohxged7oc6wjnc5zhxyk3n",
+                "handle": "adaytaramember.bsky.social",
+                "displayName": "Girlboss Tweed",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:4mohxged7oc6wjnc5zhxyk3n/bafkreicoh6wzwxptw7v6qqjg6lhvsgzbslyxg6obvo5pg3uzno75f5z67i@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "He’s correct; good chance abortion bans (and court-ordered redistricting) lose GOP the House and give the Dems even odds of keeping the Senate, whether it will trickle up to Biden has yet to be seen. \n\nThe Democratic brand is stronger down-ballot and weaker upballot, a reversal thanks to Dobbs",
+                "$type": "app.bsky.feed.post",
+                "langs": [
+                    "en"
+                ],
+                "reply": {
+                    "root": {
+                        "cid": "bafyreicvpxptu26uoa4axnorms3z3cf767wrsjfde5oqnzhyt4gbblopb4",
+                        "uri": "at://did:plc:4mohxged7oc6wjnc5zhxyk3n/app.bsky.feed.post/3kggypq7dze2u"
+                    },
+                    "parent": {
+                        "cid": "bafyreicvpxptu26uoa4axnorms3z3cf767wrsjfde5oqnzhyt4gbblopb4",
+                        "uri": "at://did:plc:4mohxged7oc6wjnc5zhxyk3n/app.bsky.feed.post/3kggypq7dze2u"
+                    }
+                },
+                "createdAt": "2023-12-13T19:22:49.494Z"
+            },
+            "replyCount": 0,
+            "repostCount": 0,
+            "likeCount": 1,
+            "indexedAt": "2023-12-13T19:22:49.494Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:alqscsadplhx2iewtiyhoart/app.bsky.feed.post/3kgh2x4gxgv2j",
+            "cid": "bafyreidvs3wnqqyl54c5bmnchcvpevz2fqzysbsgkuhmuhil4xx5oyrs3e",
+            "author": {
+                "did": "did:plc:alqscsadplhx2iewtiyhoart",
+                "handle": "jwaggo.bsky.social",
+                "displayName": "JDub for EVNA",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:alqscsadplhx2iewtiyhoart/bafkreidaanbotwyuswpscciedigagpph3bpleqyzrbtpxabjnezwdiy2cu@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "💐Thank you 💐to everyone who contacted the Elections Commission to support fair & transparent redistricting in San Francisco!",
+                "$type": "app.bsky.feed.post",
+                "embed": {
+                    "$type": "app.bsky.embed.record",
+                    "record": {
+                        "cid": "bafyreig3xxsokcxq2lkv4f6bmciafhcuytunai7nztqgvreylvcf2yw2nu",
+                        "uri": "at://did:plc:tb6kdi6xp44xmafqow5wqqd7/app.bsky.feed.post/3kgfr3hhued2z"
+                    }
+                },
+                "langs": [
+                    "en"
+                ],
+                "createdAt": "2023-12-13T18:20:51.959Z"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.record#view",
+                "record": {
+                    "$type": "app.bsky.embed.record#viewRecord",
+                    "uri": "at://did:plc:tb6kdi6xp44xmafqow5wqqd7/app.bsky.feed.post/3kgfr3hhued2z",
+                    "cid": "bafyreig3xxsokcxq2lkv4f6bmciafhcuytunai7nztqgvreylvcf2yw2nu",
+                    "author": {
+                        "did": "did:plc:tb6kdi6xp44xmafqow5wqqd7",
+                        "handle": "lwvsf.bsky.social",
+                        "displayName": "League of Women Voters of San Francisco",
+                        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:tb6kdi6xp44xmafqow5wqqd7/bafkreiejxixpkreqpvprwbubg7alddeubu4x5zthdvrnwtfrxq5mynnsbe@jpeg",
+                        "viewer": {
+                            "muted": false,
+                            "blockedBy": false
+                        },
+                        "labels": [
+
+                        ]
+                    },
+                    "value": {
+                        "text": "Great news!🎉 The San Francisco Elections Commission unanimously voted to pass its redistricting reform recommendations (one commissioner was absent). The final recommendations will be sent to the supervisors and shared with the public in the new year.\n\nIf you contacted the commission, THANK YOU!",
+                        "$type": "app.bsky.feed.post",
+                        "embed": {
+                            "$type": "app.bsky.embed.images",
+                            "images": [
+                                {
+                                    "alt": "Local redistricting in San Francisco",
+                                    "image": {
+                                        "$type": "blob",
+                                        "ref": {
+                                            "$link": "bafkreiagdxh7ny7em62bsjwkz5zcnbfllq7v27u7ka6wsln4yvnmhpjhlu"
+                                        },
+                                        "mimeType": "image/jpeg",
+                                        "size": 651127
+                                    },
+                                    "aspectRatio": {
+                                        "width": 1600,
+                                        "height": 900
+                                    }
+                                }
+                            ]
+                        },
+                        "langs": [
+                            "en"
+                        ],
+                        "createdAt": "2023-12-13T05:51:38.668Z"
+                    },
+                    "labels": [
+
+                    ],
+                    "indexedAt": "2023-12-13T05:51:38.668Z",
+                    "embeds": [
+                        {
+                            "$type": "app.bsky.embed.images#view",
+                            "images": [
+                                {
+                                    "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:tb6kdi6xp44xmafqow5wqqd7/bafkreiagdxh7ny7em62bsjwkz5zcnbfllq7v27u7ka6wsln4yvnmhpjhlu@jpeg",
+                                    "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:tb6kdi6xp44xmafqow5wqqd7/bafkreiagdxh7ny7em62bsjwkz5zcnbfllq7v27u7ka6wsln4yvnmhpjhlu@jpeg",
+                                    "alt": "Local redistricting in San Francisco",
+                                    "aspectRatio": {
+                                        "width": 1600,
+                                        "height": 900
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "replyCount": 0,
+            "repostCount": 0,
+            "likeCount": 1,
+            "indexedAt": "2023-12-13T18:20:51.959Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:gchmzqms7ibr2fkpzggmufoe/app.bsky.feed.post/3kggz36iptv2p",
+            "cid": "bafyreifloncopy5ou4ysizlgqi3q543vio6muf7t3qlhfbslwz4dzx2uvm",
+            "author": {
+                "did": "did:plc:gchmzqms7ibr2fkpzggmufoe",
+                "handle": "dailykos.bsky.social",
+                "displayName": "Daily Kos",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:gchmzqms7ibr2fkpzggmufoe/bafkreia55vmmofsr7cnedgsmtz46w3r4z5dm2ekfflsyvoinvjoawenxku@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "NY redistricting, GOP primary surprises, and endorsements. \n\nFollow below👇for the latest.",
+                "$type": "app.bsky.feed.post",
+                "embed": {
+                    "$type": "app.bsky.embed.external",
+                    "external": {
+                        "uri": "https://www.dailykos.com/stories/2023/12/13/2211350/-Morning-Digest-Here-s-what-comes-next-in-the-battle-over-New-York-s-new-congressional-map",
+                        "thumb": {
+                            "$type": "blob",
+                            "ref": {
+                                "$link": "bafkreigvipf4sptfy4rfcti2uy5zkalgzja6xw65mxag3z7htxyq4cjede"
+                            },
+                            "mimeType": "image/jpeg",
+                            "size": 453897
+                        },
+                        "title": "Morning Digest: Here's what comes next in the battle over New York's new congressional map",
+                        "description": "The Morning Digest is compiled by David Nir, Jeff Singer, and Stephen Wolf, with additional contributions from the Daily Kos Elections team. Subscribe to The Downballot, our weekly podcast Leading Off..."
+                    }
+                },
+                "langs": [
+                    "en"
+                ],
+                "createdAt": "2023-12-13T17:47:20.836Z"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.external#view",
+                "external": {
+                    "uri": "https://www.dailykos.com/stories/2023/12/13/2211350/-Morning-Digest-Here-s-what-comes-next-in-the-battle-over-New-York-s-new-congressional-map",
+                    "title": "Morning Digest: Here's what comes next in the battle over New York's new congressional map",
+                    "description": "The Morning Digest is compiled by David Nir, Jeff Singer, and Stephen Wolf, with additional contributions from the Daily Kos Elections team. Subscribe to The Downballot, our weekly podcast Leading Off...",
+                    "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gchmzqms7ibr2fkpzggmufoe/bafkreigvipf4sptfy4rfcti2uy5zkalgzja6xw65mxag3z7htxyq4cjede@jpeg"
+                }
+            },
+            "replyCount": 0,
+            "repostCount": 0,
+            "likeCount": 0,
+            "indexedAt": "2023-12-13T17:47:20.836Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:gchmzqms7ibr2fkpzggmufoe/app.bsky.feed.post/3kggttb3ulu2z",
+            "cid": "bafyreihbio4dwgfmtxyeecp5h7c63pw4d6z3qsw2biyqdoanjitusbwdnm",
+            "author": {
+                "did": "did:plc:gchmzqms7ibr2fkpzggmufoe",
+                "handle": "dailykos.bsky.social",
+                "displayName": "Daily Kos",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:gchmzqms7ibr2fkpzggmufoe/bafkreia55vmmofsr7cnedgsmtz46w3r4z5dm2ekfflsyvoinvjoawenxku@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "NY's highest court orders bipartisan redistricting commission to redraw congressional map for 2023 elections. The 4-3 ruling favors Democrats, setting a Feb. 28 deadline for compromise. \n\nMore here 👇",
+                "$type": "app.bsky.feed.post",
+                "embed": {
+                    "$type": "app.bsky.embed.external",
+                    "external": {
+                        "uri": "https://www.dailykos.com/stories/2023/12/12/2211332/-New-York-s-top-court-orders-new-House-map-but-Democratic-gains-may-not-be-dramatic",
+                        "thumb": {
+                            "$type": "blob",
+                            "ref": {
+                                "$link": "bafkreigspoifbw65kowz472cylgoxsurvpipsfx2tefcsgn73lqh3vp4z4"
+                            },
+                            "mimeType": "image/jpeg",
+                            "size": 895293
+                        },
+                        "title": "New York's top court orders new House map, but Democratic gains may not be dramatic",
+                        "description": "New York's highest court sided with Democrats on Tuesday and ordered the state's bipartisan redistricting commission to draw a new congressional map to be used in next year's elections.\n\nThe 4-..."
+                    }
+                },
+                "langs": [
+                    "en"
+                ],
+                "createdAt": "2023-12-13T16:13:26.402Z"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.external#view",
+                "external": {
+                    "uri": "https://www.dailykos.com/stories/2023/12/12/2211332/-New-York-s-top-court-orders-new-House-map-but-Democratic-gains-may-not-be-dramatic",
+                    "title": "New York's top court orders new House map, but Democratic gains may not be dramatic",
+                    "description": "New York's highest court sided with Democrats on Tuesday and ordered the state's bipartisan redistricting commission to draw a new congressional map to be used in next year's elections.\n\nThe 4-...",
+                    "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gchmzqms7ibr2fkpzggmufoe/bafkreigspoifbw65kowz472cylgoxsurvpipsfx2tefcsgn73lqh3vp4z4@jpeg"
+                }
+            },
+            "replyCount": 0,
+            "repostCount": 1,
+            "likeCount": 4,
+            "indexedAt": "2023-12-13T16:13:26.402Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:auerp2lxaggur2lvv5gv6clk/app.bsky.feed.post/3kggsno4j7a2o",
+            "cid": "bafyreifesbcd7eekjfhoflvjivrj3ezud7wmtg3d2pyj5qq3z77uurdw4q",
+            "author": {
+                "did": "did:plc:auerp2lxaggur2lvv5gv6clk",
+                "handle": "theartdontstop.bsky.social",
+                "displayName": "Todd Berman",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:auerp2lxaggur2lvv5gv6clk/bafkreidfrpxam7feb6giv7ov5qh755bwyn25gbjzuzsnaihtxhmtnioace@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "Thank you to the League of Women Voters for fighting for good governance in San Francisco!\n\nThey have our backs looking at essential technical issues in our redistricting process. Follow them. Support them.\n\n#SanFranciscoPolitics #SFPol #SanFrancisco",
+                "$type": "app.bsky.feed.post",
+                "embed": {
+                    "$type": "app.bsky.embed.record",
+                    "record": {
+                        "cid": "bafyreig3xxsokcxq2lkv4f6bmciafhcuytunai7nztqgvreylvcf2yw2nu",
+                        "uri": "at://did:plc:tb6kdi6xp44xmafqow5wqqd7/app.bsky.feed.post/3kgfr3hhued2z"
+                    }
+                },
+                "langs": [
+                    "en"
+                ],
+                "facets": [
+                    {
+                        "index": {
+                            "byteEnd": 229,
+                            "byteStart": 208
+                        },
+                        "features": [
+                            {
+                                "tag": "SanFranciscoPolitics",
+                                "$type": "app.bsky.richtext.facet#tag"
+                            }
+                        ]
+                    },
+                    {
+                        "index": {
+                            "byteEnd": 236,
+                            "byteStart": 230
+                        },
+                        "features": [
+                            {
+                                "tag": "SFPol",
+                                "$type": "app.bsky.richtext.facet#tag"
+                            }
+                        ]
+                    },
+                    {
+                        "index": {
+                            "byteEnd": 250,
+                            "byteStart": 237
+                        },
+                        "features": [
+                            {
+                                "tag": "SanFrancisco",
+                                "$type": "app.bsky.richtext.facet#tag"
+                            }
+                        ]
+                    }
+                ],
+                "createdAt": "2023-12-13T15:52:25.842Z"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.record#view",
+                "record": {
+                    "$type": "app.bsky.embed.record#viewRecord",
+                    "uri": "at://did:plc:tb6kdi6xp44xmafqow5wqqd7/app.bsky.feed.post/3kgfr3hhued2z",
+                    "cid": "bafyreig3xxsokcxq2lkv4f6bmciafhcuytunai7nztqgvreylvcf2yw2nu",
+                    "author": {
+                        "did": "did:plc:tb6kdi6xp44xmafqow5wqqd7",
+                        "handle": "lwvsf.bsky.social",
+                        "displayName": "League of Women Voters of San Francisco",
+                        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:tb6kdi6xp44xmafqow5wqqd7/bafkreiejxixpkreqpvprwbubg7alddeubu4x5zthdvrnwtfrxq5mynnsbe@jpeg",
+                        "viewer": {
+                            "muted": false,
+                            "blockedBy": false
+                        },
+                        "labels": [
+
+                        ]
+                    },
+                    "value": {
+                        "text": "Great news!🎉 The San Francisco Elections Commission unanimously voted to pass its redistricting reform recommendations (one commissioner was absent). The final recommendations will be sent to the supervisors and shared with the public in the new year.\n\nIf you contacted the commission, THANK YOU!",
+                        "$type": "app.bsky.feed.post",
+                        "embed": {
+                            "$type": "app.bsky.embed.images",
+                            "images": [
+                                {
+                                    "alt": "Local redistricting in San Francisco",
+                                    "image": {
+                                        "$type": "blob",
+                                        "ref": {
+                                            "$link": "bafkreiagdxh7ny7em62bsjwkz5zcnbfllq7v27u7ka6wsln4yvnmhpjhlu"
+                                        },
+                                        "mimeType": "image/jpeg",
+                                        "size": 651127
+                                    },
+                                    "aspectRatio": {
+                                        "width": 1600,
+                                        "height": 900
+                                    }
+                                }
+                            ]
+                        },
+                        "langs": [
+                            "en"
+                        ],
+                        "createdAt": "2023-12-13T05:51:38.668Z"
+                    },
+                    "labels": [
+
+                    ],
+                    "indexedAt": "2023-12-13T05:51:38.668Z",
+                    "embeds": [
+                        {
+                            "$type": "app.bsky.embed.images#view",
+                            "images": [
+                                {
+                                    "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:tb6kdi6xp44xmafqow5wqqd7/bafkreiagdxh7ny7em62bsjwkz5zcnbfllq7v27u7ka6wsln4yvnmhpjhlu@jpeg",
+                                    "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:tb6kdi6xp44xmafqow5wqqd7/bafkreiagdxh7ny7em62bsjwkz5zcnbfllq7v27u7ka6wsln4yvnmhpjhlu@jpeg",
+                                    "alt": "Local redistricting in San Francisco",
+                                    "aspectRatio": {
+                                        "width": 1600,
+                                        "height": 900
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "replyCount": 0,
+            "repostCount": 1,
+            "likeCount": 3,
+            "indexedAt": "2023-12-13T15:52:25.369Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:alqdxbp33ceoyly2o46nvcrc/app.bsky.feed.post/3kggqnyvesm2b",
+            "cid": "bafyreifykrwffrvjwmehuiployj6fyahjd55uj7ssg7gjy2c5j5zkgx7pq",
+            "author": {
+                "did": "did:plc:alqdxbp33ceoyly2o46nvcrc",
+                "handle": "dailykoselections.bsky.social",
+                "displayName": "Daily Kos Elections",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:alqdxbp33ceoyly2o46nvcrc/bafkreiaga4yqas7rhs35fy7esj3crfah3lwbnaxerecahhokey6iiocrru@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "This is a very important piece from @yeargain.bsky.social laying out just how screwed up the NY constitution is. If the state's redistricting commission submits dueling maps to the legislature, what happens next is extremely unclear",
+                "$type": "app.bsky.feed.post",
+                "embed": {
+                    "$type": "app.bsky.embed.external",
+                    "external": {
+                        "uri": "https://guaranteedrepublics.substack.com/p/what-happens-if-new-yorks-independent",
+                        "thumb": {
+                            "$type": "blob",
+                            "ref": {
+                                "$link": "bafkreih7jnkwikyngzkjfp66drw24gayojqinqdev6tnflp5m4srmlgf7y"
+                            },
+                            "mimeType": "image/jpeg",
+                            "size": 780299
+                        },
+                        "title": "What happens if New York’s Independent Redistricting Commission deadlocks again?",
+                        "description": "Or, what happens when immovable constitutional ambiguity meets unstoppable partisanship?"
+                    }
+                },
+                "langs": [
+                    "en"
+                ],
+                "facets": [
+                    {
+                        "$type": "app.bsky.richtext.facet",
+                        "index": {
+                            "byteEnd": 57,
+                            "byteStart": 36
+                        },
+                        "features": [
+                            {
+                                "did": "did:plc:q3dycka5ce2gybcbau5gfehd",
+                                "$type": "app.bsky.richtext.facet#mention"
+                            }
+                        ]
+                    }
+                ],
+                "createdAt": "2023-12-13T15:16:48.785Z"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.external#view",
+                "external": {
+                    "uri": "https://guaranteedrepublics.substack.com/p/what-happens-if-new-yorks-independent",
+                    "title": "What happens if New York’s Independent Redistricting Commission deadlocks again?",
+                    "description": "Or, what happens when immovable constitutional ambiguity meets unstoppable partisanship?",
+                    "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:alqdxbp33ceoyly2o46nvcrc/bafkreih7jnkwikyngzkjfp66drw24gayojqinqdev6tnflp5m4srmlgf7y@jpeg"
+                }
+            },
+            "replyCount": 0,
+            "repostCount": 2,
+            "likeCount": 1,
+            "indexedAt": "2023-12-13T15:16:48.785Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:q3dycka5ce2gybcbau5gfehd/app.bsky.feed.post/3kggqjetvek2g",
+            "cid": "bafyreiczue7rhoqfov75k6sssqupjcyacx36uquik3fwifi5avd2vounq4",
+            "author": {
+                "did": "did:plc:q3dycka5ce2gybcbau5gfehd",
+                "handle": "yeargain.bsky.social",
+                "displayName": "Quinn Yeargain",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:q3dycka5ce2gybcbau5gfehd/bafkreiemwl3t2jyhbfhozxxsfopp6nhvsey6qsze4pxxq7fktvruthe6wu@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "The New York Court of Appeals ruled that the state's \"independent\" redistricting commission has to try to redraw the state's congressional districts before 2024. Here's what would happen if the IRC fails to do so. (Spoiler: the New York Constitution isn't super clear here.)",
+                "$type": "app.bsky.feed.post",
+                "embed": {
+                    "$type": "app.bsky.embed.external",
+                    "external": {
+                        "uri": "https://guaranteedrepublics.substack.com/p/what-happens-if-new-yorks-independent",
+                        "thumb": {
+                            "$type": "blob",
+                            "ref": {
+                                "$link": "bafkreibk5lggfx2jh3ekthkv57a2lhwrguzzdbnyfwu3bxrx2qopwlbgeu"
+                            },
+                            "mimeType": "image/jpeg",
+                            "size": 717892
+                        },
+                        "title": "What happens if New York’s Independent Redistricting Commission deadlocks again?",
+                        "description": "Or, what happens when immovable constitutional ambiguity meets unstoppable partisanship?"
+                    }
+                },
+                "langs": [
+                    "en"
+                ],
+                "createdAt": "2023-12-13T15:14:13.515Z"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.external#view",
+                "external": {
+                    "uri": "https://guaranteedrepublics.substack.com/p/what-happens-if-new-yorks-independent",
+                    "title": "What happens if New York’s Independent Redistricting Commission deadlocks again?",
+                    "description": "Or, what happens when immovable constitutional ambiguity meets unstoppable partisanship?",
+                    "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:q3dycka5ce2gybcbau5gfehd/bafkreibk5lggfx2jh3ekthkv57a2lhwrguzzdbnyfwu3bxrx2qopwlbgeu@jpeg"
+                }
+            },
+            "replyCount": 0,
+            "repostCount": 0,
+            "likeCount": 0,
+            "indexedAt": "2023-12-13T15:14:13.515Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:ec7xstnedazu2cnsxjfgw3j3/app.bsky.feed.post/3kggpkep2c22j",
+            "cid": "bafyreigj2rfkro2wi3wlkzqo75ncq7qf2bdprwli3y7o5fchgqgrrqcg2u",
+            "author": {
+                "did": "did:plc:ec7xstnedazu2cnsxjfgw3j3",
+                "handle": "jeninmotion.bsky.social",
+                "displayName": "Jen in Motion",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:ec7xstnedazu2cnsxjfgw3j3/bafkreih6oxzlrryc7jcx6x7363kspk5oosb6myqw4yj7se63ovdaheqnou@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "I remembered that right after I posted, lol. My lawful good side says that's how ALL redistricting should be done, but as the GOP uses that against us, it's frustrating.",
+                "$type": "app.bsky.feed.post",
+                "langs": [
+                    "en"
+                ],
+                "reply": {
+                    "root": {
+                        "cid": "bafyreif7ina4cp5i5pzgrnhh7k4ddrnxang4kicutbjnppxxevdcx72w5m",
+                        "uri": "at://did:plc:swgxwbir4rrimj57pf75jckf/app.bsky.feed.post/3kger3ubalu2c"
+                    },
+                    "parent": {
+                        "cid": "bafyreib3bgk4wi45wc3aqal6t3kl4yrkliwtcsgr4mlipa72wnxzt2paby",
+                        "uri": "at://did:plc:jvrcnbu3dlzu7rdb22xc3whg/app.bsky.feed.post/3kgfdyefdz524"
+                    }
+                },
+                "createdAt": "2023-12-13T14:56:52.977Z"
+            },
+            "replyCount": 0,
+            "repostCount": 0,
+            "likeCount": 1,
+            "indexedAt": "2023-12-13T14:56:52.977Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:pjiafkey2cokiupsxpswqlk7/app.bsky.feed.post/3kggmkh6lrr2k",
+            "cid": "bafyreibuf4aqdpvy46acrcoewl4u2m5q3tf2ejnpexbw7cffjhw7mdt7yq",
+            "author": {
+                "did": "did:plc:pjiafkey2cokiupsxpswqlk7",
+                "handle": "marcelias.bsky.social",
+                "displayName": "Marc Elias",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:pjiafkey2cokiupsxpswqlk7/bafkreibda5a7updqoqvq2k4jnklowk5cv2zlljz4zztuzdedfivgnnkwwa@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "We will never stop fighting.\n\nThe case is one of the latest signs that fights over redistricting will continue. “I don’t expect anybody to lay down arms, not them and certainly not us,” said attorney Abha Khanna, who argued the Alabama case before SCOTUS. www.washingtonpost.com/politics/202...",
+                "$type": "app.bsky.feed.post",
+                "embed": {
+                    "$type": "app.bsky.embed.external",
+                    "external": {
+                        "uri": "https://www.washingtonpost.com/politics/2023/12/13/voting-rights-act-black-representation/",
+                        "thumb": {
+                            "$type": "blob",
+                            "ref": {
+                                "$link": "bafkreif7zsj3thixbooliilxb36q6memvm42zcjh3zstxlewwlnibc5b6y"
+                            },
+                            "mimeType": "image/jpeg",
+                            "size": 415802
+                        },
+                        "title": "A fight for Black representation, with a civil rights landmark on the line",
+                        "description": "In Louisiana and other Southern states, African American residents are suing under the Voting Rights Act to reverse policies that they say dilute their power"
+                    }
+                },
+                "langs": [
+                    "en"
+                ],
+                "facets": [
+                    {
+                        "index": {
+                            "byteEnd": 300,
+                            "byteStart": 262
+                        },
+                        "features": [
+                            {
+                                "uri": "https://www.washingtonpost.com/politics/2023/12/13/voting-rights-act-black-representation/",
+                                "$type": "app.bsky.richtext.facet#link"
+                            }
+                        ]
+                    }
+                ],
+                "createdAt": "2023-12-13T14:03:14.624Z"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.external#view",
+                "external": {
+                    "uri": "https://www.washingtonpost.com/politics/2023/12/13/voting-rights-act-black-representation/",
+                    "title": "A fight for Black representation, with a civil rights landmark on the line",
+                    "description": "In Louisiana and other Southern states, African American residents are suing under the Voting Rights Act to reverse policies that they say dilute their power",
+                    "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:pjiafkey2cokiupsxpswqlk7/bafkreif7zsj3thixbooliilxb36q6memvm42zcjh3zstxlewwlnibc5b6y@jpeg"
+                }
+            },
+            "replyCount": 0,
+            "repostCount": 15,
+            "likeCount": 54,
+            "indexedAt": "2023-12-13T14:03:14.624Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:7powrkr5qduea3kd3yzx54lp/app.bsky.feed.post/3kgfu43c2bp2w",
+            "cid": "bafyreibxdh7ysqazj653dexy7out73pklyey2d3jik2cnu4yk44mwf6wrq",
+            "author": {
+                "did": "did:plc:7powrkr5qduea3kd3yzx54lp",
+                "handle": "montealto.bsky.social",
+                "displayName": "💙 Monte_Alto 💙 (everywhere)",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7powrkr5qduea3kd3yzx54lp/bafkreihuplck3nmyjdd2lhc2dnugqu6ja6l2d6tiz54txmbi5hijtmtjxa@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "⚖️ FANTASTIC NEWS FOR NEW YORK: Democracy Watch episode 60: Marc Elias discusses New York's highest court ordering the Independent Redistricting Commission to draw new maps, which could net Democrats 6 seats in 2024.",
+                "$type": "app.bsky.feed.post",
+                "embed": {
+                    "$type": "app.bsky.embed.external",
+                    "external": {
+                        "uri": "https://youtu.be/Yh9Ifnuw7zk?si=m2weJzkCLPPCesxs",
+                        "thumb": {
+                            "$type": "blob",
+                            "ref": {
+                                "$link": "bafkreigne7hzipyscyxhzsojgjkgoxys2uyotd6hzuhfafnuiddvdug22e"
+                            },
+                            "mimeType": "image/jpeg",
+                            "size": 863279
+                        },
+                        "title": "BREAKING: Democrats get news of the decade ahead of 2024",
+                        "description": "Democracy Watch episode 60: Marc Elias discusses New York's highest court ordering the Independent Redistricting Commission to draw new maps, which could net..."
+                    }
+                },
+                "langs": [
+                    "en"
+                ],
+                "createdAt": "2023-12-13T06:45:42.494Z"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.external#view",
+                "external": {
+                    "uri": "https://youtu.be/Yh9Ifnuw7zk?si=m2weJzkCLPPCesxs",
+                    "title": "BREAKING: Democrats get news of the decade ahead of 2024",
+                    "description": "Democracy Watch episode 60: Marc Elias discusses New York's highest court ordering the Independent Redistricting Commission to draw new maps, which could net...",
+                    "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:7powrkr5qduea3kd3yzx54lp/bafkreigne7hzipyscyxhzsojgjkgoxys2uyotd6hzuhfafnuiddvdug22e@jpeg"
+                }
+            },
+            "replyCount": 0,
+            "repostCount": 0,
+            "likeCount": 1,
+            "indexedAt": "2023-12-13T06:45:42.494Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:tb6kdi6xp44xmafqow5wqqd7/app.bsky.feed.post/3kgfr3hhued2z",
+            "cid": "bafyreig3xxsokcxq2lkv4f6bmciafhcuytunai7nztqgvreylvcf2yw2nu",
+            "author": {
+                "did": "did:plc:tb6kdi6xp44xmafqow5wqqd7",
+                "handle": "lwvsf.bsky.social",
+                "displayName": "League of Women Voters of San Francisco",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:tb6kdi6xp44xmafqow5wqqd7/bafkreiejxixpkreqpvprwbubg7alddeubu4x5zthdvrnwtfrxq5mynnsbe@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ]
+            },
+            "record": {
+                "text": "Great news!🎉 The San Francisco Elections Commission unanimously voted to pass its redistricting reform recommendations (one commissioner was absent). The final recommendations will be sent to the supervisors and shared with the public in the new year.\n\nIf you contacted the commission, THANK YOU!",
+                "$type": "app.bsky.feed.post",
+                "embed": {
+                    "$type": "app.bsky.embed.images",
+                    "images": [
+                        {
+                            "alt": "Local redistricting in San Francisco",
+                            "image": {
+                                "$type": "blob",
+                                "ref": {
+                                    "$link": "bafkreiagdxh7ny7em62bsjwkz5zcnbfllq7v27u7ka6wsln4yvnmhpjhlu"
+                                },
+                                "mimeType": "image/jpeg",
+                                "size": 651127
+                            },
+                            "aspectRatio": {
+                                "width": 1600,
+                                "height": 900
+                            }
+                        }
+                    ]
+                },
+                "langs": [
+                    "en"
+                ],
+                "createdAt": "2023-12-13T05:51:38.668Z"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.images#view",
+                "images": [
+                    {
+                        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:tb6kdi6xp44xmafqow5wqqd7/bafkreiagdxh7ny7em62bsjwkz5zcnbfllq7v27u7ka6wsln4yvnmhpjhlu@jpeg",
+                        "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:tb6kdi6xp44xmafqow5wqqd7/bafkreiagdxh7ny7em62bsjwkz5zcnbfllq7v27u7ka6wsln4yvnmhpjhlu@jpeg",
+                        "alt": "Local redistricting in San Francisco",
+                        "aspectRatio": {
+                            "width": 1600,
+                            "height": 900
+                        }
+                    }
+                ]
+            },
+            "replyCount": 0,
+            "repostCount": 1,
+            "likeCount": 1,
+            "indexedAt": "2023-12-13T05:51:38.668Z",
+            "viewer": {
+
+            },
+            "labels": [
+
+            ]
+        }
+    ],
+    "cursor": "25",
+    "hitsTotal": 908
+}
