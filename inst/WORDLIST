@@ -8,11 +8,14 @@ Lifecycle
 Lucene
 NSID
 Renviron
+Repost
 URI
 URIs
 auth
 createRecord
 createSession
+deleteRecord
+describeRepo
 getActorFeeds
 getActorLikes
 getAuthorFeed
@@ -41,10 +44,12 @@ json
 listNotifications
 repo
 reposted
+reposts
 resolveHandle
 richtext
 searchActors
 searchActorsTypeahead
+searchPosts
 tibble
 typeahead
 uploadBlob

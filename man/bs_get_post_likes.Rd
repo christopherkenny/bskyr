@@ -6,6 +6,7 @@
 \usage{
 bs_get_post_likes(
   uri,
+  cursor = NULL,
   limit = NULL,
   user = get_bluesky_user(),
   pass = get_bluesky_pass(),
@@ -15,6 +16,8 @@ bs_get_post_likes(
 }
 \arguments{
 \item{uri}{Character, length 1. URI for post to get.}
+
+\item{cursor}{Character, length 1. A cursor property from a prior response. Default: \code{NULL}.}
 
 \item{limit}{Integer. Maximum number to request. Maximum: \code{100}}
 

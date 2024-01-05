@@ -5,6 +5,7 @@
 \title{Retrieve a user's (self) muted lists}
 \usage{
 bs_get_blocked_lists(
+  cursor = NULL,
   limit = NULL,
   user = get_bluesky_user(),
   pass = get_bluesky_pass(),
@@ -13,6 +14,8 @@ bs_get_blocked_lists(
 )
 }
 \arguments{
+\item{cursor}{Character, length 1. A cursor property from a prior response. Default: \code{NULL}.}
+
 \item{limit}{Integer. Maximum number to request.}
 
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}

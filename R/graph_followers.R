@@ -1,6 +1,7 @@
 #' Retrieve an actor's followers
 #'
 #' @param actor `r template_var_actor()`
+#' @param cursor `r template_var_cursor()`
 #' @param limit `r template_var_limit(100)`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
@@ -20,7 +21,7 @@
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_followers('chriskenny.bsky.social')
-bs_get_followers <- function(actor, limit = NULL,
+bs_get_followers <- function(actor, cursor = NULL, limit = NULL,
                              user = get_bluesky_user(), pass = get_bluesky_pass(),
                              auth = bs_auth(user, pass), clean = TRUE) {
 
@@ -36,7 +37,9 @@ bs_get_followers <- function(actor, limit = NULL,
     }
     limit <- as.integer(limit)
     limit <- max(limit, 1L)
-    limit <- min(limit, 100L)
+    req_seq <- diff(unique(c(seq(0, limit, 100), limit)))
+  } else {
+    req_seq <- list(NULL)
   }
 
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.graph.getFollowers') |>
@@ -45,12 +48,19 @@ bs_get_followers <- function(actor, limit = NULL,
     httr2::req_url_query(
       limit = limit
     )
-  resp <- req |>
-    httr2::req_perform() |>
-    httr2::resp_body_json()
+
+  resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching followers')
 
   if (!clean) return(resp)
 
+  resp |>
+    lapply(process_followers) |>
+    purrr::list_rbind() |>
+    add_req_url(req) |>
+    add_cursor(resp)
+}
+
+process_followers <- function(resp) {
   dplyr::bind_cols(
     resp |>
       purrr::pluck('followers') |>

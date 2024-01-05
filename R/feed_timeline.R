@@ -1,5 +1,6 @@
 #' Retrieve the user's home timeline
 #'
+#' @param cursor `r template_var_cursor()`
 #' @param limit `r template_var_limit(100)`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
@@ -19,7 +20,7 @@
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_timeline()
-bs_get_timeline <- function(limit = NULL,
+bs_get_timeline <- function(cursor = NULL, limit = NULL,
     user = get_bluesky_user(), pass = get_bluesky_pass(),
                             auth = bs_auth(user, pass), clean = TRUE) {
 
@@ -29,7 +30,9 @@ bs_get_timeline <- function(limit = NULL,
     }
     limit <- as.integer(limit)
     limit <- max(limit, 1L)
-    limit <- min(limit, 100L)
+    req_seq <- diff(unique(c(seq(0, limit, 100), limit)))
+  } else {
+    req_seq <- list(NULL)
   }
 
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.getTimeline') |>
@@ -37,14 +40,26 @@ bs_get_timeline <- function(limit = NULL,
     httr2::req_url_query(
       limit = limit
     )
-  resp <- req |>
-    httr2::req_perform() |>
-    httr2::resp_body_json()
+  resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching timeline')
 
   if (!clean) return(resp)
 
+  resp |>
+    lapply(process_timeline) |>
+    purrr::list_rbind() |>
+    add_req_url(req) |>
+    add_cursor(resp)
+}
+
+process_timeline <- function(resp) {
   out <- resp |>
-    purrr::pluck('feed') |>
+    purrr::pluck('feed')
+
+  if (purrr::is_empty(out)) {
+    return(tibble::tibble())
+  }
+
+  out <- out |>
     lapply(function(x) {
       x |>
         unlist(recursive = FALSE) |>
@@ -64,7 +79,7 @@ bs_get_timeline <- function(limit = NULL,
     dplyr::mutate(
       post_author = proc(.data$post_author),
       post_record = lapply(.data$post_record, widen),
-      post_embed = lapply(.data$post_embed, widen)
+      dplyr::across(dplyr::any_of('post_embed'), .fns = function(x) lapply(x, widen))
     ) |>
     add_singletons(resp)
 

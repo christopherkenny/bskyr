@@ -70,5 +70,6 @@ bs_get_record <- function(repo = NULL, collection = NULL, rkey = NULL,
   resp |>
     purrr::pluck('value') |>
     widen() |>
-    add_singletons(resp)
+    add_singletons(resp) |>
+    add_req_url(req)
 }

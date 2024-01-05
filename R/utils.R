@@ -76,3 +76,34 @@ get_reply_refs <- function(uri, auth) {
     )
   )
 }
+
+# call details ----
+add_cursor <- function(tb, l) {
+  if (is.null(names(l))) {
+    l_sub <- lapply(l, function(x) purrr::keep_at(x, at = c('cursor'))) |>
+      purrr::list_flatten()
+  } else {
+    l_sub <- purrr::keep_at(l, at = c('cursor'))
+  }
+
+  `attr<-`(tb, 'cursor', l_sub)
+}
+
+add_req_url <- function(tb, l) {
+  `attr<-`(tb, 'request_url', l$url)
+}
+
+repeat_request <- function(req, req_seq, cursor, txt = 'Fetching data') {
+  resp <- vector(mode = 'list', length = length(req_seq))
+  for (i in cli::cli_progress_along(req_seq, txt)) {
+    resp[[i]] <- req |>
+      httr2::req_url_query(
+        cursor = cursor,
+        limit = req_seq[[i]]
+      ) |>
+      httr2::req_perform() |>
+      httr2::resp_body_json()
+    cursor <- resp[[i]]$cursor
+  }
+  resp
+}

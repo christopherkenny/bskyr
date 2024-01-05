@@ -52,5 +52,6 @@ bs_repost <- function(post,
 
   resp |>
     tibble::as_tibble() |>
-    clean_names()
+    clean_names() |>
+    add_req_url(req)
 }

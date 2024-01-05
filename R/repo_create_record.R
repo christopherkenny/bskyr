@@ -53,6 +53,7 @@ bs_create_record <- function(collection, record,
 
   resp |>
     tibble::as_tibble() |>
-    clean_names()
+    clean_names() |>
+    add_req_url(req)
 
 }

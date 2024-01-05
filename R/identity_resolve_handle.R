@@ -47,5 +47,6 @@ bs_resolve_handle <- function(handle,
   }
 
   resp |>
-    tibble::as_tibble()
+    tibble::as_tibble() |>
+    add_req_url(req)
 }

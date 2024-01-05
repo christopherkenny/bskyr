@@ -36,5 +36,6 @@ bs_get_follow_suggestions <- function(actor,
   resp |>
     purrr::pluck('suggestions') |>
     proc() |>
-    clean_names()
+    clean_names() |>
+    add_req_url(req)
 }

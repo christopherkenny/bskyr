@@ -53,5 +53,6 @@ bs_get_feed_generators <- function(feeds,
   resp |>
     purrr::pluck('feeds') |>
     proc() |>
-    clean_names()
+    clean_names() |>
+    add_req_url(req)
 }

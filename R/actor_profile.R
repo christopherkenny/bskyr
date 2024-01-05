@@ -64,5 +64,6 @@ bs_get_profile <- function(actors,
   resp |>
     purrr::pluck('profiles') |>
     proc() |>
-    clean_names()
+    clean_names() |>
+    add_req_url(req)
 }

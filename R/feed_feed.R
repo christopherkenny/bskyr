@@ -1,6 +1,7 @@
 #' Build feed from user's feed generator
 #'
 #' @param feed `r template_var_feed()`
+#' @param cursor `r template_var_cursor()`
 #' @param limit `r template_var_limit(100)`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
@@ -20,7 +21,7 @@
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_feed('at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/bsky-team')
-bs_get_feed <- function(feed, limit = NULL,
+bs_get_feed <- function(feed, cursor = NULL, limit = NULL,
                         user = get_bluesky_user(), pass = get_bluesky_pass(),
                         auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(feed)) {
@@ -36,7 +37,9 @@ bs_get_feed <- function(feed, limit = NULL,
     }
     limit <- as.integer(limit)
     limit <- max(limit, 1L)
-    limit <- min(limit, 100L)
+    req_seq <- diff(unique(c(seq(0, limit, 100), limit)))
+  } else {
+    req_seq <- list(NULL)
   }
 
 
@@ -47,14 +50,24 @@ bs_get_feed <- function(feed, limit = NULL,
       limit = limit
     )
 
-  resp <- req |>
-    httr2::req_perform() |>
-    httr2::resp_body_json()
+  resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching feed')
 
   if (!clean) return(resp)
 
+  resp |>
+    lapply(process_feed) |>
+    purrr::list_rbind() |>
+    add_req_url(req) |>
+    add_cursor(resp)
+}
+
+process_feed <- function(resp) {
   lapply(resp$feed, function(x) {
-    dplyr::bind_cols(widen(x$post), widen(x$reply))
+    if (is.null(x$reply)) {
+      dplyr::bind_cols(widen(x$post))
+    } else {
+      dplyr::bind_cols(widen(x$post), widen(x$reply))
+    }
   }) |>
     dplyr::bind_rows() |>
     clean_names() |>

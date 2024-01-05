@@ -147,5 +147,6 @@ bs_post <- function(text, images, images_alt, langs, reply, quote,
 
   resp |>
     dplyr::bind_rows() |>
-    clean_names()
+    clean_names() |>
+    add_req_url(req)
 }

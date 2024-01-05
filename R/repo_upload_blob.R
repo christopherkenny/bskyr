@@ -48,6 +48,7 @@ bs_upload_blob <- function(blob,
   })
 
   if (!clean) return(out)
+
   out |>
     purrr::list_rbind()
 }

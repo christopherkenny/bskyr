@@ -5,6 +5,7 @@
 \title{Retrieve the user's home timeline}
 \usage{
 bs_get_timeline(
+  cursor = NULL,
   limit = NULL,
   user = get_bluesky_user(),
   pass = get_bluesky_pass(),
@@ -13,6 +14,8 @@ bs_get_timeline(
 )
 }
 \arguments{
+\item{cursor}{Character, length 1. A cursor property from a prior response. Default: \code{NULL}.}
+
 \item{limit}{Integer. Maximum number to request. Maximum: \code{100}}
 
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}

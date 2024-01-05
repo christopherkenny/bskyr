@@ -7,6 +7,7 @@
 bs_list_records(
   repo,
   collection,
+  cursor = NULL,
   limit = NULL,
   user = get_bluesky_user(),
   pass = get_bluesky_pass(),
@@ -18,6 +19,8 @@ bs_list_records(
 \item{repo}{Character, length 1. The handle or DID of the repo.}
 
 \item{collection}{Character, length 1. The NSID of the record collection.}
+
+\item{cursor}{Character, length 1. A cursor property from a prior response. Default: \code{NULL}.}
 
 \item{limit}{Integer. Maximum number to request. Maximum: \code{100}}
 

@@ -75,5 +75,6 @@ bs_get_post_thread <- function(uri, depth = NULL, parent_height = NULL,
   out$embed <- proc_embed(out$embed)
 
   out |>
-    clean_names()
+    clean_names() |>
+    add_req_url(req)
 }

@@ -6,6 +6,7 @@
 \usage{
 bs_search_posts(
   query,
+  cursor = NULL,
   limit = NULL,
   user = get_bluesky_user(),
   pass = get_bluesky_pass(),
@@ -15,6 +16,8 @@ bs_search_posts(
 }
 \arguments{
 \item{query}{character. search query, Lucene query syntax is recommended.}
+
+\item{cursor}{Character, length 1. A cursor property from a prior response. Default: \code{NULL}.}
 
 \item{limit}{Integer. Maximum number to request. Maximum: \code{100}}
 

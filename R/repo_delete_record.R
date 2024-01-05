@@ -48,5 +48,4 @@ bs_delete_record <- function(collection, rkey,
 
   resp <- req |>
     httr2::req_perform()
-
 }

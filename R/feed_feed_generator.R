@@ -49,5 +49,6 @@ bs_get_feed_generator <- function(feed,
       isValid = resp |> purrr::pluck('isValid')
     )
   ) |>
-    clean_names()
+    clean_names() |>
+    add_req_url(req)
 }

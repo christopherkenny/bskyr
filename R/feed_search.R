@@ -1,6 +1,7 @@
 #' Find posts matching search criteria
 #'
 #' @param query character. search query, Lucene query syntax is recommended.
+#' @param cursor `r template_var_cursor()`
 #' @param limit `r template_var_limit(100)`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
@@ -20,9 +21,20 @@
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
 #' bs_search_posts('redistricting')
-bs_search_posts <- function(query,  limit = NULL,
+bs_search_posts <- function(query, cursor = NULL, limit = NULL,
                             user = get_bluesky_user(), pass = get_bluesky_pass(),
                             auth = bs_auth(user, pass), clean = TRUE) {
+
+  if (!is.null(limit)) {
+    if (!is.numeric(limit)) {
+      cli::cli_abort('{.arg limit} must be numeric.')
+    }
+    limit <- as.integer(limit)
+    limit <- max(limit, 1L)
+    req_seq <- diff(unique(c(seq(0, limit, 100), limit)))
+  } else {
+    req_seq <- list(NULL)
+  }
 
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.searchPosts') |>
     httr2::req_url_query(q = query) |>
@@ -31,12 +43,18 @@ bs_search_posts <- function(query,  limit = NULL,
       limit = limit
     )
 
-  resp <- req |>
-    httr2::req_perform() |>
-    httr2::resp_body_json()
+  resp <- repeat_request(req, req_seq, cursor, txt = 'Searching posts')
 
   if (!clean) return(resp)
 
+  resp |>
+    lapply(process_search_posts) |>
+    purrr::list_rbind() |>
+    add_req_url(req) |>
+    add_cursor(resp)
+}
+
+process_search_posts <- function(resp) {
   resp |>
     purrr::pluck('posts') |>
     lapply(function(x) {

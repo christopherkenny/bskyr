@@ -69,5 +69,6 @@ bs_get_posts <- function(uris,
   # out$record_embed <- lapply(out$record_embed, proc)
   # out$embed_images <- lapply(out$embed_images, proc)
 
-  out
+  out |>
+    add_req_url(req)
 }

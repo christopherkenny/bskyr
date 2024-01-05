@@ -32,5 +32,6 @@ bs_get_muted_lists <- function(user = get_bluesky_user(), pass = get_bluesky_pas
   resp |>
     purrr::pluck('lists') |>
     proc() |>
-    clean_names()
+    clean_names() |>
+    add_req_url(req)
 }

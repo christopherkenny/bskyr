@@ -2,6 +2,7 @@
 #'
 #' @param query character. search query, Lucene query syntax is recommended when `typeahead = FALSE`.
 #' @param typeahead logical. Use typeahead for search? Default is `FALSE`.
+#' @param cursor `r template_var_cursor()`
 #' @param limit `r template_var_limit(100)`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
@@ -22,7 +23,7 @@
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
 #' bs_search_actors('political science')
-bs_search_actors <- function(query, typeahead = FALSE, limit = NULL,
+bs_search_actors <- function(query, typeahead = FALSE, cursor = NULL, limit = NULL,
                              user = get_bluesky_user(), pass = get_bluesky_pass(),
                              auth = bs_auth(user, pass), clean = TRUE) {
 
@@ -32,7 +33,9 @@ bs_search_actors <- function(query, typeahead = FALSE, limit = NULL,
     }
     limit <- as.integer(limit)
     limit <- max(limit, 1L)
-    limit <- min(limit, 100L)
+    req_seq <- diff(unique(c(seq(0, limit, 100), limit)))
+  } else {
+    req_seq <- list(NULL)
   }
 
   base_url <- ifelse(
@@ -47,12 +50,18 @@ bs_search_actors <- function(query, typeahead = FALSE, limit = NULL,
       limit = limit
     )
 
-  resp <- req |>
-    httr2::req_perform() |>
-    httr2::resp_body_json()
+  resp <- repeat_request(req, req_seq, cursor, 'Searching actors')
 
   if (!clean) return(resp)
 
+  resp |>
+    lapply(process_search_actors) |>
+    purrr::list_rbind() |>
+    add_req_url(req) |>
+    add_cursor(resp)
+}
+
+process_search_actors <- function(resp) {
   resp |>
     purrr::pluck('actors') |>
     proc() |>

@@ -1,3 +1,10 @@
+# bskyr 0.1.2
+
+* Requests with `clean = TRUE` now include an attribute "request_url" with the request URL. This does not include any headers, so authentication information is *not* recorded.
+* All functions with `limit` arguments now gain a `cursor` argument. This allows for requesting further pages of results.
+* All functions with `limit` arguments will now automatically make additional API calls if more results are requested than the limit. For example, `bs_get_followers()` is limited to 100 results per call. If `limit = 301`, it will make 4 API calls to get all 301 results. A progress bar will appear if the response is taking sufficient time to return.
+* Fixes bug where `bs_get_feed()` would discard posts with no interactions.
+
 # bskyr 0.1.1
 
 * Provides support for new post search endpoint with `bs_search_posts()`

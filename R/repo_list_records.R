@@ -2,6 +2,7 @@
 #'
 #' @param repo `r template_var_repo()`
 #' @param collection `r template_var_collection()`
+#' @param cursor `r template_var_cursor()`
 #' @param limit `r template_var_limit(100L)`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
@@ -21,7 +22,7 @@
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
 #' bs_list_records(repo = 'chriskenny.bsky.social', collection = 'app.bsky.feed.post')
-bs_list_records <- function(repo, collection, limit = NULL,
+bs_list_records <- function(repo, collection, cursor = NULL, limit = NULL,
                             user = get_bluesky_user(), pass = get_bluesky_pass(),
                             auth = bs_auth(user, pass), clean = TRUE) {
 
@@ -34,7 +35,9 @@ bs_list_records <- function(repo, collection, limit = NULL,
     }
     limit <- as.integer(limit)
     limit <- max(limit, 1L)
-    limit <- min(limit, 100L)
+    req_seq <- diff(unique(c(seq(0, limit, 100), limit)))
+  } else {
+    req_seq <- list(NULL)
   }
 
   req <- httr2::request('https://bsky.social/xrpc/com.atproto.repo.listRecords') |>
@@ -45,12 +48,18 @@ bs_list_records <- function(repo, collection, limit = NULL,
       limit = limit
     )
 
-  resp <- req |>
-    httr2::req_perform() |>
-    httr2::resp_body_json()
+  resp <- repeat_request(req, req_seq, cursor, txt = 'Listing records')
 
   if (!clean) return(resp)
 
+  resp |>
+    lapply(process_list_records) |>
+    purrr::list_rbind() |>
+    add_req_url(req) |>
+    add_cursor(resp)
+}
+
+process_list_records <- function(resp) {
   resp |>
     purrr::pluck('records') |>
     list_hoist() |>

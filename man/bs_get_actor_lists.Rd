@@ -6,6 +6,7 @@
 \usage{
 bs_get_actor_lists(
   actor,
+  cursor = NULL,
   limit = NULL,
   user = get_bluesky_user(),
   pass = get_bluesky_pass(),
@@ -15,6 +16,8 @@ bs_get_actor_lists(
 }
 \arguments{
 \item{actor}{Character, length 1. name of 1 actor, such as \code{'chriskenny.bsky.social'}}
+
+\item{cursor}{Character, length 1. A cursor property from a prior response. Default: \code{NULL}.}
 
 \item{limit}{Integer. Maximum number to request. Maximum: \code{100}}
 
@@ -44,7 +47,7 @@ Get a list of lists that belong to an actor.
 
 \examples{
 \dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-bs_get_actor_lists('chriskenny.bsky.social')
+bs_get_actor_lists('profmusgrave.bsky.social')
 \dontshow{\}) # examplesIf}
 }
 \concept{graph}

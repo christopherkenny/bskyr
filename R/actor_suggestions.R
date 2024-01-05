@@ -1,5 +1,6 @@
 #' Get a list of actors suggested for following
 #'
+#' @param cursor `r template_var_cursor()`
 #' @param limit `r template_var_limit(100)`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
@@ -19,10 +20,9 @@
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
 #' bs_get_actor_suggestions()
-bs_get_actor_suggestions <- function(
-    limit = NULL,
-    user = get_bluesky_user(), pass = get_bluesky_pass(),
-                               auth = bs_auth(user, pass), clean = TRUE) {
+bs_get_actor_suggestions <- function(cursor = NULL, limit = NULL,
+                                     user = get_bluesky_user(), pass = get_bluesky_pass(),
+                                     auth = bs_auth(user, pass), clean = TRUE) {
 
   if (!is.null(limit)) {
     if (!is.numeric(limit)) {
@@ -30,7 +30,9 @@ bs_get_actor_suggestions <- function(
     }
     limit <- as.integer(limit)
     limit <- max(limit, 1L)
-    limit <- min(limit, 100L)
+    req_seq <- diff(unique(c(seq(0, limit, 100), limit)))
+  } else {
+    req_seq <- list(NULL)
   }
 
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.actor.getSuggestions') |>
@@ -39,12 +41,18 @@ bs_get_actor_suggestions <- function(
       limit = limit
     )
 
-  resp <- req |>
-    httr2::req_perform() |>
-    httr2::resp_body_json()
+  resp <- repeat_request(req, req_seq, cursor, 'Retrieving suggestions')
 
   if (!clean) return(resp)
 
+  resp |>
+    lapply(process_actor_suggestions) |>
+    purrr::list_rbind() |>
+    add_req_url(req) |>
+    add_cursor(resp)
+}
+
+process_actor_suggestions <- function(resp) {
   resp |>
     purrr::pluck('actors') |>
     proc() |>

@@ -41,6 +41,7 @@ bs_describe_repo <- function(repo,
 
   resp |>
     widen(i = 3) |>
-    clean_names()
+    clean_names() |>
+    add_req_url(req)
 
 }
