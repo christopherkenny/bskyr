@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">bskyr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,6 +53,7 @@
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">bs_get_author_feed</span><span class="op">(</span></span>
 <span>  <span class="va">actor</span>,</span>
+<span>  cursor <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  limit <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  user <span class="op">=</span> <span class="fu"><a href="user.html">get_bluesky_user</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  pass <span class="op">=</span> <span class="fu"><a href="pass.html">get_bluesky_pass</a></span><span class="op">(</span><span class="op">)</span>,</span>
@@ -65,6 +66,10 @@
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>actor</dt>
 <dd><p>Character, length 1. name of 1 actor, such as <code>'chriskenny.bsky.social'</code></p></dd>
+
+
+<dt>cursor</dt>
+<dd><p>Character, length 1. A cursor property from a prior response. Default: <code>NULL</code>.</p></dd>
 
 
 <dt>limit</dt>
