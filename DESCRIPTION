@@ -39,3 +39,5 @@ URL: https://github.com/christopherkenny/bskyr, http://christophertkenny.com/bsk
 BugReports: https://github.com/christopherkenny/bskyr/issues
 Config/testthat/edition: 3
 Language: en-US
+Depends: 
+    R (>= 4.1.0)
