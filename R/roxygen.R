@@ -50,7 +50,7 @@ template_var_limit <- function(val = NULL) { # nocov start
   if (is.null(val)) {
     'Integer. Maximum number to request.'
   } else {
-    paste0('Integer. Maximum number to request. Maximum: `', val, '`')
+    paste0('Integer. Number of records to request. If over `', val, '`, multiple requests are made.')
   }
 } # nocov end
 

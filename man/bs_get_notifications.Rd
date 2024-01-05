@@ -16,7 +16,7 @@ bs_get_notifications(
 \arguments{
 \item{cursor}{Character, length 1. A cursor property from a prior response. Default: \code{NULL}.}
 
-\item{limit}{Integer. Maximum number to request. Maximum: \code{100}}
+\item{limit}{Integer. Number of records to request. If over \code{100}, multiple requests are made.}
 
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 
