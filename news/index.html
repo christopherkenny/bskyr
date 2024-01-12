@@ -45,7 +45,7 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.1.2" id="bskyr-012">bskyr 0.1.2<a class="anchor" aria-label="anchor" href="#bskyr-012"></a></h2>
+<h2 class="pkg-version" data-toc-text="0.1.2" id="bskyr-012">bskyr 0.1.2<a class="anchor" aria-label="anchor" href="#bskyr-012"></a></h2><p class="text-muted">CRAN release: 2024-01-09</p>
 <ul><li>Requests with <code>clean = TRUE</code> now include an attribute “request_url” with the request URL. This does not include any headers, so authentication information is <em>not</em> recorded.</li>
 <li>All functions with <code>limit</code> arguments now gain a <code>cursor</code> argument. This allows for requesting further pages of results.</li>
 <li>All functions with <code>limit</code> arguments will now automatically make additional API calls if more results are requested than the limit. For example, <code><a href="../reference/bs_get_followers.html">bs_get_followers()</a></code> is limited to 100 results per call. If <code>limit = 301</code>, it will make 4 API calls to get all 301 results. A progress bar will appear if the response is taking sufficient time to return.</li>
