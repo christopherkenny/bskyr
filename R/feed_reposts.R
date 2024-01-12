@@ -50,7 +50,9 @@ bs_get_reposts <- function(uri, cursor = NULL, limit = NULL,
     )
   resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching reposts')
 
-  if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
   resp |>
     lapply(process_reposts) |>

@@ -28,14 +28,17 @@
 #' via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)')
 #' bs_post('Test self-reply from r package `bskyr`
 #' via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
-#'         reply = 'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g')
+#'   reply = 'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g'
+#' )
 #' bs_post('Test quoting from r package `bskyr`
 #' via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
-#'         quote = 'https://bsky.app/profile/bskyr.bsky.social/post/3kf24wd6cmb2a')
+#'   quote = 'https://bsky.app/profile/bskyr.bsky.social/post/3kf24wd6cmb2a'
+#' )
 #' bs_post('Test quote and reply from r package `bskyr`
 #' via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
-#'         reply = 'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g',
-#'         quote = 'https://bsky.app/profile/bskyr.bsky.social/post/3kf24wd6cmb2a')
+#'   reply = 'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g',
+#'   quote = 'https://bsky.app/profile/bskyr.bsky.social/post/3kf24wd6cmb2a'
+#' )
 bs_post <- function(text, images, images_alt, langs, reply, quote,
                     user = get_bluesky_user(), pass = get_bluesky_pass(),
                     auth = bs_auth(user, pass), clean = TRUE) {
@@ -52,7 +55,7 @@ bs_post <- function(text, images, images_alt, langs, reply, quote,
   facets_l <- parse_facets(txt = text, auth = auth)
 
   if (!missing(images)) {
-    if (is.list(images)) { #any(fs::path_ext(images) == '')
+    if (is.list(images)) { # any(fs::path_ext(images) == '')
       # then we assume it's a blob
       blob <- images
     } else {
@@ -88,7 +91,7 @@ bs_post <- function(text, images, images_alt, langs, reply, quote,
     if (!missing(images_alt)) {
       img_incl <- lapply(seq_along(images), function(i) {
         list(
-          image  = blob[[i]]$blob,
+          image = blob[[i]]$blob,
           alt = images_alt[[i]]
         )
       })
@@ -137,13 +140,15 @@ bs_post <- function(text, images, images_alt, langs, reply, quote,
       )
     )
 
-  #return(httr2::req_dry_run(req))
+  # return(httr2::req_dry_run(req))
 
   resp <- req |>
     httr2::req_perform() |>
     httr2::resp_body_json()
 
-  if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
   resp |>
     dplyr::bind_rows() |>

@@ -52,7 +52,9 @@ bs_get_feeds <- function(actor, cursor = NULL, limit = NULL,
 
   resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching feeds')
 
-  if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
 
   resp |>

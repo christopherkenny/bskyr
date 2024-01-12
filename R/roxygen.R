@@ -75,15 +75,15 @@ template_var_blob <- function() { # nocov start
 } # nocov end
 
 template_var_repo <- function() { # nocov start
-  "Character, length 1. The handle or DID of the repo."
+  'Character, length 1. The handle or DID of the repo.'
 } # nocov end
 
 template_var_collection <- function() { # nocov start
-  "Character, length 1. The NSID of the record collection."
+  'Character, length 1. The NSID of the record collection.'
 } # nocov end
 
 template_var_rkey <- function() { # nocov start
-  "Character, length 1. The CID of the version of the record. If not specified, then return the most recent version."
+  'Character, length 1. The CID of the version of the record. If not specified, then return the most recent version.'
 } # nocov end
 
 template_var_post <- function() { # nocov start
@@ -93,4 +93,3 @@ template_var_post <- function() { # nocov start
 template_var_record <- function() { # nocov start
   'List, length 1. Description of a record.'
 } # nocov end
-

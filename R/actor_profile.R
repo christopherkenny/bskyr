@@ -48,7 +48,9 @@ bs_get_profile <- function(actors,
   #   req <- req   |>
   #     httr2::req_url_query(actor = actors)
   # } else {
-  actors <- actors |> as.list() |> purrr::set_names('actors')
+  actors <- actors |>
+    as.list() |>
+    purrr::set_names('actors')
   req <- rlang::inject(httr2::req_url_query(req, !!!actors))
   # }
 
@@ -59,7 +61,9 @@ bs_get_profile <- function(actors,
     httr2::req_perform() |>
     httr2::resp_body_json()
 
-  if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
   resp |>
     purrr::pluck('profiles') |>

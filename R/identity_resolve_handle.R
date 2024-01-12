@@ -33,11 +33,14 @@ bs_resolve_handle <- function(handle,
       handle = handle
     )
   resp <- NULL
-  try({
-  resp <- req |>
-    httr2::req_perform() |>
-    httr2::resp_body_json()
-  }, silent = TRUE)
+  try(
+    {
+      resp <- req |>
+        httr2::req_perform() |>
+        httr2::resp_body_json()
+    },
+    silent = TRUE
+  )
 
   if (is.null(resp)) {
     resp <- list(did = NA_character_)

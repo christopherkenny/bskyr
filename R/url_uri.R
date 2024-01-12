@@ -10,6 +10,8 @@
 bs_uri_to_url <- function(uri) {
   pieces <- httr2::url_parse(uri)
   type <- stringr::word(pieces$path, start = 2, sep = stringr::fixed('/'))
-  paste0('https://bsky.app/profile/', pieces$hostname, ':', pieces$port, '/', 'post',
-         '/', stringr::word(pieces$path, start = 3, sep = stringr::fixed('/')))
+  paste0(
+    'https://bsky.app/profile/', pieces$hostname, ':', pieces$port, '/', 'post',
+    '/', stringr::word(pieces$path, start = 3, sep = stringr::fixed('/'))
+  )
 }

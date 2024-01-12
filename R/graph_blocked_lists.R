@@ -23,7 +23,6 @@
 bs_get_blocked_lists <- function(cursor = NULL, limit = NULL,
                                  user = get_bluesky_user(), pass = get_bluesky_pass(),
                                  auth = bs_auth(user, pass), clean = TRUE) {
-
   if (!is.null(limit)) {
     if (!is.numeric(limit)) {
       cli::cli_abort('{.arg limit} must be numeric.')
@@ -42,7 +41,9 @@ bs_get_blocked_lists <- function(cursor = NULL, limit = NULL,
     )
   resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching lists')
 
-  if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
   resp |>
     purrr::pluck('lists') |>

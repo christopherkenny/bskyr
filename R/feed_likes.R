@@ -24,45 +24,47 @@
 bs_get_likes <- function(actor, cursor = NULL, limit = NULL,
                          user = get_bluesky_user(), pass = get_bluesky_pass(),
                          auth = bs_auth(user, pass), clean = TRUE) {
- if (missing(actor)) {
-   cli::cli_abort('{.arg actor} must list at least one user.')
- }
- if (!is.character(actor)) {
-   cli::cli_abort('{.arg actor} must be a character vector.')
- }
+  if (missing(actor)) {
+    cli::cli_abort('{.arg actor} must list at least one user.')
+  }
+  if (!is.character(actor)) {
+    cli::cli_abort('{.arg actor} must be a character vector.')
+  }
 
- if (!is.null(limit)) {
-   if (!is.numeric(limit)) {
-     cli::cli_abort('{.arg limit} must be numeric.')
-   }
-   limit <- as.integer(limit)
-   limit <- max(limit, 1L)
-   req_seq <- diff(unique(c(seq(0, limit, 100), limit)))
- } else {
-   req_seq <- list(NULL)
- }
+  if (!is.null(limit)) {
+    if (!is.numeric(limit)) {
+      cli::cli_abort('{.arg limit} must be numeric.')
+    }
+    limit <- as.integer(limit)
+    limit <- max(limit, 1L)
+    req_seq <- diff(unique(c(seq(0, limit, 100), limit)))
+  } else {
+    req_seq <- list(NULL)
+  }
 
- req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.getActorLikes') |>
-   httr2::req_url_query(actor = actor) |>
-   httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-   httr2::req_url_query(
-     limit = limit
-   )
+  req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.getActorLikes') |>
+    httr2::req_url_query(actor = actor) |>
+    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
+    httr2::req_url_query(
+      limit = limit
+    )
 
- resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching likes')
+  resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching likes')
 
- if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
- resp |>
-   lapply(process_likes) |>
-   purrr::list_rbind() |>
-   add_req_url(req) |>
-   add_cursor(resp)
+  resp |>
+    lapply(process_likes) |>
+    purrr::list_rbind() |>
+    add_req_url(req) |>
+    add_cursor(resp)
 }
 
 process_likes <- function(resp) {
- resp |>
-   purrr::pluck('feed') |>
-   proc() |>
-   clean_names()
+  resp |>
+    purrr::pluck('feed') |>
+    proc() |>
+    clean_names()
 }

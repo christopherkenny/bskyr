@@ -45,7 +45,7 @@ bs_get_feed_generators('at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.gene
 bs_get_feed_generators(c(
   'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/bsky-team',
   'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/whats-hot'
-  ))
+))
 \dontshow{\}) # examplesIf}
 }
 \seealso{

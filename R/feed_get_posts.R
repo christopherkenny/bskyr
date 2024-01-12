@@ -29,7 +29,9 @@ bs_get_posts <- function(uris,
     cli::cli_abort('{.arg uris} must be a character vector.')
   }
 
-  uris <- uris |> as.list() |> purrr::set_names('uris')
+  uris <- uris |>
+    as.list() |>
+    purrr::set_names('uris')
 
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.getPosts')
   req <- rlang::inject(httr2::req_url_query(req, !!!uris))
@@ -40,7 +42,9 @@ bs_get_posts <- function(uris,
     httr2::req_perform() |>
     httr2::resp_body_json()
 
-  if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
   resp <- resp |>
     purrr::pluck('posts')
@@ -62,8 +66,10 @@ bs_get_posts <- function(uris,
 
   out <- out |>
     dplyr::mutate(
-      dplyr::across(where(is.list) & where(~purrr::pluck_depth(.x) > 2),
-                    function(x) lapply(x, function(x) clean_names(proc(x))))
+      dplyr::across(
+        where(is.list) & where(~ purrr::pluck_depth(.x) > 2),
+        function(x) lapply(x, function(x) clean_names(proc(x)))
+      )
     )
 
   # out$record_embed <- lapply(out$record_embed, proc)

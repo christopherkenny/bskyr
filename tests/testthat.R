@@ -9,4 +9,4 @@
 library(testthat)
 library(bskyr)
 
-test_check("bskyr")
+test_check('bskyr')

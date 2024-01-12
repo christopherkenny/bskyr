@@ -53,8 +53,10 @@ like <- list(
 )
 
 rec <- bs_create_record(collection = 'app.bsky.feed.like', record = like)
-bs_delete_record(collection = 'app.bsky.feed.like',
-rkey = stringr::str_split_i(rec$uri, '/', i = 5))
+bs_delete_record(
+  collection = 'app.bsky.feed.like',
+  rkey = stringr::str_split_i(rec$uri, '/', i = 5)
+)
 \dontshow{\}) # examplesIf}
 }
 \concept{repo}

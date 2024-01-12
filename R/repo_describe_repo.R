@@ -22,7 +22,6 @@
 bs_describe_repo <- function(repo,
                              user = get_bluesky_user(), pass = get_bluesky_pass(),
                              auth = bs_auth(user, pass), clean = TRUE) {
-
   if (missing(repo)) {
     repo <- auth$did
   }
@@ -37,11 +36,12 @@ bs_describe_repo <- function(repo,
     httr2::req_perform() |>
     httr2::resp_body_json()
 
-  if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
   resp |>
     widen(i = 3) |>
     clean_names() |>
     add_req_url(req)
-
 }

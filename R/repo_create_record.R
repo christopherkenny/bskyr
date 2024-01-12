@@ -34,7 +34,6 @@
 bs_create_record <- function(collection, record,
                              user = get_bluesky_user(), pass = get_bluesky_pass(),
                              auth = bs_auth(user, pass), clean = TRUE) {
-
   req <- httr2::request('https://bsky.social/xrpc/com.atproto.repo.createRecord') |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_body_json(
@@ -49,11 +48,12 @@ bs_create_record <- function(collection, record,
     httr2::req_perform() |>
     httr2::resp_body_json()
 
-  if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
   resp |>
     tibble::as_tibble() |>
     clean_names() |>
     add_req_url(req)
-
 }

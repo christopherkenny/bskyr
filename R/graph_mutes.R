@@ -20,10 +20,10 @@
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_mutes()
-bs_get_mutes <- function(cursor = NULL, limit = NULL,
+bs_get_mutes <- function(
+    cursor = NULL, limit = NULL,
     user = get_bluesky_user(), pass = get_bluesky_pass(),
-                         auth = bs_auth(user, pass), clean = TRUE) {
-
+    auth = bs_auth(user, pass), clean = TRUE) {
   if (!is.null(limit)) {
     if (!is.numeric(limit)) {
       cli::cli_abort('{.arg limit} must be numeric.')
@@ -42,7 +42,9 @@ bs_get_mutes <- function(cursor = NULL, limit = NULL,
     )
   resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching mutes')
 
-  if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
   resp |>
     lapply(process_mutes) |>

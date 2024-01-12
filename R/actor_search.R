@@ -26,7 +26,6 @@
 bs_search_actors <- function(query, typeahead = FALSE, cursor = NULL, limit = NULL,
                              user = get_bluesky_user(), pass = get_bluesky_pass(),
                              auth = bs_auth(user, pass), clean = TRUE) {
-
   if (!is.null(limit)) {
     if (!is.numeric(limit)) {
       cli::cli_abort('{.arg limit} must be numeric.')
@@ -52,7 +51,9 @@ bs_search_actors <- function(query, typeahead = FALSE, cursor = NULL, limit = NU
 
   resp <- repeat_request(req, req_seq, cursor, 'Searching actors')
 
-  if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
   resp |>
     lapply(process_search_actors) |>

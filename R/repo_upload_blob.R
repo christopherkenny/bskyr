@@ -23,7 +23,6 @@
 bs_upload_blob <- function(blob,
                            user = get_bluesky_user(), pass = get_bluesky_pass(),
                            auth = bs_auth(user, pass), clean = TRUE) {
-
   types <- fs::path_ext(blob)
   raw_data <- lapply(blob, function(x) readBin(x, what = 'raw', n = file.size(x)))
   mime_types <- mime::guess_type(blob)
@@ -40,14 +39,18 @@ bs_upload_blob <- function(blob,
     resp <- req |>
       httr2::req_perform() |>
       httr2::resp_body_json()
-    if (!clean) return(resp)
+    if (!clean) {
+      return(resp)
+    }
 
     resp |>
       list_hoist() |>
       clean_names()
   })
 
-  if (!clean) return(out)
+  if (!clean) {
+    return(out)
+  }
 
   out |>
     purrr::list_rbind()

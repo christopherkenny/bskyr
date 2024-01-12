@@ -40,7 +40,9 @@ bs_get_feed_generator <- function(feed,
     httr2::req_perform() |>
     httr2::resp_body_json()
 
-  if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
   dplyr::bind_cols(
     resp |> purrr::pluck('view') |> unlist() |> tibble::as_tibble_row(),

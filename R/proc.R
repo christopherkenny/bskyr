@@ -41,7 +41,9 @@
 # }
 
 proc <- function(l) {
-  lapply(l, function(z) unlist(z)) |> dplyr::bind_rows() |> clean_names()
+  lapply(l, function(z) unlist(z)) |>
+    dplyr::bind_rows() |>
+    clean_names()
 }
 
 proc_record <- function(l) {

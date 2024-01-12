@@ -22,8 +22,8 @@
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_post_thread('at://did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/app.bsky.feed.post/3k7qmjev5lr2s')
 bs_get_post_thread <- function(uri, depth = NULL, parent_height = NULL,
-                              user = get_bluesky_user(), pass = get_bluesky_pass(),
-                              auth = bs_auth(user, pass), clean = TRUE) {
+                               user = get_bluesky_user(), pass = get_bluesky_pass(),
+                               auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(uri)) {
     cli::cli_abort('{.arg uri} must list at least one uri.')
   }

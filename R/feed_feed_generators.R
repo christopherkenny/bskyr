@@ -24,7 +24,7 @@
 #' bs_get_feed_generators(c(
 #'   'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/bsky-team',
 #'   'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/whats-hot'
-#'   ))
+#' ))
 bs_get_feed_generators <- function(feeds,
                                    user = get_bluesky_user(), pass = get_bluesky_pass(),
                                    auth = bs_auth(user, pass), clean = TRUE) {
@@ -38,7 +38,9 @@ bs_get_feed_generators <- function(feeds,
 
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.getFeedGenerators')
 
-  feeds <- feeds |> as.list() |> purrr::set_names('feeds')
+  feeds <- feeds |>
+    as.list() |>
+    purrr::set_names('feeds')
   req <- rlang::inject(httr2::req_url_query(req, !!!feeds))
 
   req <- req |>
@@ -48,7 +50,9 @@ bs_get_feed_generators <- function(feeds,
     httr2::req_perform() |>
     httr2::resp_body_json()
 
-  if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
   resp |>
     purrr::pluck('feeds') |>

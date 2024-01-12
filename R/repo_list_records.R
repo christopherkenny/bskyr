@@ -25,7 +25,6 @@
 bs_list_records <- function(repo, collection, cursor = NULL, limit = NULL,
                             user = get_bluesky_user(), pass = get_bluesky_pass(),
                             auth = bs_auth(user, pass), clean = TRUE) {
-
   if (missing(repo)) {
     repo <- auth$did
   }
@@ -50,7 +49,9 @@ bs_list_records <- function(repo, collection, cursor = NULL, limit = NULL,
 
   resp <- repeat_request(req, req_seq, cursor, txt = 'Listing records')
 
-  if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
   resp |>
     lapply(process_list_records) |>

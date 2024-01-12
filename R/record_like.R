@@ -21,8 +21,8 @@
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
 #' bs_like(post = 'https://bsky.app/profile/bskyr.bsky.social/post/3kf2577exva2x')
 bs_like <- function(post,
-                      user = get_bluesky_user(), pass = get_bluesky_pass(),
-                      auth = bs_auth(user, pass), clean = TRUE) {
+                    user = get_bluesky_user(), pass = get_bluesky_pass(),
+                    auth = bs_auth(user, pass), clean = TRUE) {
   if (is.list(post) && all(c('uri', 'cid') %in% names(post))) {
     post_rcd <- post
   } else {
@@ -52,7 +52,9 @@ bs_like <- function(post,
     httr2::req_perform() |>
     httr2::resp_body_json()
 
-  if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
   resp |>
     tibble::as_tibble() |>

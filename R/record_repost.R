@@ -48,7 +48,9 @@ bs_repost <- function(post,
     httr2::req_perform() |>
     httr2::resp_body_json()
 
-  if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
   resp |>
     tibble::as_tibble() |>

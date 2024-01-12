@@ -24,8 +24,6 @@
 bs_get_record <- function(repo = NULL, collection = NULL, rkey = NULL,
                           user = get_bluesky_user(), pass = get_bluesky_pass(),
                           auth = bs_auth(user, pass), clean = TRUE) {
-
-
   if (is.null(repo)) {
     cli::cli_abort('You must provide a {.arg repo}.')
   }
@@ -65,7 +63,9 @@ bs_get_record <- function(repo = NULL, collection = NULL, rkey = NULL,
   resp <- req |>
     httr2::req_perform() |>
     httr2::resp_body_json()
-  if (!clean) return(resp)
+  if (!clean) {
+    return(resp)
+  }
 
   resp |>
     purrr::pluck('value') |>
