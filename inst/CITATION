@@ -1,0 +1,18 @@
+citHeader("To cite `bskyr` in publications use:")
+
+
+bibentry(
+  bibtype  = "Manual",
+  title    = "{bskyr}: Interact with Bluesky Social",
+  author   = c(
+      person(given = "Christopher T.",
+           family = "Kenny",
+           role = c("aut", "cre"),
+           email = "christopherkenny@fas.harvard.edu",
+           comment = c(ORCID = "0000-0002-9386-6860"))
+  ),
+    year = "2024",
+    note = "R package",
+    key = "bskyr",
+    url = "https://christophertkenny.com/bskyr/"
+)
