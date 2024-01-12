@@ -17,26 +17,35 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Codecov test coverage](https://codecov.io/gh/christopherkenny/bskyr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/christopherkenny/bskyr?branch=main)
 [![R-CMD-check](https://github.com/christopherkenny/bskyr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/christopherkenny/bskyr/actions/workflows/R-CMD-check.yaml)
+[![CRAN status](https://www.r-pkg.org/badges/version/bskyr)](https://CRAN.R-project.org/package=bskyr)
+[![bskyr status badge](https://christopherkenny.r-universe.dev/badges/bskyr)](https://christopherkenny.r-universe.dev/bskyr)
 <!-- badges: end -->
 
-`bskyr` provides an interface to the Bluesky API, allowing you to interact with Bluesky Social from R. 
+`bskyr` provides an interface to the Bluesky Social API, allowing you to interact with Bluesky Social from R. 
 To do this, we provide functions which match with the [AT Protocol's Lexicon](https://atproto.com/guides/lexicon), which is like using regular HTTP requests.
 Outputs from `bskyr`'s functions are primarily `tibble`s, allowing for easy analysis of the outputs from the API calls.
 
 ## Installation
 
+You can install the stable version of `bskyr` from [CRAN](https://cran.r-project.org/package=bskyr) with:
+
+```r
+install.packages('bskyr')
+```
+
 You can install the development version of `bskyr` from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages('devtools')
-remotes::install_github('christopherkenny/bskyr')
+# install.packages('pak')
+pak::pak('christopherkenny/bskyr')
 ```
 
 ## Posting with `bskyr`
 
-Posting capabilities are still under development.
+First, load the package:
 
 ```{r}
 library(bskyr)
@@ -104,3 +113,5 @@ Alternatively, you can set them manually using `usethis::edit_r_environ()` and a
 BLUESKY_APP_USER='YOUR-USERNAME.bsky.social'
 BLUESKY_APP_PASS='your-apps-pass-word'
 ```
+
+## 
