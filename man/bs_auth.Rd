@@ -4,12 +4,17 @@
 \alias{bs_auth}
 \title{Authenticate a user}
 \usage{
-bs_auth(user, pass)
+bs_auth(user, pass, save_auth = TRUE)
 }
 \arguments{
 \item{user}{Character. User name to log in with.}
 
 \item{pass}{Character. App password to log in with.}
+
+\item{save_auth}{Logical. Should the authentication information be saved? If
+\code{TRUE}, it tries to reload from the cache. If a file is over 10 minutes old,
+it will not be read. Set \code{save_auth = NULL} to force the token to refresh and
+save the results.}
 }
 \value{
 a list of authentication information
