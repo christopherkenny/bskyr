@@ -51,7 +51,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">bs_auth</span><span class="op">(</span><span class="va">user</span>, <span class="va">pass</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">bs_auth</span><span class="op">(</span><span class="va">user</span>, <span class="va">pass</span>, save_auth <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -62,6 +62,13 @@
 
 <dt>pass</dt>
 <dd><p>Character. App password to log in with.</p></dd>
+
+
+<dt>save_auth</dt>
+<dd><p>Logical. Should the authentication information be saved? If
+<code>TRUE</code>, it tries to reload from the cache. If a file is over 10 minutes old,
+it will not be read. Set <code>save_auth = NULL</code> to force the token to refresh and
+save the results.</p></dd>
 
 </dl></div>
     <div class="section level2">

@@ -138,8 +138,8 @@
 <span><span class="fu"><a href="reference/set_bluesky_pass.html">set_bluesky_pass</a></span><span class="op">(</span><span class="st">'your-apps-pass-word'</span><span class="op">)</span></span></code></pre></div>
 <p>If you want this to persist across sessions, set <code>install = TRUE</code> and <code>r_env = file.path(Sys.getenv('HOME'), '.Renviron')</code>. This will save your credentials in your R environment file.</p>
 <p>Alternatively, you can set them manually using <code>usethis::edit_r_environ()</code> and adding lines like so:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>BLUESKY_APP_USER<span class="ot">=</span><span class="st">'YOUR-USERNAME.bsky.social'</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>BLUESKY_APP_PASS<span class="ot">=</span><span class="st">'your-apps-pass-word'</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>BLUESKY_APP_USER<span class="ot">=</span><span class="st">'YOUR-USERNAME.bsky.social'</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>BLUESKY_APP_PASS<span class="ot">=</span><span class="st">'your-apps-pass-word'</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="section"></h2>
