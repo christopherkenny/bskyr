@@ -55,22 +55,10 @@ bs_post <- function(text, images, images_alt, langs, reply, quote,
   facets_l <- parse_facets(txt = text, auth = auth)
 
   if (!missing(images)) {
-    if (is.list(images)) { # any(fs::path_ext(images) == '')
-      # then we assume it's a blob
-      blob <- images
-    } else {
-      # otherwise it's a set of paths
-      blob <- bs_upload_blob(images, auth = auth, clean = FALSE)
-      if (length(blob) == 1) {
-        blob <- blob[[1]]
-      }
-    }
-  }
-
-  if (!missing(images_alt)) {
-    if (length(blob) != length(images_alt)) {
+    if (missing(images_alt) || length(images) != length(images_alt)) {
       cli::cli_abort('{.arg images_alt} must be the same length as {.arg images}.')
     }
+    blob <- bs_upload_blob(images, auth = auth, clean = FALSE)
   }
 
   post <- list(
