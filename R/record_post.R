@@ -61,9 +61,6 @@ bs_post <- function(text, images, images_alt, langs, reply, quote,
     } else {
       # otherwise it's a set of paths
       blob <- bs_upload_blob(images, auth = auth, clean = FALSE)
-      if (length(blob) == 1) {
-        blob <- blob[[1]]
-      }
     }
   }
 
