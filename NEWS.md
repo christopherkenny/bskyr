@@ -1,3 +1,8 @@
+# bskyr 0.1.3
+
+* Fixes a bug where posting a single image fails (#3).
+* Improves authentication experience using a local cache to avoid timeouts (#2).
+
 # bskyr 0.1.2
 
 * Requests with `clean = TRUE` now include an attribute "request_url" with the request URL. This does not include any headers, so authentication information is *not* recorded.
