@@ -52,6 +52,12 @@ bs_post <- function(text, images, images_alt, langs, reply, quote,
     }
   }
 
+  if (!missing(images)) {
+    if (missing(images_alt)) {
+      cli::cli_abort('If {.arg images} is provided, {.arg images_alt} must also be provided.')
+    }
+  }
+
   facets_l <- parse_facets(txt = text, auth = auth)
 
   if (!missing(images)) {
@@ -69,6 +75,8 @@ bs_post <- function(text, images, images_alt, langs, reply, quote,
       cli::cli_abort('{.arg images_alt} must be the same length as {.arg images}.')
     }
   }
+
+
 
   post <- list(
     `$type` = 'app.bsky.feed.post',
