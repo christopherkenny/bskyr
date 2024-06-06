@@ -14,6 +14,13 @@ parse_urls <- function(txt) {
   parse_regex(txt, regex = url_regex, drop_n = 1L)
 }
 
+parse_tags <- function(txt) {
+  tag_regex <- '[$|\\W](#([a-zA-Z0-9_]{1,139}))'
+
+  # drop_n = whitespace + #
+  parse_regex(txt, regex = tag_regex, drop_n = 2L)
+}
+
 parse_regex <- function(txt, regex, drop_n = 0L) {
   matches <- stringr::str_locate_all(txt, regex)
   txt_cum_wts <- weight_by_bytes(txt)
@@ -47,6 +54,7 @@ weight_by_bytes <- function(txt) {
 parse_facets <- function(txt, auth) {
   mens <- parse_mentions(txt)
   urls <- parse_urls(txt)
+  tags <- parse_tags(txt)
 
   mens_ok <- lapply(mens, function(m_l) {
     lapply(m_l, function(m) {
@@ -87,10 +95,26 @@ parse_facets <- function(txt, auth) {
     })
   })
 
+  facet_tags <- lapply(seq_along(tags), function(i) {
+    lapply(seq_along(tags[[i]]), function(j) {
+      list(
+        index = list(
+          byteStart = tags[[i]][[j]]$start,
+          byteEnd = tags[[i]][[j]]$end
+        ),
+        features = list(list(
+          '$type' = 'app.bsky.richtext.facet#tag',
+          tag = tags[[i]][[j]]$text
+        ))
+      )
+    })
+  })
+
   lapply(seq_along(mens), function(i) {
     out <- c(
       facet_mens[[i]],
-      facet_urls[[i]]
+      facet_urls[[i]],
+      facet_tags[[i]]
     ) |>
       purrr::discard(is.null) |>
       purrr::discard(purrr::is_empty)

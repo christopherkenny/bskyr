@@ -3,6 +3,7 @@
 * Fixes a bug where posting a single image fails (#3).
 * Improves authentication experience using a local cache to avoid timeouts (#2).
 * Requires alt text in `bs_post()` to avoid issues with posting images due to accessibility settings upstream.
+* Adds support for linking for hashtags.
 
 # bskyr 0.1.2
 
