@@ -1,0 +1,250 @@
+{
+    "starterPack": {
+        "uri": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.starterpack/3lb3g5veo2z2r",
+        "cid": "bafyreibz7dddebvinkmcp4x6jh2jswxn5wjjjndezl7zgtswve5ertuati",
+        "record": {
+            "$type": "app.bsky.graph.starterpack",
+            "createdAt": "2024-11-16T17:29:49.504Z",
+            "description": "Making a differences-in-differences in the world",
+            "feeds": [
+
+            ],
+            "list": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.list/3lb3g5v7zsn2u",
+            "name": "Political Methodologists"
+        },
+        "creator": {
+            "did": "did:plc:wpe35pganb6d4pg4ekmfy6u5",
+            "handle": "chriskenny.bsky.social",
+            "displayName": "Chris Kenny",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:wpe35pganb6d4pg4ekmfy6u5/bafkreibbgv73dk7lk4qrij5xm7vri3m6hfgfxqylxbal6yau7ssieqav3a@jpeg",
+            "associated": {
+                "chat": {
+                    "allowIncoming": "following"
+                }
+            },
+            "viewer": {
+                "muted": false,
+                "blockedBy": false,
+                "following": "at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.follow/3kchl2waql32f",
+                "followedBy": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kchl2sce7p2i"
+            },
+            "labels": [
+
+            ],
+            "createdAt": "2023-09-19T15:47:01.417Z"
+        },
+        "joinedAllTimeCount": 0,
+        "joinedWeekCount": 0,
+        "labels": [
+
+        ],
+        "indexedAt": "2024-11-16T17:29:48.031Z",
+        "feeds": [
+
+        ],
+        "list": {
+            "uri": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.list/3lb3g5v7zsn2u",
+            "cid": "bafyreifdusl64pk6zhii7gm3hsddkr7ak7utork4oc3itjkcjfybukvfuy",
+            "name": "Political Methodologists",
+            "purpose": "app.bsky.graph.defs#referencelist",
+            "listItemCount": 9,
+            "indexedAt": "2024-11-16T17:29:47.814Z",
+            "labels": [
+
+            ],
+            "viewer": {
+                "muted": false
+            }
+        },
+        "listItemsSample": [
+            {
+                "uri": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcghy27",
+                "subject": {
+                    "did": "did:plc:7lfvbapvw5exazsv7hlzvzgh",
+                    "handle": "jatucker.bsky.social",
+                    "displayName": "Joshua Tucker",
+                    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7lfvbapvw5exazsv7hlzvzgh/bafkreiho2lb4vvqokhsorhdlxn5eadr3ztzjgefzvli5d6g3qadsnq5wem@jpeg",
+                    "viewer": {
+                        "muted": false,
+                        "blockedBy": false
+                    },
+                    "labels": [
+
+                    ],
+                    "createdAt": "2023-05-05T13:07:59.280Z",
+                    "description": "Politics Prof, NYU; Director @NYUJordanCenter for Adv Study of #Russia; Co-Director NYU Center for Social Media and Politics @CSMaP_NYU (http://csmapnyu.org); long suffering NY Mets fan; @j_a_tucker on other platforms; he/him",
+                    "indexedAt": "2024-11-19T14:17:14.139Z"
+                }
+            },
+            {
+                "uri": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcght27",
+                "subject": {
+                    "did": "did:plc:t4vn5ha3pp6nmaqwyszhmmub",
+                    "handle": "mattblackwell.bsky.social",
+                    "displayName": "Matt Blackwell",
+                    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:t4vn5ha3pp6nmaqwyszhmmub/bafkreigcr462eqyxwnayruu5a7bovpaxo3ompve77wxmdjhteot4pfqtiq@jpeg",
+                    "viewer": {
+                        "muted": false,
+                        "blockedBy": false
+                    },
+                    "labels": [
+
+                    ],
+                    "createdAt": "2023-07-06T20:41:16.662Z",
+                    "description": "Data, statistics, politics, Harvard\nhttps://mattblackwell.org",
+                    "indexedAt": "2024-11-20T14:42:08.005Z"
+                }
+            },
+            {
+                "uri": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcghx27",
+                "subject": {
+                    "did": "did:plc:xdfzimryz2e5kkczbbuaex5t",
+                    "handle": "aecoppock.bsky.social",
+                    "displayName": "Alex Coppock",
+                    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:xdfzimryz2e5kkczbbuaex5t/bafkreigops4hcdoa3ye5rtiqmaqlpda446zumizoj4sqfklqvvrniv7khm@jpeg",
+                    "associated": {
+                        "chat": {
+                            "allowIncoming": "following"
+                        }
+                    },
+                    "viewer": {
+                        "muted": false,
+                        "blockedBy": false
+                    },
+                    "labels": [
+
+                    ],
+                    "createdAt": "2023-08-11T20:04:56.978Z",
+                    "description": "Associate Professor (on term) of Political Science at Yale University\nalexandercoppock.com\nPersuasion in Parallel: https://alexandercoppock.com/coppock_2023.html\nResearch Design: Declaration, Diagnosis, and Redesign: book.declaredesign.org",
+                    "indexedAt": "2024-01-25T23:52:56.387Z"
+                }
+            },
+            {
+                "uri": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcghv27",
+                "subject": {
+                    "did": "did:plc:4klvcjju2m7msicq6kw7i7d6",
+                    "handle": "joshmccrain.bsky.social",
+                    "displayName": "Josh McCrain",
+                    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:4klvcjju2m7msicq6kw7i7d6/bafkreih24rbqmtbzdob7cuhdn777n243667epqjzhejj5uwtqclqxgg5z4@jpeg",
+                    "associated": {
+                        "chat": {
+                            "allowIncoming": "following"
+                        }
+                    },
+                    "viewer": {
+                        "muted": false,
+                        "blockedBy": false
+                    },
+                    "labels": [
+
+                    ],
+                    "createdAt": "2023-08-18T16:23:48.627Z",
+                    "description": "Political scientist at the University of Utah. Public policy, political institutions, media and politics",
+                    "indexedAt": "2024-11-11T18:19:46.716Z"
+                }
+            },
+            {
+                "uri": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcghs27",
+                "subject": {
+                    "did": "did:plc:2kiosyjwaoqssjslptbyux33",
+                    "handle": "melodyyhuang.bsky.social",
+                    "displayName": "Melody Huang",
+                    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2kiosyjwaoqssjslptbyux33/bafkreibdrq7dtzo5tueppqbgzqu623z6esdagdxuslzhudzxxg2vhav6dm@jpeg",
+                    "viewer": {
+                        "muted": false,
+                        "blockedBy": false
+                    },
+                    "labels": [
+
+                    ],
+                    "createdAt": "2023-09-20T02:45:26.725Z",
+                    "description": "Currently @ Yale, working on causal inference & cutting down on caffeine.\n\nWebsite: melodyyhuang.com",
+                    "indexedAt": "2024-11-17T06:50:12.871Z"
+                }
+            },
+            {
+                "uri": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcghz27",
+                "subject": {
+                    "did": "did:plc:sb44cn2k6svr7ldtle4bgpxa",
+                    "handle": "shirokuriwaki.bsky.social",
+                    "displayName": "Shiro Kuriwaki",
+                    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:sb44cn2k6svr7ldtle4bgpxa/bafkreiduj4gcfm3eilzi5fxcnplgzajt4te6cnqhm6a56dkccs6yaxq5sm@jpeg",
+                    "viewer": {
+                        "muted": false,
+                        "blockedBy": false
+                    },
+                    "labels": [
+
+                    ],
+                    "createdAt": "2023-07-13T19:08:37.034Z",
+                    "description": "Assistant Professor of Political Science, Yale University. I study elections and representation, American Politics, and applied statistics. \n\nwww.shirokuriwaki.com",
+                    "indexedAt": "2024-01-26T00:51:15.101Z"
+                }
+            },
+            {
+                "uri": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcghr27",
+                "subject": {
+                    "did": "did:plc:wpe35pganb6d4pg4ekmfy6u5",
+                    "handle": "chriskenny.bsky.social",
+                    "displayName": "Chris Kenny",
+                    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:wpe35pganb6d4pg4ekmfy6u5/bafkreibbgv73dk7lk4qrij5xm7vri3m6hfgfxqylxbal6yau7ssieqav3a@jpeg",
+                    "associated": {
+                        "chat": {
+                            "allowIncoming": "following"
+                        }
+                    },
+                    "viewer": {
+                        "muted": false,
+                        "blockedBy": false,
+                        "following": "at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.follow/3kchl2waql32f",
+                        "followedBy": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kchl2sce7p2i"
+                    },
+                    "labels": [
+
+                    ],
+                    "createdAt": "2023-09-19T15:47:01.417Z",
+                    "description": "PhD Candidate in Government @Harvard. Studies redistricting in #rstats.\nhttps://christophertkenny.com/",
+                    "indexedAt": "2024-01-26T01:34:48.670Z"
+                }
+            },
+            {
+                "uri": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcghu27",
+                "subject": {
+                    "did": "did:plc:dnsx4seefot4j3p7u6yifyx6",
+                    "handle": "corymccartan.com",
+                    "displayName": "Cory McCartan",
+                    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:dnsx4seefot4j3p7u6yifyx6/bafkreighkqufxvtp5ap5d7ujgkuxtetbc2yxxt6mnfx3faneolq5547b2y@jpeg",
+                    "viewer": {
+                        "muted": false,
+                        "blockedBy": false
+                    },
+                    "labels": [
+
+                    ],
+                    "createdAt": "2023-09-21T19:02:29.948Z",
+                    "description": "Asst. Prof. of Statistics at Penn State. I study stats methods, gerrymandering, & elections. Bayesian. Founder of UGSDW and proud alum of HGSU-UAW L. 5118.\ncorymccartan.com",
+                    "indexedAt": "2024-11-12T02:39:12.747Z"
+                }
+            },
+            {
+                "uri": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcghw27",
+                "subject": {
+                    "did": "did:plc:33jvt2o2j3p67dv7dta5jy7k",
+                    "handle": "jerzakconnor.bsky.social",
+                    "displayName": "Connor T. Jerzak",
+                    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:33jvt2o2j3p67dv7dta5jy7k/bafkreic2daybcr26576mg7bps6sjn7ai5w2d23zrumtfhb3ekhm4uhtjgm@jpeg",
+                    "viewer": {
+                        "muted": false,
+                        "blockedBy": false
+                    },
+                    "labels": [
+
+                    ],
+                    "createdAt": "2023-10-03T20:58:11.289Z",
+                    "description": "Asst Prof @UTAustin;\nCausality, AI, earth obs→ t.ly/_Ktgd t.ly/8EIxd;\nSubstantive work→ bit.ly/dcomp t.ly/3vFXs t.ly/-LyJ2;\nOpen source→ github.com/cjerzak; ConnorJerzak.com ",
+                    "indexedAt": "2024-01-26T02:04:28.433Z"
+                }
+            }
+        ]
+    }
+}
