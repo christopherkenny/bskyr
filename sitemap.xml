@@ -13,6 +13,7 @@
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_delete_record.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_describe_repo.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_get_actor_lists.html</loc></url>
+<url><loc>http://christophertkenny.com/bskyr/reference/bs_get_actor_starter_packs.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_get_actor_suggestions.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_get_author_feed.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_get_blocked_lists.html</loc></url>
@@ -37,6 +38,8 @@
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_get_profile.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_get_record.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_get_reposts.html</loc></url>
+<url><loc>http://christophertkenny.com/bskyr/reference/bs_get_starter_pack.html</loc></url>
+<url><loc>http://christophertkenny.com/bskyr/reference/bs_get_starter_packs.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_get_timeline.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_like.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_list_records.html</loc></url>
