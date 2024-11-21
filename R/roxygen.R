@@ -93,3 +93,11 @@ template_var_post <- function() { # nocov start
 template_var_record <- function() { # nocov start
   'List, length 1. Description of a record.'
 } # nocov end
+
+template_var_starter_pack <- function() { # nocov start
+  'Character vector, length 1. URI of starter pack to get.'
+} # nocov end
+
+template_var_starter_packs <- function() { # nocov start
+  'Character vector. Vector of URIs of starter packs to get.'
+} # nocov end

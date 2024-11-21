@@ -1,3 +1,10 @@
+# bskyr 0.2.0
+
+* Adds support for starter packs
+  * `bs_get_actor_starter_packs()` retrieves a list of starter packs for a specific actor.
+  * `bs_get_starter_pack()` retrieves a specific starter pack.
+  * `bs_get_starter_packs()` retrieves a list of starter packs.
+
 # bskyr 0.1.3
 
 * Fixes a bug where posting a single image fails (#3).
