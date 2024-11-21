@@ -36,7 +36,7 @@ We also need to authenticate you as a user.
 To do that, we can use the `bs_auth()` function, which communicates with Bluesky Social, creating a list of details usable to later functions.
 
 ```{r}
-auth <- bs_auth()
+auth <- bs_auth(user = bs_get_user(), pass = bs_get_pass())
 ```
 
 Alternatively, each function can authenticate you on its own, but this can result in timeouts from the API.
