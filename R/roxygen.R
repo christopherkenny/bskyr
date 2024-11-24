@@ -74,6 +74,10 @@ template_var_blob <- function() { # nocov start
   'Character, files to upload to a repo.'
 } # nocov end
 
+template_var_video <- function() { # nocov start
+  'Character, videos to upload to a repo.'
+} # nocov end
+
 template_var_repo <- function() { # nocov start
   'Character, length 1. The handle or DID of the repo.'
 } # nocov end
