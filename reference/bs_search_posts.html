@@ -44,6 +44,15 @@
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">bs_search_posts</span><span class="op">(</span></span>
 <span>  <span class="va">query</span>,</span>
+<span>  sort <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  since <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  until <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  mentions <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  author <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  lang <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  domain <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  url <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  tag <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  cursor <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  limit <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  user <span class="op">=</span> <span class="fu"><a href="user.html">get_bluesky_user</a></span><span class="op">(</span><span class="op">)</span>,</span>
@@ -58,7 +67,43 @@
 
 
 <dl><dt id="arg-query">query<a class="anchor" aria-label="anchor" href="#arg-query"></a></dt>
-<dd><p>character. search query, Lucene query syntax is recommended.</p></dd>
+<dd><p>character. Search query, Lucene query syntax is recommended.</p></dd>
+
+
+<dt id="arg-sort">sort<a class="anchor" aria-label="anchor" href="#arg-sort"></a></dt>
+<dd><p>character. Order or results. Either <code>'top'</code> or <code>'latest'</code></p></dd>
+
+
+<dt id="arg-since">since<a class="anchor" aria-label="anchor" href="#arg-since"></a></dt>
+<dd><p>character. Filter results for posts on or after the indicated datetime or ISO date (YYYY-MM-DD).</p></dd>
+
+
+<dt id="arg-until">until<a class="anchor" aria-label="anchor" href="#arg-until"></a></dt>
+<dd><p>character. Filter results for posts before the indicated datetime or ISO date (YYYY-MM-DD).</p></dd>
+
+
+<dt id="arg-mentions">mentions<a class="anchor" aria-label="anchor" href="#arg-mentions"></a></dt>
+<dd><p>character. Filter to posts which mention the given account.</p></dd>
+
+
+<dt id="arg-author">author<a class="anchor" aria-label="anchor" href="#arg-author"></a></dt>
+<dd><p>character. Filter to posts by the given account.</p></dd>
+
+
+<dt id="arg-lang">lang<a class="anchor" aria-label="anchor" href="#arg-lang"></a></dt>
+<dd><p>character. Filter to posts in the given language.</p></dd>
+
+
+<dt id="arg-domain">domain<a class="anchor" aria-label="anchor" href="#arg-domain"></a></dt>
+<dd><p>character. Filter to posts with URLs (facet links or embeds) linking to the given domain (hostname). Server may apply hostname normalization.</p></dd>
+
+
+<dt id="arg-url">url<a class="anchor" aria-label="anchor" href="#arg-url"></a></dt>
+<dd><p>character. Filter to posts with links (facet links or embeds) pointing to this URL. Server may apply URL normalization or fuzzy matching.</p></dd>
+
+
+<dt id="arg-tag">tag<a class="anchor" aria-label="anchor" href="#arg-tag"></a></dt>
+<dd><p>character. Filter to posts with the given tag (hashtag), based on rich-text facet or tag field. Do not include the hash (#) prefix. Multiple tags can be specified, with 'AND' matching.</p></dd>
 
 
 <dt id="arg-cursor">cursor<a class="anchor" aria-label="anchor" href="#arg-cursor"></a></dt>
