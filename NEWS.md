@@ -1,9 +1,10 @@
 # bskyr 0.2.0
 
-* Adds support for starter packs
+* Adds support for starter packs (#7)
   * `bs_get_actor_starter_packs()` retrieves a list of starter packs for a specific actor.
   * `bs_get_starter_pack()` retrieves a specific starter pack.
   * `bs_get_starter_packs()` retrieves a list of starter packs.
+* Adds support for additional search parameters in `bs_search_posts()` (#6)
 
 # bskyr 0.1.3
 

@@ -1,6 +1,15 @@
 #' Find posts matching search criteria
 #'
-#' @param query character. search query, Lucene query syntax is recommended.
+#' @param query character. Search query, Lucene query syntax is recommended.
+#' @param sort character. Order or results. Either `'top'` or `'latest'`
+#' @param since character. Filter results for posts on or after the indicated datetime or ISO date (YYYY-MM-DD).
+#' @param until character. Filter results for posts before the indicated datetime or ISO date (YYYY-MM-DD).
+#' @param mentions character. Filter to posts which mention the given account.
+#' @param author character. Filter to posts by the given account.
+#' @param lang character. Filter to posts in the given language.
+#' @param domain character. Filter to posts with URLs (facet links or embeds) linking to the given domain (hostname). Server may apply hostname normalization.
+#' @param url character. Filter to posts with links (facet links or embeds) pointing to this URL. Server may apply URL normalization or fuzzy matching.
+#' @param tag character. Filter to posts with the given tag (hashtag), based on rich-text facet or tag field. Do not include the hash (#) prefix. Multiple tags can be specified, with 'AND' matching.
 #' @param cursor `r template_var_cursor()`
 #' @param limit `r template_var_limit(100)`
 #' @param user `r template_var_user()`
@@ -11,7 +20,7 @@
 #' @concept feed
 #'
 #' @section Lexicon references:
-#' [feed/searchPosts.json (2023-12-13)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/searchPosts.json)
+#' [feed/searchPosts.json (2024-11-25)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/searchPosts.json)
 #'
 #' @section Function introduced:
 #' `v0.1.1` (2023-12-13)
@@ -21,7 +30,12 @@
 #'
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
 #' bs_search_posts('redistricting')
-bs_search_posts <- function(query, cursor = NULL, limit = NULL,
+#' bs_search_posts('ggplot2', tag = 'rstats', sort = 'latest')
+bs_search_posts <- function(query,
+                            sort = NULL, since = NULL, until = NULL, mentions = NULL,
+                            author = NULL, lang = NULL, domain = NULL, url = NULL,
+                            tag = NULL,
+                            cursor = NULL, limit = NULL,
                             user = get_bluesky_user(), pass = get_bluesky_pass(),
                             auth = bs_auth(user, pass), clean = TRUE) {
   if (!is.null(limit)) {
@@ -36,7 +50,18 @@ bs_search_posts <- function(query, cursor = NULL, limit = NULL,
   }
 
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.searchPosts') |>
-    httr2::req_url_query(q = query) |>
+    httr2::req_url_query(
+      q = query,
+      sort = sort,
+      since = since,
+      until = until,
+      mentions = mentions,
+      author = author,
+      lang = lang,
+      domain = domain,
+      url = url,
+      tag = tag
+      ) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(
       limit = limit
