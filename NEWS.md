@@ -5,6 +5,9 @@
   * `bs_get_starter_pack()` retrieves a specific starter pack.
   * `bs_get_starter_packs()` retrieves a list of starter packs.
 * Adds support for additional search parameters in `bs_search_posts()` (#6)
+* Improves list functionality
+  * `bs_get_actor_lists()` retrieves all lists made by an actor
+  * `bs_get_list()` retrieves a view of a list
 
 # bskyr 0.1.3
 

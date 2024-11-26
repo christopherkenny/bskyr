@@ -105,3 +105,7 @@ template_var_starter_pack <- function() { # nocov start
 template_var_starter_packs <- function() { # nocov start
   'Character vector. Vector of URIs of starter packs to get.'
 } # nocov end
+
+template_var_list <- function() { # nocov start
+  'Character vector, length 1. Reference of the list record to get.'
+} # nocov end

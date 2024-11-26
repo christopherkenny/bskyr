@@ -1,6 +1,6 @@
-#' Get a view of a list
+#' Get the lists created by an actor
 #'
-#' @param list `r template_var_list()`
+#' @param actor `r template_var_actor()`
 #' @param limit `r template_var_limit(100)`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
@@ -9,26 +9,27 @@
 #'
 #' @concept graph
 #'
-#' @return a [tibble::tibble] of lists
+#' @return a [tibble::tibble] of actors
 #' @export
 #'
 #' @section Lexicon references:
-#' [graph/getList.json (2024-11-25)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/getList.json)
+#' [graph/getLists.json (2023-11-25)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/getLists.json)
 #'
 #' @section Function introduced:
-#' `v0.2.0` (2024-11-25)
+#' `v0.2.0` (2023-11-25)
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
-#' bs_get_list('at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.list/3kmokjyuflk2g')
-bs_get_list <- function(list, limit = NULL,
+#' bs_get_actor_lists('chriskenny.bsky.social')
+#' bs_get_actor_lists('pfrazee.com')
+bs_get_actor_lists <- function(actor, limit = NULL,
                         user = get_bluesky_user(), pass = get_bluesky_pass(),
                         auth = bs_auth(user, pass), clean = TRUE) {
 
-  if (missing(list)) {
-    cli::cli_abort('{.arg list} must list at least one user.')
+  if (missing(actor)) {
+    cli::cli_abort('{.arg actor} must list at least one user.')
   }
-  if (!is.character(list)) {
-    cli::cli_abort('{.arg list} must be a character vector.')
+  if (!is.character(actor)) {
+    cli::cli_abort('{.arg actor} must be a character vector.')
   }
 
   if (!is.null(limit)) {
@@ -40,8 +41,8 @@ bs_get_list <- function(list, limit = NULL,
     limit <- min(limit, 100L)
   }
 
-  req <- httr2::request('https://bsky.social/xrpc/app.bsky.graph.getList') |>
-    httr2::req_url_query(list = list) |>
+  req <- httr2::request('https://bsky.social/xrpc/app.bsky.graph.getLists') |>
+    httr2::req_url_query(actor = actor) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(
       limit = limit
@@ -54,16 +55,8 @@ bs_get_list <- function(list, limit = NULL,
      return(resp)
    }
 
-  dplyr::bind_cols(
     resp |>
-      purrr::pluck('items') |>
-      list_hoist() |>
-      clean_names(),
-    resp |>
-      purrr::pluck('list') |>
-      widen() |>
-      clean_names() |>
-      dplyr::rename_with(.fn = function(x) paste0('list_', x))
-  ) |>
-    clean_names()
+      purrr::pluck('lists') |>
+      proc() |>
+      clean_names()
 }

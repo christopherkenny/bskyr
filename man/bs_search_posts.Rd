@@ -64,7 +64,7 @@ Find posts matching search criteria
 }
 \section{Lexicon references}{
 
-\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/searchPosts.json}{feed/searchPosts.json (2023-12-13)}
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/searchPosts.json}{feed/searchPosts.json (2024-11-25)}
 }
 
 \section{Function introduced}{
@@ -75,6 +75,7 @@ Find posts matching search criteria
 \examples{
 \dontshow{if (has_bluesky_pass() & has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 bs_search_posts('redistricting')
+bs_search_posts('ggplot2', tag = 'rstats', sort = 'latest')
 \dontshow{\}) # examplesIf}
 }
 \concept{feed}
