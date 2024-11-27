@@ -12,13 +12,15 @@
 #' @export
 #'
 #' @section Lexicon references:
-#' [graph/getStarterPack.jsonn (2024-11-20)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/getStarterPack.json)
+#' [graph/getStarterPack.json (2024-11-20)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/getStarterPack.json)
 #'
 #' @section Function introduced:
 #' `v0.2.0` (2024-11-20)
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
-#' bs_get_starter_pack('at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.starterpack/3lb3g5veo2z2r')
+#' bs_get_starter_pack(
+#'   'at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.starterpack/3lb3g5veo2z2r'
+#' )
 bs_get_starter_pack <- function(starter_pack,
                                 user = get_bluesky_user(), pass = get_bluesky_pass(),
                                 auth = bs_auth(user, pass), clean = TRUE) {

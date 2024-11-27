@@ -21,6 +21,8 @@
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_actor_lists('profmusgrave.bsky.social')
+#' bs_get_actor_lists('chriskenny.bsky.social')
+#' bs_get_actor_lists('pfrazee.com')
 bs_get_actor_lists <- function(actor, cursor = NULL, limit = NULL,
                                user = get_bluesky_user(), pass = get_bluesky_pass(),
                                auth = bs_auth(user, pass), clean = TRUE) {
