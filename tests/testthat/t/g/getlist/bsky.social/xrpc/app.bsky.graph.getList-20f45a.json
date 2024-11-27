@@ -1,0 +1,202 @@
+{
+    "list": {
+        "uri": "at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.list/3kmokjyuflk2g",
+        "cid": "bafyreiabh7fm53pnuda5zx42hhcjpdjgs7emhky25bt6fwx7xui2ob5n5u",
+        "name": "Software curate",
+        "purpose": "app.bsky.graph.defs#curatelist",
+        "listItemCount": 10,
+        "indexedAt": "2024-03-02T02:19:39.522Z",
+        "labels": [
+
+        ],
+        "viewer": {
+            "muted": false
+        },
+        "creator": {
+            "did": "did:plc:ragtjsm2j2vknwkz3zp4oxrd",
+            "handle": "pfrazee.com",
+            "displayName": "Paul Frazee",
+            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:ragtjsm2j2vknwkz3zp4oxrd/bafkreihhpqdyntku66himwor5wlhtdo44hllmngj2ofmbqnm25bdm454wq@jpeg",
+            "associated": {
+                "chat": {
+                    "allowIncoming": "following"
+                }
+            },
+            "viewer": {
+                "muted": false,
+                "blockedBy": false
+            },
+            "labels": [
+
+            ],
+            "createdAt": "2022-11-17T00:35:16.391Z",
+            "description": "Developer at Bluesky.",
+            "indexedAt": "2024-11-01T15:45:37.716Z"
+        },
+        "description": ""
+    },
+    "items": [
+        {
+            "uri": "at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.listitem/3kmt5wplju42f",
+            "subject": {
+                "did": "did:plc:4n25brjkwzbendwixetcrayj",
+                "handle": "farjanaeyasmin.bsky.social",
+                "displayName": "Farjana Eyasmin",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:4n25brjkwzbendwixetcrayj/bafkreihxigaasltvhzxkzyvozldtj6ua3f5l77yyqsm3xlhv2xwnhxb4oq@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+                    {
+                        "cts": "2024-03-11T20:30:22.831Z",
+                        "neg": false,
+                        "src": "did:plc:ar7c4by46qjdydhdevvrndac",
+                        "uri": "did:plc:4n25brjkwzbendwixetcrayj",
+                        "val": "scam",
+                        "ver": 1
+                    }
+                ],
+                "createdAt": "2024-03-03T16:06:21.660Z",
+                "description": "I'm an Affiliate Marketer. I'm with inter institute, JvZoo, WarriorPlus as an Affiliate.",
+                "indexedAt": "2024-03-03T16:09:56.808Z"
+            }
+        },
+        {
+            "uri": "at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.listitem/3kmom6aiybs2o",
+            "subject": {
+                "did": "did:plc:7fjae5aawatnt5e4hyldxsyn",
+                "handle": "abhiksi.bsky.social",
+                "displayName": "",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ],
+                "createdAt": "2024-02-21T05:16:38.330Z",
+                "indexedAt": "2024-06-04T04:40:30.411Z"
+            }
+        },
+        {
+            "uri": "at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.listitem/3kmom57qjjd2f",
+            "subject": {
+                "did": "did:plc:zxmhzvoiaulbteympusrbn5a",
+                "handle": "denisrasulev.bsky.social",
+                "displayName": "Denis Rasulev",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:zxmhzvoiaulbteympusrbn5a/bafkreidibe5cv6kkxyi3432a57rvog332lfdi7ahdum2e2mdhlojtbenje@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ],
+                "createdAt": "2024-02-08T08:00:27.335Z",
+                "description": "30 years in sales, building B2B teams and processes for startups and corporations. Hobbies: Exploring Life & Data, Python, reading, travel.",
+                "indexedAt": "2024-02-08T09:11:07.341Z"
+            }
+        },
+        {
+            "uri": "at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.listitem/3kmom4vsgsd2u",
+            "subject": {
+                "did": "did:plc:tpveiks2to7tjacjzbjodaac",
+                "handle": "gilzilberfeld.bsky.social",
+                "displayName": "Gil Zilberfeld",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:tpveiks2to7tjacjzbjodaac/bafkreieqoppbw3nto2sd64u5eukk4gd3l2pft6ny5npi4csc3apnchcvc4@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ],
+                "createdAt": "2023-08-20T11:02:20.704Z",
+                "description": "Software development and testing, author, speaker ",
+                "indexedAt": "2024-08-17T14:27:41.521Z"
+            }
+        },
+        {
+            "uri": "at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.listitem/3kmokkqartt2f",
+            "subject": {
+                "did": "did:plc:l3ye73neiydhv3myt4fulovf",
+                "handle": "oldergeeks.bsky.social",
+                "displayName": "OlderGeeks.com",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:l3ye73neiydhv3myt4fulovf/bafkreib4mb4qvquus3zejg5ngzdmjb2a5psmk2jra5gwgxvujiue4zn6a4@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ],
+                "createdAt": "2023-09-20T17:26:12.575Z",
+                "description": "OlderGeeks.com is the popular free software download site as featured on tech sites from around the world. - Randy & Deanna (The Older Geeks)",
+                "indexedAt": "2024-11-14T19:40:25.866Z"
+            }
+        },
+        {
+            "uri": "at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.listitem/3kmokklypds2d",
+            "subject": {
+                "did": "did:plc:wpat2debldpjhbwuhzvso3sb",
+                "handle": "freesoftwarehub.bsky.social",
+                "displayName": "Free Software Hub",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:wpat2debldpjhbwuhzvso3sb/bafkreic6wsv4h4t26jzx3sk7eienwtfhbstzjs7pmi5t4czzeg4qyvg4kq@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ],
+                "createdAt": "2024-02-27T20:15:38.323Z",
+                "description": "You can download latest all kinds of software's free ",
+                "indexedAt": "2024-02-27T20:18:23.008Z"
+            }
+        },
+        {
+            "uri": "at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.listitem/3kmokkjrovf22",
+            "subject": {
+                "did": "did:plc:n72kkqngi5s3r4aketewpme2",
+                "handle": "powerpage.org",
+                "displayName": "O'Grady's PowerPage⚡️",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:n72kkqngi5s3r4aketewpme2/bafkreigt6e4kfcymmawhq3x5rrdnlpprmgiahouohyzolk5ex7avlppdua@jpeg",
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ],
+                "createdAt": "2023-05-12T22:18:57.563Z",
+                "description": "[www.PowerPage.org] The original Apple blog, publishing daily technology news, speculation, and innuendo, since before it was cool. Founded in 1995 by @ogrady.ai.",
+                "indexedAt": "2024-01-26T00:57:37.630Z"
+            }
+        },
+        {
+            "uri": "at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.listitem/3kmokkh4kbg2j",
+            "subject": {
+                "did": "did:plc:a6vnwdqjgy3dftteko5gsjbz",
+                "handle": "opusminus.bsky.social",
+                "displayName": "Scootercogs",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:a6vnwdqjgy3dftteko5gsjbz/bafkreiesk7knflyylhyuwuuj2llcngbuxs7msyxwkpq2245qfph5nomkzq@jpeg",
+                "associated": {
+                    "chat": {
+                        "allowIncoming": "following"
+                    }
+                },
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false
+                },
+                "labels": [
+
+                ],
+                "createdAt": "2023-12-05T01:52:42.118Z",
+                "description": "#Gamedev #Artists #vrartist I 'ReSky' (retweet) gamedev innovation and design ideas - lifetime designer and artist. ",
+                "indexedAt": "2024-11-26T01:05:17.208Z"
+            }
+        }
+    ]
+}
