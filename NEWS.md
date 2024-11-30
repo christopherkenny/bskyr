@@ -8,6 +8,7 @@
 * Improves list functionality
   * `bs_get_actor_lists()` retrieves all lists made by an actor
   * `bs_get_list()` retrieves a view of a list
+* Adds support for emoji in the text of posts, powered by the emoji package. (#11)
 
 # bskyr 0.1.3
 

@@ -6,15 +6,24 @@
 #' @param langs character vector of languages in BCP-47 format
 #' @param reply character vector with link to the parent post to reply to
 #' @param quote character vector with link to a post to quote
+#' @param emoji boolean. Default is `TRUE`. Should `:emoji:` style references be converted?
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
 #' @param clean `r template_var_clean()`
 #'
+#' @details
+#' `:emoji:` parsing is not a formally supported Bluesky feature. This package
+#' converts usages of this kind by identifying text within `:`s, here "`emoji`"
+#' and then matches them to the `emoji` package's list of emoji names. All
+#' supported emoji names and corresponding images can be seen with
+#' `emoji::emoji_name`. This feature was introduced in `v0.2.0`.
+#'
+#'
 #' @concept record
 #'
 #' @section Lexicon references:
-#' [feed/post.json (2023-10-02)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/post.json)
+#' [feed/post.json (2024-11-29)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/post.json)
 #' [repo/createRecord.json (2023-10-02)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/createRecord.json)
 #'
 #' @section Function introduced:
@@ -39,7 +48,11 @@
 #'   reply = 'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g',
 #'   quote = 'https://bsky.app/profile/bskyr.bsky.social/post/3kf24wd6cmb2a'
 #' )
+#'
+#' bs_post('Test quote with :emoji: and :fire: and :confetti_ball: from r package
+#'   `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)')
 bs_post <- function(text, images, images_alt, langs, reply, quote,
+                    emoji = TRUE,
                     user = get_bluesky_user(), pass = get_bluesky_pass(),
                     auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(text)) {
@@ -56,6 +69,10 @@ bs_post <- function(text, images, images_alt, langs, reply, quote,
     if (missing(images_alt)) {
       cli::cli_abort('If {.arg images} is provided, {.arg images_alt} must also be provided.')
     }
+  }
+
+  if (emoji) {
+    text <- parse_emoji(text)
   }
 
   facets_l <- parse_facets(txt = text, auth = auth)
@@ -75,8 +92,6 @@ bs_post <- function(text, images, images_alt, langs, reply, quote,
       cli::cli_abort('{.arg images_alt} must be the same length as {.arg images}.')
     }
   }
-
-
 
   post <- list(
     `$type` = 'app.bsky.feed.post',

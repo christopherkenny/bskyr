@@ -98,3 +98,34 @@ test_that('parse uri functions okay', {
     parse_uri(uri = 'abc:/')
   )
 })
+
+test_that('parse emoji functions okay', {
+  skip_if_not_installed('emoji')
+
+  expect_equal(
+    parse_emoji('Test quote with :emoji:'),
+    'Test quote with :emoji:'
+  )
+
+  expect_equal(
+    parse_emoji('Test quote with :emoji: and :fire:'),
+    'Test quote with :emoji: and 🔥'
+  )
+
+  expect_equal(
+    parse_emoji(':fire:'),
+    '🔥'
+  )
+
+  expect_equal(
+    parse_emoji('Test quote with :emoji: and :fire: and :confetti_ball:'),
+    'Test quote with :emoji: and 🔥 and 🎊'
+  )
+
+  expect_equal(
+    parse_emoji('Test quote with :emoji: and :fire: and :confetti_ball: from r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)'),
+    'Test quote with :emoji: and 🔥 and 🎊 from r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)'
+  )
+
+
+})
