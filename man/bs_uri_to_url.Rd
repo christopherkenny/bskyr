@@ -15,6 +15,11 @@ character vector of HTTPS URLs
 \description{
 Convert Universal Resource Identifiers to Hypertext Transfer Protocol Secure URLs
 }
+\section{Function introduced}{
+
+\code{v0.1.0} (2023-11-24)
+}
+
 \examples{
 bs_uri_to_url('at://did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/app.bsky.feed.post/3k7qmjev5lr2s')
 }

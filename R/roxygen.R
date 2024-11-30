@@ -42,6 +42,10 @@ template_var_uris <- function() { # nocov start
   'Character. Vector of URIs for posts to get.'
 } # nocov end
 
+template_var_url <- function() { # nocov start
+  'Character, length 1. URL for record to get.'
+} # nocov start
+
 template_var_clean <- function() { # nocov start
   'Logical. Should output be cleaned into a `tibble`? Default: `TRUE`.'
 } # nocov end
