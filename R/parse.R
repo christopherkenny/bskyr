@@ -17,7 +17,7 @@ parse_urls <- function(txt) {
 parse_tags <- function(txt) {
   # regex taken from: https://github.com/bluesky-social/atproto/blob/main/packages/api/src/rich-text/util.ts
 
-  tag_regex <- '(^|\\s)[#＃](?<tag>(?!\ufe0f)[^\\s\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]*[^\\d\\s\\p{P}\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]+[^\\s\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]*)?'
+  tag_regex <- '(^|\\s)[#\\uFF03](?<tag>(?!\\ufe0f)[^\\s\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]*[^\\d\\s\\p{P}\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]+[^\\s\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]*)?'
 
   matches <- stringi::stri_locate_all_regex(txt, tag_regex, capture_groups = TRUE, get_length = TRUE)
   lapply(seq_along(matches), function(m) {
