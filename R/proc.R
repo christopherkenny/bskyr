@@ -58,6 +58,25 @@ proc_record <- function(l) {
   })
 }
 
+proc_record2 <- function(l) {
+  tibble::tibble(
+    `$type` = purrr::pluck(l, '$type', .default = NA_character_),
+    createdAt = purrr::pluck(l, 'createdAt', .default = NA_character_),
+    langs = list(purrr::pluck(l, 'langs', .default = NULL)),
+    embed = list(purrr::pluck(l, 'embed', .default = NULL)),
+    facet = list(purrr::pluck(l, 'facet', .default = NULL)),
+    text = purrr::pluck(l, 'text', .default = NA_character_),
+  )
+}
+
+proc_embed2 <- function(l) {
+  tibble::tibble(
+    `$type` = purrr::map_chr(l, .f = function(x) purrr::pluck(x, '$type', .default = NA_character_)),
+    media = purrr::map(l, .f = function(x) purrr::pluck(x, 'media', .default = NULL)),
+    record = purrr::map(l, .f = function(x) purrr::pluck(x, 'record', .default = NULL))
+  )
+}
+
 proc_embed <- function(l) {
   lapply(l, proc)
 }
@@ -69,4 +88,22 @@ add_singletons <- function(tb, l) {
   } else {
     tb
   }
+}
+
+proc_post <- function(l) {
+  tibble::tibble(
+    uri = purrr::map_chr(l, .f = function(x) purrr::pluck(x, 'uri', .default = NA_character_)),
+    cid = purrr::map_chr(l, .f = function(x) purrr::pluck(x, 'cid', .default = NA_character_)),
+    author = purrr::map(l, .f = function(x) purrr::pluck(x, 'author', .default = NULL) |> widen()),
+    record = purrr::map(l, .f = function(x) purrr::pluck(x, 'record', .default = NULL) |> proc_record2()),
+    embed = purrr::map(l, .f = function(x) purrr::pluck(x, 'embed', .default = NULL) |> proc_embed2()),
+    replyCount = purrr::map_int(l, .f = function(x) purrr::pluck(x, 'replyCount', .default = NA_integer_)),
+    repostCount = purrr::map_int(l, .f = function(x) purrr::pluck(x, 'repostCount', .default = NA_integer_)),
+    likeCount = purrr::map_int(l, .f = function(x) purrr::pluck(x, 'likeCount', .default = NA_integer_)),
+    quoteCount = purrr::map_int(l, .f = function(x) purrr::pluck(x, 'quoteCount', .default = NA_integer_)),
+    indexedAt = purrr::map_chr(l, .f = function(x) purrr::pluck(x, 'indexedAt', .default = NA_character_)),
+    viewer = purrr::map(l, .f = function(x) purrr::pluck(x, 'viewer', .default = NULL) |> widen()),
+    labels = purrr::map(l, .f = function(x) purrr::pluck(x, 'labels', .default = NULL) |> widen())
+  ) |>
+    tidyr::unnest_wider('author', names_sep = '_')
 }
