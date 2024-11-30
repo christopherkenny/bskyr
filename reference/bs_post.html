@@ -49,6 +49,7 @@
 <span>  <span class="va">langs</span>,</span>
 <span>  <span class="va">reply</span>,</span>
 <span>  <span class="va">quote</span>,</span>
+<span>  emoji <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  user <span class="op">=</span> <span class="fu"><a href="user.html">get_bluesky_user</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  pass <span class="op">=</span> <span class="fu"><a href="pass.html">get_bluesky_pass</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  auth <span class="op">=</span> <span class="fu"><a href="bs_auth.html">bs_auth</a></span><span class="op">(</span><span class="va">user</span>, <span class="va">pass</span><span class="op">)</span>,</span>
@@ -84,6 +85,10 @@
 <dd><p>character vector with link to a post to quote</p></dd>
 
 
+<dt id="arg-emoji">emoji<a class="anchor" aria-label="anchor" href="#arg-emoji"></a></dt>
+<dd><p>boolean. Default is <code>TRUE</code>. Should <code>:emoji:</code> style references be converted?</p></dd>
+
+
 <dt id="arg-user">user<a class="anchor" aria-label="anchor" href="#arg-user"></a></dt>
 <dd><p>Character. User name to log in with. Defaults to <code><a href="user.html">get_bluesky_user()</a></code>.</p></dd>
 
@@ -105,10 +110,18 @@
     <p>a <a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble::tibble</a> of post information</p>
     </div>
     <div class="section level2">
+    <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
+    <p><code>:emoji:</code> parsing is not a formally supported Bluesky feature. This package
+converts usages of this kind by identifying text within <code>:</code>s, here "<code>emoji</code>"
+and then matches them to the <code>emoji</code> package's list of emoji names. All
+supported emoji names and corresponding images can be seen with
+<code><a href="https://emilhvitfeldt.github.io/emoji/reference/emoji_name.html" class="external-link">emoji::emoji_name</a></code>. This feature was introduced in <code>v0.2.0</code>.</p>
+    </div>
+    <div class="section level2">
     <h2 id="lexicon-references">Lexicon references<a class="anchor" aria-label="anchor" href="#lexicon-references"></a></h2>
 
 
-<p><a href="https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/post.json" class="external-link">feed/post.json (2023-10-02)</a>
+<p><a href="https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/post.json" class="external-link">feed/post.json (2024-11-29)</a>
 <a href="https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/createRecord.json" class="external-link">repo/createRecord.json (2023-10-02)</a></p>
     </div>
     <div class="section level2">
@@ -136,6 +149,9 @@
 <span class="r-in"><span>  reply <span class="op">=</span> <span class="st">'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g'</span>,</span></span>
 <span class="r-in"><span>  quote <span class="op">=</span> <span class="st">'https://bsky.app/profile/bskyr.bsky.social/post/3kf24wd6cmb2a'</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">bs_post</span><span class="op">(</span><span class="st">'Test quote with :emoji: and :fire: and :confetti_ball: from r package</span></span></span>
+<span class="r-in"><span><span class="st">  `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)'</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
