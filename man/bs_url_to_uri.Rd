@@ -32,5 +32,7 @@ Convert Hypertext Transfer Protocol Secure URLs to Universal Resource Identifier
 }
 
 \examples{
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 bs_url_to_uri('https://bsky.app/profile/chriskenny.bsky.social/post/3lc5d6zspys2c')
+\dontshow{\}) # examplesIf}
 }

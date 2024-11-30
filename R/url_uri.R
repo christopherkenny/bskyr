@@ -32,7 +32,7 @@ bs_uri_to_url <- function(uri) {
 #' @section Function introduced:
 #' `v0.2.0` (2024-11-30)
 #'
-#' @examples
+#' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_url_to_uri('https://bsky.app/profile/chriskenny.bsky.social/post/3lc5d6zspys2c')
 bs_url_to_uri <- function(url,
                           user = get_bluesky_user(), pass = get_bluesky_pass(),
