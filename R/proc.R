@@ -63,7 +63,7 @@ proc_embed <- function(l) {
 }
 
 add_singletons <- function(tb, l) {
-  r1 <- purrr::keep(l, \(x) purrr::pluck_depth(x) == 1)
+  r1 <- purrr::keep(l, function(x) purrr::pluck_depth(x) == 1)
   if (length(r1) > 0 && nrow(tb) != 0) {
     dplyr::bind_cols(tb, tibble::as_tibble_row(r1))
   } else {
