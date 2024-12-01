@@ -22,6 +22,7 @@
   * `bs_delete_list_item()` removes someone from a list
 * Adds new helper function `bs_extract_record_key()` to extract the record id or key from a URL or URI.
 * Adds support for getting relationships between users with `bs_get_relationships()`.
+* Adds support for getting quote posts for a given post with `bs_get_quotes()`.
 
 # bskyr 0.1.3
 
