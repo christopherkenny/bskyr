@@ -22,3 +22,10 @@ with_mock_dir('t/o/url2uri', {
     )
   })
 })
+
+test_that('extract record key works', {
+  expect_equal(
+    bs_extract_record_key('https://bsky.app/profile/chriskenny.bsky.social/post/3lc5d6zspys2c'),
+    '3lc5d6zspys2c'
+  )
+})
