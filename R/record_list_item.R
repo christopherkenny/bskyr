@@ -35,7 +35,7 @@ bs_new_list_item <- function(subject, uri,
     cli::cli_abort('{.arg uri} must not be missing.')
   }
 
-  if (stringr::str_ends(subject, '.social')) {
+  if (!stringr::str_starts(subject, stringr::fixed('did:'))) {
     subject <- bs_resolve_handle(subject, auth = auth)$did
   }
 

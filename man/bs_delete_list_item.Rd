@@ -19,8 +19,6 @@ bs_delete_list_item(
 \item{pass}{Character. App password to log in with. Defaults to \code{get_bluesky_pass()}.}
 
 \item{auth}{Authentication information. Defaults to \code{bs_auth(user, pass)}.}
-
-\item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
 an \code{httr2} status code

@@ -16,6 +16,7 @@ auth
 createRecord
 createSession
 datetime
+defs
 deleteRecord
 describeRepo
 getActorFeeds
@@ -38,6 +39,7 @@ getPreferences
 getProfile
 getProfiles
 getRecord
+getRelationships
 getRepostedBy
 getStarterPack
 getStarterPacks
@@ -49,6 +51,7 @@ getUnreadCount
 hostname
 json
 listNotifications
+listitem
 repo
 reposted
 reposts

@@ -4,7 +4,6 @@
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
-#' @param clean `r template_var_clean()`
 #'
 #' @concept repo
 #'
@@ -37,7 +36,6 @@ bs_delete_list <- function(rkey,
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
-#' @param clean `r template_var_clean()`
 #'
 #' @concept repo
 #'
