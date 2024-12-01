@@ -52,3 +52,19 @@ bs_url_to_uri <- function(url,
     'at://', handle_as_id$did, '/', 'app.bsky.', type, '/', rid
   )
 }
+
+
+
+#' Extract Record Key from a link
+#'
+#' @param url `r template_var_url()`
+#'
+#' @return character vector of record keys
+#' @export
+#'
+#' @examples
+#' bs_extract_record_key('https://bsky.app/profile/chriskenny.bsky.social/post/3lc5d6zspys2c')
+bs_extract_record_key <- function(url) {
+  dplyr::last(stringr::str_split(url, pattern = '/')[[1]])
+}
+

@@ -31,7 +31,7 @@ Delete a list
 \section{Lexicon references}{
 
 \href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/list.json}{graph/list.json (2024-12-01)}
-\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json}{repo/deleteRecord.json (2023-11-25)}
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json}{repo/deleteRecord.json (2024-12-01)}
 }
 
 \section{Function introduced}{
@@ -42,7 +42,7 @@ Delete a list
 \examples{
 \dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 lst <- bs_new_list(name = 'test list bskyr', purpose = 'curatelist')
-bs_delete_list(stringr::str_split_i(lst$uri, pattern = '/', 5))
+bs_delete_list(bs_extract_record_key(lst$uri))
 \dontshow{\}) # examplesIf}
 }
 \concept{repo}

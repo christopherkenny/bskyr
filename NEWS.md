@@ -20,6 +20,7 @@
   * `bs_delete_list()` deletes a list
   * `bs_new_list_item()` adds someone to a list 
   * `bs_delete_list_item()` removes someone from a list
+* Adds new helper function to extract the record id or key from a URL or URI.
 
 # bskyr 0.1.3
 

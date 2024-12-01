@@ -13,14 +13,14 @@
 #'
 #' @section Lexicon references:
 #' [graph/list.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/list.json)
-#' [repo/deleteRecord.json (2023-11-25)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json)
+#' [repo/deleteRecord.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json)
 #'
 #' @section Function introduced:
 #' `v0.2.0` (2024-12-01)
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' lst <- bs_new_list(name = 'test list bskyr', purpose = 'curatelist')
-#' bs_delete_list(stringr::str_split_i(lst$uri, pattern = '/', 5))
+#' bs_delete_list(bs_extract_record_key(lst$uri))
 bs_delete_list <- function(rkey,
                         user = get_bluesky_user(), pass = get_bluesky_pass(),
                         auth = bs_auth(user, pass)) {
@@ -46,7 +46,7 @@ bs_delete_list <- function(rkey,
 #'
 #' @section Lexicon references:
 #' [graph/listitem.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/list.json)
-#' [repo/deleteRecord.json (2023-11-25)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json)
+#' [repo/deleteRecord.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json)
 #'
 #' @section Function introduced:
 #' `v0.2.0` (2024-12-01)
@@ -54,8 +54,8 @@ bs_delete_list <- function(rkey,
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' lst <- bs_new_list(name = 'test list bskyr', purpose = 'curatelist')
 #' itm <- bs_new_list_item(subject = 'bskyr.bsky.social', uri = lst$uri)
-#' bs_delete_list_item(stringr::str_split_i(itm$uri, pattern = '/', 5))
-#' bs_delete_list(stringr::str_split_i(lst$uri, pattern = '/', 5))
+#' bs_delete_list_item(bs_extract_record_key(itm$uri))
+#' bs_delete_list(bs_extract_record_key(lst$uri))
 bs_delete_list_item <- function(rkey,
                            user = get_bluesky_user(), pass = get_bluesky_pass(),
                            auth = bs_auth(user, pass)) {

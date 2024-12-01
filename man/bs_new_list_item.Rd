@@ -44,9 +44,11 @@ Add a subject to a list
 }
 
 \examples{
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 lst <- bs_new_list(name = 'test list listitem bskyr', purpose = 'curatelist')
 bs_new_list_item(subject = 'chriskenny.bsky.social', uri = lst$uri)
 # see the list item
 bs_get_list(lst$uri)
+\dontshow{\}) # examplesIf}
 }
 \concept{record}

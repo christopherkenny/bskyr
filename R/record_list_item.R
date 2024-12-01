@@ -19,7 +19,7 @@
 #' @section Function introduced:
 #' `v0.2.0` (2024-12-01)
 #'
-#' @examples
+#' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' lst <- bs_new_list(name = 'test list listitem bskyr', purpose = 'curatelist')
 #' bs_new_list_item(subject = 'chriskenny.bsky.social', uri = lst$uri)
 #' # see the list item

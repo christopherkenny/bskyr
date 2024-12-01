@@ -32,7 +32,7 @@
 #' rec <- bs_create_record(collection = 'app.bsky.feed.like', record = like)
 #' bs_delete_record(
 #'   collection = 'app.bsky.feed.like',
-#'   rkey = stringr::str_split_i(rec$uri, '/', i = 5)
+#'   rkey = bs_extract_record_key(rec$uri)
 #' )
 bs_delete_record <- function(collection, rkey,
                              user = get_bluesky_user(), pass = get_bluesky_pass(),
