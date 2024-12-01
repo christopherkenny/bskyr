@@ -24,7 +24,7 @@ bs_search_posts(
 )
 }
 \arguments{
-\item{query}{character. Search query, Lucene query syntax is recommended.}
+\item{query}{Character vector, length 1. character. Search query, Lucene query syntax is recommended.}
 
 \item{sort}{character. Order or results. Either \code{'top'} or \code{'latest'}}
 

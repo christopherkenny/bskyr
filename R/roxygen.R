@@ -113,3 +113,7 @@ template_var_starter_packs <- function() { # nocov start
 template_var_list <- function() { # nocov start
   'Character vector, length 1. Reference of the list record to get.'
 } # nocov end
+
+template_var_query <- function() { # nocov start
+  'Character vector, length 1. character. Search query, Lucene query syntax is recommended.'
+} # nocov end
