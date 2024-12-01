@@ -53,6 +53,10 @@
 #'
 #' bs_post('Test quote with :emoji: and :fire: and :confetti_ball: from r package
 #'   `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)')
+#'
+#' bs_post(text = 'testing sending videos from R',
+#'   video = fs::path_package('bskyr', 'man/figures/pkgs.mp4'),
+#'   video_alt = 'a carousel of package logos, all hexagonal')
 bs_post <- function(text, images, images_alt,
                     video, video_alt,
                     langs, reply, quote,
@@ -212,7 +216,7 @@ bs_post <- function(text, images, images_alt,
   }
 
   resp |>
-    dplyr::bind_rows() |>
+    widen() |>
     clean_names() |>
     add_req_url(req)
 }
