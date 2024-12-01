@@ -8,13 +8,13 @@
   * `bs_get_starter_pack()` retrieves a specific starter pack.
   * `bs_get_starter_packs()` retrieves a list of starter packs.
 * Adds support for additional search parameters in `bs_search_posts()` (#6)
-* Improves list functionality
-  * `bs_get_actor_lists()` retrieves all lists made by an actor
-  * `bs_get_list()` retrieves a view of a list
 * Adds support for emoji in the text of posts, powered by the emoji package. (#11)
 * Adds `bs_url_to_uri()` to convert a URL to a Bluesky URI.
   * This additionally allows `bs_get_posts()` to take URLs.
 * Add support for posting videos within `bs_post()`, including gifs (#5).
+* Improves list reading functionality
+  * `bs_get_actor_lists()` retrieves all lists made by an actor
+  * `bs_get_list()` retrieves a view of a list
 * Expands support for working with lists (#9)
   * `bs_new_list()` creates a new list
   * `bs_delete_list()` deletes a list
