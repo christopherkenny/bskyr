@@ -16,7 +16,10 @@
   * This additionally allows `bs_get_posts()` to take URLs.
 * Add support for posting videos within `bs_post()`, including gifs (#5).
 * Expands support for working with lists (#9)
-  * `bs_new_list()` is a helper for creating new lists.
+  * `bs_new_list()` creates a new list
+  * `bs_delete_list()` deletes a list
+  * `bs_new_list_item()` adds someone to a list 
+  * `bs_delete_list_item()` removes someone from a list
 
 # bskyr 0.1.3
 
