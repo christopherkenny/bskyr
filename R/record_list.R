@@ -23,6 +23,10 @@
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_new_list(name = 'test list bskyr', purpose = 'curatelist')
+#' bs_new_list(name = 'test list bskyr w avatar',
+#'   description = 'to be deleted, just for testing bskyr',
+#'   avatar = fs::path_package('bskyr', 'man/figures/logo.png'),
+#'   purpose = 'curatelist')
 bs_new_list <- function(name, purpose, description, avatar,
                     user = get_bluesky_user(), pass = get_bluesky_pass(),
                     auth = bs_auth(user, pass), clean = TRUE) {
@@ -55,7 +59,7 @@ bs_new_list <- function(name, purpose, description, avatar,
       blob <- bs_upload_blob(avatar, auth = auth, clean = FALSE)
     }
 
-    rec$avatar <- list(blob[[1]]$blob)
+    rec$avatar <- blob[[1]]$blob
   }
 
   req <- httr2::request('https://bsky.social/xrpc/com.atproto.repo.createRecord') |>
