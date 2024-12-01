@@ -38,12 +38,17 @@ bs_url_to_uri <- function(url,
                           user = get_bluesky_user(), pass = get_bluesky_pass(),
                           auth = bs_auth(user, pass)) {
   pieces <- httr2::url_parse(url)
-  type <- stringr::word(pieces$path, start = 4, sep = stringr::fixed('/'))
   handle <- stringr::word(pieces$path, start = 3, sep = stringr::fixed('/'))
   handle_as_id <- bs_resolve_handle(handle, auth = auth)
-  rid <- stringr::word(pieces$path, start = 5, sep = stringr::fixed('/'))
+  if (stringr::str_detect(pieces$path, 'starter-pack')) {
+    type <- 'graph.starterpack'
+    rid <- stringr::word(pieces$path, start = 4, sep = stringr::fixed('/'))
+  } else {
+    type <- paste0('feed.', stringr::word(pieces$path, start = 4, sep = stringr::fixed('/')))
+    rid <- stringr::word(pieces$path, start = 5, sep = stringr::fixed('/'))
+  }
 
   paste0(
-    'at://', handle_as_id$did, '/', 'app.bsky.feed.', type, '/', rid
+    'at://', handle_as_id$did, '/', 'app.bsky.', type, '/', rid
   )
 }
