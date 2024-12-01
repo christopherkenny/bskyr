@@ -30,6 +30,10 @@ bs_get_quotes <- function(uri, cid, cursor = NULL, limit = NULL,
     cli::cli_abort('{.arg uri} must not be missing.')
   }
 
+  if (!stringr::str_starts(uri, 'at://')) {
+    uri <- bs_url_to_uri(uri)
+  }
+
   if (!is.null(limit)) {
     if (!is.numeric(limit)) {
       cli::cli_abort('{.arg limit} must be numeric.')
