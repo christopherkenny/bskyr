@@ -1,5 +1,9 @@
 # bskyr 0.2.0
 
+
+* Improves processing of posts into tidy objects, impacting:
+  * `bs_get_posts()`: Posts are now returned as a tibble with one row per post, regardless of type.
+  * `bs_get_author_feed()`: Posts no longer create extra columns when there are multiple embeds.
 * Adds support for starter packs (#7)
   * `bs_get_actor_starter_packs()` retrieves a list of starter packs for a specific actor.
   * `bs_get_starter_pack()` retrieves a specific starter pack.
@@ -10,6 +14,7 @@
   * `bs_get_list()` retrieves a view of a list
 * Adds support for emoji in the text of posts, powered by the emoji package. (#11)
 * Adds `bs_url_to_uri()` to convert a URL to a Bluesky URI.
+  * This additionally allows `bs_get_posts()` to take URLs.
 
 # bskyr 0.1.3
 
