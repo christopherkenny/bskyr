@@ -55,16 +55,18 @@ bs_get_author_feed <- function(actor, cursor = NULL, limit = NULL,
     return(resp)
   }
 
-  resp |>
-    lapply(process_author_feed) |>
+  lapply(resp,function(f) {
+    lapply(f$feed, function(x) {
+      dplyr::bind_cols(
+        proc_post(x$post),
+        widen(x$reply)
+      )
+    }) |>
+      purrr::list_rbind() |>
+      clean_names()
+  }) |>
     purrr::list_rbind() |>
+    clean_names() |>
     add_req_url(req) |>
     add_cursor(resp)
-}
-
-process_author_feed <- function(resp) {
-  resp |>
-    purrr::pluck('feed') |>
-    list_hoist() |>
-    clean_names()
 }

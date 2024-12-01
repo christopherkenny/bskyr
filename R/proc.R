@@ -66,7 +66,8 @@ proc_record2 <- function(l) {
     embed = list(purrr::pluck(l, 'embed', .default = NULL)),
     facet = list(purrr::pluck(l, 'facet', .default = NULL)),
     text = purrr::pluck(l, 'text', .default = NA_character_),
-  )
+  ) |>
+    clean_names()
 }
 
 proc_embed2 <- function(l) {
@@ -74,7 +75,8 @@ proc_embed2 <- function(l) {
     `$type` = purrr::map_chr(l, .f = function(x) purrr::pluck(x, '$type', .default = NA_character_)),
     media = purrr::map(l, .f = function(x) purrr::pluck(x, 'media', .default = NULL)),
     record = purrr::map(l, .f = function(x) purrr::pluck(x, 'record', .default = NULL))
-  )
+  ) |>
+    clean_names()
 }
 
 proc_embed <- function(l) {
