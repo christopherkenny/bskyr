@@ -9,7 +9,7 @@
 #' @param auth `r template_var_auth()`
 #' @param clean `r template_var_clean()`
 #'
-#' @concept graph
+#' @concept record
 #'
 #' @return a [tibble::tibble] of lists
 #' @export

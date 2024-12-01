@@ -3,6 +3,7 @@
 export(bs_auth)
 export(bs_create_record)
 export(bs_created_at)
+export(bs_delete_list)
 export(bs_delete_record)
 export(bs_describe_repo)
 export(bs_get_actor_lists)
