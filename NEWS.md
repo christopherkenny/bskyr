@@ -15,7 +15,7 @@
 * Adds support for emoji in the text of posts, powered by the emoji package. (#11)
 * Adds `bs_url_to_uri()` to convert a URL to a Bluesky URI.
   * This additionally allows `bs_get_posts()` to take URLs.
-* Add support for posting videos within `bs_post()`.
+* Add support for posting videos within `bs_post()`, including gifs (#5).
 
 # bskyr 0.1.3
 
