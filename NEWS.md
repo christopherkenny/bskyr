@@ -1,6 +1,5 @@
 # bskyr 0.2.0
 
-
 * Improves processing of posts into tidy objects, impacting:
   * `bs_get_posts()`: Posts are now returned as a tibble with one row per post, regardless of type.
   * `bs_get_author_feed()`: Posts no longer create extra columns when there are multiple embeds.
@@ -16,6 +15,8 @@
 * Adds `bs_url_to_uri()` to convert a URL to a Bluesky URI.
   * This additionally allows `bs_get_posts()` to take URLs.
 * Add support for posting videos within `bs_post()`, including gifs (#5).
+* Expands support for working with lists (#9)
+  * `bs_new_list()` is a helper for creating new lists.
 
 # bskyr 0.1.3
 
