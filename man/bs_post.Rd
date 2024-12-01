@@ -8,6 +8,8 @@ bs_post(
   text,
   images,
   images_alt,
+  video,
+  video_alt,
   langs,
   reply,
   quote,
@@ -24,6 +26,10 @@ bs_post(
 \item{images}{character vector of paths to images to attach to post}
 
 \item{images_alt}{character vector of alt text for images. Must be same length as \code{images} if used.}
+
+\item{video}{character vector of path for up to one video to attach to post}
+
+\item{video_alt}{character vector, length one, of alt text for video, if used.}
 
 \item{langs}{character vector of languages in BCP-47 format}
 

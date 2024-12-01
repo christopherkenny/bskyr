@@ -3,6 +3,8 @@
 #' @param text text of post
 #' @param images character vector of paths to images to attach to post
 #' @param images_alt character vector of alt text for images. Must be same length as `images` if used.
+#' @param video character vector of path for up to one video to attach to post
+#' @param video_alt character vector, length one, of alt text for video, if used.
 #' @param langs character vector of languages in BCP-47 format
 #' @param reply character vector with link to the parent post to reply to
 #' @param quote character vector with link to a post to quote
@@ -51,7 +53,9 @@
 #'
 #' bs_post('Test quote with :emoji: and :fire: and :confetti_ball: from r package
 #'   `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)')
-bs_post <- function(text, images, images_alt, langs, reply, quote,
+bs_post <- function(text, images, images_alt,
+                    video, video_alt,
+                    langs, reply, quote,
                     emoji = TRUE,
                     user = get_bluesky_user(), pass = get_bluesky_pass(),
                     auth = bs_auth(user, pass), clean = TRUE) {
@@ -71,6 +75,22 @@ bs_post <- function(text, images, images_alt, langs, reply, quote,
     }
   }
 
+  if (!missing(video)) {
+    if (length(video) > 1) {
+      cli::cli_abort('You can only attach one video to a post.')
+    }
+  }
+
+  if (!missing(video)) {
+    if (missing(video_alt)) {
+      cli::cli_abort('If {.arg video} is provided, {.arg video_alt} must also be provided.')
+    }
+  }
+
+  if (!missing(images) && !missing(video)) {
+    cli::cli_abort('You can only attach images or a video to a post, not both.')
+  }
+
   if (emoji) {
     text <- parse_emoji(text)
   }
@@ -84,6 +104,16 @@ bs_post <- function(text, images, images_alt, langs, reply, quote,
     } else {
       # otherwise it's a set of paths
       blob <- bs_upload_blob(images, auth = auth, clean = FALSE)
+    }
+  }
+
+  if (!missing(video)) {
+    if (is.list(video)) {
+      # then we assume it's a blob
+      blob <- video
+    } else {
+      # otherwise it's a path
+      blob <- bs_upload_blob(video, auth = auth, clean = FALSE)
     }
   }
 
@@ -129,6 +159,17 @@ bs_post <- function(text, images, images_alt, langs, reply, quote,
     )
   }
 
+  if (!missing(video)) {
+    post$embed <- list(
+      '$type' = 'app.bsky.embed.video',
+      video = blob[[1]]$blob
+    )
+
+    if (!missing(video_alt)) {
+      post$embed$alt <- video_alt
+    }
+  }
+
   if (!missing(reply)) {
     post$reply <- get_reply_refs(reply, auth = auth)
   }
@@ -160,7 +201,7 @@ bs_post <- function(text, images, images_alt, langs, reply, quote,
       )
     )
 
-  # return(httr2::req_dry_run(req))
+  #return(httr2::req_dry_run(req))
 
   resp <- req |>
     httr2::req_perform() |>
