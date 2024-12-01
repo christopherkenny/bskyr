@@ -57,7 +57,7 @@ bs_get_posts <- function(uris,
 
   out <- resp |>
     purrr::pluck('posts') |>
-    proc_post()
+    proc_posts()
 
   out |>
     add_req_url(req) |>

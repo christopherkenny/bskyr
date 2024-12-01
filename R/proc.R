@@ -90,7 +90,7 @@ add_singletons <- function(tb, l) {
   }
 }
 
-proc_post <- function(l) {
+proc_posts <- function(l) {
   tibble::tibble(
     uri = purrr::map_chr(l, .f = function(x) purrr::pluck(x, 'uri', .default = NA_character_)),
     cid = purrr::map_chr(l, .f = function(x) purrr::pluck(x, 'cid', .default = NA_character_)),
@@ -105,5 +105,27 @@ proc_post <- function(l) {
     viewer = purrr::map(l, .f = function(x) purrr::pluck(x, 'viewer', .default = NULL) |> widen()),
     labels = purrr::map(l, .f = function(x) purrr::pluck(x, 'labels', .default = NULL) |> widen())
   ) |>
-    tidyr::unnest_wider('author', names_sep = '_')
+    tidyr::unnest_wider('author', names_sep = '_') |>
+    tidyr::unnest_wider('viewer') |>
+    clean_names()
+}
+
+proc_post <- function(l) {
+  tibble::tibble(
+    uri = purrr::pluck(l, 'uri', .default = NA_character_),
+    cid = purrr::pluck(l, 'cid', .default = NA_character_),
+    author = purrr::pluck(l, 'author', .default = NULL) |> widen(),
+    record = list(purrr::pluck(l, 'record', .default = NULL) |> proc_record2()),
+    embed = list(purrr::pluck(l, 'embed', .default = NULL) |> proc_embed2()),
+    replyCount = purrr::pluck(l, 'replyCount', .default = NA_integer_),
+    repostCount = purrr::pluck(l, 'repostCount', .default = NA_integer_),
+    likeCount = purrr::pluck(l, 'likeCount', .default = NA_integer_),
+    quoteCount = purrr::pluck(l, 'quoteCount', .default = NA_integer_),
+    indexedAt = purrr::pluck(l, 'indexedAt', .default = NA_character_),
+    viewer = purrr::pluck(l, 'viewer', .default = NULL) |> widen(),
+    labels = list(purrr::pluck(l, 'labels', .default = NULL) |> widen())
+  ) |>
+    tidyr::unnest_wider('author', names_sep = '_') |>
+    tidyr::unnest_wider('viewer') |>
+    clean_names()
 }
