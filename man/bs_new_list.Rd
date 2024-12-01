@@ -33,7 +33,7 @@ bs_new_list(
 \item{clean}{Logical. Should output be cleaned into a \code{tibble}? Default: \code{TRUE}.}
 }
 \value{
-a \link[tibble:tibble]{tibble::tibble} of lists
+a \link[tibble:tibble]{tibble::tibble} of list information
 }
 \description{
 Create a list
@@ -42,6 +42,7 @@ Create a list
 
 \href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/list.json}{graph/list.json (2024-12-01)}
 \href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/defs.json}{graph/defs.json (2024-12-01)}
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/createRecord.json}{repo/createRecord.json (2023-11-25)}
 }
 
 \section{Function introduced}{

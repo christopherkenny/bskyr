@@ -11,12 +11,13 @@
 #'
 #' @concept record
 #'
-#' @return a [tibble::tibble] of lists
+#' @return a [tibble::tibble] of list information
 #' @export
 #'
 #' @section Lexicon references:
 #' [graph/list.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/list.json)
 #' [graph/defs.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/defs.json)
+#' [repo/createRecord.json (2023-11-25)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/createRecord.json)
 #'
 #' @section Function introduced:
 #' `v0.2.0` (2024-12-01)
