@@ -52,6 +52,7 @@
 <span>  <span class="va">reply</span>,</span>
 <span>  <span class="va">quote</span>,</span>
 <span>  emoji <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  max_tries <span class="op">=</span> <span class="fl">0</span>,</span>
 <span>  user <span class="op">=</span> <span class="fu"><a href="user.html">get_bluesky_user</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  pass <span class="op">=</span> <span class="fu"><a href="pass.html">get_bluesky_pass</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  auth <span class="op">=</span> <span class="fu"><a href="bs_auth.html">bs_auth</a></span><span class="op">(</span><span class="va">user</span>, <span class="va">pass</span><span class="op">)</span>,</span>
@@ -97,6 +98,10 @@
 
 <dt id="arg-emoji">emoji<a class="anchor" aria-label="anchor" href="#arg-emoji"></a></dt>
 <dd><p>boolean. Default is <code>TRUE</code>. Should <code>:emoji:</code> style references be converted?</p></dd>
+
+
+<dt id="arg-max-tries">max_tries<a class="anchor" aria-label="anchor" href="#arg-max-tries"></a></dt>
+<dd><p>Integer. Default is <code>0</code>. Number of times to retry the request if the first fails.</p></dd>
 
 
 <dt id="arg-user">user<a class="anchor" aria-label="anchor" href="#arg-user"></a></dt>
