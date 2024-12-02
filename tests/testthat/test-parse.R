@@ -300,6 +300,7 @@ test_that('parse tags inline matches bluesky typescript', {
     parse_tags('no match 1?: #1?'),
     list(list(list()))
   )
+})
 
 # emoji ----
 test_that('parse emoji functions okay', {
