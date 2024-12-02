@@ -193,3 +193,9 @@ parse_uri <- function(uri) {
     rkey = rkey
   )
 }
+
+parse_emoji <- function(txt) {
+  emoji_regex <- ':[a-zA-Z0-9_]+:' #'(?<=:)[^:\\s]+(?=:)'
+
+  stringr::str_replace_all(txt, emoji_regex, replace_emoji)
+}

@@ -1,0 +1,352 @@
+{
+    "posts": [
+        {
+            "uri": "at://did:plc:3ixxligsafp4u6ghljcoetnm/app.bsky.feed.post/3lc6isqcp6u2y",
+            "cid": "bafyreihbjrla36p5h26nqircywtn6jipfrpaymgmfg7imk2yvpyqxozz2y",
+            "author": {
+                "did": "did:plc:3ixxligsafp4u6ghljcoetnm",
+                "handle": "randvegan.bsky.social",
+                "displayName": "",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:3ixxligsafp4u6ghljcoetnm/bafkreifgl6vye2rwr6lvcypjxheu54f2hqp4eq4ot3i4q5q7e3jni5v3ru@jpeg",
+                "associated": {
+                    "chat": {
+                        "allowIncoming": "all"
+                    }
+                },
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false,
+                    "followedBy": "at://did:plc:3ixxligsafp4u6ghljcoetnm/app.bsky.graph.follow/3lc6h77kuzl2f"
+                },
+                "labels": [
+
+                ],
+                "createdAt": "2024-11-11T20:02:59.438Z"
+            },
+            "record": {
+                "$type": "app.bsky.feed.post",
+                "createdAt": "2024-11-30T16:20:25.023354Z",
+                "embed": {
+                    "$type": "app.bsky.embed.record",
+                    "record": {
+                        "cid": "bafyreiegqvymxrnypylnihdc4lqojfvepsxbwro2r4nnm2upsqtcviebqe",
+                        "uri": "at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.feed.post/3lc5c5qv72r2w"
+                    }
+                },
+                "facets": [
+                    {
+                        "features": [
+                            {
+                                "$type": "app.bsky.richtext.facet#mention",
+                                "did": "did:plc:5c2r73erhng4bszmxlfdtscf"
+                            }
+                        ],
+                        "index": {
+                            "byteEnd": 46,
+                            "byteStart": 28
+                        }
+                    },
+                    {
+                        "features": [
+                            {
+                                "$type": "app.bsky.richtext.facet#mention",
+                                "did": "did:plc:wpe35pganb6d4pg4ekmfy6u5"
+                            }
+                        ],
+                        "index": {
+                            "byteEnd": 73,
+                            "byteStart": 50
+                        }
+                    },
+                    {
+                        "features": [
+                            {
+                                "$type": "app.bsky.richtext.facet#tag",
+                                "tag": "rstats"
+                            }
+                        ],
+                        "index": {
+                            "byteEnd": 149,
+                            "byteStart": 142
+                        }
+                    }
+                ],
+                "text": "This is my first post using @bskyr.bsky.social by @chriskenny.bsky.social! Excited to play around with the API and discover the possibilities #rstats"
+            },
+            "embed": {
+                "$type": "app.bsky.embed.record#view",
+                "record": {
+                    "$type": "app.bsky.embed.record#viewRecord",
+                    "uri": "at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.feed.post/3lc5c5qv72r2w",
+                    "cid": "bafyreiegqvymxrnypylnihdc4lqojfvepsxbwro2r4nnm2upsqtcviebqe",
+                    "author": {
+                        "did": "did:plc:5c2r73erhng4bszmxlfdtscf",
+                        "handle": "bskyr.bsky.social",
+                        "displayName": "bskyr R package",
+                        "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5c2r73erhng4bszmxlfdtscf/bafkreiesa772kej4tgvme7td67lxvd3j3l2spnznnaod7bx5fpepxf5htu@jpeg",
+                        "viewer": {
+                            "muted": false,
+                            "blockedBy": false
+                        },
+                        "labels": [
+
+                        ],
+                        "createdAt": "2023-10-24T01:27:55.968Z"
+                    },
+                    "value": {
+                        "$type": "app.bsky.feed.post",
+                        "createdAt": "2024-11-30T04:48:39.966715Z",
+                        "facets": [
+                            {
+                                "features": [
+                                    {
+                                        "$type": "app.bsky.richtext.facet#mention",
+                                        "did": "did:plc:5c2r73erhng4bszmxlfdtscf"
+                                    }
+                                ],
+                                "index": {
+                                    "byteEnd": 89,
+                                    "byteStart": 71
+                                }
+                            },
+                            {
+                                "features": [
+                                    {
+                                        "$type": "app.bsky.richtext.facet#link",
+                                        "uri": "https://christophertkenny.com/bskyr/"
+                                    }
+                                ],
+                                "index": {
+                                    "byteEnd": 127,
+                                    "byteStart": 91
+                                }
+                            }
+                        ],
+                        "text": "Test quote with :emoji: and 🔥 and 🎊 from r package\n  `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)"
+                    },
+                    "labels": [
+
+                    ],
+                    "likeCount": 3,
+                    "replyCount": 1,
+                    "repostCount": 1,
+                    "quoteCount": 2,
+                    "indexedAt": "2024-11-30T04:48:39.216Z",
+                    "embeds": [
+
+                    ]
+                }
+            },
+            "replyCount": 1,
+            "repostCount": 1,
+            "likeCount": 3,
+            "quoteCount": 0,
+            "indexedAt": "2024-11-30T16:20:25.515Z",
+            "viewer": {
+                "threadMuted": false,
+                "embeddingDisabled": false
+            },
+            "labels": [
+
+            ]
+        },
+        {
+            "uri": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.feed.post/3lc5d6zspys2c",
+            "cid": "bafyreid6iwpsfnlc2xgi4byqeerwxp6awtq3vcexsdprt25ispxyxf5ivu",
+            "author": {
+                "did": "did:plc:wpe35pganb6d4pg4ekmfy6u5",
+                "handle": "chriskenny.bsky.social",
+                "displayName": "Chris Kenny",
+                "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:wpe35pganb6d4pg4ekmfy6u5/bafkreibbgv73dk7lk4qrij5xm7vri3m6hfgfxqylxbal6yau7ssieqav3a@jpeg",
+                "associated": {
+                    "chat": {
+                        "allowIncoming": "following"
+                    }
+                },
+                "viewer": {
+                    "muted": false,
+                    "blockedBy": false,
+                    "following": "at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.follow/3kchl2waql32f",
+                    "followedBy": "at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kchl2sce7p2i"
+                },
+                "labels": [
+
+                ],
+                "createdAt": "2023-09-19T15:47:01.417Z"
+            },
+            "record": {
+                "$type": "app.bsky.feed.post",
+                "createdAt": "2024-11-30T05:07:15.799Z",
+                "embed": {
+                    "$type": "app.bsky.embed.recordWithMedia",
+                    "media": {
+                        "$type": "app.bsky.embed.external",
+                        "external": {
+                            "description": "Collect data from and make posts on Bluesky Social via the Hypertext Transfer Protocol (HTTP) Application Programming Interface (API), as documented at <https://atproto.com/specs/xrpc>. This further s...",
+                            "thumb": {
+                                "$type": "blob",
+                                "ref": {
+                                    "$link": "bafkreibhlbjhjv5cyjcoxy56bipkss2onhrqncoersxhnzrxawa2kzrabq"
+                                },
+                                "mimeType": "image/jpeg",
+                                "size": 305318
+                            },
+                            "title": "Interact with Bluesky Social",
+                            "uri": "https://christophertkenny.com/bskyr/"
+                        }
+                    },
+                    "record": {
+                        "$type": "app.bsky.embed.record",
+                        "record": {
+                            "cid": "bafyreiegqvymxrnypylnihdc4lqojfvepsxbwro2r4nnm2upsqtcviebqe",
+                            "uri": "at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.feed.post/3lc5c5qv72r2w"
+                        }
+                    }
+                },
+                "facets": [
+                    {
+                        "features": [
+                            {
+                                "$type": "app.bsky.richtext.facet#tag",
+                                "tag": "rstats"
+                            }
+                        ],
+                        "index": {
+                            "byteEnd": 26,
+                            "byteStart": 19
+                        }
+                    },
+                    {
+                        "$type": "app.bsky.richtext.facet",
+                        "features": [
+                            {
+                                "$type": "app.bsky.richtext.facet#mention",
+                                "did": "did:plc:5c2r73erhng4bszmxlfdtscf"
+                            }
+                        ],
+                        "index": {
+                            "byteEnd": 239,
+                            "byteStart": 221
+                        }
+                    },
+                    {
+                        "features": [
+                            {
+                                "$type": "app.bsky.richtext.facet#link",
+                                "uri": "https://christophertkenny.com/bskyr/'"
+                            }
+                        ],
+                        "index": {
+                            "byteEnd": 270,
+                            "byteStart": 241
+                        }
+                    },
+                    {
+                        "features": [
+                            {
+                                "$type": "app.bsky.richtext.facet#link",
+                                "uri": "https://bsky.app/profile/bskyr.bsky.social/post/3lc5c5qv72r2w"
+                            }
+                        ],
+                        "index": {
+                            "byteEnd": 297,
+                            "byteStart": 273
+                        }
+                    }
+                ],
+                "langs": [
+                    "en"
+                ],
+                "text": "The dev version of #rstats bskyr now supports :emoji:s\n\npak::pak('christopherkenny/bskyr')\n\nThe following renders to the below post:\n\nbs_post('Test quote with :emoji: and :fire: and :confetti_ball: from r package `bskyr` @bskyr.bsky.social (christophertkenny.com/bskyr/')\n\nbsky.app/profile/bsky..."
+            },
+            "embed": {
+                "$type": "app.bsky.embed.recordWithMedia#view",
+                "media": {
+                    "$type": "app.bsky.embed.external#view",
+                    "external": {
+                        "uri": "https://christophertkenny.com/bskyr/",
+                        "title": "Interact with Bluesky Social",
+                        "description": "Collect data from and make posts on Bluesky Social via the Hypertext Transfer Protocol (HTTP) Application Programming Interface (API), as documented at <https://atproto.com/specs/xrpc>. This further s...",
+                        "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:wpe35pganb6d4pg4ekmfy6u5/bafkreibhlbjhjv5cyjcoxy56bipkss2onhrqncoersxhnzrxawa2kzrabq@jpeg"
+                    }
+                },
+                "record": {
+                    "record": {
+                        "$type": "app.bsky.embed.record#viewRecord",
+                        "uri": "at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.feed.post/3lc5c5qv72r2w",
+                        "cid": "bafyreiegqvymxrnypylnihdc4lqojfvepsxbwro2r4nnm2upsqtcviebqe",
+                        "author": {
+                            "did": "did:plc:5c2r73erhng4bszmxlfdtscf",
+                            "handle": "bskyr.bsky.social",
+                            "displayName": "bskyr R package",
+                            "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5c2r73erhng4bszmxlfdtscf/bafkreiesa772kej4tgvme7td67lxvd3j3l2spnznnaod7bx5fpepxf5htu@jpeg",
+                            "viewer": {
+                                "muted": false,
+                                "blockedBy": false
+                            },
+                            "labels": [
+
+                            ],
+                            "createdAt": "2023-10-24T01:27:55.968Z"
+                        },
+                        "value": {
+                            "$type": "app.bsky.feed.post",
+                            "createdAt": "2024-11-30T04:48:39.966715Z",
+                            "facets": [
+                                {
+                                    "features": [
+                                        {
+                                            "$type": "app.bsky.richtext.facet#mention",
+                                            "did": "did:plc:5c2r73erhng4bszmxlfdtscf"
+                                        }
+                                    ],
+                                    "index": {
+                                        "byteEnd": 89,
+                                        "byteStart": 71
+                                    }
+                                },
+                                {
+                                    "features": [
+                                        {
+                                            "$type": "app.bsky.richtext.facet#link",
+                                            "uri": "https://christophertkenny.com/bskyr/"
+                                        }
+                                    ],
+                                    "index": {
+                                        "byteEnd": 127,
+                                        "byteStart": 91
+                                    }
+                                }
+                            ],
+                            "text": "Test quote with :emoji: and 🔥 and 🎊 from r package\n  `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)"
+                        },
+                        "labels": [
+
+                        ],
+                        "likeCount": 3,
+                        "replyCount": 1,
+                        "repostCount": 1,
+                        "quoteCount": 2,
+                        "indexedAt": "2024-11-30T04:48:39.216Z",
+                        "embeds": [
+
+                        ]
+                    }
+                }
+            },
+            "replyCount": 4,
+            "repostCount": 3,
+            "likeCount": 12,
+            "quoteCount": 2,
+            "indexedAt": "2024-11-30T05:07:15.820Z",
+            "viewer": {
+                "threadMuted": false,
+                "embeddingDisabled": false
+            },
+            "labels": [
+
+            ]
+        }
+    ],
+    "uri": "at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.feed.post/3lc5c5qv72r2w"
+}

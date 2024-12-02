@@ -105,6 +105,32 @@ repeat_request <- function(req, req_seq, cursor, txt = 'Fetching data') {
       httr2::req_perform() |>
       httr2::resp_body_json()
     cursor <- resp[[i]]$cursor
+    if (is.null(cursor)) {
+      break
+    }
   }
-  resp
+  resp |>
+    purrr::discard(is.null)
+}
+
+# emoji parsing ----
+
+pad_emoji <- function(emo) {
+  paste0(':', emo, ':')
+}
+
+replace_emoji <- function(emo) {
+  if (!rlang::is_installed('emoji')) {
+    return(emo)
+  }
+
+  emo <- stringr::str_remove_all(emo, ':')
+
+  noms <- names(emoji::emoji_name)
+
+  if (emo %in% noms) {
+    emoji::emoji_name[emo]
+  } else {
+    pad_emoji(emo)
+  }
 }

@@ -8,9 +8,12 @@ bs_post(
   text,
   images,
   images_alt,
+  video,
+  video_alt,
   langs,
   reply,
   quote,
+  emoji = TRUE,
   user = get_bluesky_user(),
   pass = get_bluesky_pass(),
   auth = bs_auth(user, pass),
@@ -24,11 +27,17 @@ bs_post(
 
 \item{images_alt}{character vector of alt text for images. Must be same length as \code{images} if used.}
 
+\item{video}{character vector of path for up to one video to attach to post}
+
+\item{video_alt}{character vector, length one, of alt text for video, if used.}
+
 \item{langs}{character vector of languages in BCP-47 format}
 
 \item{reply}{character vector with link to the parent post to reply to}
 
 \item{quote}{character vector with link to a post to quote}
+
+\item{emoji}{boolean. Default is \code{TRUE}. Should \verb{:emoji:} style references be converted?}
 
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 
@@ -44,9 +53,16 @@ a \link[tibble:tibble]{tibble::tibble} of post information
 \description{
 Make a post on Bluesky Social
 }
+\details{
+\verb{:emoji:} parsing is not a formally supported Bluesky feature. This package
+converts usages of this kind by identifying text within \code{:}s, here "\code{emoji}"
+and then matches them to the \code{emoji} package's list of emoji names. All
+supported emoji names and corresponding images can be seen with
+\code{emoji::emoji_name}. This feature was introduced in \code{v0.2.0}.
+}
 \section{Lexicon references}{
 
-\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/post.json}{feed/post.json (2023-10-02)}
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/post.json}{feed/post.json (2024-11-29)}
 \href{https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/createRecord.json}{repo/createRecord.json (2023-10-02)}
 }
 
@@ -72,6 +88,13 @@ via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
   reply = 'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g',
   quote = 'https://bsky.app/profile/bskyr.bsky.social/post/3kf24wd6cmb2a'
 )
+
+bs_post('Test quote with :emoji: and :fire: and :confetti_ball: from r package
+  `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)')
+
+bs_post(text = 'testing sending videos from R',
+  video = fs::path_package('bskyr', 'man/figures/pkgs.mp4'),
+  video_alt = 'a carousel of package logos, all hexagonal')
 \dontshow{\}) # examplesIf}
 }
 \concept{record}

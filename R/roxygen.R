@@ -42,6 +42,10 @@ template_var_uris <- function() { # nocov start
   'Character. Vector of URIs for posts to get.'
 } # nocov end
 
+template_var_url <- function() { # nocov start
+  'Character, length 1. URL for record to get.'
+} # nocov end
+
 template_var_clean <- function() { # nocov start
   'Logical. Should output be cleaned into a `tibble`? Default: `TRUE`.'
 } # nocov end
@@ -108,4 +112,8 @@ template_var_starter_packs <- function() { # nocov start
 
 template_var_list <- function() { # nocov start
   'Character vector, length 1. Reference of the list record to get.'
+} # nocov end
+
+template_var_query <- function() { # nocov start
+  'Character vector, length 1. character. Search query, Lucene query syntax is recommended.'
 } # nocov end

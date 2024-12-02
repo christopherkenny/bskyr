@@ -1,6 +1,6 @@
 #' Find posts matching search criteria
 #'
-#' @param query character. Search query, Lucene query syntax is recommended.
+#' @param query `r template_var_query()`
 #' @param sort character. Order or results. Either `'top'` or `'latest'`
 #' @param since character. Filter results for posts on or after the indicated datetime or ISO date (YYYY-MM-DD).
 #' @param until character. Filter results for posts before the indicated datetime or ISO date (YYYY-MM-DD).

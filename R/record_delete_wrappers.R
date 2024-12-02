@@ -1,0 +1,65 @@
+#' Delete a list
+#'
+#' @param rkey `r template_var_rkey()`
+#' @param user `r template_var_user()`
+#' @param pass `r template_var_pass()`
+#' @param auth `r template_var_auth()`
+#'
+#' @concept repo
+#'
+#' @return an `httr2` status code
+#' @export
+#'
+#' @section Lexicon references:
+#' [graph/list.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/list.json)
+#' [repo/deleteRecord.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json)
+#'
+#' @section Function introduced:
+#' `v0.2.0` (2024-12-01)
+#'
+#' @examplesIf has_bluesky_pass() && has_bluesky_user()
+#' lst <- bs_new_list(name = 'test list bskyr', purpose = 'curatelist')
+#' bs_delete_list(bs_extract_record_key(lst$uri))
+bs_delete_list <- function(rkey,
+                        user = get_bluesky_user(), pass = get_bluesky_pass(),
+                        auth = bs_auth(user, pass)) {
+  bs_delete_record(
+    collection = 'app.bsky.graph.list',
+    rkey = rkey,
+    auth = auth
+  )
+}
+
+#' Delete a list item
+#'
+#' @param rkey `r template_var_rkey()`
+#' @param user `r template_var_user()`
+#' @param pass `r template_var_pass()`
+#' @param auth `r template_var_auth()`
+#'
+#' @concept repo
+#'
+#' @return an `httr2` status code
+#' @export
+#'
+#' @section Lexicon references:
+#' [graph/listitem.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/list.json)
+#' [repo/deleteRecord.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json)
+#'
+#' @section Function introduced:
+#' `v0.2.0` (2024-12-01)
+#'
+#' @examplesIf has_bluesky_pass() && has_bluesky_user()
+#' lst <- bs_new_list(name = 'test list bskyr', purpose = 'curatelist')
+#' itm <- bs_new_list_item(subject = 'bskyr.bsky.social', uri = lst$uri)
+#' bs_delete_list_item(bs_extract_record_key(itm$uri))
+#' bs_delete_list(bs_extract_record_key(lst$uri))
+bs_delete_list_item <- function(rkey,
+                           user = get_bluesky_user(), pass = get_bluesky_pass(),
+                           auth = bs_auth(user, pass)) {
+  bs_delete_record(
+    collection = 'app.bsky.graph.listitem',
+    rkey = rkey,
+    auth = auth
+  )
+}
