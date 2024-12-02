@@ -9,6 +9,7 @@
 #' @param reply character vector with link to the parent post to reply to
 #' @param quote character vector with link to a post to quote
 #' @param emoji boolean. Default is `TRUE`. Should `:emoji:` style references be converted?
+#' @param max_tries `r template_var_max_tries()`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
@@ -60,7 +61,7 @@
 bs_post <- function(text, images, images_alt,
                     video, video_alt,
                     langs, reply, quote,
-                    emoji = TRUE,
+                    emoji = TRUE, max_tries,
                     user = get_bluesky_user(), pass = get_bluesky_pass(),
                     auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(text)) {
@@ -204,6 +205,14 @@ bs_post <- function(text, images, images_alt,
         record = post
       )
     )
+
+  if (!missing(max_tries) & max_tries > 1) {
+    req <- req |>
+      httr2::req_retry(
+        max_tries = max_tries,
+        is_transient = function(x) httr2::resp_status(x) %in% c(429, 500, 503)
+      )
+  }
 
   #return(httr2::req_dry_run(req))
 

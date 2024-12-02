@@ -14,6 +14,7 @@ bs_post(
   reply,
   quote,
   emoji = TRUE,
+  max_tries = 0,
   user = get_bluesky_user(),
   pass = get_bluesky_pass(),
   auth = bs_auth(user, pass),
@@ -38,6 +39,8 @@ bs_post(
 \item{quote}{character vector with link to a post to quote}
 
 \item{emoji}{boolean. Default is \code{TRUE}. Should \verb{:emoji:} style references be converted?}
+
+\item{max_tries}{Integer. Default is \code{0}. Number of times to retry the request if the first fails.}
 
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 
