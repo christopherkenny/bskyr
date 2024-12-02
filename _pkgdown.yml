@@ -33,5 +33,5 @@ reference:
 - title: "Other"
   desc: "Other Functions"
 - contents:
-  - lacks_concepts(c("actor", "auth", "feed", "graph", "notification", "repo"))
+  - lacks_concepts(c("actor", "auth", "feed", "graph", "notification", "repo", "record"))
 
