@@ -23,6 +23,7 @@
 * Adds new helper function `bs_extract_record_key()` to extract the record id or key from a URL or URI.
 * Adds support for getting relationships between users with `bs_get_relationships()`.
 * Adds support for getting quote posts for a given post with `bs_get_quotes()`.
+* Fixes bug in repeated requests which could result in duplicate responses. (#13)
 
 # bskyr 0.1.3
 

@@ -117,3 +117,7 @@ template_var_list <- function() { # nocov start
 template_var_query <- function() { # nocov start
   'Character vector, length 1. character. Search query, Lucene query syntax is recommended.'
 } # nocov end
+
+template_var_max_tries <- function() { # nocov start
+  'Integer. Default is `0`. Number of times to retry the request if the first fails.'
+} # nocov end
