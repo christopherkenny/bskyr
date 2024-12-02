@@ -19,14 +19,14 @@ parse_tags <- function(txt) {
 
   tag_regex <- '(^|\\s)[#\\uFF03](?<tag>(?!\\ufe0f)[^\\s\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]*[^\\d\\s\\p{P}\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]+[^\\s\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]*)?'
 
-  matches <- stringi::stri_locate_all_regex(txt, tag_regex, capture_groups = TRUE, get_length = TRUE)
+  matches <- stringi::stri_locate_all_regex(txt, tag_regex, capture_groups = TRUE, get_length = TRUE, omit_no_match = TRUE)
   lapply(seq_along(matches), function(m) {
     tags <- attr(matches[[m]], "capture_groups")$tag
     lapply(seq_len(nrow(tags)), function(r) {
 
       # did not find tag
       if (tags[r, "length", drop=TRUE] < 0) {
-        return (list())
+        return(list())
       }
 
       start_idx <- unname(tags[r, "start", drop=TRUE])
@@ -41,7 +41,7 @@ parse_tags <- function(txt) {
       text_length <- stringi::stri_numbytes(stripped_text)
 
       if (text_length > 64) {
-        return (list())
+        return(list())
       }
 
       numbytes_start <- stringi::stri_numbytes(stringr::str_sub(txt,
