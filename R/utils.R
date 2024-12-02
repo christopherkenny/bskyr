@@ -105,8 +105,12 @@ repeat_request <- function(req, req_seq, cursor, txt = 'Fetching data') {
       httr2::req_perform() |>
       httr2::resp_body_json()
     cursor <- resp[[i]]$cursor
+    if (is.null(cursor)) {
+      break
+    }
   }
-  resp
+  resp |>
+    purrr::discard(is.null)
 }
 
 # emoji parsing ----
