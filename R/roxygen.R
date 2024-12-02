@@ -119,5 +119,5 @@ template_var_query <- function() { # nocov start
 } # nocov end
 
 template_var_max_tries <- function() { # nocov start
-  'Integer. Default is `0`. Number of times to retry the request if the first fails.'
+  'Integer, >= 2. Number of times to retry the request if the first fails.'
 } # nocov end

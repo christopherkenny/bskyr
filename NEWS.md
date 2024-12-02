@@ -24,6 +24,9 @@
 * Adds support for getting relationships between users with `bs_get_relationships()`.
 * Adds support for getting quote posts for a given post with `bs_get_quotes()`.
 * Fixes bug in repeated requests which could result in duplicate responses. (#13)
+* Minor improvements to `bs_post()`
+  * Adds a `max_tries` argument that can be set to avoid transient issues. (#15)
+  * Improves processing of tags in posts (@nguyenank, #10).
 
 # bskyr 0.1.3
 
