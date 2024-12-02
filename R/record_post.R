@@ -210,7 +210,7 @@ bs_post <- function(text, images, images_alt,
     req <- req |>
       httr2::req_retry(
         max_tries = max_tries,
-        is_transient = function(x) httr2::resp_status(x) %in% c(429, 500, 503)
+        is_transient = function(x) httr2::resp_status(x) >= 400
       )
   }
 
