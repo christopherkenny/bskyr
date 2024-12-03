@@ -68,5 +68,6 @@ bs_get_author_feed <- function(actor, cursor = NULL, limit = NULL,
     purrr::list_rbind() |>
     clean_names() |>
     add_req_url(req) |>
-    add_cursor(resp)
+    add_cursor(resp) |>
+    clean_names()
 }
