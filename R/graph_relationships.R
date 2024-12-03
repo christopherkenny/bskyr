@@ -33,7 +33,7 @@ bs_get_relationships <- function(actor, others,
 
   actor_input <- actor
 
-  if (!stringr::str_starts(actor, stringr::fixed('did:'))) {
+  if (!is_user_did(actor)) {
     actor <- bs_resolve_handle(actor, auth = auth)$did
   }
 
@@ -45,7 +45,7 @@ bs_get_relationships <- function(actor, others,
     others <- purrr::map_chr(
       others,
       function(x) {
-        if (!stringr::str_starts(x, stringr::fixed('did:'))) {
+        if (!is_user_did(x)) {
           bs_resolve_handle(x, auth = auth)$did
         } else {
           x

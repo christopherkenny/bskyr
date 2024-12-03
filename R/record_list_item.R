@@ -1,6 +1,6 @@
 #' Add a subject to a list
 #'
-#' @param subject Character, length 1. Subject to add to the list as a handle or did.
+#' @param subject `r template_var_subject()`
 #' @param uri Character, length 1. URI of the list to add the subject to.
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
@@ -35,7 +35,7 @@ bs_new_list_item <- function(subject, uri,
     cli::cli_abort('{.arg uri} must not be missing.')
   }
 
-  if (!stringr::str_starts(subject, stringr::fixed('did:'))) {
+  if (!is_user_did(subject)) {
     subject <- bs_resolve_handle(subject, auth = auth)$did
   }
 
@@ -46,26 +46,10 @@ bs_new_list_item <- function(subject, uri,
     createdAt = bs_created_at()
   )
 
-  req <- httr2::request('https://bsky.social/xrpc/com.atproto.repo.createRecord') |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_body_json(
-      data = list(
-        repo = auth$did,
-        collection = 'app.bsky.graph.listitem',
-        record = rec
-      )
-    )
-
-  resp <- req |>
-    httr2::req_perform() |>
-    httr2::resp_body_json()
-
-  if (!clean) {
-    return(resp)
-  }
-
-  resp |>
-    widen() |>
-    clean_names() |>
-    add_req_url(req)
+  bs_create_record(
+    collection = 'app.bsky.graph.listitem',
+    record = rec,
+    auth = auth,
+    clean = clean
+  )
 }

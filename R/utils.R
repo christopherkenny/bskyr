@@ -134,3 +134,7 @@ replace_emoji <- function(emo) {
     pad_emoji(emo)
   }
 }
+
+is_user_did <- function(x) {
+  stringr::str_starts(x, stringr::fixed('did:'))
+}

@@ -121,3 +121,7 @@ template_var_query <- function() { # nocov start
 template_var_max_tries <- function() { # nocov start
   'Integer, >= 2. Number of times to retry the request if the first fails.'
 } # nocov end
+
+template_var_subject <- function() { # nocov start
+  'Character, length 1. Subject to act on, as a handle or did.'
+} # nocov end
