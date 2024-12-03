@@ -54,7 +54,7 @@ library(bskyr)
 Text posts can be made as follows:
 
 ``` r
-bs_post('text = Your text goes here.')
+bs_post(text = 'Your text goes here.')
 ```
 
 If you have images to include, up to four can be included with the
