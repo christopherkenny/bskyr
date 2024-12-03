@@ -206,7 +206,7 @@ bs_post <- function(text, images, images_alt,
       )
     )
 
-  if (!missing(max_tries) & max_tries > 1) {
+  if (!missing(max_tries) && max_tries > 1) {
     req <- req |>
       httr2::req_retry(
         max_tries = max_tries,
