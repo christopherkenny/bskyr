@@ -8,8 +8,10 @@
 <url><loc>http://christophertkenny.com/bskyr/index.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/news/index.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_auth.html</loc></url>
+<url><loc>http://christophertkenny.com/bskyr/reference/bs_block.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_create_record.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_created_at.html</loc></url>
+<url><loc>http://christophertkenny.com/bskyr/reference/bs_delete_block.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_delete_follow.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_delete_like.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_delete_list.html</loc></url>
