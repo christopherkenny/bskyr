@@ -137,3 +137,35 @@ bs_delete_like <- function(rkey,
 #' @rdname bs_delete_like
 #' @export
 bs_unlike <- bs_delete_like
+
+#' Delete a repost
+#'
+#' @param rkey `r template_var_rkey()`
+#' @param user `r template_var_user()`
+#' @param pass `r template_var_pass()`
+#' @param auth `r template_var_auth()`
+#'
+#' @concept repo
+#'
+#' @return an `httr2` status code
+#' @export
+#'
+#' @section Lexicon references:
+#' [feed/repost.json (2023-11-25)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/repost.json)
+#' [repo/deleteRecord.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json)
+#'
+#' @section Function introduced:
+#' `v0.2.0` (2024-12-03)
+#'
+#' @examplesIf has_bluesky_pass() && has_bluesky_user()
+#' repo <- bs_repost('https://bsky.app/profile/bskyr.bsky.social/post/3kf2577exva2x')
+#' bs_delete_repost(bs_extract_record_key(repo$uri))
+bs_delete_repost <- function(rkey,
+                           user = get_bluesky_user(), pass = get_bluesky_pass(),
+                           auth = bs_auth(user, pass)) {
+  bs_delete_record(
+    collection = 'app.bsky.feed.like',
+    rkey = rkey,
+    auth = auth
+  )
+}

@@ -31,7 +31,7 @@ Repost an existing post
 }
 \section{Lexicon references}{
 
-\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/repost.json}{feed/post.json (2023-11-25)}
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/repost.json}{feed/repost.json (2023-11-25)}
 \href{https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/createRecord.json}{repo/createRecord.json (2023-11-25)}
 }
 
