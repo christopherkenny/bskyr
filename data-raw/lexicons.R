@@ -19,7 +19,9 @@ current_supported <- fs::dir_ls('R') |>
   tidyr::unnest_longer(line) |>
   dplyr::mutate(
     lexicon = stringr::str_extract(line, '\\[(.+/.+).json '),
-    lexicon = stringr::str_sub(lexicon, 2, -2)
+    lexicon = stringr::str_sub(lexicon, 2, -2),
+    full = stringr::str_extract(line, 'lexicons/.+/.+/.+/.+'),
+    full = stringr::str_sub(full, 10, -2)
   )
 
 # what is the full set of lexicons
@@ -32,5 +34,8 @@ non_def_lexicons <- all_lexicons |>
 
 types <- tibble::tibble(
   file = names(non_def_lexicons),
+  full = str_remove(file, '../atproto/lexicons/'),
   type = map_chr(non_def_lexicons, function(x) x$defs$main$type)
 )
+
+t
