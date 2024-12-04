@@ -34,7 +34,7 @@ Add a subject to a list
 }
 \section{Lexicon references}{
 
-\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/list.json}{graph/listitem.json (2024-12-01)}
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/listitem.json}{graph/listitem.json (2024-12-01)}
 \href{https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/createRecord.json}{repo/createRecord.json (2023-11-25)}
 }
 
