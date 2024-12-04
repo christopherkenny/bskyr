@@ -205,3 +205,35 @@ bs_delete_block <- function(rkey,
 #' @rdname bs_delete_block
 #' @export
 bs_unblock <- bs_delete_block
+
+#' Delete a starter pack
+#'
+#' @param rkey `r template_var_rkey()`
+#' @param user `r template_var_user()`
+#' @param pass `r template_var_pass()`
+#' @param auth `r template_var_auth()`
+#'
+#' @concept repo
+#'
+#' @return an `httr2` status code
+#' @export
+#'
+#' @section Lexicon references:
+#' [graph/starterpack.json (2024-12-04)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/starterpack.json)
+#' [repo/deleteRecord.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json)
+#'
+#' @section Function introduced:
+#' `v0.2.0` (2024-12-04)
+#'
+#' @examplesIf has_bluesky_pass() && has_bluesky_user()
+#' starter <- bs_new_starter_pack('bskyr test')
+#' bs_delete_starter_pack(bs_extract_record_key(starter$uri))
+bs_delete_starter_pack <- function(rkey,
+                            user = get_bluesky_user(), pass = get_bluesky_pass(),
+                            auth = bs_auth(user, pass)) {
+  bs_delete_record(
+    collection = 'app.bsky.graph.block',
+    rkey = rkey,
+    auth = auth
+  )
+}
