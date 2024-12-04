@@ -63,3 +63,41 @@ bs_delete_list_item <- function(rkey,
     auth = auth
   )
 }
+
+#' Delete a follow (un-follow someone)
+#'
+#' @param rkey `r template_var_rkey()`
+#' @param user `r template_var_user()`
+#' @param pass `r template_var_pass()`
+#' @param auth `r template_var_auth()`
+#'
+#' @concept repo
+#'
+#' @return an `httr2` status code
+#' @export
+#'
+#' @section Lexicon references:
+#' [graph/list.json (2024-12-03)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/follow.json)
+#' [repo/deleteRecord.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json)
+#'
+#' @section Function introduced:
+#' `v0.2.0` (2024-12-03)
+#'
+#' @examplesIf has_bluesky_pass() && has_bluesky_user()
+#' foll <- bs_follow(subject = 'chriskenny.bsky.social')
+#' bs_delete_follow(bs_extract_record_key(foll$uri))
+#' # obviously, you deleted this by mistake and want to follow me
+#' foll <- bs_follow(subject = 'chriskenny.bsky.social')
+bs_delete_follow <- function(rkey,
+                                user = get_bluesky_user(), pass = get_bluesky_pass(),
+                                auth = bs_auth(user, pass)) {
+  bs_delete_record(
+    collection = 'app.bsky.graph.follow',
+    rkey = rkey,
+    auth = auth
+  )
+}
+
+#' @rdname bs_delete_follow
+#' @export
+bs_unfollow <- bs_delete_follow
