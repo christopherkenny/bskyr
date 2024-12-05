@@ -57,4 +57,4 @@ types <- tibble::tibble(
 
 types |>
   left_join(current_supported, by = 'ref') |>
-  filter(type == 'record', is.na(fn))
+  filter(str_detect(ref, 'app/bsky/'), is.na(fn), type == 'record')
