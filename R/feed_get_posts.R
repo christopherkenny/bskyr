@@ -12,7 +12,7 @@
 #' @export
 #'
 #' @section Lexicon references:
-#' [feed/getPostThread.json (2023-10-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/getPostThread.json)
+#' [feed/getPosts.json (2023-10-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/getPosts.json)
 #'
 #' @section Function introduced:
 #' `v0.0.1` (2023-10-01)

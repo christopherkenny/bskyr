@@ -31,7 +31,7 @@ Retrieve thread of posts
 }
 \section{Lexicon references}{
 
-\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/getPostThread.json}{feed/getPostThread.json (2023-10-01)}
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/getPosts.json}{feed/getPosts.json (2023-10-01)}
 }
 
 \section{Function introduced}{
