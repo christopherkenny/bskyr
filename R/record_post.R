@@ -72,10 +72,8 @@ bs_post <- function(text, images, images_alt,
     if (length(images) > 4) {
       cli::cli_abort('You can only attach up to 4 images to a post.')
     }
-  }
 
-  if (!missing(images)) {
-    if (missing(images_alt)) {
+    if (missing(images_alt) && !is.list(images)) {
       cli::cli_abort('If {.arg images} is provided, {.arg images_alt} must also be provided.')
     }
   }
@@ -84,9 +82,7 @@ bs_post <- function(text, images, images_alt,
     if (length(video) > 1) {
       cli::cli_abort('You can only attach one video to a post.')
     }
-  }
 
-  if (!missing(video)) {
     if (missing(video_alt)) {
       cli::cli_abort('If {.arg video} is provided, {.arg video_alt} must also be provided.')
     }
@@ -103,12 +99,20 @@ bs_post <- function(text, images, images_alt,
   facets_l <- parse_facets(txt = text, auth = auth)
 
   if (!missing(images)) {
-    if (is.list(images)) { # any(fs::path_ext(images) == '')
+    if (is.data.frame(images)) {
+      blob <- blob_tb_to_list(images)
+    } else if (is.list(images)) { # any(fs::path_ext(images) == '')
       # then we assume it's a blob
       blob <- images
     } else {
       # otherwise it's a set of paths
       blob <- bs_upload_blob(images, auth = auth, clean = FALSE)
+    }
+
+    if (!missing(images_alt)) {
+      if (length(blob) != length(images_alt)) {
+        cli::cli_abort('{.arg images_alt} must be the same length as {.arg images}.')
+      }
     }
   }
 
@@ -119,12 +123,6 @@ bs_post <- function(text, images, images_alt,
     } else {
       # otherwise it's a path
       blob <- bs_upload_blob(video, auth = auth, clean = FALSE)
-    }
-  }
-
-  if (!missing(images_alt)) {
-    if (length(blob) != length(images_alt)) {
-      cli::cli_abort('{.arg images_alt} must be the same length as {.arg images}.')
     }
   }
 
@@ -150,7 +148,7 @@ bs_post <- function(text, images, images_alt,
 
   if (!missing(images)) {
     if (!missing(images_alt)) {
-      img_incl <- lapply(seq_along(images), function(i) {
+      img_incl <- lapply(seq_along(blob), function(i) {
         list(
           image = blob[[i]]$blob,
           alt = images_alt[[i]]

@@ -135,6 +135,26 @@ replace_emoji <- function(emo) {
   }
 }
 
+# general helpers ----
 is_user_did <- function(x) {
   stringr::str_starts(x, stringr::fixed('did:'))
+}
+
+
+# handle blob tibbles ----
+
+blob_tb_to_list <- function(tb) {
+  lapply(seq_len(nrow(tb)),
+    function(r) {
+      list(
+        blob = list(
+          `$type` = tb[[r, '$type']],
+          ref = list(
+            `$link` = tb[[r, 'ref_$link']]
+          ),
+          mimeType = tb[[r, 'mime_type']],
+          size = as.integer(tb[[r, 'size']])
+        )
+      )
+  })
 }

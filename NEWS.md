@@ -27,6 +27,7 @@
 * Minor improvements to `bs_post()`
   * Adds a `max_tries` argument that can be set to avoid transient issues. (#15)
   * Improves processing of tags in posts (@nguyenank, #10).
+  * Images created with `bs_create_record()` and `clean = TRUE` can be passed to `images` in `bs_post()`.
 * General improved processing for creating and deleting records
   * `bs_follow()` allows for following other "subjects" (colloquially, other users)
   * `bs_unfollow()` allows for deleting follow records
