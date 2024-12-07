@@ -34,19 +34,25 @@ bs_new_embed_external <- function(uri, title, description, thumb) {
     details <- opengraph::og_parse(uri)
 
     if (missing(title)) {
-      if (!is.na(details$title)) {
-        title <- details$title
+      if (!is.na(details[['title']])) {
+        title <- details[['title']]
       } else {
         cli::cli_abort('{.arg title} must not be missing.')
       }
     }
 
     if (missing(description)) {
-      if (!is.na(details$description)) {
-        description <- details$description
+      if (!is.na(details[['description']])) {
+        description <- details[['description']]
         if (is.na(description)) {
           description <- title
         }
+      }
+    }
+
+    if (missing(thumb)) {
+      if (!is.na(details[['image']])) {
+        thumb <- details[['image']]
       }
     }
   }
