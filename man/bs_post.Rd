@@ -13,6 +13,7 @@ bs_post(
   langs,
   reply,
   quote,
+  embed = TRUE,
   emoji = TRUE,
   max_tries,
   user = get_bluesky_user(),
@@ -22,23 +23,23 @@ bs_post(
 )
 }
 \arguments{
-\item{text}{text of post}
+\item{text}{Text of post}
 
-\item{images}{character vector of paths to images to attach to post}
+\item{images}{Character vector of paths to images to attach to post}
 
-\item{images_alt}{character vector of alt text for images. Must be same length as \code{images} if used.}
+\item{images_alt}{Character vector of alt text for images. Must be same length as \code{images} if used.}
 
-\item{video}{character vector of path for up to one video to attach to post}
+\item{video}{Character vector of path for up to one video to attach to post}
 
-\item{video_alt}{character vector, length one, of alt text for video, if used.}
+\item{video_alt}{Character vector, length one, of alt text for video, if used.}
 
-\item{langs}{character vector of languages in BCP-47 format}
+\item{langs}{Character vector of languages in BCP-47 format}
 
-\item{reply}{character vector with link to the parent post to reply to}
+\item{reply}{Character vector with link to the parent post to reply to}
 
-\item{quote}{character vector with link to a post to quote}
+\item{quote}{Character vector with link to a post to quote}
 
-\item{emoji}{boolean. Default is \code{TRUE}. Should \verb{:emoji:} style references be converted?}
+\item{emoji}{Logical. Default is \code{TRUE}. Should \verb{:emoji:} style references be converted?}
 
 \item{max_tries}{Integer, >= 2. Number of times to retry the request if the first fails.}
 

@@ -1,0 +1,68 @@
+#' Embed external media in a post
+#'
+#' Embeds are not designed as standalone records, but rather as part of a post.
+#' This will create a list representation of an external embed.
+#'
+#' @param uri a link to embed
+#' @param title the title for the link
+#' @param description a description of the link
+#' @param thumb Optional. A thumbnail for the link
+#'
+#' @concept embed
+#'
+#' @section Lexicon references:
+#' [embed/external.json (2024-12-05)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/embed/external.json)
+#'
+#' @section Function introduced:
+#' `v0.2.0` (2024-12-05)
+#'
+#' @return a list representation of an external embed
+#' @export
+#'
+#' @examplesIf has_bluesky_pass() & has_bluesky_user()
+#' bs_new_embed_external(
+#'   uri = 'https://christophertkenny.com/bskyr/',
+#'   title = 'Interact with Bluesky Social',
+#'   description = 'An R package for using Bluesky Social'
+#' )
+bs_new_embed_external <- function(uri, title, description, thumb) {
+
+  if (missing(uri)) {
+    cli::cli_abort('{.arg uri} must not be missing.')
+  } else {
+
+    details <- opengraph::og_parse(uri)
+
+    if (missing(title)) {
+      if (!is.na(details$title)) {
+        title <- details$title
+      } else {
+        cli::cli_abort('{.arg title} must not be missing.')
+      }
+    }
+
+    if (missing(description)) {
+      if (!is.na(details$description)) {
+        description <- details$description
+        if (is.na(description)) {
+          description <- title
+        }
+      }
+    }
+  }
+
+  rec <- list(
+    `$type` = 'app.bsky.embed.external',
+    external = list(
+      uri = uri,
+      title = title,
+      description = description
+    )
+  )
+
+  if (!missing(thumb)) {
+    rec$external$thumb <- thumb
+  }
+
+  rec
+}
