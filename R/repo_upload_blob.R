@@ -23,8 +23,19 @@
 bs_upload_blob <- function(blob,
                            user = get_bluesky_user(), pass = get_bluesky_pass(),
                            auth = bs_auth(user, pass), clean = TRUE) {
-  types <- fs::path_ext(blob)
-  raw_data <- lapply(blob, function(x) readBin(x, what = 'raw', n = file.size(x)))
+
+  raw_data <- lapply(blob, function(x) {
+    n <- file.size(x)
+    if (n > 1024 * 1024) {
+      if (rlang::is_installed('base64enc')) {
+        base64enc::base64encode(x)
+      } else {
+        cli::cli_abort('File is larger than 1MB. Please install {.pkg base64enc} to encode the file.')
+      }
+    } else {
+      readBin(x, what = 'raw', n = file.size(x))
+    }
+  })
   mime_types <- mime::guess_type(blob)
 
   out <- lapply(seq_along(blob), function(i) {
