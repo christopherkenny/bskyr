@@ -37,7 +37,7 @@ bs_new_embed_external <- function(uri, title, description, thumb) {
       if (!is.na(details[['title']])) {
         title <- details[['title']]
       } else {
-        cli::cli_abort('{.arg title} must not be missing.')
+        title <- ''
       }
     }
 
