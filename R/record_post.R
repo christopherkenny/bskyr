@@ -1,14 +1,15 @@
 #' Make a post on Bluesky Social
 #'
-#' @param text text of post
-#' @param images character vector of paths to images to attach to post
-#' @param images_alt character vector of alt text for images. Must be same length as `images` if used.
-#' @param video character vector of path for up to one video to attach to post
-#' @param video_alt character vector, length one, of alt text for video, if used.
-#' @param langs character vector of languages in BCP-47 format
-#' @param reply character vector with link to the parent post to reply to
-#' @param quote character vector with link to a post to quote
-#' @param emoji boolean. Default is `TRUE`. Should `:emoji:` style references be converted?
+#' @param text Text of post
+#' @param images Character vector of paths to images to attach to post
+#' @param images_alt Character vector of alt text for images. Must be same length as `images` if used.
+#' @param video Character vector of path for up to one video to attach to post
+#' @param video_alt Character vector, length one, of alt text for video, if used.
+#' @param langs Character vector of languages in BCP-47 format
+#' @param reply Character vector with link to the parent post to reply to
+#' @param quote Character vector with link to a post to quote
+#' @param embed Logical. Default is `TRUE`. Should a link card be embedded?
+#' @param emoji Logical. Default is `TRUE`. Should `:emoji:` style references be converted?
 #' @param max_tries `r template_var_max_tries()`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
@@ -59,9 +60,8 @@
 #'   video = fs::path_package('bskyr', 'man/figures/pkgs.mp4'),
 #'   video_alt = 'a carousel of package logos, all hexagonal')
 bs_post <- function(text, images, images_alt,
-                    video, video_alt,
-                    langs, reply, quote,
-                    emoji = TRUE, max_tries,
+                    video, video_alt, langs, reply, quote,
+                    embed = TRUE, emoji = TRUE, max_tries,
                     user = get_bluesky_user(), pass = get_bluesky_pass(),
                     auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(text)) {
@@ -197,6 +197,38 @@ bs_post <- function(text, images, images_alt,
       post$embed <- append(post$embed, quote_inc)
     } else {
       post$embed <- quote_inc
+    }
+  }
+
+  # this should be auto calced unless the user wants to override
+  if (is.null(post$embed) && !missing(embed)) {
+    # then parse links
+    # priorities
+    # 1. list of embeds manually provided
+    # 2. a tenor gif
+    # 3. link card for the first link
+
+    # 1. list of embeds manually provided
+    if (is.list(embed)) {
+      post$embed <- list(
+        '$type' = 'app.bsky.embed.external',
+        links = embed
+      )
+    } else {
+      # 2. a tenor gif
+      tenor_gif <- parse_tenor_gif(text)
+      if (!is.null(tenor_gif)) {
+        post$embed <- list(
+          '$type' = 'app.bsky.embed.external',
+          gif = tenor_gif
+        )
+      } else {
+        # 3. link card for the first link
+        link_card <- parse_first_link(text)
+        if (!is.null(link_card)) {
+          post$embed <- link_card
+        }
+      }
     }
   }
 
