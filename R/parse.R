@@ -198,6 +198,23 @@ parse_emoji <- function(txt) {
   stringr::str_replace_all(txt, emoji_regex, replace_emoji)
 }
 
-parse_tenor_gif <- function() {
+parse_tenor_gif <- function(txt) {
+  # extract gif from tenor like: https://tenor.com/view/this-is-fine-gif-24177057
+  tenor_regex <- 'https://tenor.com/view/[^\\s]+'
+  tenor_urls <- stringr::str_extract(txt, tenor_regex)
 
+  # get the opengraph content+
+  if (length(tenor_urls) == 0) {
+    return(NULL)
+  }
+
+  bs_new_embed_external(tenor_urls[[1]])
+}
+
+parse_first_link <- function(txt) {
+  urls <- parse_urls(txt)
+  if (length(urls) == 0) {
+    return(NULL)
+  }
+  bs_new_embed_external(urls[[1]][[1]]$text)
 }

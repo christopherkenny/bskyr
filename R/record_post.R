@@ -224,7 +224,7 @@ bs_post <- function(text, images, images_alt,
         )
       } else {
         # 3. link card for the first link
-        link_card <- bs_new_embed_external(text)
+        link_card <- parse_first_link(text)
         if (!is.null(link_card)) {
           post$embed <- link_card
         }
