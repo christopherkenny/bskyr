@@ -39,6 +39,8 @@ bs_post(
 
 \item{quote}{Character vector with link to a post to quote}
 
+\item{embed}{Logical. Default is \code{TRUE}. Should a link card be embedded?}
+
 \item{emoji}{Logical. Default is \code{TRUE}. Should \verb{:emoji:} style references be converted?}
 
 \item{max_tries}{Integer, >= 2. Number of times to retry the request if the first fails.}
