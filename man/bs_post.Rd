@@ -59,13 +59,37 @@ a \link[tibble:tibble]{tibble::tibble} of post information
 \description{
 Make a post on Bluesky Social
 }
-\details{
+\section{Emoji parsing}{
+
 \verb{:emoji:} parsing is not a formally supported Bluesky feature. This package
 converts usages of this kind by identifying text within \code{:}s, here "\code{emoji}"
 and then matches them to the \code{emoji} package's list of emoji names. All
 supported emoji names and corresponding images can be seen with
 \code{emoji::emoji_name}. This feature was introduced in \code{v0.2.0}.
 }
+
+\section{Embedding}{
+
+Embedding is a feature that allows for a link card to be created when a URL
+or other media to be added as a preview to the post. This feature was
+introduced in \code{v0.2.0}.
+
+Embeds are processed as follows:
+\enumerate{
+\item If \code{is.list(embed)}, it is assumed to be an embed object. These should be
+created with \code{bs_new_embed_external()}, unless you are certain of the
+structure.
+\item If \code{is.character(embed)}, it is assumed to be a URL. The function will
+use the open graph protocol to try to infer the embed from the URL.
+\item If \code{isTRUE(embed)}, the \emph{default}, it tries to infer the embed from the text.
+\item First, if a Tenor Gif link is found in the text, it will be embedded.
+\item Second, if a URL is found in the text, it will be embedded. Only the first
+URL found will be embedded.
+\item If \code{isFALSE(embed)} or it does match an earlier condidtion, no embed is
+created and the post is sent as is.
+}
+}
+
 \section{Lexicon references}{
 
 \href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/post.json}{feed/post.json (2024-11-29)}

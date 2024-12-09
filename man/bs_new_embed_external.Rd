@@ -4,7 +4,15 @@
 \alias{bs_new_embed_external}
 \title{Embed external media in a post}
 \usage{
-bs_new_embed_external(uri, title, description, thumb)
+bs_new_embed_external(
+  uri,
+  title,
+  description,
+  thumb,
+  user = get_bluesky_user(),
+  pass = get_bluesky_pass(),
+  auth = bs_auth(user, pass)
+)
 }
 \arguments{
 \item{uri}{a link to embed}
@@ -14,6 +22,12 @@ bs_new_embed_external(uri, title, description, thumb)
 \item{description}{a description of the link}
 
 \item{thumb}{Optional. A thumbnail for the link}
+
+\item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
+
+\item{pass}{Character. App password to log in with. Defaults to \code{get_bluesky_pass()}.}
+
+\item{auth}{Authentication information. Defaults to \code{bs_auth(user, pass)}.}
 }
 \value{
 a list representation of an external embed

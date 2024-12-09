@@ -7,6 +7,9 @@
 #' @param title the title for the link
 #' @param description a description of the link
 #' @param thumb Optional. A thumbnail for the link
+#' @param user `r template_var_user()`
+#' @param pass `r template_var_pass()`
+#' @param auth `r template_var_auth()`
 #'
 #' @concept embed
 #'
@@ -25,37 +28,51 @@
 #'   title = 'Interact with Bluesky Social',
 #'   description = 'An R package for using Bluesky Social'
 #' )
-bs_new_embed_external <- function(uri, title, description, thumb) {
+bs_new_embed_external <- function(uri, title, description, thumb,
+                                  user = get_bluesky_user(), pass = get_bluesky_pass(),
+                                  auth = bs_auth(user, pass)) {
 
   if (missing(uri)) {
     cli::cli_abort('{.arg uri} must not be missing.')
-  } else {
+  }
 
-    details <- opengraph::og_parse(uri)
+  details <- opengraph::og_parse(uri)
 
-    if (missing(title)) {
-      if (!is.na(details[['title']])) {
-        title <- details[['title']]
-      } else {
-        title <- ''
-      }
+  if (missing(title)) {
+    if (!is.na(details[['title']])) {
+      title <- details[['title']]
+    } else {
+      title <- ''
     }
+  }
 
-    if (missing(description)) {
-      if (!is.na(details[['description']])) {
-        description <- details[['description']]
-        if (is.na(description)) {
-          description <- title
-        }
-      }
-    }
-
-    if (missing(thumb)) {
-      if (!is.na(details[['image']])) {
-        thumb <- details[['image']]
+  if (missing(description)) {
+    if (!is.na(details[['description']])) {
+      description <- details[['description']]
+      if (is.na(description)) {
+        description <- title
       }
     }
   }
+
+  if (missing(thumb)) {
+    if (!is.na(details[['image']])) {
+      user_did <- auth$did
+
+      if (fs::is_link(details[['image']])) {
+        ext <- fs::path_ext(details[['image']])
+        tfd <- fs::file_temp(fileext = ext)
+        download.file(details[['image']], tfd)
+        details[['image']] <- tfd
+      }
+      thumb_url <- bs_upload_blob(details[['image']], auth = auth)
+
+      thumb <- paste0('https://cdn.bsky.app/img/feed_thumbnail/plain/', user_did, '/', thumb_url[['ref_$link']])
+    } else {
+      thumb <- NULL
+    }
+  }
+
 
   rec <- list(
     `$type` = 'app.bsky.embed.external',
@@ -66,7 +83,7 @@ bs_new_embed_external <- function(uri, title, description, thumb) {
     )
   )
 
-  if (!missing(thumb)) {
+  if (!is.null(thumb)) {
     rec$external$thumb <- thumb
   }
 

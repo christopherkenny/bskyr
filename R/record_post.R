@@ -16,12 +16,30 @@
 #' @param auth `r template_var_auth()`
 #' @param clean `r template_var_clean()`
 #'
-#' @details
+#' @section Emoji parsing:
 #' `:emoji:` parsing is not a formally supported Bluesky feature. This package
 #' converts usages of this kind by identifying text within `:`s, here "`emoji`"
 #' and then matches them to the `emoji` package's list of emoji names. All
 #' supported emoji names and corresponding images can be seen with
 #' `emoji::emoji_name`. This feature was introduced in `v0.2.0`.
+#'
+#' @section Embedding:
+#' Embedding is a feature that allows for a link card to be created when a URL
+#' or other media to be added as a preview to the post. This feature was
+#' introduced in `v0.2.0`.
+#'
+#' Embeds are processed as follows:
+#' 1. If `is.list(embed)`, it is assumed to be an embed object. These should be
+#'   created with `bs_new_embed_external()`, unless you are certain of the
+#'   structure.
+#' 2. If `is.character(embed)`, it is assumed to be a URL. The function will
+#'   use the open graph protocol to try to infer the embed from the URL.
+#' 3. If `isTRUE(embed)`, the *default*, it tries to infer the embed from the text.
+#'   1. First, if a Tenor Gif link is found in the text, it will be embedded.
+#'   2. Second, if a URL is found in the text, it will be embedded. Only the first
+#'   URL found will be embedded.
+#' 4. If `isFALSE(embed)` or it does match an earlier condidtion, no embed is
+#'   created and the post is sent as is.
 #'
 #'
 #' @concept record
@@ -205,28 +223,37 @@ bs_post <- function(text, images, images_alt,
     # then parse links
     # priorities
     # 1. list of embeds manually provided
-    # 2. a tenor gif
-    # 3. link card for the first link
+    # 2. a provided link
+    # 3. a tenor gif
+    # 4. link card for the first link
 
     # 1. list of embeds manually provided
     if (is.list(embed)) {
       post$embed <- list(
         '$type' = 'app.bsky.embed.external',
-        links = embed
+        external = embed
       )
-    } else {
+    } else if (is.character(embed)) {
+      post$embed <- list(
+        '$type' = 'app.bsky.embed.external',
+        external = bs_new_embed_external(uri = embed)
+      )
+    } else if (isTRUE(embed)) {
       # 2. a tenor gif
       tenor_gif <- parse_tenor_gif(text)
       if (!is.null(tenor_gif)) {
         post$embed <- list(
           '$type' = 'app.bsky.embed.external',
-          gif = tenor_gif
+          external = tenor_gif
         )
       } else {
         # 3. link card for the first link
         link_card <- parse_first_link(text)
         if (!is.null(link_card)) {
-          post$embed <- link_card
+          post$embed <- list(
+            '$type' = 'app.bsky.embed.external',
+            external = link_card
+          )
         }
       }
     }
