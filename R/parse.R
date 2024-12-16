@@ -208,7 +208,46 @@ parse_tenor_gif <- function(txt) {
     return(NULL)
   }
 
-  bs_new_embed_external(tenor_urls[[1]])
+  url <- tenor_urls[[1]]
+
+  og <- opengraph::og_parse(url)
+
+  if (!'site_name' %in% names(og)) {
+    return(NULL)
+  }
+  if (og[['site_name']] != 'Tenor') {
+    return(NULL)
+  }
+
+  # get image link
+  # get image:width
+  # get image:height
+  # create new url, e.g. 'https://media.tenor.com/MYZgsN2TDJAAAAAC/this-is.gif?hh=280&ww=498'
+  out_url <- paste0(
+    og[['image']],
+    '?hh=', og[['image:height']],
+    '&ww=', og[['image:width']]
+  ) |>
+    stringr::str_replace('media1.tenor.com', 'media.tenor.com') |>
+    stringr::str_replace('/m/', '/')
+
+  # download the gif
+  ext <- fs::path_ext(og[['image']])
+  tfd <- fs::file_temp(ext = ext)
+  curl::curl_download(og[['image']], tfd)
+
+  # convert first frame to png as the thumbnail
+  thumb <- fs::file_temp(ext = '.png')
+  magick::image_read(tfd) |>
+    magick::image_convert(format = 'png') |>
+    magick::image_write(thumb)
+
+  bs_new_embed_external(
+    uri = out_url,
+    title = og[['title']],
+    description = og[['title']],
+    thumb = thumb
+  )
 }
 
 parse_first_link <- function(txt) {

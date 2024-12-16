@@ -63,7 +63,7 @@ bs_new_embed_external <- function(uri, title, description, thumb,
 
   if (missing(thumb)) {
     if ('image' %in% names(details)) {
-      user_did <- auth$did
+      #user_did <- auth$did
 
       if (is_online_link(details[['image']])) {
         ext <- fs::path_ext(details[['image']])
@@ -73,11 +73,19 @@ bs_new_embed_external <- function(uri, title, description, thumb,
       }
       thumb_url <- bs_upload_blob(details[['image']], auth = auth, clean = FALSE)
 
-      thumb <- thumb_url[[1]]$blob#$ref$`$link`
-
+      thumb <- thumb_url[[1]]$blob
       #thumb <- paste0('https://cdn.bsky.app/img/feed_thumbnail/plain/', user_did, '/', thumb_url[[1]]$blob$ref$`$link`)
     } else {
       thumb <- NULL
+    }
+  } else {
+    if (is_online_link(thumb)) {
+      ext <- fs::path_ext(thumb)
+      tfd <- fs::file_temp(ext = ext)
+      curl::curl_download(thumb, tfd)
+      thumb <- bs_upload_blob(tfd, auth = auth, clean = FALSE)[[1]]$blob
+    } else if (fs::is_file(thumb)) {
+      thumb <- bs_upload_blob(thumb, auth = auth, clean = FALSE)[[1]]$blob
     }
   }
 

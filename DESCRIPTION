@@ -24,6 +24,7 @@ Imports:
     fs,
     httr2,
     lubridate,
+    magick,
     mime,
     opengraph,
     purrr,
