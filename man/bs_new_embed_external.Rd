@@ -53,6 +53,10 @@ bs_new_embed_external(
   title = 'Interact with Bluesky Social',
   description = 'An R package for using Bluesky Social'
 )
+
+bs_new_embed_external(
+  uri = 'https://christophertkenny.com/bskyr/'
+)
 \dontshow{\}) # examplesIf}
 }
 \concept{embed}

@@ -140,6 +140,10 @@ is_user_did <- function(x) {
   stringr::str_starts(x, stringr::fixed('did:'))
 }
 
+is_online_link <- function(x) {
+  stringr::str_starts(x, 'https://') | stringr::str_starts(x, 'http://')
+}
+
 
 # handle blob tibbles ----
 

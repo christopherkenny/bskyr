@@ -28,6 +28,10 @@
 #'   title = 'Interact with Bluesky Social',
 #'   description = 'An R package for using Bluesky Social'
 #' )
+#'
+#' bs_new_embed_external(
+#'   uri = 'https://christophertkenny.com/bskyr/'
+#' )
 bs_new_embed_external <- function(uri, title, description, thumb,
                                   user = get_bluesky_user(), pass = get_bluesky_pass(),
                                   auth = bs_auth(user, pass)) {
@@ -59,15 +63,17 @@ bs_new_embed_external <- function(uri, title, description, thumb,
     if (!is.na(details[['image']])) {
       user_did <- auth$did
 
-      if (fs::is_link(details[['image']])) {
+      if (is_online_link(details[['image']])) {
         ext <- fs::path_ext(details[['image']])
-        tfd <- fs::file_temp(fileext = ext)
+        tfd <- fs::file_temp(ext = ext)
         download.file(details[['image']], tfd)
         details[['image']] <- tfd
       }
-      thumb_url <- bs_upload_blob(details[['image']], auth = auth)
+      thumb_url <- bs_upload_blob(details[['image']], auth = auth, clean = FALSE)
 
-      thumb <- paste0('https://cdn.bsky.app/img/feed_thumbnail/plain/', user_did, '/', thumb_url[['ref_$link']])
+      thumb <- thumb_url[[1]]$blob#$ref$`$link`
+
+      #thumb <- paste0('https://cdn.bsky.app/img/feed_thumbnail/plain/', user_did, '/', thumb_url[[1]]$blob$ref$`$link`)
     } else {
       thumb <- NULL
     }
@@ -76,15 +82,15 @@ bs_new_embed_external <- function(uri, title, description, thumb,
 
   rec <- list(
     `$type` = 'app.bsky.embed.external',
-    external = list(
-      uri = uri,
-      title = title,
-      description = description
-    )
+    #external = list(
+    uri = uri,
+    title = title,
+    description = description
+    #)
   )
 
   if (!is.null(thumb)) {
-    rec$external$thumb <- thumb
+    rec$thumb <- thumb
   }
 
   rec
