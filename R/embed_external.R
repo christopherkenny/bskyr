@@ -51,16 +51,18 @@ bs_new_embed_external <- function(uri, title, description, thumb,
   }
 
   if (missing(description)) {
-    if (!is.na(details[['description']])) {
+    if ('description' %in% names(details)) {
       description <- details[['description']]
       if (is.na(description)) {
         description <- title
       }
+    } else {
+      description <- title
     }
   }
 
   if (missing(thumb)) {
-    if (!is.na(details[['image']])) {
+    if ('image' %in% names(details)) {
       user_did <- auth$did
 
       if (is_online_link(details[['image']])) {

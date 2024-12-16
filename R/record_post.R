@@ -219,7 +219,7 @@ bs_post <- function(text, images, images_alt,
   }
 
   # this should be auto calced unless the user wants to override
-  if (is.null(post$embed) && !missing(embed)) {
+  if (!is.null(embed) && !isFALSE(embed)) {
     # then parse links
     # priorities
     # 1. list of embeds manually provided
@@ -233,7 +233,7 @@ bs_post <- function(text, images, images_alt,
         '$type' = 'app.bsky.embed.external',
         external = embed
       )
-    } else if (is.character(embed)) {
+    } else if (is.character(embed) && is_online_link(embed)) {
       post$embed <- list(
         '$type' = 'app.bsky.embed.external',
         external = bs_new_embed_external(uri = embed)

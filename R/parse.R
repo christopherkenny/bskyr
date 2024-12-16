@@ -204,7 +204,7 @@ parse_tenor_gif <- function(txt) {
   tenor_urls <- stringr::str_extract(txt, tenor_regex)
 
   # get the opengraph content+
-  if (length(tenor_urls) == 0) {
+  if (length(tenor_urls) == 0 || is.na(tenor_urls)) {
     return(NULL)
   }
 
@@ -212,9 +212,9 @@ parse_tenor_gif <- function(txt) {
 }
 
 parse_first_link <- function(txt) {
-  urls <- parse_urls(txt)
+  urls <- parse_urls(txt)[[1]]
   if (length(urls) == 0) {
     return(NULL)
   }
-  bs_new_embed_external(urls[[1]][[1]]$text)
+  bs_new_embed_external(urls[[1]]$text)
 }
