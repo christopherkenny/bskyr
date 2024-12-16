@@ -66,7 +66,7 @@ bs_new_embed_external <- function(uri, title, description, thumb,
       if (is_online_link(details[['image']])) {
         ext <- fs::path_ext(details[['image']])
         tfd <- fs::file_temp(ext = ext)
-        download.file(details[['image']], tfd)
+        curl::curl_download(details[['image']], tfd)
         details[['image']] <- tfd
       }
       thumb_url <- bs_upload_blob(details[['image']], auth = auth, clean = FALSE)
