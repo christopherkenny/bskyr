@@ -227,14 +227,16 @@ bs_post <- function(text, images, images_alt,
     # 3. a tenor gif
     # 4. link card for the first link
 
+    card <- NULL
+
     # 1. list of embeds manually provided
     if (is.list(embed)) {
-      post$embed <- list(
+      card <- list(
         '$type' = 'app.bsky.embed.external',
         external = embed
       )
     } else if (is.character(embed) && is_online_link(embed)) {
-      post$embed <- list(
+      card <- list(
         '$type' = 'app.bsky.embed.external',
         external = bs_new_embed_external(uri = embed)
       )
@@ -242,7 +244,7 @@ bs_post <- function(text, images, images_alt,
       # 2. a tenor gif
       tenor_gif <- parse_tenor_gif(text)
       if (!is.null(tenor_gif)) {
-        post$embed <- list(
+        card <- list(
           '$type' = 'app.bsky.embed.external',
           external = tenor_gif
         )
@@ -250,11 +252,19 @@ bs_post <- function(text, images, images_alt,
         # 3. link card for the first link
         link_card <- parse_first_link(text)
         if (!is.null(link_card)) {
-          post$embed <- list(
+          card <- list(
             '$type' = 'app.bsky.embed.external',
             external = link_card
           )
         }
+      }
+    }
+
+    if (!is.null(card)) {
+      if (!is.null(post$embed)) {
+        post$embed <- append(post$embed, card)
+      } else {
+        post$embed <- card
       }
     }
   }
