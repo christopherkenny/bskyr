@@ -128,7 +128,7 @@ bs_post <- function(text, images, images_alt,
 
   if (stringi::stri_numbytes(text) > 300) {
     # warning because *sometimes* it works even if I think it's above the limit
-    cli::cli_warn(c('{.arg text} evaluates to {} graphemes, which is above the limit (300).',
+    cli::cli_warn(c('{.arg text} evaluates to {stringi::stri_numbytes(text)} graphemes, which is above the limit (300).',
                     i = 'If positng fails, consider reducing the length of the text.'))
   }
 
