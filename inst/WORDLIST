@@ -35,9 +35,11 @@ getListMutes
 getLists
 getMutes
 getPostThread
+getPosts
 getPreferences
 getProfile
 getProfiles
+getQuotes
 getRecord
 getRelationships
 getRepostedBy
@@ -53,6 +55,7 @@ json
 listNotifications
 listitem
 repo
+repost
 reposted
 reposts
 resolveHandle
@@ -60,7 +63,9 @@ richtext
 searchActors
 searchActorsTypeahead
 searchPosts
+starterpack
 tibble
 typeahead
+un
 uploadBlob
 ’s
