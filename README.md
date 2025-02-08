@@ -95,7 +95,7 @@ See the reference for additional features, including likes with
 ## Authentication
 
 To authenticate, you first need to make an App Password. To do this, go
-to <https://bsky.app/settings>. Under “Advanced” click App passwords and
+to `https://bsky.app/settings`. Under “Advanced” click App passwords and
 then “Add App Password.”
 
 Once you have a password, you need to run:
