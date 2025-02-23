@@ -22,7 +22,7 @@
 #' bs_get_list('at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.list/3kmokjyuflk2g')
 bs_get_list <- function(list, limit = NULL,
                         user = get_bluesky_user(), pass = get_bluesky_pass(),
-                        auth = bs_auth(user, pass), clean = TRUE) {
+                        auth = bs_auth(user, pass), clean = TRUE, cursor = NULL) {
 
   if (missing(list)) {
     cli::cli_abort('{.arg list} must list at least one user.')
@@ -44,7 +44,8 @@ bs_get_list <- function(list, limit = NULL,
     httr2::req_url_query(list = list) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(
-      limit = limit
+      limit = limit,
+      cursor = cursor
     )
   resp <- req |>
     httr2::req_perform() |>
