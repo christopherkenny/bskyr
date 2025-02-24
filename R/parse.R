@@ -1,39 +1,35 @@
-parse_mentions <- function(txt) {
-  # regex based on: https://atproto.com/specs/handle#handle-identifier-syntax
-  mention_regex <- '[$|\\W](@([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\\.)+[a-zA-Z]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)'
+# regex based on: https://atproto.com/specs/handle#handle-identifier-syntax
+mention_regex <- '[$|\\W](@([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\\.)+[a-zA-Z]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)'
+# regex base on: https://atproto.com/blog/create-post
+url_regex <- '[$|\\W](https?://(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*[-a-zA-Z0-9@%_\\+~#//=])?)'
+# regex taken from: https://github.com/bluesky-social/atproto/blob/main/packages/api/src/rich-text/util.ts
+tag_regex <- '(^|\\s)[#\\uFF03](?<tag>(?!\\ufe0f)[^\\s\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]*[^\\d\\s\\p{P}\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]+[^\\s\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]*)?'
 
+parse_mentions <- function(txt) {
   # drop_n = whitespace + @
   parse_regex(txt, regex = mention_regex, drop_n = 2L)
 }
 
 parse_urls <- function(txt) {
-  # regex base on: https://atproto.com/blog/create-post
-  url_regex <- '[$|\\W](https?://(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*[-a-zA-Z0-9@%_\\+~#//=])?)'
-
   # drop_n = whitespace
   parse_regex(txt, regex = url_regex, drop_n = 1L)
 }
 
 parse_tags <- function(txt) {
-  # regex taken from: https://github.com/bluesky-social/atproto/blob/main/packages/api/src/rich-text/util.ts
-
-  tag_regex <- '(^|\\s)[#\\uFF03](?<tag>(?!\\ufe0f)[^\\s\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]*[^\\d\\s\\p{P}\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]+[^\\s\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]*)?'
-
   matches <- stringi::stri_locate_all_regex(txt, tag_regex, capture_groups = TRUE, get_length = TRUE, omit_no_match = TRUE)
   lapply(seq_along(matches), function(m) {
-    tags <- attr(matches[[m]], "capture_groups")$tag
+    tags <- attr(matches[[m]], 'capture_groups')$tag
     lapply(seq_len(nrow(tags)), function(r) {
-
       # did not find tag
-      if (tags[r, "length", drop=TRUE] < 0) {
+      if (tags[r, 'length', drop = TRUE] < 0) {
         return(list())
       }
 
-      start_idx <- unname(tags[r, "start", drop=TRUE])
+      start_idx <- unname(tags[r, 'start', drop = TRUE])
       text <- stringr::str_sub(
         txt[[m]],
         start = start_idx,
-        end = start_idx + tags[r, "length", drop=TRUE]
+        end = start_idx + tags[r, 'length', drop = TRUE]
       )
       # strip ending punctuation and any spaces
       punct_space_unicode_set <- '[\\p{P}\\p{Z}\\n\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]'
@@ -45,11 +41,13 @@ parse_tags <- function(txt) {
       }
 
       numbytes_start <- stringi::stri_numbytes(stringr::str_sub(txt,
-                                                                start = 1L,
-                                                                end = start_idx - 1))
+        start = 1L,
+        end = start_idx - 1
+      ))
       numbytes_hashtag <- stringi::stri_numbytes(stringr::str_sub(txt,
-                                                                  start = start_idx - 1,
-                                                                  end = start_idx - 1))
+        start = start_idx - 1,
+        end = start_idx - 1
+      ))
 
       list(
         start = numbytes_start - numbytes_hashtag,
@@ -195,7 +193,67 @@ parse_uri <- function(uri) {
 }
 
 parse_emoji <- function(txt) {
-  emoji_regex <- ':[a-zA-Z0-9_]+:' #'(?<=:)[^:\\s]+(?=:)'
+  emoji_regex <- ':[a-zA-Z0-9_]+:' #' (?<=:)[^:\\s]+(?=:)'
 
   stringr::str_replace_all(txt, emoji_regex, replace_emoji)
+}
+
+parse_tenor_gif <- function(txt) {
+  # extract gif from tenor like: https://tenor.com/view/this-is-fine-gif-24177057
+  tenor_regex <- 'https://tenor.com/view/[^\\s]+'
+  tenor_urls <- stringr::str_extract(txt, tenor_regex)
+
+  # get the opengraph content+
+  if (length(tenor_urls) == 0 || is.na(tenor_urls)) {
+    return(NULL)
+  }
+
+  url <- tenor_urls[[1]]
+
+  og <- opengraph::og_parse(url)
+
+  if (!'site_name' %in% names(og)) {
+    return(NULL)
+  }
+  if (og[['site_name']] != 'Tenor') {
+    return(NULL)
+  }
+
+  # get image link
+  # get image:width
+  # get image:height
+  # create new url, e.g. 'https://media.tenor.com/MYZgsN2TDJAAAAAC/this-is.gif?hh=280&ww=498'
+  out_url <- paste0(
+    og[['image']],
+    '?hh=', og[['image:height']],
+    '&ww=', og[['image:width']]
+  ) |>
+    stringr::str_replace('media1.tenor.com', 'media.tenor.com') |>
+    stringr::str_replace('/m/', '/')
+
+  # download the gif
+  ext <- fs::path_ext(og[['image']])
+  tfd <- fs::file_temp(ext = ext)
+  curl::curl_download(og[['image']], tfd)
+
+  # convert first frame to png as the thumbnail
+  thumb <- fs::file_temp(ext = '.png')
+  magick::image_read(tfd) |>
+    magick::image_convert(format = 'png') |>
+    magick::image_write(thumb)
+
+  bs_new_embed_external(
+    uri = out_url,
+    title = og[['title']],
+    description = og[['title']],
+    thumb = thumb
+  )
+}
+
+parse_first_link <- function(txt) {
+  urls <- parse_urls(txt)[[1]]
+  if (length(urls) == 0) {
+    return(NULL)
+  }
+  bs_new_embed_external(urls[[1]]$text)
 }
