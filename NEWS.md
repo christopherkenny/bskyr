@@ -1,3 +1,7 @@
+# bskyr 0.3.0
+
+* Adds support for embedded link cards in `bs_post()`. (#17)
+
 # bskyr 0.2.0
 
 * Improves processing of posts into tidy objects, impacting:
