@@ -1,26 +1,45 @@
 #' Make a post on Bluesky Social
 #'
-#' @param text text of post
-#' @param images character vector of paths to images to attach to post
-#' @param images_alt character vector of alt text for images. Must be same length as `images` if used.
-#' @param video character vector of path for up to one video to attach to post
-#' @param video_alt character vector, length one, of alt text for video, if used.
-#' @param langs character vector of languages in BCP-47 format
-#' @param reply character vector with link to the parent post to reply to
-#' @param quote character vector with link to a post to quote
-#' @param emoji boolean. Default is `TRUE`. Should `:emoji:` style references be converted?
+#' @param text Text of post
+#' @param images Character vector of paths to images to attach to post
+#' @param images_alt Character vector of alt text for images. Must be same length as `images` if used.
+#' @param video Character vector of path for up to one video to attach to post
+#' @param video_alt Character vector, length one, of alt text for video, if used.
+#' @param langs Character vector of languages in BCP-47 format
+#' @param reply Character vector with link to the parent post to reply to
+#' @param quote Character vector with link to a post to quote
+#' @param embed Logical. Default is `TRUE`. Should a link card be embedded?
+#' @param emoji Logical. Default is `TRUE`. Should `:emoji:` style references be converted?
 #' @param max_tries `r template_var_max_tries()`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
 #' @param clean `r template_var_clean()`
 #'
-#' @details
+#' @section Emoji parsing:
 #' `:emoji:` parsing is not a formally supported Bluesky feature. This package
 #' converts usages of this kind by identifying text within `:`s, here "`emoji`"
 #' and then matches them to the `emoji` package's list of emoji names. All
 #' supported emoji names and corresponding images can be seen with
 #' `emoji::emoji_name`. This feature was introduced in `v0.2.0`.
+#'
+#' @section Embedding:
+#' Embedding is a feature that allows for a link card to be created when a URL
+#' or other media to be added as a preview to the post. This feature was
+#' introduced in `v0.2.0`.
+#'
+#' Embeds are processed as follows:
+#' 1. If `is.list(embed)`, it is assumed to be an embed object. These should be
+#'   created with `bs_new_embed_external()`, unless you are certain of the
+#'   structure.
+#' 2. If `is.character(embed)`, it is assumed to be a URL. The function will
+#'   use the open graph protocol to try to infer the embed from the URL.
+#' 3. If `isTRUE(embed)`, the *default*, it tries to infer the embed from the text.
+#'   1. First, if a Tenor Gif link is found in the text, it will be embedded.
+#'   2. Second, if a URL is found in the text, it will be embedded. Only the first
+#'   URL found will be embedded.
+#' 4. If `isFALSE(embed)` or it does match an earlier condidtion, no embed is
+#'   created and the post is sent as is.
 #'
 #'
 #' @concept record
@@ -59,9 +78,8 @@
 #'   video = fs::path_package('bskyr', 'man/figures/pkgs.mp4'),
 #'   video_alt = 'a carousel of package logos, all hexagonal')
 bs_post <- function(text, images, images_alt,
-                    video, video_alt,
-                    langs, reply, quote,
-                    emoji = TRUE, max_tries,
+                    video, video_alt, langs, reply, quote,
+                    embed = TRUE, emoji = TRUE, max_tries,
                     user = get_bluesky_user(), pass = get_bluesky_pass(),
                     auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(text)) {
@@ -193,10 +211,78 @@ bs_post <- function(text, images, images_alt,
       )
     )
 
-    if (!is.null(post$embed)) {
-      post$embed <- append(post$embed, quote_inc)
-    } else {
-      post$embed <- quote_inc
+    if (is.null(embed) || isFALSE(embed)) {
+      if (!is.null(post$embed)) {
+        post$embed <- append(post$embed, quote_inc)
+      } else {
+        post$embed <- quote_inc
+      }
+    }
+  }
+
+  # this should be auto calced unless the user wants to override
+  if (!is.null(embed) && !isFALSE(embed)) {
+    # then parse links
+    # priorities
+    # 1. list of embeds manually provided
+    # 2. a provided link
+    # 3. a tenor gif
+    # 4. link card for the first link
+
+    card <- NULL
+
+    # 1. list of embeds manually provided
+    if (is.list(embed)) {
+      card <- list(
+        '$type' = 'app.bsky.embed.external',
+        external = embed
+      )
+    } else if (is.character(embed) && is_online_link(embed)) {
+      card <- list(
+        '$type' = 'app.bsky.embed.external',
+        external = bs_new_embed_external(uri = embed)
+      )
+    } else if (isTRUE(embed)) {
+      # 2. a tenor gif
+      tenor_gif <- parse_tenor_gif(text)
+      if (!is.null(tenor_gif)) {
+        card <- list(
+          '$type' = 'app.bsky.embed.external',
+          external = tenor_gif
+        )
+      } else {
+        # 3. link card for the first link
+        link_card <- parse_first_link(text)
+        if (!is.null(link_card)) {
+          card <- list(
+            '$type' = 'app.bsky.embed.external',
+            external = link_card
+          )
+        }
+      }
+    }
+
+    if (!is.null(card)) {
+      if (!missing(quote)) {
+        quote_card <- list(
+          '$type' = 'app.bsky.embed.recordWithMedia',
+          media = card,
+          record = quote_inc
+        )
+
+        if (!is.null(post$embed)) {
+          post$embed <- append(post$embed, quote_card)
+        } else {
+          post$embed <- quote_card
+        }
+
+      } else {
+        if (!is.null(post$embed)) {
+          post$embed <- append(post$embed, card)
+        } else {
+          post$embed <- card
+        }
+      }
     }
   }
 
