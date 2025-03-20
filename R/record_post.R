@@ -11,6 +11,7 @@
 #' @param embed Logical. Default is `TRUE`. Should a link card be embedded?
 #' @param emoji Logical. Default is `TRUE`. Should `:emoji:` style references be converted?
 #' @param max_tries `r template_var_max_tries()`
+#' @param created_at `r template_var_created_at()`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
@@ -80,6 +81,7 @@
 bs_post <- function(text, images, images_alt,
                     video, video_alt, langs, reply, quote,
                     embed = TRUE, emoji = TRUE, max_tries,
+                    created_at = bs_created_at(),
                     user = get_bluesky_user(), pass = get_bluesky_pass(),
                     auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(text)) {
@@ -153,7 +155,7 @@ bs_post <- function(text, images, images_alt,
   post <- list(
     `$type` = 'app.bsky.feed.post',
     text = text,
-    createdAt = bs_created_at()
+    createdAt = created_at
   )
 
   if (!missing(langs)) {

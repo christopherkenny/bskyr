@@ -2,6 +2,7 @@
 
 * Adds support for embedded link cards in `bs_post()`. (#17)
 * Adds new function `bs_new_embed_external()` to support manual setup of external embeds. (#17)
+* Adds more control to `bs_post()` with a new argument `created_at` to customize times of posts. (#21)
 
 # bskyr 0.2.0
 

@@ -16,6 +16,7 @@ bs_post(
   embed = TRUE,
   emoji = TRUE,
   max_tries,
+  created_at = bs_created_at(),
   user = get_bluesky_user(),
   pass = get_bluesky_pass(),
   auth = bs_auth(user, pass),
@@ -44,6 +45,8 @@ bs_post(
 \item{emoji}{Logical. Default is \code{TRUE}. Should \verb{:emoji:} style references be converted?}
 
 \item{max_tries}{Integer, >= 2. Number of times to retry the request if the first fails.}
+
+\item{created_at}{Character, length 1 of the form "\%Y-\%m-\%dT\%H:\%M:\%OS6Z". Time to assign to a record. Default is \code{bs_created_at()}.}
 
 \item{user}{Character. User name to log in with. Defaults to \code{get_bluesky_user()}.}
 
