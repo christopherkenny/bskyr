@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">bskyr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,6 +51,7 @@
 <span>  <span class="va">langs</span>,</span>
 <span>  <span class="va">reply</span>,</span>
 <span>  <span class="va">quote</span>,</span>
+<span>  embed <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  emoji <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  <span class="va">max_tries</span>,</span>
 <span>  user <span class="op">=</span> <span class="fu"><a href="user.html">get_bluesky_user</a></span><span class="op">(</span><span class="op">)</span>,</span>
@@ -65,39 +66,43 @@
 
 
 <dl><dt id="arg-text">text<a class="anchor" aria-label="anchor" href="#arg-text"></a></dt>
-<dd><p>text of post</p></dd>
+<dd><p>Text of post</p></dd>
 
 
 <dt id="arg-images">images<a class="anchor" aria-label="anchor" href="#arg-images"></a></dt>
-<dd><p>character vector of paths to images to attach to post</p></dd>
+<dd><p>Character vector of paths to images to attach to post</p></dd>
 
 
 <dt id="arg-images-alt">images_alt<a class="anchor" aria-label="anchor" href="#arg-images-alt"></a></dt>
-<dd><p>character vector of alt text for images. Must be same length as <code>images</code> if used.</p></dd>
+<dd><p>Character vector of alt text for images. Must be same length as <code>images</code> if used.</p></dd>
 
 
 <dt id="arg-video">video<a class="anchor" aria-label="anchor" href="#arg-video"></a></dt>
-<dd><p>character vector of path for up to one video to attach to post</p></dd>
+<dd><p>Character vector of path for up to one video to attach to post</p></dd>
 
 
 <dt id="arg-video-alt">video_alt<a class="anchor" aria-label="anchor" href="#arg-video-alt"></a></dt>
-<dd><p>character vector, length one, of alt text for video, if used.</p></dd>
+<dd><p>Character vector, length one, of alt text for video, if used.</p></dd>
 
 
 <dt id="arg-langs">langs<a class="anchor" aria-label="anchor" href="#arg-langs"></a></dt>
-<dd><p>character vector of languages in BCP-47 format</p></dd>
+<dd><p>Character vector of languages in BCP-47 format</p></dd>
 
 
 <dt id="arg-reply">reply<a class="anchor" aria-label="anchor" href="#arg-reply"></a></dt>
-<dd><p>character vector with link to the parent post to reply to</p></dd>
+<dd><p>Character vector with link to the parent post to reply to</p></dd>
 
 
 <dt id="arg-quote">quote<a class="anchor" aria-label="anchor" href="#arg-quote"></a></dt>
-<dd><p>character vector with link to a post to quote</p></dd>
+<dd><p>Character vector with link to a post to quote</p></dd>
+
+
+<dt id="arg-embed">embed<a class="anchor" aria-label="anchor" href="#arg-embed"></a></dt>
+<dd><p>Logical. Default is <code>TRUE</code>. Should a link card be embedded?</p></dd>
 
 
 <dt id="arg-emoji">emoji<a class="anchor" aria-label="anchor" href="#arg-emoji"></a></dt>
-<dd><p>boolean. Default is <code>TRUE</code>. Should <code>:emoji:</code> style references be converted?</p></dd>
+<dd><p>Logical. Default is <code>TRUE</code>. Should <code>:emoji:</code> style references be converted?</p></dd>
 
 
 <dt id="arg-max-tries">max_tries<a class="anchor" aria-label="anchor" href="#arg-max-tries"></a></dt>
@@ -125,13 +130,34 @@
     <p>a <a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble::tibble</a> of post information</p>
     </div>
     <div class="section level2">
-    <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p><code>:emoji:</code> parsing is not a formally supported Bluesky feature. This package
+    <h2 id="emoji-parsing">Emoji parsing<a class="anchor" aria-label="anchor" href="#emoji-parsing"></a></h2>
+
+
+<p><code>:emoji:</code> parsing is not a formally supported Bluesky feature. This package
 converts usages of this kind by identifying text within <code>:</code>s, here "<code>emoji</code>"
 and then matches them to the <code>emoji</code> package's list of emoji names. All
 supported emoji names and corresponding images can be seen with
 <code><a href="https://emilhvitfeldt.github.io/emoji/reference/emoji_name.html" class="external-link">emoji::emoji_name</a></code>. This feature was introduced in <code>v0.2.0</code>.</p>
     </div>
+    <div class="section level2">
+    <h2 id="embedding">Embedding<a class="anchor" aria-label="anchor" href="#embedding"></a></h2>
+
+
+<p>Embedding is a feature that allows for a link card to be created when a URL
+or other media to be added as a preview to the post. This feature was
+introduced in <code>v0.2.0</code>.</p>
+<p>Embeds are processed as follows:</p><ol><li><p>If <code>is.list(embed)</code>, it is assumed to be an embed object. These should be
+created with <code><a href="bs_new_embed_external.html">bs_new_embed_external()</a></code>, unless you are certain of the
+structure.</p></li>
+<li><p>If <code>is.character(embed)</code>, it is assumed to be a URL. The function will
+use the open graph protocol to try to infer the embed from the URL.</p></li>
+<li><p>If <code>isTRUE(embed)</code>, the <em>default</em>, it tries to infer the embed from the text.</p></li>
+<li><p>First, if a Tenor Gif link is found in the text, it will be embedded.</p></li>
+<li><p>Second, if a URL is found in the text, it will be embedded. Only the first
+URL found will be embedded.</p></li>
+<li><p>If <code>isFALSE(embed)</code> or it does match an earlier condidtion, no embed is
+created and the post is sent as is.</p></li>
+</ol></div>
     <div class="section level2">
     <h2 id="lexicon-references">Lexicon references<a class="anchor" aria-label="anchor" href="#lexicon-references"></a></h2>
 
