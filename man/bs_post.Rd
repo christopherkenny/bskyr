@@ -13,6 +13,7 @@ bs_post(
   langs,
   reply,
   quote,
+  embed = TRUE,
   emoji = TRUE,
   max_tries,
   user = get_bluesky_user(),
@@ -22,23 +23,25 @@ bs_post(
 )
 }
 \arguments{
-\item{text}{text of post}
+\item{text}{Text of post}
 
-\item{images}{character vector of paths to images to attach to post}
+\item{images}{Character vector of paths to images to attach to post}
 
-\item{images_alt}{character vector of alt text for images. Must be same length as \code{images} if used.}
+\item{images_alt}{Character vector of alt text for images. Must be same length as \code{images} if used.}
 
-\item{video}{character vector of path for up to one video to attach to post}
+\item{video}{Character vector of path for up to one video to attach to post}
 
-\item{video_alt}{character vector, length one, of alt text for video, if used.}
+\item{video_alt}{Character vector, length one, of alt text for video, if used.}
 
-\item{langs}{character vector of languages in BCP-47 format}
+\item{langs}{Character vector of languages in BCP-47 format}
 
-\item{reply}{character vector with link to the parent post to reply to}
+\item{reply}{Character vector with link to the parent post to reply to}
 
-\item{quote}{character vector with link to a post to quote}
+\item{quote}{Character vector with link to a post to quote}
 
-\item{emoji}{boolean. Default is \code{TRUE}. Should \verb{:emoji:} style references be converted?}
+\item{embed}{Logical. Default is \code{TRUE}. Should a link card be embedded?}
+
+\item{emoji}{Logical. Default is \code{TRUE}. Should \verb{:emoji:} style references be converted?}
 
 \item{max_tries}{Integer, >= 2. Number of times to retry the request if the first fails.}
 
@@ -56,13 +59,37 @@ a \link[tibble:tibble]{tibble::tibble} of post information
 \description{
 Make a post on Bluesky Social
 }
-\details{
+\section{Emoji parsing}{
+
 \verb{:emoji:} parsing is not a formally supported Bluesky feature. This package
 converts usages of this kind by identifying text within \code{:}s, here "\code{emoji}"
 and then matches them to the \code{emoji} package's list of emoji names. All
 supported emoji names and corresponding images can be seen with
 \code{emoji::emoji_name}. This feature was introduced in \code{v0.2.0}.
 }
+
+\section{Embedding}{
+
+Embedding is a feature that allows for a link card to be created when a URL
+or other media to be added as a preview to the post. This feature was
+introduced in \code{v0.2.0}.
+
+Embeds are processed as follows:
+\enumerate{
+\item If \code{is.list(embed)}, it is assumed to be an embed object. These should be
+created with \code{bs_new_embed_external()}, unless you are certain of the
+structure.
+\item If \code{is.character(embed)}, it is assumed to be a URL. The function will
+use the open graph protocol to try to infer the embed from the URL.
+\item If \code{isTRUE(embed)}, the \emph{default}, it tries to infer the embed from the text.
+\item First, if a Tenor Gif link is found in the text, it will be embedded.
+\item Second, if a URL is found in the text, it will be embedded. Only the first
+URL found will be embedded.
+\item If \code{isFALSE(embed)} or it does match an earlier condidtion, no embed is
+created and the post is sent as is.
+}
+}
+
 \section{Lexicon references}{
 
 \href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/post.json}{feed/post.json (2024-11-29)}
