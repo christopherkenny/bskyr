@@ -211,10 +211,12 @@ bs_post <- function(text, images, images_alt,
       )
     )
 
-    if (!is.null(post$embed)) {
-      post$embed <- append(post$embed, quote_inc)
-    } else {
-      post$embed <- quote_inc
+    if (is.null(embed) || isFALSE(embed)) {
+      if (!is.null(post$embed)) {
+        post$embed <- append(post$embed, quote_inc)
+      } else {
+        post$embed <- quote_inc
+      }
     }
   }
 
@@ -261,10 +263,25 @@ bs_post <- function(text, images, images_alt,
     }
 
     if (!is.null(card)) {
-      if (!is.null(post$embed)) {
-        post$embed <- append(post$embed, card)
+      if (!missing(quote)) {
+        quote_card <- list(
+          '$type' = 'app.bsky.embed.recordWithMedia',
+          media = card,
+          record = quote_inc
+        )
+
+        if (!is.null(post$embed)) {
+          post$embed <- append(post$embed, quote_card)
+        } else {
+          post$embed <- quote_card
+        }
+
       } else {
-        post$embed <- card
+        if (!is.null(post$embed)) {
+          post$embed <- append(post$embed, card)
+        } else {
+          post$embed <- card
+        }
       }
     }
   }
