@@ -54,6 +54,7 @@
 <span>  embed <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  emoji <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  <span class="va">max_tries</span>,</span>
+<span>  created_at <span class="op">=</span> <span class="fu"><a href="bs_created_at.html">bs_created_at</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  user <span class="op">=</span> <span class="fu"><a href="user.html">get_bluesky_user</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  pass <span class="op">=</span> <span class="fu"><a href="pass.html">get_bluesky_pass</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  auth <span class="op">=</span> <span class="fu"><a href="bs_auth.html">bs_auth</a></span><span class="op">(</span><span class="va">user</span>, <span class="va">pass</span><span class="op">)</span>,</span>
@@ -107,6 +108,10 @@
 
 <dt id="arg-max-tries">max_tries<a class="anchor" aria-label="anchor" href="#arg-max-tries"></a></dt>
 <dd><p>Integer, &gt;= 2. Number of times to retry the request if the first fails.</p></dd>
+
+
+<dt id="arg-created-at">created_at<a class="anchor" aria-label="anchor" href="#arg-created-at"></a></dt>
+<dd><p>Character, length 1 of the form "%Y-%m-%dT%H:%M:%OS6Z". Time to assign to a record. Default is <code><a href="bs_created_at.html">bs_created_at()</a></code>.</p></dd>
 
 
 <dt id="arg-user">user<a class="anchor" aria-label="anchor" href="#arg-user"></a></dt>
