@@ -1,6 +1,7 @@
 # bskyr 0.3.0
 
 * Adds support for embedded link cards in `bs_post()`. (#17)
+* Adds new function `bs_new_embed_external()` to support manual setup of external embeds. (#17)
 
 # bskyr 0.2.0
 
