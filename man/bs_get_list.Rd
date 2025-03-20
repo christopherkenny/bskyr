@@ -6,6 +6,7 @@
 \usage{
 bs_get_list(
   list,
+  cursor = NULL,
   limit = NULL,
   user = get_bluesky_user(),
   pass = get_bluesky_pass(),
@@ -15,6 +16,8 @@ bs_get_list(
 }
 \arguments{
 \item{list}{Character vector, length 1. Reference of the list record to get.}
+
+\item{cursor}{Character, length 1. A cursor property from a prior response. Default: \code{NULL}.}
 
 \item{limit}{Integer. Number of records to request. If over \code{100}, multiple requests are made.}
 
@@ -34,7 +37,7 @@ Get a view of a list
 }
 \section{Lexicon references}{
 
-\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/getList.json}{graph/getList.json (2024-11-25)}
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/getList.json}{graph/getList.json (2025-03-20)}
 }
 
 \section{Function introduced}{
@@ -45,6 +48,7 @@ Get a view of a list
 \examples{
 \dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 bs_get_list('at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.list/3kmokjyuflk2g')
+bs_get_list('at://did:plc:hgyzg2hn6zxpqokmp5c2xrdo/app.bsky.graph.list/3laygnmmcfc2x')
 \dontshow{\}) # examplesIf}
 }
 \concept{graph}
