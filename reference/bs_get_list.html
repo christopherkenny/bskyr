@@ -44,6 +44,7 @@
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">bs_get_list</span><span class="op">(</span></span>
 <span>  <span class="va">list</span>,</span>
+<span>  cursor <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  limit <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  user <span class="op">=</span> <span class="fu"><a href="user.html">get_bluesky_user</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  pass <span class="op">=</span> <span class="fu"><a href="pass.html">get_bluesky_pass</a></span><span class="op">(</span><span class="op">)</span>,</span>
@@ -58,6 +59,10 @@
 
 <dl><dt id="arg-list">list<a class="anchor" aria-label="anchor" href="#arg-list"></a></dt>
 <dd><p>Character vector, length 1. Reference of the list record to get.</p></dd>
+
+
+<dt id="arg-cursor">cursor<a class="anchor" aria-label="anchor" href="#arg-cursor"></a></dt>
+<dd><p>Character, length 1. A cursor property from a prior response. Default: <code>NULL</code>.</p></dd>
 
 
 <dt id="arg-limit">limit<a class="anchor" aria-label="anchor" href="#arg-limit"></a></dt>
@@ -88,7 +93,7 @@
     <h2 id="lexicon-references">Lexicon references<a class="anchor" aria-label="anchor" href="#lexicon-references"></a></h2>
 
 
-<p><a href="https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/getList.json" class="external-link">graph/getList.json (2024-11-25)</a></p>
+<p><a href="https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/getList.json" class="external-link">graph/getList.json (2025-03-20)</a></p>
     </div>
     <div class="section level2">
     <h2 id="function-introduced">Function introduced<a class="anchor" aria-label="anchor" href="#function-introduced"></a></h2>
@@ -101,6 +106,7 @@
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># has_bluesky_pass() &amp;&amp; has_bluesky_user()</span></span></span>
 <span class="r-in"><span><span class="fu">bs_get_list</span><span class="op">(</span><span class="st">'at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.list/3kmokjyuflk2g'</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">bs_get_list</span><span class="op">(</span><span class="st">'at://did:plc:hgyzg2hn6zxpqokmp5c2xrdo/app.bsky.graph.list/3laygnmmcfc2x'</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
