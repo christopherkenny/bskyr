@@ -43,7 +43,7 @@ bs_new_embed_external <- function(uri, title, description, thumb,
   details <- opengraph::og_parse(uri)
 
   if (missing(title)) {
-    if (!is.na(details[['title']])) {
+    if ('title' %in% names(details)) {
       title <- details[['title']]
     } else {
       title <- ''

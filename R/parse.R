@@ -1,7 +1,7 @@
 # regex based on: https://atproto.com/specs/handle#handle-identifier-syntax
 mention_regex <- '[$|\\W](@([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\\.)+[a-zA-Z]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)'
 # regex base on: https://atproto.com/blog/create-post
-url_regex <- '[$|\\W](https?://(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*[-a-zA-Z0-9@%_\\+~#//=])?)'
+url_regex <- '(^|[$|\\W])(https?://(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*[-a-zA-Z0-9@%_\\+~#//=])?)'
 # regex taken from: https://github.com/bluesky-social/atproto/blob/main/packages/api/src/rich-text/util.ts
 tag_regex <- '(^|\\s)[#\\uFF03](?<tag>(?!\\ufe0f)[^\\s\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]*[^\\d\\s\\p{P}\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]+[^\\s\\u00AD\\u2060\\u200A\\u200B\\u200C\\u200D\\u20e2]*)?'
 
@@ -64,12 +64,15 @@ parse_regex <- function(txt, regex, drop_n = 0L) {
 
   lapply(seq_along(matches), function(m) {
     lapply(seq_len(nrow(matches[[m]])), function(r) {
+      num_byte_prev <- stringr::str_sub(txt, matches[[m]][r, 1, drop = TRUE] - 1,
+                                        matches[[m]][r, 1, drop = TRUE] - 1) |>
+        stringi::stri_numbytes()
       list(
-        start = txt_cum_wts[[m]][unname(matches[[m]][r, 1, drop = TRUE])],
+        start = ifelse(num_byte_prev == 0, 0, txt_cum_wts[[m]][unname(matches[[m]][r, 1, drop = TRUE])]),
         end = txt_cum_wts[[m]][unname(matches[[m]][r, 2, drop = TRUE])],
         text = stringr::str_sub(
           string = txt[[m]],
-          start = matches[[m]][r, 1, drop = TRUE] + drop_n,
+          start = matches[[m]][r, 1, drop = TRUE] + ifelse(num_byte_prev == 0, 0, drop_n),
           end = matches[[m]][r, 2, drop = TRUE]
         )
       )
@@ -79,7 +82,7 @@ parse_regex <- function(txt, regex, drop_n = 0L) {
 
 weight_by_bytes <- function(txt) {
   txt |>
-    stringr::str_split(pattern = '') |>
+    strsplit(split = '') |>
     lapply(function(x) {
       x |>
         stringi::stri_numbytes() |>

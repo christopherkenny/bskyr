@@ -99,6 +99,53 @@ test_that('parse uri functions okay', {
   )
 })
 
+# test that we fix #23, fixed by using strsplit() over str_split()
+test_that('parse mattkerlogue examples re #23', {
+  expect_equal(
+    parse_urls('https://www.example.com'),
+    list(list(list(start = 0L, end = 23L, text = 'https://www.example.com')))
+  )
+
+  expect_equal(
+    parse_urls('This is a test https://www.example.com'),
+    list(list(list(start = 15L, end = 38L, text = 'https://www.example.com')))
+  )
+
+  expect_equal(
+    parse_urls('This is a test 🙂 https://www.example.com'),
+    list(list(list(start = 20L, end = 43L, text = 'https://www.example.com')))
+  )
+  expect_equal(
+    parse_urls('This is a test 🇬🇧 https://www.example.com'),
+    list(list(list(start = 24L, end = 47L, text = "https://www.example.com")))
+  )
+  expect_equal(
+    parse_urls('This is a test 👨🏼‍💻 https://www.example.com'),
+    list(list(list(start = 31L, end = 54L, text = "https://www.example.com")))
+  )
+
+  expect_equal(
+    parse_urls('https://www.example.com again'),
+    list(list(list(start = 0, end = 23L, text = "https://www.example.com")))
+  )
+  expect_equal(
+    parse_urls('This is a test https://www.example.com again'),
+    list(list(list(start = 15L, end = 38L, text = 'https://www.example.com')))
+  )
+  expect_equal(
+    parse_urls('This is a test 🙂 https://www.example.com again'),
+    list(list(list(start = 20L, end = 43L, text = 'https://www.example.com')))
+  )
+  expect_equal(
+    parse_urls('This is a test 🇬🇧 https://www.example.com again'),
+    list(list(list(start = 24L, end = 47L, text = 'https://www.example.com')))
+  )
+  expect_equal(
+    parse_urls('This is a test 👨🏼‍💻 https://www.example.com again'),
+    list(list(list(start = 31L, end = 54L, text = 'https://www.example.com')))
+  )
+})
+
 
 # tags ----
 # do we match:
