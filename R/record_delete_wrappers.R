@@ -237,3 +237,35 @@ bs_delete_starter_pack <- function(rkey,
     auth = auth
   )
 }
+
+#' Delete a post
+#'
+#' @param rkey `r template_var_rkey()`
+#' @param user `r template_var_user()`
+#' @param pass `r template_var_pass()`
+#' @param auth `r template_var_auth()`
+#'
+#' @concept repo
+#'
+#' @return an `httr2` status code
+#' @export
+#'
+#' @section Lexicon references:
+#' [feed/post.json (2025-03-20)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/post.json)
+#' [repo/deleteRecord.json (2025-03-20)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json)
+#'
+#' @section Function introduced:
+#' `v0.3.0` (2025-03-20)
+#'
+#' @examplesIf has_bluesky_pass() && has_bluesky_user()
+#' pst <- bs_post('a test post to be deleted')
+#' bs_delete_post(bs_extract_record_key(pst$uri))
+bs_delete_post <- function(rkey,
+                           user = get_bluesky_user(), pass = get_bluesky_pass(),
+                           auth = bs_auth(user, pass)) {
+  bs_delete_record(
+    collection = 'app.bsky.feed.post',
+    rkey = rkey,
+    auth = auth
+  )
+}
