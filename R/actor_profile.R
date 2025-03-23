@@ -36,7 +36,7 @@ bs_get_profile <- function(actors,
   req <- httr2::request(base_url)
 
   .get_profile_mult <- function(actor, basereq=req) {
-    actors_resp <- basereq |>
+    basereq |>
       httr2::req_auth_bearer_token(token = auth$accessJwt) |>
       httr2::req_url_query(actors=actor, .multi = "explode") |>
       httr2::req_perform() |>
