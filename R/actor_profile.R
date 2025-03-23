@@ -30,44 +30,46 @@ bs_get_profile <- function(actors,
   if (!is.character(actors)) {
     cli::cli_abort('{.arg actors} must be a character vector.')
   }
-  # if (length(actors) == 1) {
-  #   base_url <- 'https://bsky.social/xrpc/app.bsky.actor.getProfile'
-  # } else {
+
   base_url <- 'https://bsky.social/xrpc/app.bsky.actor.getProfiles'
-  # }
-  if (length(actors) > 25) {
-    cli::cli_abort(c(
-      '{.arg actors} must be at most length 25.',
-      'To support more actors, request this in an issue at {.url https://github.com/christopherkenny/bskyr/issues}.'
-    ))
-  }
 
   req <- httr2::request(base_url)
 
-  # if (length(actors) == 1) {
-  #   req <- req   |>
-  #     httr2::req_url_query(actor = actors)
-  # } else {
-  actors <- actors |>
-    as.list() |>
-    purrr::set_names('actors')
-  req <- rlang::inject(httr2::req_url_query(req, !!!actors))
-  # }
+  .get_profile_mult <- function(actor, basereq=req) {
+    actors_resp <- basereq |>
+      httr2::req_auth_bearer_token(token = auth$accessJwt) |>
+      httr2::req_url_query(actors=actor, .multi = "explode") |>
+      httr2::req_perform() |>
+      httr2::resp_body_json()
+  }
 
-  req <- req |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt)
+  chunk <- function(x, n) {
+    (mapply(
+      function(a, b)
+        (x[a:b]),
+      seq.int(from = 1, to = length(x), by = n),
+      pmin(seq.int(
+        from = 1, to = length(x), by = n
+      ) + (n - 1), length(x)),
+      SIMPLIFY = FALSE
+    ))
+  }
+  chunks <- chunk(actors, 25)
 
-  resp <- req |>
-    httr2::req_perform() |>
-    httr2::resp_body_json()
+  resp <- lapply(chunks, .get_profile_mult)
+
+  resp <- unlist(unlist(resp, recursive=FALSE), recursive=FALSE)
+
+  resp <- unname(resp)
 
   if (!clean) {
     return(resp)
   }
 
   resp |>
-    purrr::pluck('profiles') |>
     proc() |>
     clean_names() |>
     add_req_url(req)
+
+  return(resp)
 }
