@@ -1,7 +1,7 @@
 Package: bskyr
 Title: Interact with 'Bluesky' Social
 Version: 0.3.0
-Authors@R: 
+Authors@R:
     person(given = "Christopher T.",
            family = "Kenny",
            role = c("aut", "cre"),
@@ -17,7 +17,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-Imports: 
+Imports:
     cli,
     curl,
     dplyr,
@@ -33,8 +33,7 @@ Imports:
     stringr,
     tibble,
     tidyr
-Suggests: 
-    base64enc,
+Suggests:
     emoji,
     httptest2,
     jsonlite,

@@ -27,11 +27,7 @@ bs_upload_blob <- function(blob,
   raw_data <- lapply(blob, function(x) {
     n <- file.size(x)
     if (n > 1024 * 1024) {
-      if (rlang::is_installed('base64enc')) {
-        base64enc::base64encode(x)
-      } else {
-        cli::cli_abort('File is larger than 1MB. Please install {.pkg base64enc} to encode the file.')
-      }
+      cli::cli_abort('File is larger than 1MB and exceeds allowable upload size.')
     } else {
       readBin(x, what = 'raw', n = file.size(x))
     }
