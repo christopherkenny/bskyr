@@ -1,3 +1,7 @@
+# bskyr 0.3.1
+
+* Fixes an issue where OpenGraph links with a size hint would fail downloading. (#32)
+
 # bskyr 0.3.0
 
 * Adds support for embedded link cards in `bs_post()`. (#17)

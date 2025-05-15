@@ -66,7 +66,8 @@ bs_new_embed_external <- function(uri, title, description, thumb,
       #user_did <- auth$did
 
       if (is_online_link(details[['image']])) {
-        ext <- fs::path_ext(details[['image']])
+        ext <- fs::path_ext(details[['image']]) |>
+          stringr::str_remove('\\?.*$')
         if (ext == '') {
           ext <- 'png'
         }
