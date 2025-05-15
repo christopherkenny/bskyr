@@ -48,6 +48,11 @@ bs_get_starter_pack <- function(starter_pack,
   resp |>
     purrr::pluck('starterPack') |>
     widen() |>
+    tidyr::unnest_wider(col = dplyr::any_of('record'), names_sep = '_', simplify = TRUE) |>
+    dplyr::mutate(
+      dplyr::across(dplyr::any_of(c('feeds')), .fns = function(x) lapply(x, list_hoist)),
+      dplyr::across(dplyr::any_of(c('list', 'listItemsSample')), .fns = function(x) lapply(x, widen)),
+    ) |>
     add_req_url(req) |>
     add_cursor(resp) |>
     clean_names()
