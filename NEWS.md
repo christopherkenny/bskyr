@@ -1,6 +1,7 @@
 # bskyr 0.3.1
 
 * Fixes an issue where OpenGraph links with a size hint would fail downloading. (#32)
+* Improves transformations of starter packs into tibbles with cleaner unnesting. (#31)
 
 # bskyr 0.3.0
 
