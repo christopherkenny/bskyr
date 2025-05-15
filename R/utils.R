@@ -34,16 +34,44 @@ list_hoist <- function(l) {
 
 validate_user <- function(x) {
   # regex adapted from https://atproto.com/specs/handle#handle-identifier-syntax
+  if (!is.character(x)) {
+    cli::cli_abort('{.arg user} must be a character vector.')
+  }
+  if (length(x) != 1) {
+    cli::cli_abort('{.arg user} must be a single character string.')
+  }
+  if (x == '') {
+    cli::cli_abort(
+      c(
+        x = '{.arg user} is {.val {x}}, the empty string, not a username.',
+        i = 'Add a username using {.fn bs_set_user}.'
+      )
+    )
+  }
   if (!stringr::str_detect(
     x,
     '^([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\\.)+[a-zA-Z]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?$'
   )) {
-    cli::cli_abort('{.arg user} must be a valid handle.')
+    cli::cli_abort('{.arg user} is {.val {x}}, which is not a valid handle.')
   }
   invisible(x)
 }
 
 validate_pass <- function(x) {
+  if (!is.character(x)) {
+    cli::cli_abort('{.arg pass} must be a character vector.')
+  }
+  if (length(x) != 1) {
+    cli::cli_abort('{.arg pass} must be a single character string.')
+  }
+  if (x == '') {
+    cli::cli_abort(
+      c(
+        x = '{.arg pass} is {.val {x}}, the empty string, not a password.',
+        i = 'Add a password using {.fn bs_set_pass}.'
+      )
+    )
+  }
   if (nchar(x) != 19) {
     cli::cli_abort('{.arg pass} must have 19 characters.')
   }
