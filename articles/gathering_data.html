@@ -64,52 +64,127 @@
 
     
     
-<p>The incredible thing about Bluesky Social is that its entirely
-decentralized. For end users, this means you can gather essentially
-<em>anything</em> that you want. Bluesky itself is organized as a series
-of records, which have strict definitions described in lexicons.
-<code>bskyr</code> provides a number of functions to help you gather
-data from Bluesky Social, by querying those lexicons. The corresponding
-records are described in the “Lexicon references” section of the
-documentation for each function.</p>
-<p><code>bskyr</code> offers the most comprehensive set of tools for
-gathering Bluesky data from R. This vignette walks through the process
-of gathering data from Bluesky Social using <code>bskyr</code>.</p>
+<p>Bluesky Social is a decentralized social network built on the AT
+Protocol. For users, this means it is possible to programmatically
+access a broad range of public data from the network. Bluesky organizes
+information as a series of <strong>records</strong>, each defined by a
+structured schema known as a <strong>lexicon</strong>. These lexicons
+(e.g., <code>app.bsky.*</code>) specify the types of data (such as
+posts, profiles, or social relationships) and the methods for querying
+them. The <code>bskyr</code> package provides an R interface to these
+endpoints, abstracting the underlying API and returning data in a tidy
+format suitable for analysis.</p>
+<p>This vignette provides an overview of how to collect public data from
+Bluesky using the <code>bskyr</code> package. It focuses on common data
+collection tasks such as retrieving user profiles, gathering posts,
+exploring threads, accessing social relationships, and examining likes
+or reposts.</p>
 <div class="section level2">
-<h2 id="gathering-data-from-bluesky-social">Gathering data from Bluesky Social<a class="anchor" aria-label="anchor" href="#gathering-data-from-bluesky-social"></a>
+<h2 id="setup-and-authentication">Setup and Authentication<a class="anchor" aria-label="anchor" href="#setup-and-authentication"></a>
 </h2>
-<p>To collect data, we first need to load the <code>bskyr</code>
-package.</p>
+<p>Begin by loading the <code>bskyr</code> package:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/christopherkenny/bskyr" class="external-link">bskyr</a></span><span class="op">)</span></span></code></pre></div>
-<p>We also need to authenticate you as a user. To do that, we can use
-the <code><a href="../reference/bs_auth.html">bs_auth()</a></code> function, which communicates with Bluesky
-Social, creating a list of details usable to later functions.</p>
+<p>Authentication is required to access the Bluesky API. After setting
+your credentials using <code><a href="../reference/set_bluesky_user.html">set_bluesky_user()</a></code> and
+<code><a href="../reference/set_bluesky_pass.html">set_bluesky_pass()</a></code>, you can initiate a session with:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">auth</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/bs_auth.html">bs_auth</a></span><span class="op">(</span>user <span class="op">=</span> <span class="fu"><a href="../reference/user.html">bs_get_user</a></span><span class="op">(</span><span class="op">)</span>, pass <span class="op">=</span> <span class="fu"><a href="../reference/pass.html">bs_get_pass</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p>Alternatively, each function can authenticate you on its own, but
-this can result in timeouts from the API.</p>
-<div class="section level3">
-<h3 id="your-data">Your data<a class="anchor" aria-label="anchor" href="#your-data"></a>
-</h3>
-<p>Several lexicons allow you to gather data about yourself, but not
-others. These are largely useful for managing your own account.</p>
-<p>For example, the API (reasonably) only lets you interact with your
-own preferences. You can do this with
-<code><a href="../reference/bs_get_preferences.html">bs_get_preferences()</a></code></p>
+<p>This authentication is used internally by most functions, though
+explicitly creating a session at the beginning of your script is
+recommended to avoid repeated logins. Note that this is <em>not</em>
+necessary to do for every function call, as your authentication is
+<em>automatically</em> cached for the session and refreshed if it gets
+stale.</p>
+</div>
+<div class="section level2">
+<h2 id="accessing-profile-information">Accessing Profile Information<a class="anchor" aria-label="anchor" href="#accessing-profile-information"></a>
+</h2>
+<p>To retrieve profile information for a user, use
+<code><a href="../reference/bs_get_profile.html">bs_get_profile()</a></code>. This function queries the
+<code>app.bsky.actor.getProfile</code> endpoint:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_get_preferences.html">bs_get_preferences</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p>Other self-focused functions include blocks,
-(e.g. <code><a href="../reference/bs_get_blocks.html">bs_get_blocks()</a></code>), mutes
-(e.g. <code><a href="../reference/bs_get_muted_lists.html">bs_get_muted_lists()</a></code>), and notifications
-(e.g. <code><a href="../reference/bs_get_notifications.html">bs_get_notifications()</a></code>).</p>
+<code class="sourceCode R"><span><span class="va">profile</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/bs_get_profile.html">bs_get_profile</a></span><span class="op">(</span><span class="st">'chriskenny.bsky.social'</span><span class="op">)</span></span>
+<span><span class="va">profile</span></span></code></pre></div>
+<p>This returns metadata such as the user’s handle, display name,
+description, and follower counts. To retrieve multiple profiles:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_get_profile.html">bs_get_profile</a></span><span class="op">(</span>actors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'chriskenny.bsky.social'</span>, <span class="st">'simko.bsky.social'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="other-peoples-data">Other people’s data<a class="anchor" aria-label="anchor" href="#other-peoples-data"></a>
-</h3>
-<p>Most functions engage with lexicons that allow you to gather data
-about other people.</p>
+<div class="section level2">
+<h2 id="gathering-posts-from-a-user">Gathering Posts from a User<a class="anchor" aria-label="anchor" href="#gathering-posts-from-a-user"></a>
+</h2>
+<p>To access posts authored by a user, use
+<code><a href="../reference/bs_get_author_feed.html">bs_get_author_feed()</a></code>, which queries the
+<code>app.bsky.feed.getAuthorFeed</code> lexicon:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">feed</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/bs_get_author_feed.html">bs_get_author_feed</a></span><span class="op">(</span><span class="st">'chriskenny.bsky.social'</span><span class="op">)</span></span>
+<span><span class="va">feed</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">uri</span>, <span class="va">like_count</span>, <span class="va">reply_count</span><span class="op">)</span></span></code></pre></div>
+<p>This returns the most recent posts. If additional results are
+available, the <code>cursor</code> returned can be used to paginate:</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">more_posts</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/bs_get_author_feed.html">bs_get_author_feed</a></span><span class="op">(</span><span class="st">'chriskenny.bsky.social'</span>, cursor <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/attr.html" class="external-link">attr</a></span><span class="op">(</span><span class="va">feed</span>, <span class="st">'cursor'</span><span class="op">)</span><span class="op">$</span><span class="va">cursor</span><span class="op">)</span></span></code></pre></div>
 </div>
+<div class="section level2">
+<h2 id="retrieving-threads-and-replies">Retrieving Threads and Replies<a class="anchor" aria-label="anchor" href="#retrieving-threads-and-replies"></a>
+</h2>
+<p>Threads, comprising posts and their replies, can be retrieved using
+<code><a href="../reference/bs_get_post_thread.html">bs_get_post_thread()</a></code>:</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">thread</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/bs_get_post_thread.html">bs_get_post_thread</a></span><span class="op">(</span><span class="st">'at://did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/app.bsky.feed.post/3k7qmjev5lr2s'</span><span class="op">)</span></span>
+<span><span class="va">thread</span></span></code></pre></div>
+<p>This returns the conversation context around a specific post. If the
+post URI is known, <code><a href="../reference/bs_get_posts.html">bs_get_posts()</a></code> can be used to retrieve
+it directly:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">post</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/bs_get_posts.html">bs_get_posts</a></span><span class="op">(</span><span class="st">'https://bsky.app/profile/chriskenny.bsky.social/post/3loagm2phgk2t'</span><span class="op">)</span></span>
+<span><span class="va">post</span><span class="op">$</span><span class="va">record</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">`$type`</span>, <span class="va">text</span>, <span class="va">created_at</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="accessing-social-graph-data">Accessing Social Graph Data<a class="anchor" aria-label="anchor" href="#accessing-social-graph-data"></a>
+</h2>
+<p>The functions <code><a href="../reference/bs_get_followers.html">bs_get_followers()</a></code> and
+<code><a href="../reference/bs_get_follows.html">bs_get_follows()</a></code> return a user’s followers and follows,
+respectively. Both functions support pagination using cursors. The
+returned <code>tibble</code>s include each user’s <code>did</code>,
+handle, display name, and various details about their profile.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">followers</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/bs_get_followers.html">bs_get_followers</a></span><span class="op">(</span><span class="st">'chriskenny.bsky.social'</span><span class="op">)</span></span>
+<span><span class="va">followers</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">follows</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/bs_get_follows.html">bs_get_follows</a></span><span class="op">(</span><span class="st">'chriskenny.bsky.social'</span><span class="op">)</span></span>
+<span><span class="va">follows</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="likes-and-reposts">Likes and Reposts<a class="anchor" aria-label="anchor" href="#likes-and-reposts"></a>
+</h2>
+<p>To retrieve posts liked by a user:</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">liked_posts</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/bs_get_likes.html">bs_get_likes</a></span><span class="op">(</span><span class="st">'bskyr.bsky.social'</span><span class="op">)</span></span>
+<span><span class="va">liked_posts</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">author.handle</span>, <span class="va">text</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">slice_head</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
+<p>To identify users who have liked or reposted a specific post:</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_get_post_likes.html">bs_get_post_likes</a></span><span class="op">(</span><span class="st">'at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.feed.post/3lnghukd7vk22'</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/bs_get_reposts.html">bs_get_reposts</a></span><span class="op">(</span><span class="st">'at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.feed.post/3lnghukd7vk22'</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="conclusion">Conclusion<a class="anchor" aria-label="anchor" href="#conclusion"></a>
+</h2>
+<p>This vignette has illustrated how to use <code>bskyr</code> to
+collect a variety of public data from Bluesky Social. By interfacing
+with the AT Protocol’s structured API through a consistent and tidy R
+interface, <code>bskyr</code> enables researchers and developers to
+explore user behavior, content trends, and social networks on Bluesky.
+Future enhancements to the package will track changes to the protocol
+and support additional data access patterns as the ecosystem
+evolves.</p>
+<p><strong>DISCLAIMER</strong>: This vignette has been written with help
+from ChatGPT 4o. It has been reviewed for correctness and edited for
+clarity by the package author. Please note any issues at <a href="https://github.com/christopherkenny/bskyr/issues" class="external-link uri">https://github.com/christopherkenny/bskyr/issues</a>.</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
