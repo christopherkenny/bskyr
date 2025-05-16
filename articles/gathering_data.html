@@ -164,8 +164,7 @@ handle, display name, and various details about their profile.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">liked_posts</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/bs_get_likes.html">bs_get_likes</a></span><span class="op">(</span><span class="st">'bskyr.bsky.social'</span><span class="op">)</span></span>
 <span><span class="va">liked_posts</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">select</span><span class="op">(</span><span class="va">author.handle</span>, <span class="va">text</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">slice_head</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">author_handle</span>, <span class="va">record_text</span><span class="op">)</span></span></code></pre></div>
 <p>To identify users who have liked or reposted a specific post:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_get_post_likes.html">bs_get_post_likes</a></span><span class="op">(</span><span class="st">'at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.feed.post/3lnghukd7vk22'</span><span class="op">)</span></span>
