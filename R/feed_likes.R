@@ -1,4 +1,4 @@
-#' Retrieve posts liked by an actor
+#' Retrieve posts liked by an actor (self)
 #'
 #' @param actor `r template_var_actor()`
 #' @param cursor `r template_var_cursor()`
@@ -20,7 +20,7 @@
 #' `v0.0.1` (2023-10-01)
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
-#' bs_get_likes('chriskenny.bsky.social')
+#' bs_get_likes(bs_get_user())
 bs_get_likes <- function(actor, cursor = NULL, limit = NULL,
                          user = get_bluesky_user(), pass = get_bluesky_pass(),
                          auth = bs_auth(user, pass), clean = TRUE) {
@@ -65,6 +65,10 @@ bs_get_likes <- function(actor, cursor = NULL, limit = NULL,
 process_likes <- function(resp) {
   resp |>
     purrr::pluck('feed') |>
-    proc() |>
+    lapply(widen) |>
+    lapply(function(x) tidyr::unnest_wider(x, col = dplyr::everything())) |>
+    purrr::list_rbind() |>
+    tidyr::unnest_wider(col = dplyr::everything(), names_sep = '_') |>
+    dplyr::rename_with(.fn = function(x) substr(x, start = 1, stop = nchar(x) - 2), .cols = dplyr::ends_with('_1')) |>
     clean_names()
 }

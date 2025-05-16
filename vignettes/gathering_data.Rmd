@@ -10,51 +10,116 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
+  comment = '#>',
   eval = bskyr::has_bluesky_pass()
 )
 ```
 
-The incredible thing about Bluesky Social is that its entirely decentralized.
-For end users, this means you can gather essentially *anything* that you want.
-Bluesky itself is organized as a series of records, which have strict definitions described in lexicons.
-`bskyr` provides a number of functions to help you gather data from Bluesky Social, by querying those lexicons.
-The corresponding records are described in the "Lexicon references" section of the documentation for each function.
+Bluesky Social is a decentralized social network built on the AT Protocol. For users, this means it is possible to programmatically access a broad range of public data from the network. Bluesky organizes information as a series of **records**, each defined by a structured schema known as a **lexicon**. These lexicons (e.g., `app.bsky.*`) specify the types of data (such as posts, profiles, or social relationships) and the methods for querying them. The `bskyr` package provides an R interface to these endpoints, abstracting the underlying API and returning data in a tidy format suitable for analysis.
 
-`bskyr` offers the most comprehensive set of tools for gathering Bluesky data from R.
-This vignette walks through the process of gathering data from Bluesky Social using `bskyr`.
+This vignette provides an overview of how to collect public data from Bluesky using the `bskyr` package. It focuses on common data collection tasks such as retrieving user profiles, gathering posts, exploring threads, accessing social relationships, and examining likes or reposts.
 
-## Gathering data from Bluesky Social
+## Setup and Authentication
 
-To collect data, we first need to load the `bskyr` package.
+Begin by loading the `bskyr` package:
 
-```{r setup}
+```{r}
 library(bskyr)
 ```
 
-We also need to authenticate you as a user.
-To do that, we can use the `bs_auth()` function, which communicates with Bluesky Social, creating a list of details usable to later functions.
+Authentication is required to access the Bluesky API. After setting your credentials using `set_bluesky_user()` and `set_bluesky_pass()`, you can initiate a session with:
 
-```{r}
+```{r, eval= FALSE}
 auth <- bs_auth(user = bs_get_user(), pass = bs_get_pass())
 ```
 
-Alternatively, each function can authenticate you on its own, but this can result in timeouts from the API.
+This authentication is used internally by most functions, though explicitly creating a session at the beginning of your script is recommended to avoid repeated logins.
+Note that this is *not* necessary to do for every function call, as your authentication is *automatically* cached for the session and refreshed if it gets stale.
 
-### Your data
+## Accessing Profile Information
 
-Several lexicons allow you to gather data about yourself, but not others.
-These are largely useful for managing your own account.
-
-For example, the API (reasonably) only lets you interact with your own preferences.
-You can do this with `bs_get_preferences()`
+To retrieve profile information for a user, use `bs_get_profile()`. This function queries the `app.bsky.actor.getProfile` endpoint:
 
 ```{r}
-bs_get_preferences()
+profile <- bs_get_profile('chriskenny.bsky.social')
+profile
 ```
-Other self-focused functions include blocks, (e.g. `bs_get_blocks()`), mutes (e.g. `bs_get_muted_lists()`), and notifications (e.g. `bs_get_notifications()`).
 
-### Other people's data
+This returns metadata such as the user's handle, display name, description, and follower counts. To retrieve multiple profiles:
 
-Most functions engage with lexicons that allow you to gather data about other people.
+```{r}
+bs_get_profile(actors = c('chriskenny.bsky.social', 'simko.bsky.social'))
+```
 
+## Gathering Posts from a User
+
+To access posts authored by a user, use `bs_get_author_feed()`, which queries the `app.bsky.feed.getAuthorFeed` lexicon:
+
+```{r}
+feed <- bs_get_author_feed('chriskenny.bsky.social')
+feed |>
+  dplyr::select(uri, like_count, reply_count)
+```
+
+This returns the most recent posts. If additional results are available, the `cursor` returned can be used to paginate:
+
+```{r}
+more_posts <- bs_get_author_feed('chriskenny.bsky.social', cursor = attr(feed, 'cursor')$cursor)
+```
+
+## Retrieving Threads and Replies
+
+Threads, comprising posts and their replies, can be retrieved using `bs_get_post_thread()`:
+
+```{r}
+thread <- bs_get_post_thread('at://did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/app.bsky.feed.post/3k7qmjev5lr2s')
+thread
+```
+
+This returns the conversation context around a specific post. If the post URI is known, `bs_get_posts()` can be used to retrieve it directly:
+
+```{r}
+post <- bs_get_posts('https://bsky.app/profile/chriskenny.bsky.social/post/3loagm2phgk2t')
+post$record[[1]] |>
+  dplyr::select(`$type`, text, created_at)
+```
+
+## Accessing Social Graph Data
+
+The functions `bs_get_followers()` and `bs_get_follows()` return a user's followers and follows, respectively.
+Both functions support pagination using cursors. The returned `tibble`s include each user's `did`, handle, display name, and various details about their profile.
+
+```{r}
+followers <- bs_get_followers('chriskenny.bsky.social')
+followers
+```
+
+```{r}
+follows <- bs_get_follows('chriskenny.bsky.social')
+follows
+```
+
+
+## Likes and Reposts
+
+To retrieve posts liked by a user:
+
+```{r}
+liked_posts <- bs_get_likes('bskyr.bsky.social')
+liked_posts |>
+  select(author.handle, text) |>
+  slice_head(n = 5)
+```
+
+To identify users who have liked or reposted a specific post:
+
+```{r}
+bs_get_post_likes('at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.feed.post/3lnghukd7vk22')
+bs_get_reposts('at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.feed.post/3lnghukd7vk22')
+```
+
+## Conclusion
+
+This vignette has illustrated how to use `bskyr` to collect a variety of public data from Bluesky Social. By interfacing with the AT Protocol’s structured API through a consistent and tidy R interface, `bskyr` enables researchers and developers to explore user behavior, content trends, and social networks on Bluesky. Future enhancements to the package will track changes to the protocol and support additional data access patterns as the ecosystem evolves.
+
+**DISCLAIMER**: This vignette has been written with help from ChatGPT 4o. It has been reviewed for correctness and edited for clarity by the package author. Please note any issues at <https://github.com/christopherkenny/bskyr/issues>.

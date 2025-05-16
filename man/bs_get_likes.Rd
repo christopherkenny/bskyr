@@ -2,7 +2,7 @@
 % Please edit documentation in R/feed_likes.R
 \name{bs_get_likes}
 \alias{bs_get_likes}
-\title{Retrieve posts liked by an actor}
+\title{Retrieve posts liked by an actor (self)}
 \usage{
 bs_get_likes(
   actor,
@@ -33,7 +33,7 @@ bs_get_likes(
 a \link[tibble:tibble]{tibble::tibble} of likes
 }
 \description{
-Retrieve posts liked by an actor
+Retrieve posts liked by an actor (self)
 }
 \section{Lexicon references}{
 
@@ -47,7 +47,7 @@ Retrieve posts liked by an actor
 
 \examples{
 \dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-bs_get_likes('chriskenny.bsky.social')
+bs_get_likes(bs_get_user())
 \dontshow{\}) # examplesIf}
 }
 \concept{feed}
