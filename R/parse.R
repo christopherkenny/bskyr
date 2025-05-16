@@ -64,8 +64,10 @@ parse_regex <- function(txt, regex, drop_n = 0L) {
 
   lapply(seq_along(matches), function(m) {
     lapply(seq_len(nrow(matches[[m]])), function(r) {
-      num_byte_prev <- stringr::str_sub(txt, matches[[m]][r, 1, drop = TRUE] - 1,
-                                        matches[[m]][r, 1, drop = TRUE] - 1) |>
+      num_byte_prev <- stringr::str_sub(
+        txt, matches[[m]][r, 1, drop = TRUE] - 1,
+        matches[[m]][r, 1, drop = TRUE] - 1
+      ) |>
         stringi::stri_numbytes()
       list(
         start = ifelse(num_byte_prev == 0, 0, txt_cum_wts[[m]][unname(matches[[m]][r, 1, drop = TRUE])]),

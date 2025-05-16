@@ -24,7 +24,6 @@
 bs_get_starter_pack <- function(starter_pack,
                                 user = get_bluesky_user(), pass = get_bluesky_pass(),
                                 auth = bs_auth(user, pass), clean = TRUE) {
-
   if (missing(starter_pack)) {
     cli::cli_abort('{.arg starter_pack} must list at least one user.')
   }

@@ -75,13 +75,17 @@
 #' bs_post('Test quote with :emoji: and :fire: and :confetti_ball: from r package
 #'   `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)')
 #'
-#' bs_post(text = 'Testing images and aspect ratios from R',
+#' bs_post(
+#'   text = 'Testing images and aspect ratios from R',
 #'   images = fs::path_package('bskyr', 'man/figures/logo.png'),
-#'   images_alt = 'hexagonal logo of the R package bskyr, with the text "bskyr" on a cloud')
+#'   images_alt = 'hexagonal logo of the R package bskyr, with the text "bskyr" on a cloud'
+#' )
 #'
-#' bs_post(text = 'testing sending videos from R',
+#' bs_post(
+#'   text = 'testing sending videos from R',
 #'   video = fs::path_package('bskyr', 'man/figures/pkgs.mp4'),
-#'   video_alt = 'a carousel of package logos, all hexagonal')
+#'   video_alt = 'a carousel of package logos, all hexagonal'
+#' )
 bs_post <- function(text, images, images_alt,
                     video, video_alt, langs, reply, quote,
                     embed = TRUE, emoji = TRUE, max_tries,
@@ -153,7 +157,8 @@ bs_post <- function(text, images, images_alt,
   if (stringi::stri_numbytes(text) > 300) {
     # warning because *sometimes* it works even if I think it's above the limit
     cli::cli_warn(c('{.arg text} evaluates to {stringi::stri_numbytes(text)} graphemes, which is above the limit (300).',
-                    i = 'If positng fails, consider reducing the length of the text.'))
+      i = 'If positng fails, consider reducing the length of the text.'
+    ))
   }
 
   post <- list(
@@ -171,23 +176,24 @@ bs_post <- function(text, images, images_alt,
   }
 
   if (!missing(images)) {
-
     asp_rat <- lapply(images, function(img) {
       out <- NULL
-      out <- try({ # use try bc not all types that atproto accepts are magick supported
-        info <- magick::image_read(img) |>
-          magick::image_info()
-        list(
-          width = info$width,
-          height = info$height
-        )
-      }, silent = TRUE)
+      out <- try(
+        { # use try bc not all types that atproto accepts are magick supported
+          info <- magick::image_read(img) |>
+            magick::image_info()
+          list(
+            width = info$width,
+            height = info$height
+          )
+        },
+        silent = TRUE
+      )
       out
     })
 
     if (!missing(images_alt)) {
       img_incl <- lapply(seq_along(blob), function(i) {
-
         list(
           image = blob[[i]]$blob,
           alt = images_alt[[i]],
@@ -298,7 +304,6 @@ bs_post <- function(text, images, images_alt,
         } else {
           post$embed <- quote_card
         }
-
       } else {
         if (!is.null(post$embed)) {
           post$embed <- append(post$embed, card)
@@ -327,7 +332,7 @@ bs_post <- function(text, images, images_alt,
       )
   }
 
-  #return(httr2::req_dry_run(req))
+  # return(httr2::req_dry_run(req))
 
   resp <- req |>
     httr2::req_perform() |>

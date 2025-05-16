@@ -61,7 +61,7 @@ bs_search_posts <- function(query,
       domain = domain,
       url = url,
       tag = tag
-      ) |>
+    ) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(
       limit = limit

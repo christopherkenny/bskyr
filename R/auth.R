@@ -75,8 +75,8 @@ bs_cache_auth <- function(user, pass) {
     # if (bs_has_user()) {
     #   auth <- httr2::secret_read_rds(bs_auth_file(), key = 'BLUESKY_APP_USER')
     # } else {
-      auth <- readRDS(bs_auth_file())
-    #}
+    auth <- readRDS(bs_auth_file())
+    # }
     if (bs_auth_is_valid(auth)) {
       return(auth)
     }
@@ -86,8 +86,8 @@ bs_cache_auth <- function(user, pass) {
   # if (bs_has_user()) {
   #   httr2::secret_write_rds(auth, path = bs_auth_file(), key = 'BLUESKY_APP_USER')
   # } else {
-    saveRDS(auth, bs_auth_file())
-  #}
+  saveRDS(auth, bs_auth_file())
+  # }
   auth
 }
 

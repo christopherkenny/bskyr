@@ -23,7 +23,6 @@
 bs_get_relationships <- function(actor, others,
                                  user = get_bluesky_user(), pass = get_bluesky_pass(),
                                  auth = bs_auth(user, pass), clean = TRUE) {
-
   if (missing(actor)) {
     cli::cli_abort('{.arg actor} must list at least one user.')
   }
@@ -92,10 +91,12 @@ bs_get_relationships <- function(actor, others,
   }
 
   out <- resp |>
-    lapply(function(x) dplyr::bind_cols(
-    tibble::tibble(actor = x$actor),
-    x$relationships |> list_hoist()
-    )) |>
+    lapply(function(x) {
+      dplyr::bind_cols(
+        tibble::tibble(actor = x$actor),
+        x$relationships |> list_hoist()
+      )
+    }) |>
     purrr::list_rbind() |>
     clean_names() |>
     add_req_url(req)

@@ -176,7 +176,8 @@ is_online_link <- function(x) {
 # handle blob tibbles ----
 
 blob_tb_to_list <- function(tb) {
-  lapply(seq_len(nrow(tb)),
+  lapply(
+    seq_len(nrow(tb)),
     function(r) {
       list(
         blob = list(
@@ -188,5 +189,6 @@ blob_tb_to_list <- function(tb) {
           size = as.integer(tb[[r, 'size']])
         )
       )
-  })
+    }
+  )
 }

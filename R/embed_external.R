@@ -35,7 +35,6 @@
 bs_new_embed_external <- function(uri, title, description, thumb,
                                   user = get_bluesky_user(), pass = get_bluesky_pass(),
                                   auth = bs_auth(user, pass)) {
-
   if (missing(uri)) {
     cli::cli_abort('{.arg uri} must not be missing.')
   }
@@ -63,7 +62,7 @@ bs_new_embed_external <- function(uri, title, description, thumb,
 
   if (missing(thumb)) {
     if ('image' %in% names(details)) {
-      #user_did <- auth$did
+      # user_did <- auth$did
 
       if (is_online_link(details[['image']])) {
         ext <- fs::path_ext(details[['image']]) |>
@@ -78,7 +77,7 @@ bs_new_embed_external <- function(uri, title, description, thumb,
       thumb_url <- bs_upload_blob(details[['image']], auth = auth, clean = FALSE)
 
       thumb <- thumb_url[[1]]$blob
-      #thumb <- paste0('https://cdn.bsky.app/img/feed_thumbnail/plain/', user_did, '/', thumb_url[[1]]$blob$ref$`$link`)
+      # thumb <- paste0('https://cdn.bsky.app/img/feed_thumbnail/plain/', user_did, '/', thumb_url[[1]]$blob$ref$`$link`)
     } else {
       thumb <- NULL
     }
@@ -96,11 +95,11 @@ bs_new_embed_external <- function(uri, title, description, thumb,
 
   rec <- list(
     `$type` = 'app.bsky.embed.external',
-    #external = list(
+    # external = list(
     uri = uri,
     title = title,
     description = description
-    #)
+    # )
   )
 
   if (!is.null(thumb)) {

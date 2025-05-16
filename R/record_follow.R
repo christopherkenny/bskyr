@@ -23,7 +23,6 @@
 bs_follow <- function(subject,
                       user = get_bluesky_user(), pass = get_bluesky_pass(),
                       auth = bs_auth(user, pass), clean = TRUE) {
-
   if (missing(subject)) {
     cli::cli_abort('{.arg subject} must not be missing.')
   }

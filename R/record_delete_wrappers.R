@@ -21,8 +21,8 @@
 #' lst <- bs_new_list(name = 'test list bskyr', purpose = 'curatelist')
 #' bs_delete_list(bs_extract_record_key(lst$uri))
 bs_delete_list <- function(rkey,
-                        user = get_bluesky_user(), pass = get_bluesky_pass(),
-                        auth = bs_auth(user, pass)) {
+                           user = get_bluesky_user(), pass = get_bluesky_pass(),
+                           auth = bs_auth(user, pass)) {
   bs_delete_record(
     collection = 'app.bsky.graph.list',
     rkey = rkey,
@@ -55,8 +55,8 @@ bs_delete_list <- function(rkey,
 #' bs_delete_list_item(bs_extract_record_key(itm$uri))
 #' bs_delete_list(bs_extract_record_key(lst$uri))
 bs_delete_list_item <- function(rkey,
-                           user = get_bluesky_user(), pass = get_bluesky_pass(),
-                           auth = bs_auth(user, pass)) {
+                                user = get_bluesky_user(), pass = get_bluesky_pass(),
+                                auth = bs_auth(user, pass)) {
   bs_delete_record(
     collection = 'app.bsky.graph.listitem',
     rkey = rkey,
@@ -89,8 +89,8 @@ bs_delete_list_item <- function(rkey,
 #' # obviously, you deleted this by mistake and want to follow me
 #' foll <- bs_follow(subject = 'chriskenny.bsky.social')
 bs_delete_follow <- function(rkey,
-                                user = get_bluesky_user(), pass = get_bluesky_pass(),
-                                auth = bs_auth(user, pass)) {
+                             user = get_bluesky_user(), pass = get_bluesky_pass(),
+                             auth = bs_auth(user, pass)) {
   bs_delete_record(
     collection = 'app.bsky.graph.follow',
     rkey = rkey,
@@ -125,8 +125,8 @@ bs_unfollow <- bs_delete_follow
 #' like <- bs_like(post = 'https://bsky.app/profile/bskyr.bsky.social/post/3kf2577exva2x')
 #' bs_delete_like(bs_extract_record_key(like$uri))
 bs_delete_like <- function(rkey,
-                             user = get_bluesky_user(), pass = get_bluesky_pass(),
-                             auth = bs_auth(user, pass)) {
+                           user = get_bluesky_user(), pass = get_bluesky_pass(),
+                           auth = bs_auth(user, pass)) {
   bs_delete_record(
     collection = 'app.bsky.feed.like',
     rkey = rkey,
@@ -161,8 +161,8 @@ bs_unlike <- bs_delete_like
 #' repo <- bs_repost('https://bsky.app/profile/bskyr.bsky.social/post/3kf2577exva2x')
 #' bs_delete_repost(bs_extract_record_key(repo$uri))
 bs_delete_repost <- function(rkey,
-                           user = get_bluesky_user(), pass = get_bluesky_pass(),
-                           auth = bs_auth(user, pass)) {
+                             user = get_bluesky_user(), pass = get_bluesky_pass(),
+                             auth = bs_auth(user, pass)) {
   bs_delete_record(
     collection = 'app.bsky.feed.like',
     rkey = rkey,
@@ -193,8 +193,8 @@ bs_delete_repost <- function(rkey,
 #' blck <- bs_block(subject = 'nytimes.com')
 #' bs_delete_block(bs_extract_record_key(blck$uri))
 bs_delete_block <- function(rkey,
-                             user = get_bluesky_user(), pass = get_bluesky_pass(),
-                             auth = bs_auth(user, pass)) {
+                            user = get_bluesky_user(), pass = get_bluesky_pass(),
+                            auth = bs_auth(user, pass)) {
   bs_delete_record(
     collection = 'app.bsky.graph.block',
     rkey = rkey,
@@ -229,8 +229,8 @@ bs_unblock <- bs_delete_block
 #' starter <- bs_new_starter_pack('bskyr test')
 #' bs_delete_starter_pack(bs_extract_record_key(starter$uri))
 bs_delete_starter_pack <- function(rkey,
-                            user = get_bluesky_user(), pass = get_bluesky_pass(),
-                            auth = bs_auth(user, pass)) {
+                                   user = get_bluesky_user(), pass = get_bluesky_pass(),
+                                   auth = bs_auth(user, pass)) {
   bs_delete_record(
     collection = 'app.bsky.graph.block',
     rkey = rkey,

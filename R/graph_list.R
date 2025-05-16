@@ -25,7 +25,6 @@
 bs_get_list <- function(list, cursor = NULL, limit = NULL,
                         user = get_bluesky_user(), pass = get_bluesky_pass(),
                         auth = bs_auth(user, pass), clean = TRUE) {
-
   if (missing(list)) {
     cli::cli_abort('{.arg list} must list at least one user.')
   }
@@ -53,9 +52,9 @@ bs_get_list <- function(list, cursor = NULL, limit = NULL,
 
   resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching list views')
 
-   if (!clean) {
-     return(resp)
-   }
+  if (!clean) {
+    return(resp)
+  }
 
   lapply(resp, function(f) {
     dplyr::bind_cols(
@@ -75,5 +74,4 @@ bs_get_list <- function(list, cursor = NULL, limit = NULL,
     add_req_url(req) |>
     add_cursor(resp) |>
     clean_names()
-
 }

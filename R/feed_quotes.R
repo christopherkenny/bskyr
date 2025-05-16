@@ -23,9 +23,8 @@
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_quotes('at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.feed.post/3lc5c5qv72r2w')
 bs_get_quotes <- function(uri, cid, cursor = NULL, limit = NULL,
-                           user = get_bluesky_user(), pass = get_bluesky_pass(),
-                           auth = bs_auth(user, pass), clean = TRUE) {
-
+                          user = get_bluesky_user(), pass = get_bluesky_pass(),
+                          auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(uri)) {
     cli::cli_abort('{.arg uri} must not be missing.')
   }

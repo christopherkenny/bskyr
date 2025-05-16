@@ -55,11 +55,11 @@ bs_get_author_feed <- function(actor, cursor = NULL, limit = NULL,
     return(resp)
   }
 
-  lapply(resp,function(f) {
+  lapply(resp, function(f) {
     lapply(f$feed, function(x) {
       if (is.null(x$reply)) {
         proc_post(x$post)
-      } else{
+      } else {
         dplyr::bind_cols(
           proc_post(x$post),
           widen(x$reply)

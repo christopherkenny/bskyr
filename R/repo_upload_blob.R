@@ -23,7 +23,6 @@
 bs_upload_blob <- function(blob,
                            user = get_bluesky_user(), pass = get_bluesky_pass(),
                            auth = bs_auth(user, pass), clean = TRUE) {
-
   raw_data <- lapply(blob, function(x) {
     n <- file.size(x)
     if (n > 1024 * 1024) {

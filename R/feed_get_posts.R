@@ -33,7 +33,7 @@ bs_get_posts <- function(uris,
   uris <- purrr::map_chr(uris, function(x) {
     if (stringr::str_detect(x, '^http')) {
       bs_url_to_uri(x, auth = auth)
-    } else{
+    } else {
       x
     }
   })

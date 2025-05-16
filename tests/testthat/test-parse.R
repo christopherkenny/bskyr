@@ -117,16 +117,16 @@ test_that('parse mattkerlogue examples re #23', {
   )
   expect_equal(
     parse_urls('This is a test 🇬🇧 https://www.example.com'),
-    list(list(list(start = 24L, end = 47L, text = "https://www.example.com")))
+    list(list(list(start = 24L, end = 47L, text = 'https://www.example.com')))
   )
   expect_equal(
     parse_urls('This is a test 👨🏼‍💻 https://www.example.com'),
-    list(list(list(start = 31L, end = 54L, text = "https://www.example.com")))
+    list(list(list(start = 31L, end = 54L, text = 'https://www.example.com')))
   )
 
   expect_equal(
     parse_urls('https://www.example.com again'),
-    list(list(list(start = 0, end = 23L, text = "https://www.example.com")))
+    list(list(list(start = 0, end = 23L, text = 'https://www.example.com')))
   )
   expect_equal(
     parse_urls('This is a test https://www.example.com again'),
@@ -152,154 +152,162 @@ test_that('parse mattkerlogue examples re #23', {
 # https://github.com/bluesky-social/atproto/blob/main/packages/api/tests/rich-text-detection.test.ts
 test_that('parse tags inline matches bluesky typescript', {
   expect_equal(
-    parse_tags("#a"),
+    parse_tags('#a'),
     list(list(list(start = 0, end = 2, text = 'a')))
   )
 
   expect_equal(
-    parse_tags("#a #b"),
-    list(list(list(start = 0, end = 2, text = 'a'),
-              list(start = 3, end = 5, text = 'b')))
+    parse_tags('#a #b'),
+    list(list(
+      list(start = 0, end = 2, text = 'a'),
+      list(start = 3, end = 5, text = 'b')
+    ))
   )
 
   expect_equal(
-    parse_tags("#1"),
+    parse_tags('#1'),
     list(list(list()))
   )
 
   expect_equal(
-    parse_tags("#1a"),
+    parse_tags('#1a'),
     list(list(list(start = 0, end = 3, text = '1a')))
   )
 
   expect_equal(
-    parse_tags("#tag"),
+    parse_tags('#tag'),
     list(list(list(start = 0, end = 4, text = 'tag')))
   )
 
   expect_equal(
-    parse_tags("body #tag"),
+    parse_tags('body #tag'),
     list(list(list(start = 5, end = 9, text = 'tag')))
   )
 
   expect_equal(
-    parse_tags("#tag body"),
+    parse_tags('#tag body'),
     list(list(list(start = 0, end = 4, text = 'tag')))
   )
 
   expect_equal(
-    parse_tags("body #tag body"),
+    parse_tags('body #tag body'),
     list(list(list(start = 5, end = 9, text = 'tag')))
   )
 
   expect_equal(
-    parse_tags("body #1"),
+    parse_tags('body #1'),
     list(list(list()))
   )
 
   expect_equal(
-    parse_tags("body #1a"),
+    parse_tags('body #1a'),
     list(list(list(start = 5, end = 8, text = '1a')))
   )
 
   expect_equal(
-    parse_tags("body #a1"),
+    parse_tags('body #a1'),
     list(list(list(start = 5, end = 8, text = 'a1')))
   )
 
   expect_equal(
-    parse_tags("#"),
+    parse_tags('#'),
     list(list(list()))
   )
 
   expect_equal(
-    parse_tags("#?"),
+    parse_tags('#?'),
     list(list(list()))
   )
 
   expect_equal(
-    parse_tags("text #"),
+    parse_tags('text #'),
     list(list(list()))
   )
 
   expect_equal(
-    parse_tags("text # text"),
+    parse_tags('text # text'),
     list(list(list()))
   )
 
   expect_equal(
-    parse_tags("body #thisisa64characterstring_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
+    parse_tags('body #thisisa64characterstring_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
     list(list(list(start = 5, end = 70, text = 'thisisa64characterstring_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')))
   )
 
   expect_equal(
-    parse_tags("body #thisisa65characterstring_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"),
+    parse_tags('body #thisisa65characterstring_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab'),
     list(list(list()))
   )
 
   expect_equal(
-    parse_tags("body #thisisa64characterstring_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!"),
+    parse_tags('body #thisisa64characterstring_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!'),
     list(list(list(start = 5, end = 70, text = 'thisisa64characterstring_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')))
   )
 
   expect_equal(
-    parse_tags("its a #double#rainbow"),
+    parse_tags('its a #double#rainbow'),
     list(list(list(start = 6, end = 21, text = 'double#rainbow')))
   )
 
   expect_equal(
-    parse_tags("##hashash"),
+    parse_tags('##hashash'),
     list(list(list(start = 0, end = 9, text = '#hashash')))
   )
 
   expect_equal(
-    parse_tags("##"),
+    parse_tags('##'),
     list(list(list()))
   )
 
   expect_equal(
-    parse_tags("some #n0n3s@n5e!"),
+    parse_tags('some #n0n3s@n5e!'),
     list(list(list(start = 5, end = 15, text = 'n0n3s@n5e')))
   )
 
   expect_equal(
-    parse_tags("strips trailing #punctuation, #like. #this!"),
-    list(list(list(start = 16, end = 28, text = 'punctuation'),
-              list(start = 30, end = 35, text = 'like'),
-              list(start = 37, end = 42, text = 'this')))
+    parse_tags('strips trailing #punctuation, #like. #this!'),
+    list(list(
+      list(start = 16, end = 28, text = 'punctuation'),
+      list(start = 30, end = 35, text = 'like'),
+      list(start = 37, end = 42, text = 'this')
+    ))
   )
 
   expect_equal(
-    parse_tags("strips #multi_trailing___..."),
+    parse_tags('strips #multi_trailing___...'),
     list(list(list(start = 7, end = 22, text = 'multi_trailing')))
   )
 
   expect_equal(
-    parse_tags("works with #🦋 emoji, and #butter🦋fly"),
-    list(list(list(start = 11, end = 16, text = '🦋'),
-              list(start = 28, end = 42, text = 'butter🦋fly')))
+    parse_tags('works with #🦋 emoji, and #butter🦋fly'),
+    list(list(
+      list(start = 11, end = 16, text = '🦋'),
+      list(start = 28, end = 42, text = 'butter🦋fly')
+    ))
   )
 
   expect_equal(
-    parse_tags("#same #same #but #diff"),
-    list(list(list(start = 0, end = 5, text = 'same'),
-              list(start = 6, end = 11, text = 'same'),
-              list(start = 12, end = 16, text = 'but'),
-              list(start = 17, end = 22, text = 'diff')))
+    parse_tags('#same #same #but #diff'),
+    list(list(
+      list(start = 0, end = 5, text = 'same'),
+      list(start = 6, end = 11, text = 'same'),
+      list(start = 12, end = 16, text = 'but'),
+      list(start = 17, end = 22, text = 'diff')
+    ))
   )
 
   expect_equal(
-    parse_tags("this #️⃣tag should not be a tag"),
+    parse_tags('this #️⃣tag should not be a tag'),
     list(list(list()))
   )
 
   expect_equal(
-    parse_tags("this ##️⃣tag should be a tag"),
+    parse_tags('this ##️⃣tag should be a tag'),
     list(list(list(start = 5, end = 16, text = '#️⃣tag')))
   )
 
   expect_equal(
-    parse_tags("this #t\nag should be a tag"),
+    parse_tags('this #t\nag should be a tag'),
     list(list(list(start = 5, end = 7, text = 't')))
   )
 

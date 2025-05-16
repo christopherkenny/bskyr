@@ -22,8 +22,8 @@
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_list_feed('at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.list/3kmokjyuflk2g')
 bs_get_list_feed <- function(list, cursor = NULL, limit = NULL,
-                              user = get_bluesky_user(), pass = get_bluesky_pass(),
-                              auth = bs_auth(user, pass), clean = TRUE) {
+                             user = get_bluesky_user(), pass = get_bluesky_pass(),
+                             auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(list)) {
     cli::cli_abort('{.arg list} must be an at-uri for a list.')
   }

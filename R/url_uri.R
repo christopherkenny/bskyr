@@ -66,4 +66,3 @@ bs_url_to_uri <- function(url,
 bs_extract_record_key <- function(url) {
   dplyr::last(stringr::str_split(url, pattern = '/')[[1]])
 }
-

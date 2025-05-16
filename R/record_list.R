@@ -24,14 +24,15 @@
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_new_list(name = 'test list bskyr', purpose = 'curatelist')
-#' bs_new_list(name = 'test list bskyr w avatar',
+#' bs_new_list(
+#'   name = 'test list bskyr w avatar',
 #'   description = 'to be deleted, just for testing bskyr',
 #'   avatar = fs::path_package('bskyr', 'man/figures/logo.png'),
-#'   purpose = 'curatelist')
+#'   purpose = 'curatelist'
+#' )
 bs_new_list <- function(name, purpose, description, avatar,
-                    user = get_bluesky_user(), pass = get_bluesky_pass(),
-                    auth = bs_auth(user, pass), clean = TRUE) {
-
+                        user = get_bluesky_user(), pass = get_bluesky_pass(),
+                        auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(name)) {
     cli::cli_abort('{.arg name} must not be missing.')
   }

@@ -25,16 +25,17 @@
 #' @examplesIf has_bluesky_pass() & has_bluesky_user()
 #' bs_new_starter_pack('bskyr test')
 bs_new_starter_pack <- function(name, list, description, feeds,
-                      user = get_bluesky_user(), pass = get_bluesky_pass(),
-                      auth = bs_auth(user, pass), clean = TRUE) {
-
+                                user = get_bluesky_user(), pass = get_bluesky_pass(),
+                                auth = bs_auth(user, pass), clean = TRUE) {
   if (missing(name)) {
     cli::cli_abort('{.arg name} must not be missing.')
   }
 
   if (missing(list)) {
-    list <- bs_new_list(name = name, purpose = 'curatelist',
-                        description = description, auth = auth)
+    list <- bs_new_list(
+      name = name, purpose = 'curatelist',
+      description = description, auth = auth
+    )
   }
 
   if (is.data.frame(list)) {
