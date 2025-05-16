@@ -107,8 +107,7 @@ To retrieve posts liked by a user:
 ```{r}
 liked_posts <- bs_get_likes('bskyr.bsky.social')
 liked_posts |>
-  select(author.handle, text) |>
-  slice_head(n = 5)
+  dplyr::select(author_handle, record_text)
 ```
 
 To identify users who have liked or reposted a specific post:

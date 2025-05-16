@@ -53,10 +53,12 @@ Create a list
 \examples{
 \dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 bs_new_list(name = 'test list bskyr', purpose = 'curatelist')
-bs_new_list(name = 'test list bskyr w avatar',
+bs_new_list(
+  name = 'test list bskyr w avatar',
   description = 'to be deleted, just for testing bskyr',
   avatar = fs::path_package('bskyr', 'man/figures/logo.png'),
-  purpose = 'curatelist')
+  purpose = 'curatelist'
+)
 \dontshow{\}) # examplesIf}
 }
 \concept{record}

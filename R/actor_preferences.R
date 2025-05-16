@@ -31,14 +31,11 @@ bs_get_preferences <- function(user = get_bluesky_user(), pass = get_bluesky_pas
     return(resp)
   }
 
-  dplyr::bind_cols(
-    resp$preferences[[1]] |> unlist() |> clean_names() |> tibble::as_tibble_row(),
-    if (length(resp$preferences) > 1) {
-      resp$preferences[[2]] |>
-        lapply(unlist) |>
-        lapply(function(x) if (length(x) > 1) list(x) else x) |>
-        tibble::as_tibble() |>
-        dplyr::rename('$type2' = '$type')
-    }
+  resp <- resp |>
+    purrr::pluck('preferences')
+
+  tibble::tibble(
+    `$type` = purrr::map_chr(resp, function(x) x[['$type']]),
+    details = purrr::map(resp, function(x) widen(x[-1])),
   )
 }
