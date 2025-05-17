@@ -83,16 +83,7 @@ bs_search_posts <- function(query,
 process_search_posts <- function(resp) {
   resp |>
     purrr::pluck('posts') |>
-    lapply(function(x) {
-      lapply(x, function(y) {
-        if (length(y) != 1) {
-          list(y)
-        } else {
-          y
-        }
-      }) |>
-        tibble::as_tibble_row()
-    }) |>
+    list_to_row() |>
     dplyr::bind_rows() |>
     add_singletons(resp) |>
     clean_names()

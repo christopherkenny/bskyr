@@ -25,7 +25,22 @@ widen <- function(x, i = 4) {
     tibble::enframe() |>
     tidyr::pivot_wider() |>
     tidyr::unnest_wider(col = where(~ purrr::pluck_depth(.x) < i), simplify = TRUE, names_sep = '_') |>
-    dplyr::rename_with(.fn = function(x) substr(x, start = 1, stop = nchar(x) - 2), .cols = dplyr::ends_with('_1'))
+    dplyr::rename_with(.fn = function(x) substr(x, start = 1, stop = nchar(x) - 2), .cols = dplyr::ends_with('_1')) |>
+    clean_names()
+}
+
+list_to_row <- function(l) {
+  l |>
+    lapply(function(x) {
+      lapply(x, function(y) {
+        if (length(y) != 1) {
+          list(widen(y))
+        } else {
+          y
+        }
+      }) |>
+        tibble::as_tibble_row()
+    })
 }
 
 list_hoist <- function(l) {
