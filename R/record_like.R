@@ -57,7 +57,7 @@ bs_like <- function(post,
   }
 
   resp |>
-    tibble::as_tibble() |>
+    widen() |>
     clean_names() |>
     add_req_url(req)
 }
