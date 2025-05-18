@@ -36,6 +36,10 @@ bs_uri_to_url <- function(uri) {
 bs_url_to_uri <- function(url,
                           user = get_bluesky_user(), pass = get_bluesky_pass(),
                           auth = bs_auth(user, pass)) {
+
+  if (stringr::str_starts(url, 'at://')) {
+    return(url)
+  }
   pieces <- httr2::url_parse(url)
   handle <- stringr::word(pieces$path, start = 3, sep = stringr::fixed('/'))
   handle_as_id <- bs_resolve_handle(handle, auth = auth)

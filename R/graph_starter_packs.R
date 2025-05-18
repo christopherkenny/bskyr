@@ -37,6 +37,10 @@ bs_get_starter_packs <- function(starter_packs,
     cli::cli_abort('{.arg starter_pack} must be a character vector.')
   }
 
+  starter_packs <- purrr::map_chr(starter_packs, function(x) {
+    bs_url_to_uri(x, auth = auth)
+  })
+
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.graph.getStarterPacks')
 
   uris <- starter_packs |>
