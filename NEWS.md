@@ -18,6 +18,8 @@
   * `bs_accept_convo()` accepts a conversation
   * `bs_add_reaction()` adds a reaction to a message
   * `bs_remove_reaction()` removes a reaction to a message
+  * `bs_mute_convo()` mutes a conversation
+  * `bs_unmute_convo()` unmutes a conversation
 
 # bskyr 0.3.0
 
