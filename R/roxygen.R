@@ -129,3 +129,7 @@ template_var_subject <- function() { # nocov start
 template_var_created_at <- function() { # nocov start
   'Character, length 1 of the form "%Y-%m-%dT%H:%M:%OS6Z". Time to assign to a record. Default is `bs_created_at()`.'
 } # nocov end
+
+template_var_convo_id <- function() { # nocov start
+  'Character, length 1. ID of the conversation to get.'
+} # nocov end
