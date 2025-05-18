@@ -34,4 +34,8 @@ reference:
   desc: "Other Functions"
 - contents:
   - lacks_concepts(c("actor", "auth", "feed", "graph", "notification", "repo", "record"))
-
+external-articles:
+- name: scheduled-bot
+  title: Making a Scheduled Bot for Bluesky Social
+  description: Explaining the mechanics behind my CRAN Updates bot for Bluesky Social.
+  href: https://christophertkenny.com/posts/2024-01-03-bskyr-bot/
