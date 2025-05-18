@@ -4,6 +4,10 @@
 * Improves transformations of starter packs into tibbles with cleaner unnesting. (#31)
 * Allows for more than 25 actors in `bs_get_profile()`, (#29, #30).
 * Improves `bs_get_likes()` processing and makes it clear it is self-only.
+* Adds 3 vignettes. (#12)
+  * "Creating Records on Bluesky Social"
+  * "Gathering Data from Bluesky Social"
+  * "Working with Lists and Starter Packs"
 
 # bskyr 0.3.0
 
