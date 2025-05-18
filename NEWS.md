@@ -15,6 +15,7 @@
   * `bs_get_convo_log()` retrieves the log on all conversations
   * `bs_update_read()` sets a conversation to read
   * `bs_update_all_read()` sets all conversations to read
+  * `bs_accept_convo()` accepts a conversation
 
 # bskyr 0.3.0
 
