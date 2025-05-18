@@ -1,6 +1,6 @@
-#' Mark all conversations as read for the authenticated user
+#' Retrieve detailed information about a conversation by its ID
 #'
-#' @param status `r template_var_status()`
+#' @param convo_id `r template_var_convo_id()`
 #' @param user `r template_var_user()`
 #' @param pass `r template_var_pass()`
 #' @param auth `r template_var_auth()`
@@ -12,30 +12,24 @@
 #' @export
 #'
 #' @section Lexicon references:
-#' [chat.bsky.convo.updateAllRead.json (2025-05-16)](https://github.com/bluesky-social/atproto/blob/main/lexicons/chat/bsky/convo/updateAllRead.json)
+#' [chat.bsky.convo.getConvo.json (2025-05-16)](https://github.com/bluesky-social/atproto/blob/main/lexicons/chat/bsky/convo/getConvo.json)
 #'
 #' @section Function introduced:
 #' `v0.3.1` (2025-05-16)
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
-#' bs_update_all_read()
-bs_update_all_read <- function(status = c('accepted', 'request'),
-                               user = get_bluesky_user(), pass = get_bluesky_pass(),
-                               auth = bs_auth(user, pass), clean = TRUE) {
-
-  status <- rlang::arg_match(status)
+#' bs_get_convo(convo_id = '3ku7w6h4vog2d')
+bs_get_convo <- function(convo_id,
+                         user = get_bluesky_user(), pass = get_bluesky_pass(),
+                         auth = bs_auth(user, pass), clean = TRUE) {
 
   session_url <- auth$didDoc$service[[1]]$serviceEndpoint
-  req_url <- paste0(session_url, '/xrpc/chat.bsky.convo.updateAllRead')
+  req_url <- paste0(session_url, '/xrpc/chat.bsky.convo.getConvo')
 
   req <- httr2::request(req_url) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_headers('Atproto-Proxy' = 'did:web:api.bsky.chat#bsky_chat') |>
-    httr2::req_body_json(
-      data = list(
-        status = status
-      )
-    )
+    httr2::req_url_query(convoId = convo_id)
 
   resp <- req |>
     httr2::req_perform() |>
@@ -46,6 +40,7 @@ bs_update_all_read <- function(status = c('accepted', 'request'),
   }
 
   resp |>
+    purrr::pluck('convo') |>
     widen() |>
     clean_names() |>
     add_req_url(req)

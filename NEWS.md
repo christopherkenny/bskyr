@@ -8,8 +8,12 @@
   * "Creating Records on Bluesky Social"
   * "Gathering Data from Bluesky Social"
   * "Working with Lists and Starter Packs"
-* Adds support for direct messages or "convos"
+* Adds support for direct messages or conversations (aka "convos").
   * `bs_list_convos()` lists all conversations
+  * `bs_get_messages()` retrieves messages from a conversation
+  * `bs_get_convo()` retrieves details on a conversation  
+  * `bs_update_read()` sets a conversation to read
+  * `bs_update_all_read()` sets all conversations to read
 
 # bskyr 0.3.0
 
