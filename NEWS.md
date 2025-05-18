@@ -12,6 +12,7 @@
   * `bs_list_convos()` lists all conversations
   * `bs_get_messages()` retrieves messages from a conversation
   * `bs_get_convo()` retrieves details on a conversation  
+  * `bs_get_convo_log()` retrieves the log on all conversations
   * `bs_update_read()` sets a conversation to read
   * `bs_update_all_read()` sets all conversations to read
 
