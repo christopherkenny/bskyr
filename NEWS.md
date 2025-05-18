@@ -16,6 +16,7 @@
   * `bs_update_read()` sets a conversation to read
   * `bs_update_all_read()` sets all conversations to read
   * `bs_accept_convo()` accepts a conversation
+  * `bs_add_reaction()` adds a reaction to a message
 
 # bskyr 0.3.0
 

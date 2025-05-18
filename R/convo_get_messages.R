@@ -50,7 +50,7 @@ bs_get_messages <- function(convo_id,
       limit = limit
     )
 
-  resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching conversations')
+  resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching messages')
 
   if (!clean) {
     return(resp)
