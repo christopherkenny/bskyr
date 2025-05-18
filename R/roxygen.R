@@ -133,3 +133,7 @@ template_var_created_at <- function() { # nocov start
 template_var_convo_id <- function() { # nocov start
   'Character, length 1. ID of the conversation to get.'
 } # nocov end
+
+template_var_status <- function() { # nocov start
+  'Character, length 1. Conversation status, one of  `c("accepted", "request")`. Default: `NULL`.'
+} # nocov end
