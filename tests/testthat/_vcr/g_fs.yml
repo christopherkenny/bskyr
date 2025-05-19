@@ -1,0 +1,50 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/app.bsky.graph.getSuggestedFollowsByActor?actor=chriskenny.bsky.social
+  response:
+    status: 200
+    headers:
+      Date: Mon, 19 May 2025 17:41:41 GMT
+      Content-Type: application/json; charset=utf-8
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2976'
+      RateLimit-Reset: '1747676784'
+      RateLimit-Policy: 3000;w=300
+      atproto-content-labelers: did:plc:ar7c4by46qjdydhdevvrndac;redact
+      Vary: Accept-Encoding
+      Content-Encoding: gzip
+    body:
+      string: "{\"isFallback\":true,\"suggestions\":[{\"did\":\"did:plc:bii5oena6gcqubtxd3ai3dwy\",\"handle\":\"kokomiyara.bsky.social\",\"displayName\":\"Koko\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:bii5oena6gcqubtxd3ai3dwy/bafkreidr6vyil7zc7h43apjhj2n6t6nffknvxyapddqhj2epslvfnaooa4@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2025-04-03T04:11:41.064Z\",\"description\":\"\U0001F6ABMAGA
+        SUPPORTER\U0001F6ABPorn\\nHuman Rights \U0001F44D\\nDM only for sharing perspectives
+        \U0001F44D\",\"indexedAt\":\"2025-05-17T22:17:53.607Z\"},{\"did\":\"did:plc:zhcfq6acrvb6ermtjt644w2n\",\"handle\":\"davidjbier.bsky.social\",\"displayName\":\"David
+        Bier\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:zhcfq6acrvb6ermtjt644w2n/bafkreiai4ikmgxnuhfycyppc52biqbmqpqumrdihga46mhrdq5z46onzwe@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2023-10-06T16:56:23.131Z\",\"description\":\"Cato
+        Institute, Director of Immigration Studies, BEER, not buyer. Cato, not CATO\",\"indexedAt\":\"2024-11-15T15:40:04.776Z\"},{\"did\":\"did:plc:yemdlplnzpos7ktm7qz3rjrq\",\"handle\":\"doomquasar.bsky.social\",\"displayName\":\"Simone
+        de Rochefort\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:yemdlplnzpos7ktm7qz3rjrq/bafkreia2viv5w6ksrf223jfsjykothmwntqazdifphnqyod37f6wsttyfq@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2023-04-27T10:24:31.832Z\",\"description\":\"i’m
+        thinking about cars\",\"indexedAt\":\"2025-03-25T04:37:59.947Z\"},{\"did\":\"did:plc:m6ynazjvzq2ulyvwsdvcnn63\",\"handle\":\"pinguteamsquidnmb.bsky.social\",\"displayName\":\"PenguinCommandoUK\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:m6ynazjvzq2ulyvwsdvcnn63/bafkreih5bcy74c6pxagfm2kujim3v7gz3fzmfpjztunwamhq3bldkph6nq@jpeg\",\"associated\":{\"chat\":{\"allowIncoming\":\"none\"}},\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[{\"src\":\"did:plc:m6ynazjvzq2ulyvwsdvcnn63\",\"uri\":\"at://did:plc:m6ynazjvzq2ulyvwsdvcnn63/app.bsky.actor.profile/self\",\"cid\":\"bafyreig4wfygm54tass54ygydk64n446ewleq4jtgiemo6tvpwiboks27i\",\"val\":\"!no-unauthenticated\",\"cts\":\"2025-05-12T00:49:30.728Z\"}],\"createdAt\":\"2025-05-12T00:49:31.606Z\",\"description\":\"8647\\nUK
+        man who can\\nHere to fight the fascist right\\n\\nSlava Ukraini\\nResist
+        Krasnov USA, fuck Putin, fuck Musk\\nHopefuly have some fun too\",\"indexedAt\":\"2025-05-18T22:01:43.809Z\"},{\"did\":\"did:plc:jagspzkxyduqjvmrivtcnfe4\",\"handle\":\"meadowsonh2o.bsky.social\",\"displayName\":\"Kerry
+        Meadows\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:jagspzkxyduqjvmrivtcnfe4/bafkreigjrskurdjwyo63ikncj65t3ioanappnzazg5bblggpspplaib3qe@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[{\"src\":\"did:plc:jagspzkxyduqjvmrivtcnfe4\",\"uri\":\"at://did:plc:jagspzkxyduqjvmrivtcnfe4/app.bsky.actor.profile/self\",\"cid\":\"bafyreidpwfm224jvhnsgsfgqdzhohgq6icrjpwde7v732ba7niygiltfcu\",\"val\":\"!no-unauthenticated\",\"cts\":\"2024-11-13T02:03:37.386Z\"}],\"createdAt\":\"2024-11-13T02:03:38.581Z\",\"description\":\"“The
+        road to success is always under construction.”\\nTree hugger, earth lover…\",\"indexedAt\":\"2025-05-13T00:48:36.707Z\"},{\"did\":\"did:plc:ad454hgwag5iwacpxl6qroy4\",\"handle\":\"open19spaces.bsky.social\",\"displayName\":\"\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:ad454hgwag5iwacpxl6qroy4/bafkreieg2jh4fjve2f4drxinckvr2o5pn74z7uovmceacgyvgb65v42i3q@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2024-11-16T18:15:11.622Z\",\"description\":\"Grandmother
+        ;Mother, \\nLiving in Beautiful Montana\\nWorking towards a Blue Montana.\",\"indexedAt\":\"2024-11-21T23:42:44.116Z\"},{\"did\":\"did:plc:sjkvyc5asouwyao3petk2bs6\",\"handle\":\"druidchief.bsky.social\",\"displayName\":\"\U0001F340
+        DRUID CHIEF ☀️\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:sjkvyc5asouwyao3petk2bs6/bafkreidg2pbdx6ixvcl5f46ztb23gbriwq7wcx2fhbccaxbim3zseseq3q@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2025-05-01T04:48:11.044Z\",\"description\":\"#revolution
+        #activism #politics #history #art \U0001F340 DRUID CHIEF ☀️ https://druidchief.bsky.social
+        ✊\",\"indexedAt\":\"2025-05-18T18:56:59.607Z\"},{\"did\":\"did:plc:gthoroljv5rpildbvfqlmhop\",\"handle\":\"afelonpresident.com\",\"displayName\":\"A
+        [rapey] Felon President\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:gthoroljv5rpildbvfqlmhop/bafkreih5gpu5nb2seznx2sdr6rw2c7ctczmqzqjzloknppbijgjcr5made@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2025-05-13T14:47:29.907Z\",\"description\":\"We're
+        talking and documenting his crimes, embarrassing-damaging acts, the stooges
+        who follow him and the fallout to America and the world.\\n\\nhttps://afelonpresident.com/\",\"indexedAt\":\"2025-05-16T15:41:38.906Z\"},{\"did\":\"did:plc:t4bqtdzd3adznnqmif635xta\",\"handle\":\"angelsarray.bsky.social\",\"displayName\":\"Angel's
+        Array\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:t4bqtdzd3adznnqmif635xta/bafkreienxrgomkrq7d4prvigxsfnsuyoiolnac3ayi3fl2otrjhgygldxu@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2025-03-30T19:11:45.165Z\",\"description\":\"\U0001F1E8\U0001F1E6
+        Canadian❣️\\n❤️ Liberal \U0001F341\\n\U0001F499 Democrat \U0001F30A \\n\U0001F49A
+        Vegan \U0001F331\\n\U0001F90D Peace \U0001F54A\",\"indexedAt\":\"2025-05-11T04:02:37.007Z\"},{\"did\":\"did:plc:tdfea6xxierwjg2g6emmoski\",\"handle\":\"docgrant.bsky.social\",\"displayName\":\"\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:tdfea6xxierwjg2g6emmoski/bafkreihlm7f6ybsaetzoombah2yhftsiakhs5ykbhdcwnx4o7jiyt7pww4@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2024-11-14T01:02:11.125Z\",\"indexedAt\":\"2024-11-14T01:02:11.125Z\"},{\"did\":\"did:plc:pk72eerzsm3e53uvn4wpeyht\",\"handle\":\"gouchcath.bsky.social\",\"displayName\":\"\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:pk72eerzsm3e53uvn4wpeyht/bafkreie5iib4dapjxb3cywcba67y5yppa26m6oegqkoekf7qhgprmpdetu@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2025-01-21T01:17:08.414Z\",\"description\":\"Pragmatic
+        Progressive. Pro-democracy/Anti-stupidity. Project & People Organizer. Hate
+        never made any nation great.\",\"indexedAt\":\"2025-05-06T14:54:32.343Z\"},{\"did\":\"did:plc:x7ztza7m35qgzft3ovv42v5h\",\"handle\":\"ray-a-sun.bsky.social\",\"displayName\":\"Ray-a-Sun\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:x7ztza7m35qgzft3ovv42v5h/bafkreihtp4qdthobf72ihkxh7hhsq35wqo6vnny4zmg4ohfss67piouece@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2024-11-12T19:07:32.436Z\",\"description\":\"Dog
+        Lover - Video Games - Politics - Healthcare For ALL - Learning is powerful
+        - My husband says I'm a ray of sunshine \U0001F1E8\U0001F1E6♥️\U0001F60A DM\\\"S
+        \U0001F6AB PORN \U0001F6AB CRYPTO \U0001F6AB\\nI'm a Twitch streamer, come
+        hang out! Its a safe space :)\\nhttps://www.twitch.tv/rayyasun\",\"indexedAt\":\"2025-05-18T13:51:09.007Z\"}],\"recId\":50276710100242430}"
+  recorded_at: 2025-05-19 17:41:42
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

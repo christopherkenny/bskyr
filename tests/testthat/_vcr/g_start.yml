@@ -1,0 +1,65 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/app.bsky.graph.getStarterPack?starterPack=at%3A%2F%2Fdid%3Aplc%3Awpe35pganb6d4pg4ekmfy6u5%2Fapp.bsky.graph.starterpack%2F3lb3g5veo2z2r
+  response:
+    status: 200
+    headers:
+      Date: Mon, 19 May 2025 17:41:46 GMT
+      Content-Type: application/json; charset=utf-8
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2968'
+      RateLimit-Reset: '1747676784'
+      RateLimit-Policy: 3000;w=300
+      atproto-content-labelers: did:plc:ar7c4by46qjdydhdevvrndac;redact
+      Vary: Accept-Encoding
+      Content-Encoding: gzip
+    body:
+      string: "{\"starterPack\":{\"uri\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.starterpack/3lb3g5veo2z2r\",\"cid\":\"bafyreiaut4ogfmhjefrp5ivmxeyhfvcy6tkyrnji6l6iodextybwxx2qqu\",\"record\":{\"$type\":\"app.bsky.graph.starterpack\",\"createdAt\":\"2024-11-16T17:29:49.504Z\",\"description\":\"Making
+        a differences-in-differences in the world\",\"feeds\":[],\"list\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.list/3lb3g5v7zsn2u\",\"name\":\"Political
+        Methodologists\",\"updatedAt\":\"2024-12-01T02:39:52.846Z\"},\"creator\":{\"did\":\"did:plc:wpe35pganb6d4pg4ekmfy6u5\",\"handle\":\"chriskenny.bsky.social\",\"displayName\":\"Chris
+        Kenny\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:wpe35pganb6d4pg4ekmfy6u5/bafkreibbgv73dk7lk4qrij5xm7vri3m6hfgfxqylxbal6yau7ssieqav3a@jpeg\",\"associated\":{\"chat\":{\"allowIncoming\":\"following\"}},\"viewer\":{\"muted\":false,\"blockedBy\":false,\"following\":\"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.follow/3lpcvwevybs2p\",\"followedBy\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kchl2sce7p2i\"},\"labels\":[],\"createdAt\":\"2023-09-19T15:47:01.417Z\"},\"joinedAllTimeCount\":0,\"joinedWeekCount\":0,\"labels\":[],\"indexedAt\":\"2024-12-01T02:39:53.074Z\",\"feeds\":[],\"list\":{\"uri\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.list/3lb3g5v7zsn2u\",\"cid\":\"bafyreifdusl64pk6zhii7gm3hsddkr7ak7utork4oc3itjkcjfybukvfuy\",\"name\":\"Political
+        Methodologists\",\"purpose\":\"app.bsky.graph.defs#referencelist\",\"listItemCount\":13,\"indexedAt\":\"2024-11-16T17:29:47.814Z\",\"labels\":[],\"viewer\":{\"muted\":false}},\"listItemsSample\":[{\"uri\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lc7lgg42pp2r\",\"subject\":{\"did\":\"did:plc:tb2bwzxom5qv4542ru3zqcgu\",\"handle\":\"jakemgrumbach.bsky.social\",\"displayName\":\"Jake
+        Grumbach\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:tb2bwzxom5qv4542ru3zqcgu/bafkreihriguqdrjc5ximup7tw5ccjj7wq6swfak75gkeytqwcaowpvnqhi@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2023-05-16T21:02:56.237Z\",\"description\":\"policy,
+        $, political economy of race // 70-80s soul, 90s hip hop // #DubNation //
+        proud product of miscegenation // Berkeley prof (formerly: Princeton CSDP,
+        UW)\",\"indexedAt\":\"2024-01-26T00:15:24.456Z\"}},{\"uri\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lc7lgg42po2r\",\"subject\":{\"did\":\"did:plc:yw3qqfa7hrhmwbc6wyrq5u7f\",\"handle\":\"paulgp.com\",\"displayName\":\"Paul
+        Goldsmith-Pinkham\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:yw3qqfa7hrhmwbc6wyrq5u7f/bafkreied5hws3knfjdxmzvmbmampslevscltcca5iqisoknqq4wfvrdsqa@jpeg\",\"associated\":{\"chat\":{\"allowIncoming\":\"following\"}},\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2023-05-03T11:44:14.557Z\",\"description\":\"Yale
+        SOM professor & Bulls fan. I study consumer finance, and econometrics is a
+        big part of my research identity. He/him/his\",\"indexedAt\":\"2024-01-26T00:38:21.169Z\"}},{\"uri\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcghy27\",\"subject\":{\"did\":\"did:plc:7lfvbapvw5exazsv7hlzvzgh\",\"handle\":\"jatucker.bsky.social\",\"displayName\":\"Joshua
+        Tucker\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:7lfvbapvw5exazsv7hlzvzgh/bafkreiho2lb4vvqokhsorhdlxn5eadr3ztzjgefzvli5d6g3qadsnq5wem@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2023-05-05T13:07:59.280Z\",\"description\":\"Politics
+        Prof, NYU; Director @NYUJordanCenter for Adv Study of #Russia; Co-Director
+        NYU Center for Social Media and Politics @CSMaP_NYU (http://csmapnyu.org);
+        long suffering NY Mets fan; @j_a_tucker on other platforms; he/him\",\"indexedAt\":\"2024-11-19T14:17:14.139Z\"}},{\"uri\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcght27\",\"subject\":{\"did\":\"did:plc:t4vn5ha3pp6nmaqwyszhmmub\",\"handle\":\"mattblackwell.bsky.social\",\"displayName\":\"Matt
+        Blackwell\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:t4vn5ha3pp6nmaqwyszhmmub/bafkreigcr462eqyxwnayruu5a7bovpaxo3ompve77wxmdjhteot4pfqtiq@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2023-07-06T20:41:16.662Z\",\"description\":\"data,
+        causal inference, experiments, politics\\nhttps://mattblackwell.org\",\"indexedAt\":\"2025-02-27T02:12:36.614Z\"}},{\"uri\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcghx27\",\"subject\":{\"did\":\"did:plc:xdfzimryz2e5kkczbbuaex5t\",\"handle\":\"aecoppock.bsky.social\",\"displayName\":\"Alex
+        Coppock\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:xdfzimryz2e5kkczbbuaex5t/bafkreigops4hcdoa3ye5rtiqmaqlpda446zumizoj4sqfklqvvrniv7khm@jpeg\",\"associated\":{\"chat\":{\"allowIncoming\":\"following\"}},\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2023-08-11T20:04:56.978Z\",\"description\":\"Associate
+        Professor (on term) of Political Science at Yale University\\nalexandercoppock.com\\nPersuasion
+        in Parallel: https://alexandercoppock.com/coppock_2023.html\\nResearch Design:
+        Declaration, Diagnosis, and Redesign: book.declaredesign.org\",\"indexedAt\":\"2024-01-25T23:52:56.387Z\"}},{\"uri\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcghv27\",\"subject\":{\"did\":\"did:plc:4klvcjju2m7msicq6kw7i7d6\",\"handle\":\"joshmccrain.bsky.social\",\"displayName\":\"Josh
+        McCrain\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:4klvcjju2m7msicq6kw7i7d6/bafkreih24rbqmtbzdob7cuhdn777n243667epqjzhejj5uwtqclqxgg5z4@jpeg\",\"associated\":{\"chat\":{\"allowIncoming\":\"following\"}},\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2023-08-18T16:23:48.627Z\",\"description\":\"Political
+        scientist at the University of Utah. Public policy, political institutions,
+        media and politics\",\"indexedAt\":\"2024-11-11T18:19:46.716Z\"}},{\"uri\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lc7lgg42pn2r\",\"subject\":{\"did\":\"did:plc:bsq6e23cupqfp3m33c2a7ez4\",\"handle\":\"guilhermeduarte.bsky.social\",\"displayName\":\"Guilherme
+        Duarte\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:bsq6e23cupqfp3m33c2a7ez4/bafkreigud7b5ruhiumihpxa3dp2kt4pkntdksjlua6q2cwnzkjjexfxega@jpeg\",\"associated\":{\"chat\":{\"allowIncoming\":\"following\"}},\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2023-07-01T21:07:48.039Z\",\"description\":\"PhD
+        candidate (OID - @Wharton - @Penn). interests: causality, politics, ML duarteguilherme.github.io\",\"indexedAt\":\"2024-09-01T00:00:29.138Z\"}},{\"uri\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcghs27\",\"subject\":{\"did\":\"did:plc:2kiosyjwaoqssjslptbyux33\",\"handle\":\"melodyyhuang.bsky.social\",\"displayName\":\"Melody
+        Huang\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:2kiosyjwaoqssjslptbyux33/bafkreibdrq7dtzo5tueppqbgzqu623z6esdagdxuslzhudzxxg2vhav6dm@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2023-09-20T02:45:26.725Z\",\"description\":\"Currently
+        @ Yale, working on causal inference & cutting down on caffeine.\\n\\nWebsite:
+        melodyyhuang.com\",\"indexedAt\":\"2024-11-17T06:50:12.871Z\"}},{\"uri\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcghz27\",\"subject\":{\"did\":\"did:plc:sb44cn2k6svr7ldtle4bgpxa\",\"handle\":\"shirokuriwaki.bsky.social\",\"displayName\":\"Shiro
+        Kuriwaki\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:sb44cn2k6svr7ldtle4bgpxa/bafkreiduj4gcfm3eilzi5fxcnplgzajt4te6cnqhm6a56dkccs6yaxq5sm@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2023-07-13T19:08:37.034Z\",\"description\":\"Assistant
+        Professor of Political Science, Yale University. I study elections and representation,
+        American Politics, and applied statistics. \\n\\nwww.shirokuriwaki.com\",\"indexedAt\":\"2024-01-26T00:51:15.101Z\"}},{\"uri\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcghr27\",\"subject\":{\"did\":\"did:plc:wpe35pganb6d4pg4ekmfy6u5\",\"handle\":\"chriskenny.bsky.social\",\"displayName\":\"Chris
+        Kenny\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:wpe35pganb6d4pg4ekmfy6u5/bafkreibbgv73dk7lk4qrij5xm7vri3m6hfgfxqylxbal6yau7ssieqav3a@jpeg\",\"associated\":{\"chat\":{\"allowIncoming\":\"following\"}},\"viewer\":{\"muted\":false,\"blockedBy\":false,\"following\":\"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.follow/3lpcvwevybs2p\",\"followedBy\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kchl2sce7p2i\"},\"labels\":[],\"createdAt\":\"2023-09-19T15:47:01.417Z\",\"description\":\"PhD
+        '25 Government @harvard.edu. Studies redistricting in #rstats.\\nhttps://christophertkenny.com/\",\"indexedAt\":\"2025-04-26T18:24:05.352Z\"}},{\"uri\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lb3g5vcghu27\",\"subject\":{\"did\":\"did:plc:dnsx4seefot4j3p7u6yifyx6\",\"handle\":\"corymccartan.com\",\"displayName\":\"Cory
+        McCartan\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:dnsx4seefot4j3p7u6yifyx6/bafkreighkqufxvtp5ap5d7ujgkuxtetbc2yxxt6mnfx3faneolq5547b2y@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2023-09-21T19:02:29.948Z\",\"description\":\"Asst.
+        Prof. of Statistics & Political Science at Penn State. I study stats methods,
+        gerrymandering, & elections. Bayesian. Founder of UGSDW and proud alum of
+        HGSU-UAW L. 5118.\\ncorymccartan.com\",\"indexedAt\":\"2025-03-18T00:45:38.213Z\"}},{\"uri\":\"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.listitem/3lbrt364gul2w\",\"subject\":{\"did\":\"did:plc:zmntuq2p4dwafidbvo5hm6jl\",\"handle\":\"ruofan-ma.bsky.social\",\"displayName\":\"Ruofan
+        Ma\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:zmntuq2p4dwafidbvo5hm6jl/bafkreie6bhpy44ftmsla43736q53upj7bmaqg76vi6nft46ebq32vl334q@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2024-11-19T11:45:44.137Z\",\"description\":\"PhD
+        candidate @ Harvard Gov | he, him \U0001F3F3️‍\U0001F308| Labor & Human Rights,
+        International Organization, and (in whisper voice) Methodology\",\"indexedAt\":\"2024-11-25T20:11:01.108Z\"}}]}}"
+  recorded_at: 2025-05-19 17:41:46
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

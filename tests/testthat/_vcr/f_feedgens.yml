@@ -1,0 +1,27 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/app.bsky.feed.getFeedGenerators?feeds=at%3A%2F%2Fdid%3Aplc%3Az72i7hdynmk6r22z27h6tvur%2Fapp.bsky.feed.generator%2Fbsky-team
+  response:
+    status: 200
+    headers:
+      Date: Mon, 19 May 2025 17:41:31 GMT
+      Content-Type: application/json; charset=utf-8
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2991'
+      RateLimit-Reset: '1747676784'
+      RateLimit-Policy: 3000;w=300
+      atproto-content-labelers: did:plc:ar7c4by46qjdydhdevvrndac;redact
+      Vary: Accept-Encoding
+      Content-Encoding: gzip
+    body:
+      string: "{\"feeds\":[{\"uri\":\"at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/bsky-team\",\"cid\":\"bafyreiaakdzle2bfn7d4leicpcyzvvqy4mvk6prxz62dilm64n3ayblaa4\",\"did\":\"did:web:discover.bsky.app\",\"creator\":{\"did\":\"did:plc:z72i7hdynmk6r22z27h6tvur\",\"handle\":\"bsky.app\",\"displayName\":\"Bluesky\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:z72i7hdynmk6r22z27h6tvur/bafkreihagr2cmvl2jt4mgx3sppwe2it3fwolkrbtjrhcnwjk4jdijhsoze@jpeg\",\"associated\":{\"chat\":{\"allowIncoming\":\"none\"}},\"viewer\":{\"muted\":false,\"blockedBy\":false,\"following\":\"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.follow/3kchl23c5tg2j\"},\"labels\":[],\"createdAt\":\"2023-04-12T04:53:57.057Z\",\"verification\":{\"verifications\":[],\"verifiedStatus\":\"none\",\"trustedVerifierStatus\":\"valid\"},\"description\":\"official
+        Bluesky account (check username\U0001F446)\\n\\nBugs, feature requests, feedback:
+        support@bsky.app\",\"indexedAt\":\"2024-12-18T07:43:57.513Z\"},\"displayName\":\"Bluesky
+        Team\",\"description\":\"Posts from members of the Bluesky Team\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:z72i7hdynmk6r22z27h6tvur/bafkreidztvxbbdkakiarsshcwk6ctcagovwjd6fnxxeixwytfnlq3nbl6i@jpeg\",\"likeCount\":5712,\"labels\":[],\"viewer\":{},\"indexedAt\":\"2023-05-19T23:19:20.545Z\"}]}"
+  recorded_at: 2025-05-19 17:41:31
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0
