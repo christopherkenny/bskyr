@@ -205,14 +205,14 @@ lists, but for packs. It returns a <code>tibble</code> of the user’s
 starter pack records:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">user_packs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/bs_get_actor_starter_packs.html">bs_get_actor_starter_packs</a></span><span class="op">(</span><span class="st">'chriskenny.bsky.social'</span><span class="op">)</span></span>
-<span><span class="va">user_packs</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">user_packs</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">record_name</span>, <span class="va">record_description</span><span class="op">)</span></span></code></pre></div>
 <p>If you have the AT URI of a particular starter pack, you can fetch
 its details with <code><a href="../reference/bs_get_starter_pack.html">bs_get_starter_pack()</a></code>. This will return
 the pack’s metadata along with the contents (the list of accounts and
 any feeds it includes):</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_get_starter_pack.html">bs_get_starter_pack</a></span><span class="op">(</span><span class="st">'https://bsky.app/starter-pack/jkertzer.bsky.social/3laywns2q2v27'</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_get_starter_pack.html">bs_get_starter_pack</a></span><span class="op">(</span><span class="st">'https://bsky.app/starter-pack/jkertzer.bsky.social/3laywns2q2v27'</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">record_name</span>, <span class="va">record_description</span><span class="op">)</span></span></code></pre></div>
 <p>For convenience, <code>bskyr</code> also provides
 <code><a href="../reference/bs_get_starter_packs.html">bs_get_starter_packs()</a></code>, which can fetch multiple packs in
@@ -220,9 +220,9 @@ one call. You can supply a vector of starter pack URIs to
 <code><a href="../reference/bs_get_starter_packs.html">bs_get_starter_packs()</a></code> to retrieve them all at once:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_get_starter_packs.html">bs_get_starter_packs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>  <span class="st">'at://did:plc:bmc56x6ksb7o7sdkq2fgm7se/app.bsky.graph.starterpack/3laywns2q2v27'</span>, </span>
+<span>  <span class="st">'at://did:plc:bmc56x6ksb7o7sdkq2fgm7se/app.bsky.graph.starterpack/3laywns2q2v27'</span>,</span>
 <span>  <span class="st">'https://bsky.app/starter-pack/chriskenny.bsky.social/3lb3g5veo2z2r'</span></span>
-<span>  <span class="op">)</span><span class="op">)</span>  <span class="op">|&gt;</span> </span>
+<span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">record_name</span>, <span class="va">record_description</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
