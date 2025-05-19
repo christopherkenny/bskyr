@@ -56,7 +56,8 @@ bs_get_notifications <- function(cursor = NULL, limit = NULL,
 process_notifications <- function(resp) {
   resp |>
     purrr::pluck('notifications') |>
-    list_hoist() |>
+    list_to_row() |>
+    purrr::list_rbind() |>
     add_singletons(resp) |>
     clean_names()
 }

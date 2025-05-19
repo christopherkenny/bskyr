@@ -63,7 +63,8 @@ bs_list_records <- function(repo, collection, cursor = NULL, limit = NULL,
 process_list_records <- function(resp) {
   resp |>
     purrr::pluck('records') |>
-    list_hoist() |>
+    list_to_row() |>
+    purrr::list_rbind() |>
     add_singletons(resp) |>
     clean_names()
 }
