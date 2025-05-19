@@ -26,6 +26,14 @@ bs_resolve_handle <- function(handle,
     cli::cli_abort('{.arg handle} must not be missing.')
   }
 
+  if (stringr::str_starts(handle, 'did:plc:')) {
+    if (!clean) {
+      return(list(did = handle))
+    } else {
+      return(tibble::tibble(did = handle))
+    }
+  }
+
   req <- httr2::request('https://bsky.social/xrpc/com.atproto.identity.resolveHandle') |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_method('GET') |>

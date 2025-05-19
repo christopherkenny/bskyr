@@ -23,6 +23,8 @@
   * `bs_send_message()` sends a message to a conversation
   * `bs_delete_message_for_self()` hides a message for you
   * `bs_leave_convo()` leaves a conversation
+  * `bs_get_convo_availability()` retrieves info on if you can chat with another actor
+  
 
 # bskyr 0.3.0
 
