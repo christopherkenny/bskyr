@@ -21,6 +21,7 @@
   * `bs_mute_convo()` mutes a conversation
   * `bs_unmute_convo()` unmutes a conversation
   * `bs_send_message()` sends a message to a conversation
+  * `bs_delete_message_for_self()` hides a message for you
 
 # bskyr 0.3.0
 
