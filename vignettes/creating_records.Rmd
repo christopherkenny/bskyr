@@ -238,7 +238,7 @@ If `post_rcd` is a post object we fetched or have details for, we could do:
 
 ```{r}
 post_rcd <- bs_get_record(
-  'https://bsky.app/profile/bskyr.bsky.social/post/3lpeonujcdg2q', 
+  'https://bsky.app/profile/bskyr.bsky.social/post/3lpeonujcdg2q',
   clean = FALSE
 )
 

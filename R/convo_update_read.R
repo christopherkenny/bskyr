@@ -23,7 +23,6 @@
 bs_update_read <- function(convo_id, message_id = NULL,
                            user = get_bluesky_user(), pass = get_bluesky_pass(),
                            auth = bs_auth(user, pass), clean = TRUE) {
-
   body <- list(convoId = convo_id)
   if (!is.null(message_id)) {
     body$messageId <- message_id

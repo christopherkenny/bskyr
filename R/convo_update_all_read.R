@@ -22,7 +22,6 @@
 bs_update_all_read <- function(status = c('accepted', 'request'),
                                user = get_bluesky_user(), pass = get_bluesky_pass(),
                                auth = bs_auth(user, pass), clean = TRUE) {
-
   status <- rlang::arg_match(status)
 
   session_url <- auth$didDoc$service[[1]]$serviceEndpoint

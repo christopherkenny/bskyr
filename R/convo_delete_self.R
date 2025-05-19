@@ -23,7 +23,6 @@
 bs_delete_message_for_self <- function(convo_id, message_id,
                                        user = get_bluesky_user(), pass = get_bluesky_pass(),
                                        auth = bs_auth(user, pass), clean = TRUE) {
-
   session_url <- auth$didDoc$service[[1]]$serviceEndpoint
   req_url <- paste0(session_url, '/xrpc/chat.bsky.convo.deleteMessageForSelf')
 

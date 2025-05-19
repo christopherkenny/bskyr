@@ -26,7 +26,6 @@
 bs_send_message_batch <- function(convo_id, text,
                                   user = get_bluesky_user(), pass = get_bluesky_pass(),
                                   auth = bs_auth(user, pass), clean = TRUE) {
-
   # Recycle text if length is 1
   if (length(text) == 1) {
     text <- rep(text, length(convo_id))

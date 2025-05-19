@@ -64,6 +64,3 @@ types |>
 types |>
   anti_join(current_supported, by = 'ref') |>
   filter(str_detect(ref, 'app/bsky/'), !str_detect(ref, 'unspecced'), type == 'query')
-
-
-

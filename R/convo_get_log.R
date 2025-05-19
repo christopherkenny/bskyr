@@ -20,9 +20,8 @@
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_convo_log()
 bs_get_convo_log <- function(cursor = NULL,
-                       user = get_bluesky_user(), pass = get_bluesky_pass(),
-                       auth = bs_auth(user, pass), clean = TRUE) {
-
+                             user = get_bluesky_user(), pass = get_bluesky_pass(),
+                             auth = bs_auth(user, pass), clean = TRUE) {
   session_url <- auth$didDoc$service[[1]]$serviceEndpoint
   req_url <- paste0(session_url, '/xrpc/chat.bsky.convo.getLog')
 

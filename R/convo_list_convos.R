@@ -28,7 +28,6 @@ bs_list_convos <- function(read_state = NULL, status = NULL,
                            cursor = NULL, limit = NULL,
                            user = get_bluesky_user(), pass = get_bluesky_pass(),
                            auth = bs_auth(user, pass), clean = TRUE) {
-
   if (!is.null(limit)) {
     if (!is.numeric(limit)) {
       cli::cli_abort('{.arg limit} must be numeric.')
@@ -43,7 +42,7 @@ bs_list_convos <- function(read_state = NULL, status = NULL,
   session_url <- auth$didDoc$service[[1]]$serviceEndpoint
   req_url <- paste0(session_url, '/xrpc/chat.bsky.convo.listConvos')
 
-  req <- httr2::request(req_url)|>
+  req <- httr2::request(req_url) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_headers('Atproto-Proxy' = 'did:web:api.bsky.chat#bsky_chat') |>
     httr2::req_url_query(

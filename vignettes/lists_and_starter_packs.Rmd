@@ -146,7 +146,7 @@ It returns a `tibble` of the user’s starter pack records:
 
 ```{r}
 user_packs <- bs_get_actor_starter_packs('chriskenny.bsky.social')
-user_packs |> 
+user_packs |>
   dplyr::select(record_name, record_description)
 ```
 
@@ -154,7 +154,7 @@ If you have the AT URI of a particular starter pack, you can fetch its details w
 This will return the pack’s metadata along with the contents (the list of accounts and any feeds it includes):
 
 ```{r}
-bs_get_starter_pack('https://bsky.app/starter-pack/jkertzer.bsky.social/3laywns2q2v27') |> 
+bs_get_starter_pack('https://bsky.app/starter-pack/jkertzer.bsky.social/3laywns2q2v27') |>
   dplyr::select(record_name, record_description)
 ```
 
@@ -163,9 +163,9 @@ You can supply a vector of starter pack URIs to `bs_get_starter_packs()` to retr
 
 ```{r}
 bs_get_starter_packs(c(
-  'at://did:plc:bmc56x6ksb7o7sdkq2fgm7se/app.bsky.graph.starterpack/3laywns2q2v27', 
+  'at://did:plc:bmc56x6ksb7o7sdkq2fgm7se/app.bsky.graph.starterpack/3laywns2q2v27',
   'https://bsky.app/starter-pack/chriskenny.bsky.social/3lb3g5veo2z2r'
-  ))  |> 
+)) |>
   dplyr::select(record_name, record_description)
 ```
 

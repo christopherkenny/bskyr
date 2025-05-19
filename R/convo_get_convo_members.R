@@ -22,7 +22,6 @@
 bs_get_convo_for_members <- function(actors,
                                      user = get_bluesky_user(), pass = get_bluesky_pass(),
                                      auth = bs_auth(user, pass), clean = TRUE) {
-
   session_url <- auth$didDoc$service[[1]]$serviceEndpoint
   req_url <- paste0(session_url, '/xrpc/chat.bsky.convo.getConvoForMembers')
 

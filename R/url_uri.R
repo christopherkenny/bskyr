@@ -36,7 +36,6 @@ bs_uri_to_url <- function(uri) {
 bs_url_to_uri <- function(url,
                           user = get_bluesky_user(), pass = get_bluesky_pass(),
                           auth = bs_auth(user, pass)) {
-
   if (stringr::str_starts(url, 'at://')) {
     return(url)
   }

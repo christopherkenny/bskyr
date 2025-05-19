@@ -26,7 +26,6 @@ bs_get_messages <- function(convo_id,
                             limit = NULL,
                             user = get_bluesky_user(), pass = get_bluesky_pass(),
                             auth = bs_auth(user, pass), clean = TRUE) {
-
   if (!is.null(limit)) {
     if (!is.numeric(limit)) {
       cli::cli_abort('{.arg limit} must be numeric.')
