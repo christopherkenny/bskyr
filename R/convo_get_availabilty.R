@@ -15,7 +15,7 @@
 #' [chat.bsky.convo.getConvoAvailability.json (2025-05-16)](https://github.com/bluesky-social/atproto/blob/main/lexicons/chat/bsky/convo/getConvoAvailability.json)
 #'
 #' @section Function introduced:
-#' `v0.3.1` (2025-05-16)
+#' `v0.4.0` (2025-05-16)
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_get_convo_availability(actors = 'chriskenny.bsky.social')

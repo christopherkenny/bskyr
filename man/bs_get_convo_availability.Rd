@@ -36,7 +36,7 @@ Check conversation availability with specified members
 
 \section{Function introduced}{
 
-\code{v0.3.1} (2025-05-16)
+\code{v0.4.0} (2025-05-16)
 }
 
 \examples{

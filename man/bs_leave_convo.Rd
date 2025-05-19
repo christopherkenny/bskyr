@@ -36,7 +36,7 @@ Exit a conversation so you no longer receive messages or see it in your inbox
 
 \section{Function introduced}{
 
-\code{v0.3.1} (2025-05-16)
+\code{v0.4.0} (2025-05-16)
 }
 
 \examples{
