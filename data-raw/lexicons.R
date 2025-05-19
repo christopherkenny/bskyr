@@ -55,6 +55,15 @@ types <- tibble::tibble(
   type = map_chr(non_def_lexicons, function(x) x$defs$main$type)
 )
 
+# which are implemented
 types |>
   left_join(current_supported, by = 'ref') |>
-  filter(str_detect(ref, 'app/bsky/'), is.na(fn), type == 'record')
+  filter(str_detect(ref, 'app/bsky/'), is.na(fn))
+
+# queries to do
+types |>
+  anti_join(current_supported, by = 'ref') |>
+  filter(str_detect(ref, 'app/bsky/'), !str_detect(ref, 'unspecced'), type == 'query')
+
+
+
