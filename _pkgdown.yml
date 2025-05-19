@@ -30,6 +30,10 @@ reference:
   desc: "Procedures for adding and otherwise interacting with records on Bluesky Social"
 - contents:
   - has_concept("repo")
+- title: "Direct Messages"
+  desc: "Send, receive, and delete direct messages (aka convos)"
+- contents:
+  - has_concept("chat")
 - title: "Other"
   desc: "Other Functions"
 - contents:
