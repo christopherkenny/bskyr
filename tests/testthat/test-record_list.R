@@ -6,11 +6,12 @@ test_that('`bs_new_list()` works', {
 
 test_that('`bs_new_list()` with avatar works', {
   vcr::local_cassette('r_post_new_list_avatar')
+  img <- safe_figures('logo.png')
   x <- bs_new_list(
     name = 'test list bskyr w avatar',
     purpose = 'curatelist',
     description = 'to be deleted, just for testing bskyr',
-    avatar = fs::path_package('bskyr', 'man/figures/logo.png'),
+    avatar = img,
     auth = auth
   )
   expect_s3_class(x, 'tbl_df')

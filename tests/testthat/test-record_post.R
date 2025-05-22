@@ -51,9 +51,10 @@ test_that('`bs_post()` emoji conversion works', {
 
 test_that('`bs_post()` with image upload works', {
   vcr::local_cassette('r_post_image')
+  img <- safe_figures('logo.png')
   x <- bs_post(
     text = 'Testing images and aspect ratios from R',
-    images = fs::path_package('bskyr', 'man/figures/logo.png'),
+    images = img,
     images_alt = 'hexagonal logo of the R package bskyr, with the text "bskyr" on a cloud',
     auth = auth
   )
@@ -62,9 +63,10 @@ test_that('`bs_post()` with image upload works', {
 
 test_that('`bs_post()` with video upload works', {
   vcr::local_cassette('r_post_video')
+  vid <- safe_figures('pkgs.mp4')
   x <- bs_post(
     text = 'testing sending videos from R',
-    video = fs::path_package('bskyr', 'man/figures/pkgs.mp4'),
+    video = vid,
     video_alt = 'a carousel of package logos, all hexagonal',
     auth = auth
   )
