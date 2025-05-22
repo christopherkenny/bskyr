@@ -10,3 +10,7 @@ library(testthat)
 library(bskyr)
 
 test_check('bskyr')
+
+tools::R_user_dir('bskyr', 'config') |>
+  fs::path('bs_auth.rds') |>
+  fs::file_delete()
