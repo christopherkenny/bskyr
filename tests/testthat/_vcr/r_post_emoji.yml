@@ -1,0 +1,63 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/com.atproto.identity.resolveHandle?handle=bskyr.bsky.social
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 14:39:59 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '42'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2983'
+      RateLimit-Reset: '1747925095'
+      RateLimit-Policy: 3000;w=300
+      ETag: W/"2a-luAFB8RVHExhMydjtdU+UckvPJs"
+      Vary: Accept-Encoding
+    body:
+      string: '{"did":"did:plc:5c2r73erhng4bszmxlfdtscf"}'
+  recorded_at: 2025-05-22 14:39:59
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.repo.uploadBlob
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 14:39:59 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '139'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2982'
+      RateLimit-Reset: '1747925095'
+      RateLimit-Policy: 3000;w=300
+      Vary: Accept-Encoding
+    body:
+      string: '{"blob":{"$type":"blob","ref":{"$link":"bafkreiak7tto2scyh6arlg3igu2snhg6fgytn22ett63vvylys2kui2rxq"},"mimeType":"image/png","size":17396}}'
+  recorded_at: 2025-05-22 14:40:00
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.repo.createRecord
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 14:39:59 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '276'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2981'
+      RateLimit-Reset: '1747925095'
+      RateLimit-Policy: 3000;w=300
+      Vary: Accept-Encoding
+    body:
+      string: '{"uri":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.feed.post/3lprdugknkr2k","cid":"bafyreihbheiaegwqsy26yxbynveopswyb3yvkq5vnsjdgwqvrx3zkcwqzi","commit":{"cid":"bafyreicrh56tn3lahwzqzfl4zxnjwozc7eoylxqmvor3zggvriaco6vzre","rev":"3lprdugksgz2k"},"validationStatus":"valid"}'
+  recorded_at: 2025-05-22 14:40:00
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

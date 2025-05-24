@@ -1,0 +1,22 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/app.bsky.actor.getPreferences
+  response:
+    status: 200
+    headers:
+      Date: Mon, 19 May 2025 17:41:25 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '909'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2998'
+      RateLimit-Reset: '1747676784'
+      RateLimit-Policy: 3000;w=300
+      Vary: Accept-Encoding
+    body:
+      string: '{"preferences":[{"$type":"app.bsky.actor.defs#savedFeedsPrefV2","items":[{"id":"3lbleuymmks2t","type":"timeline","value":"following","pinned":true},{"id":"3lbleuymmkt2t","type":"feed","value":"at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/whats-hot","pinned":true},{"id":"3lbleuymmku2t","type":"feed","value":"at://did:plc:gekdk2nd47gkk3utfz2xf7cn/app.bsky.feed.generator/aaap4tbjcfe5y","pinned":true}]},{"$type":"app.bsky.actor.defs#savedFeedsPref","saved":["at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/whats-hot","at://did:plc:gekdk2nd47gkk3utfz2xf7cn/app.bsky.feed.generator/aaap4tbjcfe5y"],"pinned":["at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/whats-hot","at://did:plc:gekdk2nd47gkk3utfz2xf7cn/app.bsky.feed.generator/aaap4tbjcfe5y"]},{"$type":"app.bsky.actor.defs#bskyAppStatePref","nuxs":[{"id":"InitialVerificationAnnouncement","completed":true}]}]}'
+  recorded_at: 2025-05-19 17:41:25
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

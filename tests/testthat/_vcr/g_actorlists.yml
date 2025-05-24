@@ -1,0 +1,32 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/app.bsky.graph.getLists?actor=pfrazee.com
+  response:
+    status: 200
+    headers:
+      Date: Mon, 19 May 2025 17:41:44 GMT
+      Content-Type: application/json; charset=utf-8
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2972'
+      RateLimit-Reset: '1747676784'
+      RateLimit-Policy: 3000;w=300
+      atproto-content-labelers: did:plc:ar7c4by46qjdydhdevvrndac;redact
+      Vary: Accept-Encoding
+      Content-Encoding: gzip
+    body:
+      string: '{"lists":[{"uri":"at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.list/3ldlyatgm572h","cid":"bafyreifqsncjligrg2ubgjnr2vcmz5jda6wujr4g7nht4fxcqol2tkhz6q","name":"Test","purpose":"app.bsky.graph.defs#curatelist","listItemCount":0,"indexedAt":"2024-12-18T18:26:32.828Z","labels":[],"viewer":{"muted":false},"creator":{"did":"did:plc:ragtjsm2j2vknwkz3zp4oxrd","handle":"pfrazee.com","displayName":"Paul
+        Frazee","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:ragtjsm2j2vknwkz3zp4oxrd/bafkreihhpqdyntku66himwor5wlhtdo44hllmngj2ofmbqnm25bdm454wq@jpeg","associated":{"chat":{"allowIncoming":"following"}},"viewer":{"muted":false,"blockedBy":false},"labels":[],"createdAt":"2022-11-17T00:35:16.391Z","description":"Developer
+        at Bluesky.","indexedAt":"2025-01-07T18:07:49.913Z"},"description":"Test"},{"uri":"at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.list/3kmokjyuflk2g","cid":"bafyreiabh7fm53pnuda5zx42hhcjpdjgs7emhky25bt6fwx7xui2ob5n5u","name":"Software
+        curate","purpose":"app.bsky.graph.defs#curatelist","listItemCount":10,"indexedAt":"2024-03-02T02:19:39.522Z","labels":[],"viewer":{"muted":false},"creator":{"did":"did:plc:ragtjsm2j2vknwkz3zp4oxrd","handle":"pfrazee.com","displayName":"Paul
+        Frazee","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:ragtjsm2j2vknwkz3zp4oxrd/bafkreihhpqdyntku66himwor5wlhtdo44hllmngj2ofmbqnm25bdm454wq@jpeg","associated":{"chat":{"allowIncoming":"following"}},"viewer":{"muted":false,"blockedBy":false},"labels":[],"createdAt":"2022-11-17T00:35:16.391Z","description":"Developer
+        at Bluesky.","indexedAt":"2025-01-07T18:07:49.913Z"},"description":""},{"uri":"at://did:plc:ragtjsm2j2vknwkz3zp4oxrd/app.bsky.graph.list/3kbkxylukjj2o","cid":"bafyreidbxhnnd7okyc7fw4lponvr2fieqj47izw52d3gkpvwgk2xumhgeu","name":"Postes","purpose":"app.bsky.graph.defs#curatelist","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:ragtjsm2j2vknwkz3zp4oxrd/bafkreiethsa223dq2b25v6k6gvurwru6t4ts2wapiax6wlp75fd6bgm43u@jpeg","listItemCount":16,"indexedAt":"2023-10-12T16:32:39.770Z","labels":[],"viewer":{"muted":false},"creator":{"did":"did:plc:ragtjsm2j2vknwkz3zp4oxrd","handle":"pfrazee.com","displayName":"Paul
+        Frazee","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:ragtjsm2j2vknwkz3zp4oxrd/bafkreihhpqdyntku66himwor5wlhtdo44hllmngj2ofmbqnm25bdm454wq@jpeg","associated":{"chat":{"allowIncoming":"following"}},"viewer":{"muted":false,"blockedBy":false},"labels":[],"createdAt":"2022-11-17T00:35:16.391Z","description":"Developer
+        at Bluesky.","indexedAt":"2025-01-07T18:07:49.913Z"},"description":"just rolling
+        up some users into a katamari pls ignore"}]}'
+  recorded_at: 2025-05-19 17:41:44
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

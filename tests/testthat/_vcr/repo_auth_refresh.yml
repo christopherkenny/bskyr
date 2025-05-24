@@ -1,0 +1,24 @@
+http_interactions:
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.server.createSession
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 16:16:13 GMT
+      Content-Type: application/json; charset=utf-8
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '10'
+      RateLimit-Remaining: '9'
+      RateLimit-Reset: '1748016973'
+      RateLimit-Policy: 10;w=86400
+      ETag: W/"5dc-tBkKZyI1A6ZvR7GD5896xDJVnDA"
+      Vary: Accept-Encoding
+      Content-Encoding: gzip
+    body:
+      string: '{"did":"did:plc:5c2r73erhng4bszmxlfdtscf","didDoc":{"@context":["https://www.w3.org/ns/did/v1","https://w3id.org/security/multikey/v1","https://w3id.org/security/suites/secp256k1-2019/v1"],"id":"did:plc:5c2r73erhng4bszmxlfdtscf","alsoKnownAs":["at://bskyr.bsky.social"],"verificationMethod":[{"id":"did:plc:5c2r73erhng4bszmxlfdtscf#atproto","type":"Multikey","controller":"did:plc:5c2r73erhng4bszmxlfdtscf","publicKeyMultibase":"zQ3shqmgZJjmskSvHU4N6TKiZheotdSe1xrkorvvvmtCcMr1G"}],"service":[{"id":"#atproto_pds","type":"AtprotoPersonalDataServer","serviceEndpoint":"https://puffball.us-east.host.bsky.network"}]},"handle":"bskyr.bsky.social","email":"ctk44@cornell.edu","emailConfirmed":true,"emailAuthFactor":false,"accessJwt":"","refreshJwt":"","active":true}'
+  recorded_at: 2025-05-22 16:16:14
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

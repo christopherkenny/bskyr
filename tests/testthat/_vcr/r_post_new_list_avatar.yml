@@ -1,0 +1,42 @@
+http_interactions:
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.repo.uploadBlob
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 14:56:39 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '139'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2967'
+      RateLimit-Reset: '1747926095'
+      RateLimit-Policy: 3000;w=300
+      Vary: Accept-Encoding
+    body:
+      string: '{"blob":{"$type":"blob","ref":{"$link":"bafkreiak7tto2scyh6arlg3igu2snhg6fgytn22ett63vvylys2kui2rxq"},"mimeType":"image/png","size":17396}}'
+  recorded_at: 2025-05-22 14:56:40
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.repo.createRecord
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 14:56:39 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '277'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2966'
+      RateLimit-Reset: '1747926095'
+      RateLimit-Policy: 3000;w=300
+      Vary: Accept-Encoding
+    body:
+      string: '{"uri":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.list/3lpresaf3ck2i","cid":"bafyreigkyt6blu4edlzndtojvmnasrfjd3h5jfs2yxfzvpou3poyqeo3mi","commit":{"cid":"bafyreihqp5yc2qsx64wwhelvtifvruqzst4yvohjycy76b3yqhaehuigju","rev":"3lpresafa6s2i"},"validationStatus":"valid"}'
+  recorded_at: 2025-05-22 14:56:40
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

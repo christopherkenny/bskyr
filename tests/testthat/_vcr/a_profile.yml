@@ -1,0 +1,28 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/app.bsky.actor.getProfiles?actors=chriskenny.bsky.social
+  response:
+    status: 200
+    headers:
+      Date: Mon, 19 May 2025 17:41:25 GMT
+      Content-Type: application/json; charset=utf-8
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2997'
+      RateLimit-Reset: '1747676784'
+      RateLimit-Policy: 3000;w=300
+      atproto-repo-rev: 3lpis5o776z2g
+      atproto-content-labelers: did:plc:ar7c4by46qjdydhdevvrndac;redact
+      Vary: Accept-Encoding
+      Content-Encoding: gzip
+    body:
+      string: '{"profiles":[{"did":"did:plc:wpe35pganb6d4pg4ekmfy6u5","handle":"chriskenny.bsky.social","displayName":"Chris
+        Kenny","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:wpe35pganb6d4pg4ekmfy6u5/bafkreibbgv73dk7lk4qrij5xm7vri3m6hfgfxqylxbal6yau7ssieqav3a@jpeg","associated":{"lists":1,"feedgens":0,"starterPacks":1,"labeler":false,"chat":{"allowIncoming":"following"}},"viewer":{"muted":false,"blockedBy":false,"following":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.follow/3lpcvwevybs2p","followedBy":"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kchl2sce7p2i","knownFollowers":{"count":1,"followers":[{"did":"did:plc:qnzaaisqa3lafzmtjxt5nt52","handle":"cranupdates.bsky.social","displayName":"CRAN
+        Updates","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:qnzaaisqa3lafzmtjxt5nt52/bafkreiesa772kej4tgvme7td67lxvd3j3l2spnznnaod7bx5fpepxf5htu@jpeg","viewer":{"muted":false,"blockedBy":false,"following":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.follow/3kgupfuy76i24","followedBy":"at://did:plc:qnzaaisqa3lafzmtjxt5nt52/app.bsky.graph.follow/3kgupg5wvty2d"},"labels":[],"createdAt":"2023-12-19T03:01:43.626Z"}]}},"labels":[],"createdAt":"2023-09-19T15:47:01.417Z","description":"PhD
+        ''25 Government @harvard.edu. Studies redistricting in #rstats.\nhttps://christophertkenny.com/","indexedAt":"2025-04-26T18:24:05.352Z","banner":"https://cdn.bsky.app/img/banner/plain/did:plc:wpe35pganb6d4pg4ekmfy6u5/bafkreidx7q2aemgjhwuoyvdacvuogwjkhyoffbjgu6t33wzsk2ta4lv5wu@jpeg","followersCount":554,"followsCount":296,"postsCount":65}]}'
+  recorded_at: 2025-05-19 17:41:25
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

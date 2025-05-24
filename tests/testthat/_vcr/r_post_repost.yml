@@ -1,0 +1,44 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/com.atproto.repo.getRecord?repo=bskyr.bsky.social&collection=app.bsky.feed.post&rkey=3kf2577exva2x
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 14:56:42 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '824'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2962'
+      RateLimit-Reset: '1747926095'
+      RateLimit-Policy: 3000;w=300
+      ETag: W/"338-mJ8WEmC20tg/tU00SAAFka+2wY8"
+      Vary: Accept-Encoding
+    body:
+      string: '{"uri":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.feed.post/3kf2577exva2x","cid":"bafyreibf5g5pkajhv4afkronrzyu3ywfk7dkjt5sdjdvkawkhcwv2l5fgu","value":{"text":"Test
+        quoting from r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)","$type":"app.bsky.feed.post","embed":{"$type":"app.bsky.embed.record","record":{"cid":"bafyreiclvbut74gpys3psh3iqpzh5wdk2rgiyt35iudrkjyp62w2t5i44i","uri":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.feed.post/3kf24wd6cmb2a"}},"facets":[{"index":{"byteEnd":58,"byteStart":40},"features":[{"did":"did:plc:5c2r73erhng4bszmxlfdtscf","$type":"app.bsky.richtext.facet#mention"}]},{"index":{"byteEnd":96,"byteStart":60},"features":[{"uri":"https://christophertkenny.com/bskyr/","$type":"app.bsky.richtext.facet#link"}]}],"createdAt":"2023-11-25T21:31:23.378179Z"}}'
+  recorded_at: 2025-05-22 14:56:42
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.repo.createRecord
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 14:56:42 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '278'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2961'
+      RateLimit-Reset: '1747926095'
+      RateLimit-Policy: 3000;w=300
+      Vary: Accept-Encoding
+    body:
+      string: '{"uri":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.feed.repost/3lprescoxks2i","cid":"bafyreiabgwad5azp4vndh7e5titem4l5uf2svyicxxv4o656n54l77yf24","commit":{"cid":"bafyreihg7e64z4ouy5umdbc5uaz3ie5o6herkfckolabkms32bcsiq3hme","rev":"3lprescpae22i"},"validationStatus":"valid"}'
+  recorded_at: 2025-05-22 14:56:42
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

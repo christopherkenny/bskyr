@@ -1,0 +1,23 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/app.bsky.graph.getLists?actor=chriskenny.bsky.social
+  response:
+    status: 200
+    headers:
+      Date: Mon, 19 May 2025 17:41:40 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '12'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2980'
+      RateLimit-Reset: '1747676784'
+      RateLimit-Policy: 3000;w=300
+      atproto-content-labelers: did:plc:ar7c4by46qjdydhdevvrndac;redact
+      Vary: Accept-Encoding
+    body:
+      string: '{"lists":[]}'
+  recorded_at: 2025-05-19 17:41:40
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

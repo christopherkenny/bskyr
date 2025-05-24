@@ -1,0 +1,62 @@
+http_interactions:
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.repo.createRecord
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 14:56:38 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '277'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2973'
+      RateLimit-Reset: '1747926095'
+      RateLimit-Policy: 3000;w=300
+      Vary: Accept-Encoding
+    body:
+      string: '{"uri":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.list/3lpres7hk7p22","cid":"bafyreif6i7lic2rxupiscqeglo2z3evuieu6chzcm7obn2xcyewp56pn7q","commit":{"cid":"bafyreidtovapcbhlc6ws7rncoxxk7k7pqqr5n3tm2xgrcvbeaw7uruo4km","rev":"3lpres7ho4p22"},"validationStatus":"valid"}'
+  recorded_at: 2025-05-22 14:56:39
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.repo.createRecord
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 14:56:39 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '284'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2972'
+      RateLimit-Reset: '1747926095'
+      RateLimit-Policy: 3000;w=300
+      Vary: Accept-Encoding
+    body:
+      string: '{"uri":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.starterpack/3lpres7jx6j2t","cid":"bafyreict6ybk4zty4nxrvuziatwrmf5m2gvmtxuo3hqylyftterlhhzsuq","commit":{"cid":"bafyreibqe4nitjtm7l4qrmi6wj5pd34hhhvazho6punlco4wpflzy6ypye","rev":"3lpres7k42r2t"},"validationStatus":"valid"}'
+  recorded_at: 2025-05-22 14:56:39
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.repo.deleteRecord
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 14:56:39 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '2'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2971'
+      RateLimit-Reset: '1747926095'
+      RateLimit-Policy: 3000;w=300
+      Vary: Accept-Encoding
+    body:
+      string: '{}'
+  recorded_at: 2025-05-22 14:56:39
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

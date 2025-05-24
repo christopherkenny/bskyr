@@ -1,0 +1,26 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/app.bsky.feed.getRepostedBy?uri=at%3A%2F%2Fdid%3Aplc%3Aic6zqvuw5ulmfpjiwnhsr2ns%2Fapp.bsky.feed.post%2F3kaa2gxjhzr2a
+  response:
+    status: 200
+    headers:
+      Date: Mon, 19 May 2025 17:41:36 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '711'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2984'
+      RateLimit-Reset: '1747676784'
+      RateLimit-Policy: 3000;w=300
+      atproto-content-labelers: did:plc:ar7c4by46qjdydhdevvrndac;redact
+      Vary: Accept-Encoding
+    body:
+      string: '{"repostedBy":[{"did":"did:plc:jyolltxtyl2yq2jamky6mwjn","handle":"jaeyeonkim.bsky.social","displayName":"Jae
+        Yeon Kim","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:jyolltxtyl2yq2jamky6mwjn/bafkreib7eumhipo3sfp55erbqad23dv3k7f6tiifeywsx6hdwimaoky6zq@jpeg","associated":{"chat":{"allowIncoming":"following"}},"viewer":{"muted":false,"blockedBy":false},"labels":[],"createdAt":"2023-08-22T01:08:32.110Z","description":"incoming
+        asst prof of public policy @UNC Chapel Hill | ex-data science @codeforamerica
+        | Data for Good Roundtables co-founder | runner\n\nhttps://jaeyk.github.io","indexedAt":"2025-05-06T17:07:12.045Z"}],"uri":"at://did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/app.bsky.feed.post/3kaa2gxjhzr2a"}'
+  recorded_at: 2025-05-19 17:41:36
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

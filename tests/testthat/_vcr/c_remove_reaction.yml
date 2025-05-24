@@ -1,0 +1,25 @@
+http_interactions:
+- request:
+    method: POST
+    uri: https://puffball.us-east.host.bsky.network/xrpc/chat.bsky.convo.removeReaction
+  response:
+    status: 200
+    headers:
+      x-powered-by: Express
+      access-control-allow-origin: '*'
+      ratelimit-limit: '3000'
+      ratelimit-remaining: '2994'
+      ratelimit-reset: '1747924529'
+      ratelimit-policy: 3000;w=300
+      cache-control: private
+      vary: Authorization, Accept-Encoding
+      content-length: '185'
+      content-type: application/json; charset=utf-8
+      date: Thu, 22 May 2025 14:30:31 GMT
+      keep-alive: timeout=90
+      strict-transport-security: max-age=63072000
+    body:
+      string: '{"message":{"id":"3lphbnrx7l32l","rev":"2222223ej4377","sender":{"did":"did:plc:wpe35pganb6d4pg4ekmfy6u5"},"text":"Can
+        you hear me?","reactions":[],"sentAt":"2025-05-18T14:33:51.935Z"}}'
+  recorded_at: 2025-05-22 14:30:31
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

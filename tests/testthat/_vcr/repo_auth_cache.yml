@@ -1,0 +1,24 @@
+http_interactions:
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.server.createSession
+  response:
+    status: 401
+    headers:
+      Date: Thu, 22 May 2025 16:13:43 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '77'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '10'
+      RateLimit-Remaining: '7'
+      RateLimit-Reset: '1748016454'
+      RateLimit-Policy: 10;w=86400
+      ETag: W/"4d-98r3hvgolnybv7tgksQiZbSE7Zg"
+      Vary: Accept-Encoding
+    body:
+      string: '{"error":"AuthenticationRequired","message":"Invalid identifier or
+        password"}'
+  recorded_at: 2025-05-22 16:13:43
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

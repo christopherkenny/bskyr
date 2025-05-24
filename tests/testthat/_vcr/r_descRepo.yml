@@ -1,0 +1,23 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/com.atproto.repo.describeRepo?repo=chriskenny.bsky.social
+  response:
+    status: 200
+    headers:
+      Date: Mon, 19 May 2025 17:41:51 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '912'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2962'
+      RateLimit-Reset: '1747676784'
+      RateLimit-Policy: 3000;w=300
+      ETag: W/"390-VrG67cjDsXY6NsDh71p6/ZSVzBQ"
+      Vary: Accept-Encoding
+    body:
+      string: '{"handle":"chriskenny.bsky.social","did":"did:plc:wpe35pganb6d4pg4ekmfy6u5","didDoc":{"@context":["https://www.w3.org/ns/did/v1","https://w3id.org/security/multikey/v1","https://w3id.org/security/suites/secp256k1-2019/v1"],"id":"did:plc:wpe35pganb6d4pg4ekmfy6u5","alsoKnownAs":["at://chriskenny.bsky.social"],"verificationMethod":[{"id":"did:plc:wpe35pganb6d4pg4ekmfy6u5#atproto","type":"Multikey","controller":"did:plc:wpe35pganb6d4pg4ekmfy6u5","publicKeyMultibase":"zQ3shuzn5j7gpn83dEgNEormVfUF1NCPWUs9U3F5eg9PEYF4V"}],"service":[{"id":"#atproto_pds","type":"AtprotoPersonalDataServer","serviceEndpoint":"https://inkcap.us-east.host.bsky.network"}]},"collections":["app.bsky.actor.profile","app.bsky.feed.like","app.bsky.feed.post","app.bsky.feed.repost","app.bsky.graph.follow","app.bsky.graph.list","app.bsky.graph.listitem","app.bsky.graph.starterpack","chat.bsky.actor.declaration"],"handleIsCorrect":true}'
+  recorded_at: 2025-05-19 17:41:51
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

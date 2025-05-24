@@ -1,0 +1,33 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/app.bsky.feed.getLikes?uri=at%3A%2F%2Fdid%3Aplc%3Aic6zqvuw5ulmfpjiwnhsr2ns%2Fapp.bsky.feed.post%2F3k7qmjev5lr2s
+  response:
+    status: 200
+    headers:
+      Date: Mon, 19 May 2025 17:41:34 GMT
+      Content-Type: application/json; charset=utf-8
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2987'
+      RateLimit-Reset: '1747676784'
+      RateLimit-Policy: 3000;w=300
+      atproto-content-labelers: did:plc:ar7c4by46qjdydhdevvrndac;redact
+      Vary: Accept-Encoding
+      Content-Encoding: gzip
+    body:
+      string: "{\"likes\":[{\"actor\":{\"did\":\"did:plc:uzthbl6ktojhxfpzb4hrvilk\",\"handle\":\"fkjoeller.bsky.social\",\"displayName\":\"Frederik
+        Kjøller\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:uzthbl6ktojhxfpzb4hrvilk/bafkreicgg35wnbtyktxsjilfqtffefh4ne7huo3ewtwo36k6aeozfykwli@jpeg\",\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2023-09-23T00:42:53.413Z\",\"description\":\"Postdoc
+        in Political Science, University of Copenhagen • casually and causally studying
+        politicians’ rewards, representation, and careers • fkjoeller.github.io\",\"indexedAt\":\"2024-11-24T16:02:38.209Z\"},\"createdAt\":\"2023-09-23T00:44:02.135Z\",\"indexedAt\":\"2023-09-23T00:44:02.135Z\"},{\"actor\":{\"did\":\"did:plc:46yyakot3byghwqc6rhmqzqd\",\"handle\":\"favstats.eu\",\"displayName\":\"Fabio
+        Votta\U0001F4CA\U0001F427 \",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:46yyakot3byghwqc6rhmqzqd/bafkreib7erx36sgry67q4hvonroqkcpasogsagrkwg7h2kqg3nupnmc4rq@jpeg\",\"associated\":{\"chat\":{\"allowIncoming\":\"following\"}},\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2023-08-21T12:52:55.127Z\",\"description\":\"Computational
+        Communication Scientist #rstats | Postdoc Researcher @UvA_ASCoR | Blog: favstats.eu
+        |  Running on plant-based fuel \U0001F331 | he/him\",\"indexedAt\":\"2025-04-06T19:30:45.264Z\"},\"createdAt\":\"2023-09-19T15:30:19.924Z\",\"indexedAt\":\"2023-09-19T15:30:19.924Z\"},{\"actor\":{\"did\":\"did:plc:p7flpn65bzf3kzjrp2xftshq\",\"handle\":\"jett.ai\",\"displayName\":\"jett\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:p7flpn65bzf3kzjrp2xftshq/bafkreihlxhm3ejpjcdxx4zs2m4nhtujcjihanbe3rwd3aysvjjp5jokdfq@jpeg\",\"associated\":{\"chat\":{\"allowIncoming\":\"following\"}},\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2023-04-07T20:36:34.100Z\",\"description\":\"Building
+        For You\",\"indexedAt\":\"2024-03-27T07:05:41.843Z\"},\"createdAt\":\"2023-09-19T11:42:16.903Z\",\"indexedAt\":\"2023-09-19T11:42:16.903Z\"},{\"actor\":{\"did\":\"did:plc:32ejvo3lggl47tlvhzn35td7\",\"handle\":\"renoviana.dev\",\"displayName\":\"‎\",\"avatar\":\"https://cdn.bsky.app/img/avatar/plain/did:plc:32ejvo3lggl47tlvhzn35td7/bafkreicmkxgevbw2a37mdals6by3pl23gplnmr66gyg6mekpw5wcxdfraq@jpeg\",\"associated\":{\"chat\":{\"allowIncoming\":\"all\"}},\"viewer\":{\"muted\":false,\"blockedBy\":false},\"labels\":[],\"createdAt\":\"2023-07-07T13:30:27.657Z\",\"description\":\"\U0001F1E7\U0001F1F7
+        | Baiano perdido no DF | Software Engineer | All photos taken by me \U0001F4F7
+        | renoviana.com\\n\\n\U0001F426 @avesbrasil.bsky.social\\n\U0001F4DA @livro.bsky.social\",\"indexedAt\":\"2025-02-17T00:28:42.513Z\"},\"createdAt\":\"2023-09-19T11:35:15.339Z\",\"indexedAt\":\"2023-09-19T11:35:15.339Z\"}],\"uri\":\"at://did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/app.bsky.feed.post/3k7qmjev5lr2s\"}"
+  recorded_at: 2025-05-19 17:41:34
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

@@ -1,0 +1,24 @@
+http_interactions:
+- request:
+    method: POST
+    uri: https://puffball.us-east.host.bsky.network/xrpc/chat.bsky.convo.deleteMessageForSelf
+  response:
+    status: 200
+    headers:
+      x-powered-by: Express
+      access-control-allow-origin: '*'
+      ratelimit-limit: '3000'
+      ratelimit-remaining: '2988'
+      ratelimit-reset: '1747924227'
+      ratelimit-policy: 3000;w=300
+      cache-control: private
+      vary: Authorization, Accept-Encoding
+      content-length: '132'
+      content-type: application/json; charset=utf-8
+      date: Thu, 22 May 2025 14:30:24 GMT
+      keep-alive: timeout=90
+      strict-transport-security: max-age=63072000
+    body:
+      string: '{"id":"3lpi4fcbnxv2l","sender":{"did":"did:plc:5c2r73erhng4bszmxlfdtscf"},"rev":"2222223ej42ub","sentAt":"2025-05-18T22:32:18.094Z"}'
+  recorded_at: 2025-05-22 14:30:25
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0
