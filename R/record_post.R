@@ -183,8 +183,8 @@ bs_post <- function(text, images, images_alt,
           info <- magick::image_read(img) |>
             magick::image_info()
           list(
-            width = info$width,
-            height = info$height
+            width = as.integer(info$width[1]),
+            height = as.integer(info$height[1])
           )
         },
         silent = TRUE
