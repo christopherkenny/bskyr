@@ -40,7 +40,8 @@ Suggests:
     rmarkdown,
     spelling,
     testthat (>= 3.0.0),
-    vcr (>= 2.0.0)
+    vcr (>= 2.0.0),
+    withr
 URL: https://github.com/christopherkenny/bskyr, http://christophertkenny.com/bskyr/
 BugReports: https://github.com/christopherkenny/bskyr/issues
 Config/testthat/edition: 3
