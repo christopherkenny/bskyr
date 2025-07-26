@@ -27,7 +27,7 @@ bs_get_convo_availability <- function(actors,
 
   actors <- actors |>
     purrr::map_chr(function(x) bs_resolve_handle(x)$did) |>
-    setNames(rep('members', length(actors)))
+    purrr::set_names(rep('members', length(actors)))
 
   req <- httr2::request(req_url) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
