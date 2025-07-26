@@ -5,14 +5,14 @@
 #   })
 
 test_that('`bs_post()` basic text post works', {
-  vcr::local_cassette('r_post_text')
+  vcr::local_cassette('r_post_text', match_requests_on = c('uri', 'method'))
   x <- bs_post('Test post from R CMD Check for r package `bskyr`
     via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)', auth = auth)
   expect_s3_class(x, 'tbl_df')
 })
 
 test_that('`bs_post()` self-reply works', {
-  vcr::local_cassette('r_post_reply')
+  vcr::local_cassette('r_post_reply', match_requests_on = c('uri', 'method'))
   x <- bs_post('Test self-reply from r package `bskyr`
     via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
     reply = 'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g',
@@ -22,7 +22,7 @@ test_that('`bs_post()` self-reply works', {
 })
 
 test_that('`bs_post()` quote works', {
-  vcr::local_cassette('r_post_quote')
+  vcr::local_cassette('r_post_quote', match_requests_on = c('uri', 'method'))
   x <- bs_post('Test quoting from r package `bskyr`
     via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
     quote = 'https://bsky.app/profile/bskyr.bsky.social/post/3kf24wd6cmb2a',
@@ -32,7 +32,7 @@ test_that('`bs_post()` quote works', {
 })
 
 test_that('`bs_post()` quote + reply works', {
-  vcr::local_cassette('r_post_quote_reply')
+  vcr::local_cassette('r_post_quote_reply', match_requests_on = c('uri', 'method'))
   x <- bs_post('Test quote and reply from r package `bskyr`
     via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)',
     reply = 'https://bsky.app/profile/bskyr.bsky.social/post/3kexwuoyqj32g',
@@ -43,14 +43,14 @@ test_that('`bs_post()` quote + reply works', {
 })
 
 test_that('`bs_post()` emoji conversion works', {
-  vcr::local_cassette('r_post_emoji')
+  vcr::local_cassette('r_post_emoji', match_requests_on = c('uri', 'method'))
   x <- bs_post('Test quote with :emoji: and :fire: and :confetti_ball: from r package
     `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)', auth = auth)
   expect_s3_class(x, 'tbl_df')
 })
 
 test_that('`bs_post()` with image upload works', {
-  vcr::local_cassette('r_post_image')
+  vcr::local_cassette('r_post_image', match_requests_on = c('uri', 'method'))
   img <- safe_figures('logo.png')
   x <- bs_post(
     text = 'Testing images and aspect ratios from R',
@@ -62,7 +62,7 @@ test_that('`bs_post()` with image upload works', {
 })
 
 test_that('`bs_post()` with video upload works', {
-  vcr::local_cassette('r_post_video')
+  vcr::local_cassette('r_post_video', match_requests_on = c('uri', 'method'))
   vid <- safe_figures('pkgs.mp4')
   x <- bs_post(
     text = 'testing sending videos from R',
@@ -74,7 +74,7 @@ test_that('`bs_post()` with video upload works', {
 })
 
 test_that('`bs_post()` errors and warnings are triggered as expected', {
-  vcr::local_cassette('r_post_errors')
+  vcr::local_cassette('r_post_errors', match_requests_on = c('uri', 'method'))
 
   expect_error(bs_post(), '`text` must not be missing')
 
