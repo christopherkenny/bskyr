@@ -273,7 +273,7 @@ bs_post <- function(text, images, images_alt,
       )
     } else if (isTRUE(embed)) {
       # 2. a tenor gif
-      tenor_gif <- parse_tenor_gif(text)
+      tenor_gif <- parse_tenor_gif(text, user = user, pass = pass, auth = auth)
       if (!is.null(tenor_gif)) {
         card <- list(
           '$type' = 'app.bsky.embed.external',
