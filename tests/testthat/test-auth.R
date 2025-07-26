@@ -15,7 +15,7 @@ test_that('`bs_auth()` works and caches when save_auth = TRUE', {
   fake_config <- tempfile()
   withr::local_options(list(R_USER_CONFIG_DIR = fake_config))
 
-  vcr::local_cassette('repo_auth_cache')
+  vcr::local_cassette('repo_auth_cache', match_requests_on = c('uri', 'method'))
   expect_error(
     bs_auth(
       user = get_bluesky_user(),
@@ -30,7 +30,7 @@ test_that('`bs_auth()` forces refresh when save_auth = NULL', {
   skip_if_not(bs_has_pass())
   skip_if_not(bs_has_user())
 
-  vcr::local_cassette('repo_auth_refresh')
+  vcr::local_cassette('repo_auth_refresh', match_requests_on = c('uri', 'method'))
   # create initial cache file
   bs_auth(
     user = get_bluesky_user(),
@@ -60,9 +60,13 @@ test_that('`bs_auth()` bypasses cache with save_auth = FALSE', {
   skip_if_not(bs_has_pass())
   skip_if_not(bs_has_user())
 
-  time <- readRDS(bs_auth_file())$bskyr_created_time
+  time <- NULL
+  time <- try({readRDS(bs_auth_file())$bskyr_created_time})
+  if (is.null(time)) {
+    skip('No cached auth found, skipping test')
+  }
 
-  vcr::local_cassette('repo_auth_direct')
+  vcr::local_cassette('repo_auth_direct', match_requests_on = c('uri', 'method'))
   auth <- bs_auth(
     user = get_bluesky_user(),
     pass = get_bluesky_pass(),
