@@ -26,7 +26,7 @@ bs_get_convo_for_members <- function(actors,
   req_url <- paste0(session_url, '/xrpc/chat.bsky.convo.getConvoForMembers')
 
   actors <- actors |>
-    purrr::map_chr(function(x) bs_resolve_handle(x)$did) |>
+    purrr::map_chr(function(x) bs_resolve_handle(x, auth = auth)$did) |>
     purrr::set_names(rep('members', length(actors)))
 
   req <- httr2::request(req_url) |>

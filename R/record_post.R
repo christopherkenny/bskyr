@@ -269,7 +269,7 @@ bs_post <- function(text, images, images_alt,
     } else if (is.character(embed) && is_online_link(embed)) {
       card <- list(
         '$type' = 'app.bsky.embed.external',
-        external = bs_new_embed_external(uri = embed)
+        external = bs_new_embed_external(uri = embed, auth = auth)
       )
     } else if (isTRUE(embed)) {
       # 2. a tenor gif
