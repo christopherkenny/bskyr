@@ -3,7 +3,16 @@ library(vcr)
 if (has_bluesky_pass() && has_bluesky_user()) {
   auth <- bs_auth(user = get_bluesky_user(), pass = get_bluesky_pass())
 } else {
-  auth <- list(accessJwt = '')
+  auth <- list(
+    accessJwt = '',
+    didDoc = list(
+      service = list(
+        list(
+          serviceEndpoint = 'https://puffball.us-east.host.bsky.network'
+        )
+      )
+    )
+  )
 }
 
 rcd <- list(
