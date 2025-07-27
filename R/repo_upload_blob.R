@@ -23,12 +23,10 @@
 bs_upload_blob <- function(blob,
                            user = get_bluesky_user(), pass = get_bluesky_pass(),
                            auth = bs_auth(user, pass), clean = TRUE) {
-  raw_data <- lapply(blob, function(x) {
+  lapply(blob, function(x) {
     n <- file.size(x)
     if (n > 1024 * 1024) {
       cli::cli_abort('File is larger than 1MB and exceeds allowable upload size.')
-    } else {
-      readBin(x, what = 'raw', n = file.size(x))
     }
   })
   mime_types <- mime::guess_type(blob)
@@ -39,8 +37,8 @@ bs_upload_blob <- function(blob,
       httr2::req_headers(
         'Content-Type' = mime_types[[i]]
       ) |>
-      httr2::req_body_raw(
-        raw_data[[i]]
+      httr2::req_body_file(
+        path = blob[[i]]
       )
     resp <- req |>
       httr2::req_perform() |>
