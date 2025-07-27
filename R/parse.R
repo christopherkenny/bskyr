@@ -259,10 +259,10 @@ parse_tenor_gif <- function(txt,
   )
 }
 
-parse_first_link <- function(txt) {
+parse_first_link <- function(txt, auth) {
   urls <- parse_urls(txt)[[1]]
   if (length(urls) == 0) {
     return(NULL)
   }
-  bs_new_embed_external(urls[[1]]$text)
+  bs_new_embed_external(urls[[1]]$text, auth = auth)
 }

@@ -281,7 +281,7 @@ bs_post <- function(text, images, images_alt,
         )
       } else {
         # 3. link card for the first link
-        link_card <- parse_first_link(text)
+        link_card <- parse_first_link(text, auth = auth)
         if (!is.null(link_card)) {
           card <- list(
             '$type' = 'app.bsky.embed.external',
