@@ -1,0 +1,22 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/app.bsky.graph.getRelationships?actor=did%3Aplc%3Awpe35pganb6d4pg4ekmfy6u5&others=did%3Aplc%3A5c2r73erhng4bszmxlfdtscf
+  response:
+    status: 200
+    headers:
+      Date: Mon, 19 May 2025 17:41:45 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '325'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2969'
+      RateLimit-Reset: '1747676784'
+      RateLimit-Policy: 3000;w=300
+      Vary: Accept-Encoding
+    body:
+      string: '{"actor":"did:plc:wpe35pganb6d4pg4ekmfy6u5","relationships":[{"$type":"app.bsky.graph.defs#relationship","did":"did:plc:5c2r73erhng4bszmxlfdtscf","following":"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kchl2sce7p2i","followedBy":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.follow/3lpcvwevybs2p"}]}'
+  recorded_at: 2025-05-19 17:41:46
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

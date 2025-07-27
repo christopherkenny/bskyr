@@ -1,0 +1,27 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/com.atproto.repo.getRecord?repo=did%3Aplc%3Aic6zqvuw5ulmfpjiwnhsr2ns&collection=app.bsky.feed.post&rkey=3k7qmjev5lr2s
+  response:
+    status: 200
+    headers:
+      Date: Mon, 19 May 2025 17:41:51 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '1001'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2960'
+      RateLimit-Reset: '1747676784'
+      RateLimit-Policy: 3000;w=300
+      ETag: W/"3e9-02la329/hNk71uKOIb3i5hBgnyM"
+      Vary: Accept-Encoding
+    body:
+      string: "{\"uri\":\"at://did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/app.bsky.feed.post/3k7qmjev5lr2s\",\"cid\":\"bafyreifk6pyilxkm7vcingnkdbzueaftqg54i3al4zbh5p3jy3pryfkc3a\",\"value\":{\"text\":\"Excited
+        to be a speaker for the \\n@rstatsai conf on Oct 19 @Georgetown! \U0001F4C8
+        I'll be debuting a new version (and applications) of LocalView (localview.net),
+        a local civic data platform I co-built. Come say hi if you’re around the beltway!✨#rstats
+        #rgov\\n\\nrstats.ai/gov.html\",\"$type\":\"app.bsky.feed.post\",\"embed\":{\"$type\":\"app.bsky.embed.images\",\"images\":[{\"alt\":\"\",\"image\":{\"$type\":\"blob\",\"ref\":{\"$link\":\"bafkreictkyws7qbruuupes52t6k5o5o5qfggf7pm6urzz7dyty53gzu3h4\"},\"mimeType\":\"image/jpeg\",\"size\":851799}}]},\"langs\":[\"en\"],\"facets\":[{\"index\":{\"byteEnd\":153,\"byteStart\":140},\"features\":[{\"uri\":\"http://localview.net\",\"$type\":\"app.bsky.richtext.facet#link\"}]},{\"index\":{\"byteEnd\":275,\"byteStart\":257},\"features\":[{\"uri\":\"https://rstats.ai/gov.html\",\"$type\":\"app.bsky.richtext.facet#link\"}]}],\"createdAt\":\"2023-09-19T11:32:54.574Z\"}}"
+  recorded_at: 2025-05-19 17:41:52
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

@@ -1,0 +1,30 @@
+http_interactions:
+- request:
+    method: POST
+    uri: https://puffball.us-east.host.bsky.network/xrpc/chat.bsky.convo.updateRead
+  response:
+    status: 200
+    headers:
+      x-powered-by: Express
+      access-control-allow-origin: '*'
+      ratelimit-limit: '3000'
+      ratelimit-remaining: '2989'
+      ratelimit-reset: '1747924529'
+      ratelimit-policy: 3000;w=300
+      cache-control: private
+      vary: Authorization, Accept-Encoding
+      content-type: application/json; charset=utf-8
+      content-encoding: gzip
+      date: Thu, 22 May 2025 14:30:32 GMT
+      keep-alive: timeout=90
+      transfer-encoding: chunked
+      strict-transport-security: max-age=63072000
+    body:
+      string: '{"convo":{"id":"3ku7w6h4vog2d","rev":"2222223ej43ao","members":[{"did":"did:plc:5c2r73erhng4bszmxlfdtscf","handle":"bskyr.bsky.social","displayName":"bskyr
+        R package","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:5c2r73erhng4bszmxlfdtscf/bafkreiesa772kej4tgvme7td67lxvd3j3l2spnznnaod7bx5fpepxf5htu@jpeg","associated":{"lists":30,"feedgens":0,"starterPacks":9,"labeler":false},"viewer":{"muted":false,"blockedBy":false,"knownFollowers":{"count":2,"followers":[{"did":"did:plc:wpe35pganb6d4pg4ekmfy6u5","handle":"chriskenny.bsky.social","displayName":"Chris
+        Kenny","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:wpe35pganb6d4pg4ekmfy6u5/bafkreibbgv73dk7lk4qrij5xm7vri3m6hfgfxqylxbal6yau7ssieqav3a@jpeg","associated":{"chat":{"allowIncoming":"following"}},"viewer":{"muted":false,"blockedBy":false,"following":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.follow/3lpcvwevybs2p","followedBy":"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kchl2sce7p2i"},"labels":[],"createdAt":"2023-09-19T15:47:01.417Z"},{"did":"did:plc:qnzaaisqa3lafzmtjxt5nt52","handle":"cranupdates.bsky.social","displayName":"CRAN
+        Updates","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:qnzaaisqa3lafzmtjxt5nt52/bafkreiesa772kej4tgvme7td67lxvd3j3l2spnznnaod7bx5fpepxf5htu@jpeg","viewer":{"muted":false,"blockedBy":false,"following":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.follow/3kgupfuy76i24","followedBy":"at://did:plc:qnzaaisqa3lafzmtjxt5nt52/app.bsky.graph.follow/3kgupg5wvty2d"},"labels":[],"createdAt":"2023-12-19T03:01:43.626Z"}]}},"labels":[]},{"did":"did:plc:wpe35pganb6d4pg4ekmfy6u5","handle":"chriskenny.bsky.social","displayName":"Chris
+        Kenny","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:wpe35pganb6d4pg4ekmfy6u5/bafkreibbgv73dk7lk4qrij5xm7vri3m6hfgfxqylxbal6yau7ssieqav3a@jpeg","associated":{"lists":1,"feedgens":0,"starterPacks":1,"labeler":false,"chat":{"allowIncoming":"following"}},"viewer":{"muted":false,"blockedBy":false,"following":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.follow/3lpcvwevybs2p","followedBy":"at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.graph.follow/3kchl2sce7p2i","knownFollowers":{"count":1,"followers":[{"did":"did:plc:qnzaaisqa3lafzmtjxt5nt52","handle":"cranupdates.bsky.social","displayName":"CRAN
+        Updates","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:qnzaaisqa3lafzmtjxt5nt52/bafkreiesa772kej4tgvme7td67lxvd3j3l2spnznnaod7bx5fpepxf5htu@jpeg","viewer":{"muted":false,"blockedBy":false,"following":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.follow/3kgupfuy76i24","followedBy":"at://did:plc:qnzaaisqa3lafzmtjxt5nt52/app.bsky.graph.follow/3kgupg5wvty2d"},"labels":[],"createdAt":"2023-12-19T03:01:43.626Z"}]}},"labels":[]}],"lastMessage":{"$type":"chat.bsky.convo.defs#messageView","id":"3lprddiuukl26","rev":"2222223ej43ao","sender":{"did":"did:plc:5c2r73erhng4bszmxlfdtscf"},"text":"Hello","reactions":[],"sentAt":"2025-05-22T14:30:31.744Z"},"unreadCount":0,"status":"accepted","muted":false}}'
+  recorded_at: 2025-05-22 14:30:33
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

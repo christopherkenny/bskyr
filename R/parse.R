@@ -203,7 +203,9 @@ parse_emoji <- function(txt) {
   stringr::str_replace_all(txt, emoji_regex, replace_emoji)
 }
 
-parse_tenor_gif <- function(txt) {
+parse_tenor_gif <- function(txt,
+                            user = get_bluesky_user(), pass = get_bluesky_pass(),
+                            auth = bs_auth(user, pass)) {
   # extract gif from tenor like: https://tenor.com/view/this-is-fine-gif-24177057
   tenor_regex <- 'https://tenor.com/view/[^\\s]+'
   tenor_urls <- stringr::str_extract(txt, tenor_regex)
@@ -251,14 +253,16 @@ parse_tenor_gif <- function(txt) {
     uri = out_url,
     title = og[['title']],
     description = og[['title']],
-    thumb = thumb
+    thumb = thumb,
+    user = user, pass = pass,
+    auth = auth
   )
 }
 
-parse_first_link <- function(txt) {
+parse_first_link <- function(txt, auth) {
   urls <- parse_urls(txt)[[1]]
   if (length(urls) == 0) {
     return(NULL)
   }
-  bs_new_embed_external(urls[[1]]$text)
+  bs_new_embed_external(urls[[1]]$text, auth = auth)
 }

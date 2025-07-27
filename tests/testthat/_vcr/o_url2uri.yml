@@ -1,0 +1,23 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/com.atproto.identity.resolveHandle?handle=chriskenny.bsky.social
+  response:
+    status: 200
+    headers:
+      Date: Mon, 19 May 2025 17:41:56 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '42'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2957'
+      RateLimit-Reset: '1747676784'
+      RateLimit-Policy: 3000;w=300
+      ETag: W/"2a-6x9KSSJdMqAX+42Cdo5UuX/ldjQ"
+      Vary: Accept-Encoding
+    body:
+      string: '{"did":"did:plc:wpe35pganb6d4pg4ekmfy6u5"}'
+  recorded_at: 2025-05-19 17:41:56
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

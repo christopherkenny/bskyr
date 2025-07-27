@@ -1,0 +1,22 @@
+http_interactions:
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.repo.createRecord
+  response:
+    status: 200
+    headers:
+      Date: Mon, 19 May 2025 20:11:39 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '276'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2998'
+      RateLimit-Reset: '1747685799'
+      RateLimit-Policy: 3000;w=300
+      Vary: Accept-Encoding
+    body:
+      string: '{"uri":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.feed.like/3lpkeyq2bkp2a","cid":"bafyreigg52a7xopzgiyzqywzthjk2jeishwm2eoekfqgg4wtwiap5brd2y","commit":{"cid":"bafyreihc3j5s6avqngvxz6k5xx66upivl7qhgsstnyjzpgcnjmf2g4q364","rev":"3lpkeyq2ifh2a"},"validationStatus":"valid"}'
+  recorded_at: 2025-05-19 20:11:39
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

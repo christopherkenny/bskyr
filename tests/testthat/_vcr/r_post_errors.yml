@@ -1,0 +1,24 @@
+http_interactions:
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.repo.createRecord
+  response:
+    status: 400
+    headers:
+      Date: Thu, 22 May 2025 14:42:25 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '123'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2976'
+      RateLimit-Reset: '1747925095'
+      RateLimit-Policy: 3000;w=300
+      ETag: W/"7b-5OYjOucrkx456vG6nIBiH/VZWIA"
+      Vary: Accept-Encoding
+    body:
+      string: '{"error":"InvalidRequest","message":"Invalid app.bsky.feed.post record:
+        Record/text must not be longer than 300 graphemes"}'
+  recorded_at: 2025-05-22 14:42:26
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

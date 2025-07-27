@@ -16,7 +16,7 @@ clean_names <- function(x) {
     stringr::str_replace('\\.', '_') |>
     stringr::str_replace('([a-z])([A-Z])', '\\1_\\2') |>
     tolower()
-  stats::setNames(object = x, nm = out)
+  purrr::set_names(x = x, nm = out)
 }
 
 

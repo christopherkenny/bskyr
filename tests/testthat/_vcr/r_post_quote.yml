@@ -1,0 +1,85 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/com.atproto.identity.resolveHandle?handle=bskyr.bsky.social
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 14:39:57 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '42'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2992'
+      RateLimit-Reset: '1747925095'
+      RateLimit-Policy: 3000;w=300
+      ETag: W/"2a-luAFB8RVHExhMydjtdU+UckvPJs"
+      Vary: Accept-Encoding
+    body:
+      string: '{"did":"did:plc:5c2r73erhng4bszmxlfdtscf"}'
+  recorded_at: 2025-05-22 14:39:57
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/com.atproto.repo.getRecord?repo=bskyr.bsky.social&collection=app.bsky.feed.post&rkey=3kf24wd6cmb2a
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 14:39:57 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '951'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2991'
+      RateLimit-Reset: '1747925095'
+      RateLimit-Policy: 3000;w=300
+      ETag: W/"3b7-I1UEU4X0pLzE8YG0dPefLAxUTqs"
+      Vary: Accept-Encoding
+    body:
+      string: '{"uri":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.feed.post/3kf24wd6cmb2a","cid":"bafyreiclvbut74gpys3psh3iqpzh5wdk2rgiyt35iudrkjyp62w2t5i44i","value":{"text":"Test
+        self-reply from r package `bskyr` via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)","$type":"app.bsky.feed.post","reply":{"root":{"cid":"bafyreid4i763c2iyr6adhmgriiisz2p7gleztu7tn66pfrl3qhe4hgoyny","uri":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.feed.post/3kexwuoyqj32g"},"parent":{"cid":"bafyreid4i763c2iyr6adhmgriiisz2p7gleztu7tn66pfrl3qhe4hgoyny","uri":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.feed.post/3kexwuoyqj32g"}},"facets":[{"index":{"byteEnd":61,"byteStart":43},"features":[{"did":"did:plc:5c2r73erhng4bszmxlfdtscf","$type":"app.bsky.richtext.facet#mention"}]},{"index":{"byteEnd":99,"byteStart":63},"features":[{"uri":"https://christophertkenny.com/bskyr/","$type":"app.bsky.richtext.facet#link"}]}],"createdAt":"2023-11-25T21:26:25.338233Z"}}'
+  recorded_at: 2025-05-22 14:39:58
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.repo.uploadBlob
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 14:39:58 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '139'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2990'
+      RateLimit-Reset: '1747925095'
+      RateLimit-Policy: 3000;w=300
+      Vary: Accept-Encoding
+    body:
+      string: '{"blob":{"$type":"blob","ref":{"$link":"bafkreiak7tto2scyh6arlg3igu2snhg6fgytn22ett63vvylys2kui2rxq"},"mimeType":"image/png","size":17396}}'
+  recorded_at: 2025-05-22 14:39:58
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.repo.createRecord
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 14:39:58 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '276'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2989'
+      RateLimit-Reset: '1747925095'
+      RateLimit-Policy: 3000;w=300
+      Vary: Accept-Encoding
+    body:
+      string: '{"uri":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.feed.post/3lprdueybcw2j","cid":"bafyreif4s6bgha43zvshgv63imd4n6nij77kd7wtmi3xznadiy7ljf6squ","commit":{"cid":"bafyreiga5fcs7kn3aaphrbxfmyocu7kn34nayc4xiz2pkv2k3nyjyquaee","rev":"3lprdueyg762j"},"validationStatus":"valid"}'
+  recorded_at: 2025-05-22 14:39:58
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

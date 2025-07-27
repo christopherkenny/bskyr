@@ -1,0 +1,34 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/app.bsky.actor.searchActorsTypeahead?q=political%20science
+  response:
+    status: 200
+    headers:
+      Date: Mon, 19 May 2025 17:41:25 GMT
+      Content-Type: application/json; charset=utf-8
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2996'
+      RateLimit-Reset: '1747676784'
+      RateLimit-Policy: 3000;w=300
+      atproto-content-labelers: did:plc:ar7c4by46qjdydhdevvrndac;redact
+      Vary: Accept-Encoding
+      Content-Encoding: gzip
+    body:
+      string: '{"actors":[{"did":"did:plc:xzzesxndb6f3xsp2phcfhb5n","handle":"bjpols.bsky.social","displayName":"British
+        Journal of Political Science","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:xzzesxndb6f3xsp2phcfhb5n/bafkreihcliepselqzldk3t5zjfc5t6tv7p3if2ios5p266brk4vjur4yxq@jpeg","associated":{"chat":{"allowIncoming":"following"}},"viewer":{"muted":false,"blockedBy":false},"labels":[],"createdAt":"2023-10-05T11:25:58.672Z"},{"did":"did:plc:vlx4qfwltlkhhgxavhe6a4iq","handle":"pspolisci.bsky.social","displayName":"PS:
+        Political Science & Politics","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:vlx4qfwltlkhhgxavhe6a4iq/bafkreidlfczmfdjhksxv5ufwqkz2gmqgirhipcenvj2de7jasx5nmpeqo4@jpeg","viewer":{"muted":false,"blockedBy":false},"labels":[],"createdAt":"2023-11-08T20:46:34.135Z"},{"did":"did:plc:iyeak3ppl3oqnxpr3v7tvmuj","handle":"cambup-polsci.cambridge.org","displayName":"Cambridge
+        University Press Political Science & IR","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:iyeak3ppl3oqnxpr3v7tvmuj/bafkreic3zxnzceprou73fwvcfneadjzpyh6mjqearl2bhn4i5ketdtlbmm@jpeg","viewer":{"muted":false,"blockedBy":false},"labels":[],"createdAt":"2024-11-26T17:11:49.509Z"},{"did":"did:plc:tz6gszrl4b6ljqqp3tb5cfbt","handle":"ajpseditor.bsky.social","displayName":"American
+        Journal of Political Science (AJPS)","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:tz6gszrl4b6ljqqp3tb5cfbt/bafkreichs7mqxazyynvxpehjphmnojwgvywt5gi474cav5hh3gjnj6yaie@jpeg","associated":{"chat":{"allowIncoming":"following"}},"viewer":{"muted":false,"blockedBy":false},"labels":[],"createdAt":"2023-11-29T16:20:15.265Z"},{"did":"did:plc:o45yanvs6wuszy32eujesj3h","handle":"apsrjournal.bsky.social","displayName":"American
+        Political Science Review","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:o45yanvs6wuszy32eujesj3h/bafkreifiisnz2gjmjfqdtlpec6ubyidrath6on6ibd6sox3xyooikuwuo4@jpeg","viewer":{"muted":false,"blockedBy":false},"labels":[],"createdAt":"2024-11-14T23:25:16.747Z"},{"did":"did:plc:jhuuda4kpubqoaqllyqlvkpq","handle":"mpsa.bsky.social","displayName":"Midwest
+        Political Science Association","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:jhuuda4kpubqoaqllyqlvkpq/bafkreibm5zxems5iqrxclhpzwfxmvoaktbzxtfgwzhvu4ebq7vfsxpe44e@jpeg","viewer":{"muted":false,"blockedBy":false},"labels":[],"createdAt":"2023-10-10T21:24:43.055Z"},{"did":"did:plc:ogxnyyjp3bwctxyepx3bpjaz","handle":"poscresearch.bsky.social","displayName":"Political
+        Science Research","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:ogxnyyjp3bwctxyepx3bpjaz/bafkreiei2nfyhxb2zq5jpwxkaxukcodouggmo5235zgybadwaf3ezsgno4@jpeg","associated":{"chat":{"allowIncoming":"all"}},"viewer":{"muted":false,"blockedBy":false},"labels":[],"createdAt":"2023-09-15T16:54:41.241Z"},{"did":"did:plc:xbuxro356hiy4bxueftmulxt","handle":"ipz.bsky.social","displayName":"IPZ
+        - Political Science UZH","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:xbuxro356hiy4bxueftmulxt/bafkreifctkntyogc7hvake246jhd5n57hfwrbryzhyu6l42rs7yf77egni@jpeg","viewer":{"muted":false,"blockedBy":false},"labels":[],"createdAt":"2023-10-15T16:59:43.169Z"},{"did":"did:plc:kwevmpyhxw3lu34qoltaugyx","handle":"psrm.bsky.social","displayName":"Political
+        Science Research and Methods","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:kwevmpyhxw3lu34qoltaugyx/bafkreigve6u53swa4jcrpjmbq36qrn65ncllpwc2aap6sj2ompfstoiuiu@jpeg","associated":{"chat":{"allowIncoming":"all"}},"viewer":{"muted":false,"blockedBy":false},"labels":[],"createdAt":"2024-04-22T07:00:21.607Z"},{"did":"did:plc:q4arr2uibnyaweqsktqmxjww","handle":"jjps.bsky.social","displayName":"Japanese
+        Journal of Political Science","avatar":"https://cdn.bsky.app/img/avatar/plain/did:plc:q4arr2uibnyaweqsktqmxjww/bafkreid64dsu6oop5gorr42yarcjmx2qisli4jmxarbf4acvnkc446gope@jpeg","viewer":{"muted":false,"blockedBy":false},"labels":[],"createdAt":"2023-10-18T09:53:52.795Z"}]}'
+  recorded_at: 2025-05-19 17:41:25
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

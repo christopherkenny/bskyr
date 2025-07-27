@@ -1,0 +1,43 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://bsky.social/xrpc/com.atproto.identity.resolveHandle?handle=chriskenny.bsky.social
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 14:56:39 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '42'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2970'
+      RateLimit-Reset: '1747926095'
+      RateLimit-Policy: 3000;w=300
+      ETag: W/"2a-6x9KSSJdMqAX+42Cdo5UuX/ldjQ"
+      Vary: Accept-Encoding
+    body:
+      string: '{"did":"did:plc:wpe35pganb6d4pg4ekmfy6u5"}'
+  recorded_at: 2025-05-22 14:56:39
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.repo.createRecord
+  response:
+    status: 200
+    headers:
+      Date: Thu, 22 May 2025 14:56:39 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '279'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2969'
+      RateLimit-Reset: '1747926095'
+      RateLimit-Policy: 3000;w=300
+      Vary: Accept-Encoding
+    body:
+      string: '{"uri":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.graph.follow/3lpres7rcmq2w","cid":"bafyreihh2qiihjwkyt6kijxaaygpjulbdjh76i3wd3fe7q2exih67ykdfi","commit":{"cid":"bafyreie73rlg2wqj4spexy7fxmq335avensihg5kctjevnqjcvmtggclwa","rev":"3lpres7rhiy2w"},"validationStatus":"valid"}'
+  recorded_at: 2025-05-22 14:56:39
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0

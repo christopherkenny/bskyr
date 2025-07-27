@@ -269,11 +269,11 @@ bs_post <- function(text, images, images_alt,
     } else if (is.character(embed) && is_online_link(embed)) {
       card <- list(
         '$type' = 'app.bsky.embed.external',
-        external = bs_new_embed_external(uri = embed)
+        external = bs_new_embed_external(uri = embed, auth = auth)
       )
     } else if (isTRUE(embed)) {
       # 2. a tenor gif
-      tenor_gif <- parse_tenor_gif(text)
+      tenor_gif <- parse_tenor_gif(text, user = user, pass = pass, auth = auth)
       if (!is.null(tenor_gif)) {
         card <- list(
           '$type' = 'app.bsky.embed.external',
@@ -281,7 +281,7 @@ bs_post <- function(text, images, images_alt,
         )
       } else {
         # 3. link card for the first link
-        link_card <- parse_first_link(text)
+        link_card <- parse_first_link(text, auth = auth)
         if (!is.null(link_card)) {
           card <- list(
             '$type' = 'app.bsky.embed.external',

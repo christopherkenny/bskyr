@@ -1,0 +1,27 @@
+http_interactions:
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.repo.uploadBlob
+  response:
+    status: 200
+    headers:
+      Date: Tue, 20 May 2025 23:51:37 GMT
+      Content-Type: application/json; charset=utf-8
+      Content-Length: '139'
+      Connection: keep-alive
+      X-Powered-By: Express
+      Access-Control-Allow-Origin: '*'
+      RateLimit-Limit: '3000'
+      RateLimit-Remaining: '2999'
+      RateLimit-Reset: '1747785397'
+      RateLimit-Policy: 3000;w=300
+      Vary: Accept-Encoding
+    body:
+      raw_gzip: |-
+        eJwlzVsOgjAQheG9THwkMbZJiazDDRQzHSa9gO1ArKR7F+XxfA/n32EM8wjDDhepC8Jw7g4y
+        ur8GTv6
+        n1vmMbH0vMqvyrJOxOZBmWlVJExlHVZJSKGL0ttVQi/Irq/x+QesgcsTH+c/REl6X
+        REek8OegW6/vpr
+        Uv7F4vcA==
+  recorded_at: 2025-05-20 23:51:48
+recorded_with: vcr/1.7.0.91, webmockr/2.0.0
