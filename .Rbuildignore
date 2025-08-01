@@ -12,3 +12,5 @@
 ^data-raw$
 ^doc$
 ^Meta$
+^paper\.md$
+^paper\.bib$
