@@ -49,7 +49,7 @@ bs_get_author_feed <- function(actor, cursor = NULL, limit = NULL,
       limit = limit
     )
 
-  resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching followers')
+  resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching author feed')
 
   if (!clean) {
     return(resp)
