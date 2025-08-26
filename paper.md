@@ -81,3 +81,6 @@ For example, users can get information on a specific user using the `bs_get_user
 ```r
 bs_get_user('chriskenny.bsky.social')
 ```
+
+# References
+
