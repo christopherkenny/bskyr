@@ -64,7 +64,7 @@ proc_record2 <- function(l) {
     createdAt = purrr::pluck(l, 'createdAt', .default = NA_character_),
     langs = list(purrr::pluck(l, 'langs', .default = NULL)),
     embed = list(purrr::pluck(l, 'embed', .default = NULL)),
-    facet = list(purrr::pluck(l, 'facet', .default = NULL)),
+    facets = list(purrr::pluck(l, 'facets', .default = NULL)),
     text = purrr::pluck(l, 'text', .default = NA_character_),
   ) |>
     clean_names()
