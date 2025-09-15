@@ -159,7 +159,8 @@ parse_facets <- function(txt, auth) {
       facet_tags[[i]]
     ) |>
       purrr::discard(is.null) |>
-      purrr::discard(purrr::is_empty)
+      purrr::discard(purrr::is_empty) |>
+      purrr::discard(function(x) is.null(x$index$byteStart) || is.null(x$index$byteEnd))
     if (purrr::is_empty(out)) {
       return(NULL)
     }
