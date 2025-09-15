@@ -31,6 +31,10 @@ bs_get_likes <- function(actor, cursor = NULL, limit = NULL,
     cli::cli_abort('{.arg actor} must be a character vector.')
   }
 
+  if (!actor %in% c(auth$did, auth$handle)) {
+    cli::cli_abort('{.arg actor} must be the authenticated user (self).')
+  }
+
   if (!is.null(limit)) {
     if (!is.numeric(limit)) {
       cli::cli_abort('{.arg limit} must be numeric.')
