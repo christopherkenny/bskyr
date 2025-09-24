@@ -168,14 +168,9 @@ replace_emoji <- function(emo) {
   }
 
   emo <- stringr::str_remove_all(emo, ':')
-
   noms <- names(emoji::emoji_name)
 
-  if (emo %in% noms) {
-    emoji::emoji_name[emo]
-  } else {
-    pad_emoji(emo)
-  }
+  ifelse(emo %in% noms, emoji::emoji_name[emo], pad_emoji(emo))
 }
 
 # general helpers ----
