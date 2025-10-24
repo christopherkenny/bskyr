@@ -27,6 +27,8 @@
   * `bs_send_message_batch()` sends a batch of messages to different conversations
 * Fixes an issue where actual numbers with a # sign would cause failures in posting (#45).
 * Avoids creating raw version of files for upload where possible (#16).
+* Always returns `embed` for `bs_get_posts()` (#40, #41).
+* Include all returned information in `bs_get_author_feed()`. Note that this requires adding a prefix to `reply` and `reason` information. (#43)
 
 # bskyr 0.3.0
 

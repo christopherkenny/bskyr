@@ -57,14 +57,22 @@ bs_get_author_feed <- function(actor, cursor = NULL, limit = NULL,
 
   lapply(resp, function(f) {
     lapply(f$feed, function(x) {
-      if (is.null(x$reply)) {
-        proc_post(x$post)
-      } else {
-        dplyr::bind_cols(
-          proc_post(x$post),
-          widen(x$reply)
+      post <- proc_post(x$post)
+      if (!is.null(x$reply)) {
+        post <- dplyr::bind_cols(
+          post,
+          widen(x$reply) |>
+            dplyr::rename_with(function(x) paste0('reply_', x))
         )
       }
+      if (!is.null(x$reason)) {
+        post <- dplyr::bind_cols(
+          post,
+          widen(x$reason) |>
+            dplyr::rename_with(function(x) paste0('reason_', x))
+        )
+      }
+      post
     }) |>
       purrr::list_rbind() |>
       clean_names()
