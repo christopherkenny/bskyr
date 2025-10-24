@@ -3,6 +3,7 @@
 * Fixes an issue where OpenGraph links with a size hint would fail downloading. (#32)
 * Improves transformations of starter packs into tibbles with cleaner unnesting. (#31)
 * Allows for more than 25 actors in `bs_get_profile()`, (#29, #30).
+* No longer overly widens results in `bs_get_profile()`. (#42)
 * Improves `bs_get_likes()` processing and makes it clear it is self-only.
 * Adds 3 vignettes. (#12)
   * "Creating Records on Bluesky Social"
