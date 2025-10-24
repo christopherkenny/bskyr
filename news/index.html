@@ -84,6 +84,8 @@
 </ul></li>
 <li>Fixes an issue where actual numbers with a # sign would cause failures in posting (<a href="https://github.com/christopherkenny/bskyr/issues/45" class="external-link">#45</a>).</li>
 <li>Avoids creating raw version of files for upload where possible (<a href="https://github.com/christopherkenny/bskyr/issues/16" class="external-link">#16</a>).</li>
+<li>Always returns <code>embed</code> for <code><a href="../reference/bs_get_posts.html">bs_get_posts()</a></code> (<a href="https://github.com/christopherkenny/bskyr/issues/40" class="external-link">#40</a>, <a href="https://github.com/christopherkenny/bskyr/issues/41" class="external-link">#41</a>).</li>
+<li>Include all returned information in <code><a href="../reference/bs_get_author_feed.html">bs_get_author_feed()</a></code>. Note that this requires adding a prefix to <code>reply</code> and <code>reason</code> information. (<a href="https://github.com/christopherkenny/bskyr/issues/43" class="external-link">#43</a>)</li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.3.0" id="bskyr-030">bskyr 0.3.0<a class="anchor" aria-label="anchor" href="#bskyr-030"></a></h2><p class="text-muted">CRAN release: 2025-05-02</p>
