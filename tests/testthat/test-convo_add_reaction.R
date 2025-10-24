@@ -1,5 +1,5 @@
 test_that('`bs_add_reaction()` works', {
   vcr::local_cassette('c_add_reaction', match_requests_on = c('uri', 'method'))
-  x <- bs_add_reaction('3ku7w6h4vog2d', '3lphbnrx7l32l', '👍', auth = auth)
+  x <- bs_add_reaction('3ku7w6h4vog2d', '3lphbnrx7l32l', '\U0001F44D', auth = auth)
   expect_s3_class(x, 'tbl_df')
 })

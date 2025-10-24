@@ -47,7 +47,7 @@ Remove a previously added reaction from a message
 
 \examples{
 \dontshow{if (has_bluesky_pass() && has_bluesky_user()) withAutoprint(\{ # examplesIf}
-bs_remove_reaction(convo_id = '3ku7w6h4vog2d', message_id = '3lphbnrx7l32l', value = '👍')
+bs_remove_reaction(convo_id = '3ku7w6h4vog2d', message_id = '3lphbnrx7l32l', value = '\U0001F44D')
 \dontshow{\}) # examplesIf}
 }
 \concept{chat}
