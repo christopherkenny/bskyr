@@ -46,7 +46,7 @@ Delete a block
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) withAutoprint(\{ # examplesIf}
 blck <- bs_block(subject = 'nytimes.com')
 bs_delete_block(bs_extract_record_key(blck$uri))
 \dontshow{\}) # examplesIf}

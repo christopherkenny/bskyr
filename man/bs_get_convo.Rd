@@ -40,7 +40,7 @@ Retrieve detailed information about a conversation by its ID
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) withAutoprint(\{ # examplesIf}
 bs_get_convo(convo_id = '3ku7w6h4vog2d')
 \dontshow{\}) # examplesIf}
 }

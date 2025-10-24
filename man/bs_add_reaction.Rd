@@ -46,7 +46,7 @@ Add a reaction (e.g. emoji) to a message in a conversation
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) withAutoprint(\{ # examplesIf}
 bs_add_reaction(convo_id = '3ku7w6h4vog2d', message_id = '3lphbnrx7l32l', value = '👍')
 \dontshow{\}) # examplesIf}
 }

@@ -38,7 +38,7 @@ Delete a list
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) withAutoprint(\{ # examplesIf}
 lst <- bs_new_list(name = 'test list bskyr', purpose = 'curatelist')
 bs_delete_list(bs_extract_record_key(lst$uri))
 \dontshow{\}) # examplesIf}

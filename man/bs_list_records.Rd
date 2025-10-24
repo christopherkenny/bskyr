@@ -49,7 +49,7 @@ List records in a repo
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() & has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() & has_bluesky_user()) withAutoprint(\{ # examplesIf}
 bs_list_records(repo = 'chriskenny.bsky.social', collection = 'app.bsky.feed.post')
 \dontshow{\}) # examplesIf}
 }

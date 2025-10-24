@@ -38,7 +38,7 @@ Delete a starter pack
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) withAutoprint(\{ # examplesIf}
 starter <- bs_new_starter_pack('bskyr test')
 bs_delete_starter_pack(bs_extract_record_key(starter$uri))
 \dontshow{\}) # examplesIf}

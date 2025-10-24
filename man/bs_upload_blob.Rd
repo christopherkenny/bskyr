@@ -40,7 +40,7 @@ Upload a blob to a repo
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() & has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() & has_bluesky_user()) withAutoprint(\{ # examplesIf}
 fig <- fs::path_package('bskyr', 'man/figures/logo.png')
 bs_upload_blob(fig)
 \dontshow{\}) # examplesIf}
