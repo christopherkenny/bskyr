@@ -15,3 +15,7 @@ New maintainer:
   Christopher T. Kenny <ctkenny@proton.me>
 Old maintainer(s):
   Christopher T. Kenny <christopherkenny@fas.harvard.edu>
+
+## Additional notes
+
+* This includes updating the maintainer email to ctkenny@proton.me. Please see the email from christopherkenny@fas.harvard.edu on 2025-08-29 for confirmation.
