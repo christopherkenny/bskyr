@@ -1,0 +1,383 @@
+# bskyr
+
+`bskyr` provides an interface to the Bluesky Social API, allowing you to
+interact with Bluesky Social from R. To do this, we provide functions
+which match with the [AT Protocol’s
+Lexicon](https://atproto.com/guides/lexicon), which is like using
+regular HTTP requests. Outputs from `bskyr`’s functions are primarily
+`tibble`s, allowing for easy analysis of the outputs from the API calls.
+
+## Installation
+
+You can install the stable version of `bskyr` from
+[CRAN](https://cran.r-project.org/package=bskyr) with:
+
+``` r
+install.packages('bskyr')
+```
+
+You can install the development version of `bskyr` from
+[GitHub](https://github.com/) with:
+
+``` r
+# install.packages('pak')
+pak::pak('christopherkenny/bskyr')
+```
+
+## Posting with `bskyr`
+
+First, load the package:
+
+``` r
+library(bskyr)
+```
+
+Text posts can be made as follows:
+
+``` r
+bs_post(text = 'Your text goes here.')
+```
+
+If you have images to include, up to four can be included with the
+`images` argument:
+
+``` r
+bs_post(
+  text = 'Your text goes here.', 
+  images = c('path/to/image1.jpg', 'path/to/image2.png')
+)
+```
+
+Alt text can be added to images with the `images_alt` argument:
+
+``` r
+bs_post(
+  text = 'Your text goes here.', 
+  images = c('path/to/image1.jpg', 'path/to/image2.png'), 
+  images_alt = c('Alt text for image 1', 'Alt text for image 2')
+)
+```
+
+To quote or reply to a post, use the `quote` and/or `reply` argument,
+respectively. These can take the link of an existing post. You can quote
+and reply to the same post, if you want.
+
+``` r
+bs_post(
+  text = 'Your text goes here.', 
+  quote = 'https://bsky.app/profile/chriskenny.bsky.social/post/3kepscxiljc22',
+  reply = 'https://bsky.app/profile/chriskenny.bsky.social/post/3kepscxiljc22'
+)
+```
+
+See the reference for additional features, including likes with
+[`bs_like()`](http://christophertkenny.com/bskyr/reference/bs_like.md)
+and reposts with
+[`bs_repost()`](http://christophertkenny.com/bskyr/reference/bs_repost.md).
+
+## Authentication
+
+To authenticate, you first need to make an App Password. To do this, go
+to `https://bsky.app/settings`. Under “Advanced” click App passwords and
+then “Add App Password.”
+
+Once you have a password, you need to run:
+
+``` r
+set_bluesky_user('YOUR-USERNAME.bsky.social')
+set_bluesky_pass('your-apps-pass-word')
+```
+
+If you want this to persist across sessions, set `install = TRUE` and
+`r_env = file.path(Sys.getenv('HOME'), '.Renviron')`. This will save
+your credentials in your R environment file.
+
+Alternatively, you can set them manually using
+`usethis::edit_r_environ()` and adding lines like so:
+
+``` R
+BLUESKY_APP_USER='YOUR-USERNAME.bsky.social'
+BLUESKY_APP_PASS='your-apps-pass-word'
+```
+
+## 
+
+# Package index
+
+## Interact with posts
+
+Create, edit, and delete records including posts, reposts, and likes
+
+- [`bs_block()`](http://christophertkenny.com/bskyr/reference/bs_block.md)
+  : Block an account
+- [`bs_follow()`](http://christophertkenny.com/bskyr/reference/bs_follow.md)
+  : Follow an account
+- [`bs_like()`](http://christophertkenny.com/bskyr/reference/bs_like.md)
+  : Like an existing post
+- [`bs_new_list()`](http://christophertkenny.com/bskyr/reference/bs_new_list.md)
+  : Create a list
+- [`bs_new_list_item()`](http://christophertkenny.com/bskyr/reference/bs_new_list_item.md)
+  : Add a subject to a list
+- [`bs_new_starter_pack()`](http://christophertkenny.com/bskyr/reference/bs_new_starter_pack.md)
+  : Create a new starter pack
+- [`bs_post()`](http://christophertkenny.com/bskyr/reference/bs_post.md)
+  : Make a post on Bluesky Social
+- [`bs_repost()`](http://christophertkenny.com/bskyr/reference/bs_repost.md)
+  : Repost an existing post
+
+## Actor
+
+Functions related to an actor (a user)
+
+- [`bs_get_actor_suggestions()`](http://christophertkenny.com/bskyr/reference/bs_get_actor_suggestions.md)
+  : Get a list of actors suggested for following
+- [`bs_get_preferences()`](http://christophertkenny.com/bskyr/reference/bs_get_preferences.md)
+  : Get (Self) Preferences
+- [`bs_get_profile()`](http://christophertkenny.com/bskyr/reference/bs_get_profile.md)
+  : Get Profile for a Bluesky Social User
+- [`bs_search_actors()`](http://christophertkenny.com/bskyr/reference/bs_search_actors.md)
+  : Find profiles matching search criteria
+
+## Authentication
+
+Functions for authenticating `bskyr` users
+
+- [`bs_auth()`](http://christophertkenny.com/bskyr/reference/bs_auth.md)
+  : Authenticate a user
+- [`has_bluesky_pass()`](http://christophertkenny.com/bskyr/reference/pass.md)
+  [`get_bluesky_pass()`](http://christophertkenny.com/bskyr/reference/pass.md)
+  [`bs_get_pass()`](http://christophertkenny.com/bskyr/reference/pass.md)
+  [`bs_has_pass()`](http://christophertkenny.com/bskyr/reference/pass.md)
+  : Check or Get Bluesky App Password
+- [`set_bluesky_pass()`](http://christophertkenny.com/bskyr/reference/set_bluesky_pass.md)
+  [`bs_set_pass()`](http://christophertkenny.com/bskyr/reference/set_bluesky_pass.md)
+  : Add Entry to Renviron
+- [`set_bluesky_user()`](http://christophertkenny.com/bskyr/reference/set_bluesky_user.md)
+  [`bs_set_user()`](http://christophertkenny.com/bskyr/reference/set_bluesky_user.md)
+  : Adds Bluesky User to .Renviron.
+- [`has_bluesky_user()`](http://christophertkenny.com/bskyr/reference/user.md)
+  [`get_bluesky_user()`](http://christophertkenny.com/bskyr/reference/user.md)
+  [`bs_get_user()`](http://christophertkenny.com/bskyr/reference/user.md)
+  [`bs_has_user()`](http://christophertkenny.com/bskyr/reference/user.md)
+  : Check or Get Bluesky User
+
+## Feed
+
+Functions which describe feeds (essentially timelines filled with posts)
+
+- [`bs_get_author_feed()`](http://christophertkenny.com/bskyr/reference/bs_get_author_feed.md)
+  : Retrieve posts on an actor's feed
+- [`bs_get_feed()`](http://christophertkenny.com/bskyr/reference/bs_get_feed.md)
+  : Build feed from user's feed generator
+- [`bs_get_feed_generator()`](http://christophertkenny.com/bskyr/reference/bs_get_feed_generator.md)
+  : Get specific information about one feed generator
+- [`bs_get_feed_generators()`](http://christophertkenny.com/bskyr/reference/bs_get_feed_generators.md)
+  : Get information about a list of feed generators
+- [`bs_get_feed_suggestions()`](http://christophertkenny.com/bskyr/reference/bs_get_feed_suggestions.md)
+  : Get a list of feed suggestions
+- [`bs_get_feeds()`](http://christophertkenny.com/bskyr/reference/bs_get_feeds.md)
+  : Retrieve a list of feeds created by a given actor
+- [`bs_get_likes()`](http://christophertkenny.com/bskyr/reference/bs_get_likes.md)
+  : Retrieve posts liked by an actor (self)
+- [`bs_get_list_feed()`](http://christophertkenny.com/bskyr/reference/bs_get_list_feed.md)
+  : Retrieve recent posts from actors in a list
+- [`bs_get_post_likes()`](http://christophertkenny.com/bskyr/reference/bs_get_post_likes.md)
+  : Retrieve likes on a post
+- [`bs_get_post_thread()`](http://christophertkenny.com/bskyr/reference/bs_get_post_thread.md)
+  : Retrieve thread of posts
+- [`bs_get_posts()`](http://christophertkenny.com/bskyr/reference/bs_get_posts.md)
+  : Retrieve thread of posts
+- [`bs_get_quotes()`](http://christophertkenny.com/bskyr/reference/bs_get_quotes.md)
+  : Retrieve a list of quotes for a given post
+- [`bs_get_reposts()`](http://christophertkenny.com/bskyr/reference/bs_get_reposts.md)
+  : Retrieve actors who reposted a post
+- [`bs_get_timeline()`](http://christophertkenny.com/bskyr/reference/bs_get_timeline.md)
+  : Retrieve the user's home timeline
+- [`bs_search_posts()`](http://christophertkenny.com/bskyr/reference/bs_search_posts.md)
+  : Find posts matching search criteria
+
+## Graph
+
+Functions which describe the relationships between users
+
+- [`bs_get_actor_lists()`](http://christophertkenny.com/bskyr/reference/bs_get_actor_lists.md)
+  : Get a list of lists that belong to an actor.
+- [`bs_get_actor_starter_packs()`](http://christophertkenny.com/bskyr/reference/bs_get_actor_starter_packs.md)
+  : Get starter packs created by an actor
+- [`bs_get_blocked_lists()`](http://christophertkenny.com/bskyr/reference/bs_get_blocked_lists.md)
+  : Retrieve a user's (self) muted lists
+- [`bs_get_blocks()`](http://christophertkenny.com/bskyr/reference/bs_get_blocks.md)
+  : Retrieve user (self) blocks
+- [`bs_get_follow_suggestions()`](http://christophertkenny.com/bskyr/reference/bs_get_follow_suggestions.md)
+  : Get suggested follows related to a given actor
+- [`bs_get_followers()`](http://christophertkenny.com/bskyr/reference/bs_get_followers.md)
+  : Retrieve an actor's followers
+- [`bs_get_follows()`](http://christophertkenny.com/bskyr/reference/bs_get_follows.md)
+  : Retrieve an actor's follows
+- [`bs_get_list()`](http://christophertkenny.com/bskyr/reference/bs_get_list.md)
+  : Get a view of a list
+- [`bs_get_muted_lists()`](http://christophertkenny.com/bskyr/reference/bs_get_muted_lists.md)
+  : Retrieve a user's (self) muted lists
+- [`bs_get_mutes()`](http://christophertkenny.com/bskyr/reference/bs_get_mutes.md)
+  : Retrieve a user's (self) muted accounts
+- [`bs_get_relationships()`](http://christophertkenny.com/bskyr/reference/bs_get_relationships.md)
+  : Get relationships between an account and other users
+- [`bs_get_starter_pack()`](http://christophertkenny.com/bskyr/reference/bs_get_starter_pack.md)
+  : Get information on one starter pack
+- [`bs_get_starter_packs()`](http://christophertkenny.com/bskyr/reference/bs_get_starter_packs.md)
+  : Get information about a list of starter packs
+
+## Notifications
+
+Interact with your own notifications
+
+- [`bs_get_notification_count()`](http://christophertkenny.com/bskyr/reference/bs_get_notification_count.md)
+  : Get the user's (self) number of unread notifications
+- [`bs_get_notifications()`](http://christophertkenny.com/bskyr/reference/bs_get_notifications.md)
+  : Get the user's (self) notifications
+
+## Repo
+
+Procedures for adding and otherwise interacting with records on Bluesky
+Social
+
+- [`bs_create_record()`](http://christophertkenny.com/bskyr/reference/bs_create_record.md)
+  : Create a record in a repo
+- [`bs_delete_block()`](http://christophertkenny.com/bskyr/reference/bs_delete_block.md)
+  [`bs_unblock()`](http://christophertkenny.com/bskyr/reference/bs_delete_block.md)
+  : Delete a block
+- [`bs_delete_follow()`](http://christophertkenny.com/bskyr/reference/bs_delete_follow.md)
+  [`bs_unfollow()`](http://christophertkenny.com/bskyr/reference/bs_delete_follow.md)
+  : Delete a follow (un-follow someone)
+- [`bs_delete_like()`](http://christophertkenny.com/bskyr/reference/bs_delete_like.md)
+  [`bs_unlike()`](http://christophertkenny.com/bskyr/reference/bs_delete_like.md)
+  : Delete a like (un-like something)
+- [`bs_delete_list()`](http://christophertkenny.com/bskyr/reference/bs_delete_list.md)
+  : Delete a list
+- [`bs_delete_list_item()`](http://christophertkenny.com/bskyr/reference/bs_delete_list_item.md)
+  : Delete a list item
+- [`bs_delete_post()`](http://christophertkenny.com/bskyr/reference/bs_delete_post.md)
+  : Delete a post
+- [`bs_delete_record()`](http://christophertkenny.com/bskyr/reference/bs_delete_record.md)
+  : Delete a record in a repo
+- [`bs_delete_repost()`](http://christophertkenny.com/bskyr/reference/bs_delete_repost.md)
+  : Delete a repost
+- [`bs_delete_starter_pack()`](http://christophertkenny.com/bskyr/reference/bs_delete_starter_pack.md)
+  : Delete a starter pack
+- [`bs_describe_repo()`](http://christophertkenny.com/bskyr/reference/bs_describe_repo.md)
+  : Describe a repo
+- [`bs_get_record()`](http://christophertkenny.com/bskyr/reference/bs_get_record.md)
+  : Get an arbitrary record from a repo
+- [`bs_list_records()`](http://christophertkenny.com/bskyr/reference/bs_list_records.md)
+  : List records in a repo
+- [`bs_upload_blob()`](http://christophertkenny.com/bskyr/reference/bs_upload_blob.md)
+  : Upload a blob to a repo
+
+## Direct Messages
+
+Send, receive, and delete direct messages (aka convos)
+
+- [`bs_accept_convo()`](http://christophertkenny.com/bskyr/reference/bs_accept_convo.md)
+  : Accept a conversation (direct message) invitation or request
+- [`bs_add_reaction()`](http://christophertkenny.com/bskyr/reference/bs_add_reaction.md)
+  : Add a reaction (e.g. emoji) to a message in a conversation
+- [`bs_delete_message_for_self()`](http://christophertkenny.com/bskyr/reference/bs_delete_message_for_self.md)
+  : Remove a message from your view of a conversation (does not delete
+  it for others)
+- [`bs_get_convo()`](http://christophertkenny.com/bskyr/reference/bs_get_convo.md)
+  : Retrieve detailed information about a conversation by its ID
+- [`bs_get_convo_availability()`](http://christophertkenny.com/bskyr/reference/bs_get_convo_availability.md)
+  : Check conversation availability with specified members
+- [`bs_get_convo_for_members()`](http://christophertkenny.com/bskyr/reference/bs_get_convo_for_members.md)
+  : Retrieve conversation shared among specified members
+- [`bs_get_convo_log()`](http://christophertkenny.com/bskyr/reference/bs_get_convo_log.md)
+  : Retrieve the chat event log for the authenticated user
+- [`bs_get_messages()`](http://christophertkenny.com/bskyr/reference/bs_get_messages.md)
+  : Retrieve messages from a conversation, optionally paginated
+- [`bs_leave_convo()`](http://christophertkenny.com/bskyr/reference/bs_leave_convo.md)
+  : Exit a conversation so you no longer receive messages or see it in
+  your inbox
+- [`bs_list_convos()`](http://christophertkenny.com/bskyr/reference/bs_list_convos.md)
+  : List the conversations (direct message threads) for the
+  authenticated user
+- [`bs_mute_convo()`](http://christophertkenny.com/bskyr/reference/bs_mute_convo.md)
+  : Mute a conversation so you no longer receive notifications.
+- [`bs_remove_reaction()`](http://christophertkenny.com/bskyr/reference/bs_remove_reaction.md)
+  : Remove a previously added reaction from a message
+- [`bs_send_message()`](http://christophertkenny.com/bskyr/reference/bs_send_message.md)
+  : Send a message in a conversation (DM thread)
+- [`bs_send_message_batch()`](http://christophertkenny.com/bskyr/reference/bs_send_message_batch.md)
+  : Send multiple messages across different conversations
+- [`bs_unmute_convo()`](http://christophertkenny.com/bskyr/reference/bs_unmute_convo.md)
+  : Unmute a previously muted conversation
+- [`bs_update_all_read()`](http://christophertkenny.com/bskyr/reference/bs_update_all_read.md)
+  : Mark all conversations as read for the authenticated user
+- [`bs_update_read()`](http://christophertkenny.com/bskyr/reference/bs_update_read.md)
+  : Mark a conversation (optionally up to a specific message) as read
+
+## Other
+
+Other Functions
+
+- [`bs_accept_convo()`](http://christophertkenny.com/bskyr/reference/bs_accept_convo.md)
+  : Accept a conversation (direct message) invitation or request
+- [`bs_add_reaction()`](http://christophertkenny.com/bskyr/reference/bs_add_reaction.md)
+  : Add a reaction (e.g. emoji) to a message in a conversation
+- [`bs_created_at()`](http://christophertkenny.com/bskyr/reference/bs_created_at.md)
+  : Get current time in Bluesky format
+- [`bs_delete_message_for_self()`](http://christophertkenny.com/bskyr/reference/bs_delete_message_for_self.md)
+  : Remove a message from your view of a conversation (does not delete
+  it for others)
+- [`bs_extract_record_key()`](http://christophertkenny.com/bskyr/reference/bs_extract_record_key.md)
+  : Extract Record Key from a link
+- [`bs_get_convo()`](http://christophertkenny.com/bskyr/reference/bs_get_convo.md)
+  : Retrieve detailed information about a conversation by its ID
+- [`bs_get_convo_availability()`](http://christophertkenny.com/bskyr/reference/bs_get_convo_availability.md)
+  : Check conversation availability with specified members
+- [`bs_get_convo_for_members()`](http://christophertkenny.com/bskyr/reference/bs_get_convo_for_members.md)
+  : Retrieve conversation shared among specified members
+- [`bs_get_convo_log()`](http://christophertkenny.com/bskyr/reference/bs_get_convo_log.md)
+  : Retrieve the chat event log for the authenticated user
+- [`bs_get_messages()`](http://christophertkenny.com/bskyr/reference/bs_get_messages.md)
+  : Retrieve messages from a conversation, optionally paginated
+- [`bs_leave_convo()`](http://christophertkenny.com/bskyr/reference/bs_leave_convo.md)
+  : Exit a conversation so you no longer receive messages or see it in
+  your inbox
+- [`bs_list_convos()`](http://christophertkenny.com/bskyr/reference/bs_list_convos.md)
+  : List the conversations (direct message threads) for the
+  authenticated user
+- [`bs_mute_convo()`](http://christophertkenny.com/bskyr/reference/bs_mute_convo.md)
+  : Mute a conversation so you no longer receive notifications.
+- [`bs_new_embed_external()`](http://christophertkenny.com/bskyr/reference/bs_new_embed_external.md)
+  : Embed external media in a post
+- [`bs_remove_reaction()`](http://christophertkenny.com/bskyr/reference/bs_remove_reaction.md)
+  : Remove a previously added reaction from a message
+- [`bs_resolve_handle()`](http://christophertkenny.com/bskyr/reference/bs_resolve_handle.md)
+  : Resolve a Handle to Decentralized Identifier (DID)
+- [`bs_send_message()`](http://christophertkenny.com/bskyr/reference/bs_send_message.md)
+  : Send a message in a conversation (DM thread)
+- [`bs_send_message_batch()`](http://christophertkenny.com/bskyr/reference/bs_send_message_batch.md)
+  : Send multiple messages across different conversations
+- [`bs_unmute_convo()`](http://christophertkenny.com/bskyr/reference/bs_unmute_convo.md)
+  : Unmute a previously muted conversation
+- [`bs_update_all_read()`](http://christophertkenny.com/bskyr/reference/bs_update_all_read.md)
+  : Mark all conversations as read for the authenticated user
+- [`bs_update_read()`](http://christophertkenny.com/bskyr/reference/bs_update_read.md)
+  : Mark a conversation (optionally up to a specific message) as read
+- [`bs_uri_to_url()`](http://christophertkenny.com/bskyr/reference/bs_uri_to_url.md)
+  : Convert Universal Resource Identifiers to Hypertext Transfer
+  Protocol Secure URLs
+- [`bs_url_to_uri()`](http://christophertkenny.com/bskyr/reference/bs_url_to_uri.md)
+  : Convert Hypertext Transfer Protocol Secure URLs to Universal
+  Resource Identifiers
+
+# Articles
+
+### All vignettes
+
+- [Creating Records on Bluesky
+  Social](http://christophertkenny.com/bskyr/articles/creating_records.md):
+- [Gathering Data from Bluesky
+  Social](http://christophertkenny.com/bskyr/articles/gathering_data.md):
+- [Working with Lists and Starter
+  Packs](http://christophertkenny.com/bskyr/articles/lists_and_starter_packs.md):

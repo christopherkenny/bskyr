@@ -1,0 +1,259 @@
+# Working with Lists and Starter Packs
+
+## Introduction
+
+Bluesky **lists** and **starter packs** are two features for organizing
+and sharing groups of users (and content). A *list* (lexicon type
+`app.bsky.graph.list`) is a curated set of user accounts (actors) –
+similar to Twitter lists – that can be used for curation or moderation
+purposes. A *starter pack* (lexicon type `app.bsky.graph.starterpack`)
+is a shareable collection of accounts (and optionally algorithmic feeds)
+intended to help onboard new users by suggesting who to follow and which
+feeds to try. In practice, a starter pack is backed by a list of
+accounts and up to a few feeds.
+
+In this vignette, we demonstrate how to use `bskyr` to programmatically
+interact with Bluesky lists and starter packs: fetching existing
+lists/packs, creating and managing lists, and using lists as the basis
+for starter packs.
+
+**Authentication:** Before proceeding, ensure you are authenticated with
+Bluesky. Assuming you have already configured your Bluesky credentials
+(via
+[`set_bluesky_user()`](http://christophertkenny.com/bskyr/reference/set_bluesky_user.md)
+and
+[`set_bluesky_pass()`](http://christophertkenny.com/bskyr/reference/set_bluesky_pass.md)
+or environment variables), you can authenticate once at the start:
+
+``` r
+library(bskyr)
+auth <- bs_auth(user = bs_get_user(), pass = bs_get_pass())
+```
+
+## Fetching and Exploring Lists
+
+To retrieve the lists belonging to a specific user (actor), use
+[`bs_get_actor_lists()`](http://christophertkenny.com/bskyr/reference/bs_get_actor_lists.md).
+This function returns a tibble of the actor’s list records. Each list
+entry includes fields like its `uri` (the unique AT URI for the list
+record), `name`, `purpose`, and any description:
+
+``` r
+# Fetch all lists created by a given user (actor)
+user_lists <- bs_get_actor_lists('bskyr.bsky.social')
+user_lists
+```
+
+You can inspect the details of a particular list using its URI. For
+example, to get a view of the first list from the above results:
+
+``` r
+first_list_uri <- user_lists$uri[1] # AT URI of the first list
+first_list <- bs_get_list(first_list_uri) # retrieve detailed list info
+first_list
+```
+
+The
+[`bs_get_list()`](http://christophertkenny.com/bskyr/reference/bs_get_list.md)
+function returns the list’s metadata and its members. If `clean = TRUE`,
+it will be formatted as a tibble for convenience. In addition, Bluesky
+provides mechanisms to mute or block entire lists. You can retrieve
+lists that the current user has muted or blocked via:
+
+``` r
+bs_get_muted_lists()
+bs_get_blocked_lists()
+```
+
+These return `tibble` of list records that you have muted or blocked,
+which is useful for moderation or content filtering.
+
+## Creating and Managing Lists
+
+To create a new list, use
+[`bs_new_list()`](http://christophertkenny.com/bskyr/reference/bs_new_list.md).
+At minimum you must provide a `name` and a `purpose`. The `purpose`
+should be one of `'curatelist'`, `'modlist'`, or `'referencelist'`,
+distinguishing a normal curated list from a moderation list, etc. For
+typical user-curated lists, use `'curatelist'`. You may also include an
+optional `description` (and even an `avatar` image file if desired).
+
+Here we’ll make a list on redistricting experts. My day job is
+redistricting research, so I’ll add some of my colleagues to the list.
+
+``` r
+# Create a new curated list
+new_list <- bs_new_list(
+  name = '[vignette] Redistricting Experts',
+  purpose = 'curatelist',
+  description = 'A list of interesting people in redistricting'
+)
+```
+
+After creating a list, you can add members to it using
+[`bs_new_list_item()`](http://christophertkenny.com/bskyr/reference/bs_new_list_item.md).
+Each call adds a single account, identified by handle or DID, to the
+specified list. You must provide the `subject` (the account to add) and
+the list’s `uri`:
+
+``` r
+# Add members to the list
+bs_new_list_item(
+  subject = 'chriskenny.bsky.social',
+  uri = new_list$uri
+)
+bs_new_list_item(
+  subject = 'simko.bsky.social',
+  uri = new_list$uri
+)
+bs_new_list_item(
+  subject = 'corymccartan.com',
+  uri = new_list$uri
+)
+```
+
+If needed, you can remove a member from a list with
+[`bs_delete_list_item()`](http://christophertkenny.com/bskyr/reference/bs_delete_list_item.md).
+This function requires the record key (`rkey`) of the list item (the
+membership record). Typically, you can extract that from the `uri` of
+the item returned when it was added.
+
+Here, we’ll add a new member to the list and then remove it. I’ll use
+this testing account (`bskyr.bsky.social`) as an example:
+
+``` r
+fourth_item <- bs_new_list_item(
+  subject = 'bskyr.bsky.social', uri = new_list$uri
+)
+item_rkey <- bs_extract_record_key(fourth_item$uri)
+bs_delete_list_item(item_rkey)
+```
+
+Finally, to delete an entire list, use
+[`bs_delete_list()`](http://christophertkenny.com/bskyr/reference/bs_delete_list.md)
+with the list’s record key. As with items, you can obtain the list’s
+record key from its `uri`:
+
+``` r
+list_rkey <- bs_extract_record_key(new_list$uri)
+bs_delete_list(list_rkey)
+```
+
+After deletion, the list and its memberships are removed from your
+Bluesky account.
+
+## Understanding Starter Packs
+
+Starter packs are curated bundles of recommendations. A starter pack
+typically includes a set of accounts, often centered around a theme or
+community, and can also include references to up to three custom feeds.
+Users can use a starter pack to quickly follow a group of people and
+subscribe to feeds with one click during onboarding. Under the hood, a
+starter pack record points to a list of accounts and an optional set of
+feed URIs. In other words, creating a starter pack is essentially
+packaging an existing list (of actors) and some feeds into a shareable
+recommendation set.
+
+## Fetching Starter Packs
+
+To retrieve starter packs created by a specific user, use
+[`bs_get_actor_starter_packs()`](http://christophertkenny.com/bskyr/reference/bs_get_actor_starter_packs.md).
+This is analogous to fetching lists, but for packs. It returns a
+`tibble` of the user’s starter pack records:
+
+``` r
+user_packs <- bs_get_actor_starter_packs('chriskenny.bsky.social')
+user_packs |>
+  dplyr::select(record_name, record_description)
+```
+
+If you have the AT URI of a particular starter pack, you can fetch its
+details with
+[`bs_get_starter_pack()`](http://christophertkenny.com/bskyr/reference/bs_get_starter_pack.md).
+This will return the pack’s metadata along with the contents (the list
+of accounts and any feeds it includes):
+
+``` r
+bs_get_starter_pack('https://bsky.app/starter-pack/jkertzer.bsky.social/3laywns2q2v27') |>
+  dplyr::select(record_name, record_description)
+```
+
+For convenience, `bskyr` also provides
+[`bs_get_starter_packs()`](http://christophertkenny.com/bskyr/reference/bs_get_starter_packs.md),
+which can fetch multiple packs in one call. You can supply a vector of
+starter pack URIs to
+[`bs_get_starter_packs()`](http://christophertkenny.com/bskyr/reference/bs_get_starter_packs.md)
+to retrieve them all at once:
+
+``` r
+bs_get_starter_packs(c(
+  'at://did:plc:bmc56x6ksb7o7sdkq2fgm7se/app.bsky.graph.starterpack/3laywns2q2v27',
+  'https://bsky.app/starter-pack/chriskenny.bsky.social/3lb3g5veo2z2r'
+)) |>
+  dplyr::select(record_name, record_description)
+```
+
+## Creating and Managing Starter Packs
+
+Creating a new starter pack is done with
+[`bs_new_starter_pack()`](http://christophertkenny.com/bskyr/reference/bs_new_starter_pack.md).
+The required arguments are a display `name` for the pack and a `list` to
+base the pack on. The `list` should be the AT URI of a Bluesky list
+record containing the accounts you want in the starter pack. If you
+don’t already have a list prepared, you can omit the `list` argument –
+in that case,
+[`bs_new_starter_pack()`](http://christophertkenny.com/bskyr/reference/bs_new_starter_pack.md)
+will create a new (empty) list for you behind the scenes. You would then
+need to add accounts to it with
+[`bs_new_list_item()`](http://christophertkenny.com/bskyr/reference/bs_new_list_item.md).
+You can also provide an optional `description` for the pack, as well as
+a `feeds` vector of up to 3 feed generator URIs to include.
+
+Here’s an example:
+
+``` r
+pack <- bs_new_starter_pack(
+  name = '[vignette] Redistricting people',
+  list = new_list$uri, # use an existing list of accounts
+  description = 'A starter pack of interesting redistricters'
+)
+```
+
+After running the above, `pack` will contain the newly created starter
+pack record (including its own `uri`). The pack references the accounts
+in `new_list` and the specified feeds. If you omitted the `list`
+parameter, remember to add accounts to the pack’s list (accessible via
+`pack$list` URI) using
+[`bs_new_list_item()`](http://christophertkenny.com/bskyr/reference/bs_new_list_item.md)
+calls.
+
+If a starter pack is no longer needed, you can delete it with
+[`bs_delete_starter_pack()`](http://christophertkenny.com/bskyr/reference/bs_delete_starter_pack.md).
+As with lists, you must supply the record key of the pack. For example:
+
+``` r
+# Delete the starter pack by its record key
+pack_rkey <- bs_extract_record_key(pack$uri)
+bs_delete_starter_pack(pack_rkey)
+```
+
+Deleting the pack removes the starter pack record, nbut does not delete
+the underlying list or its members. You may delete the list separately
+if desired.
+
+## Conclusion
+
+In this vignette, we covered how to work with Bluesky lists and starter
+packs using `bskyr`. We saw how to fetch and view existing lists, create
+new lists and manage their membership, and how lists serve as the basis
+for starter packs. We also demonstrated creating and deleting starter
+packs, including how to incorporate custom feeds. Together, these tools
+enable you to programmatically organize accounts into lists and craft
+shareable starter packs for recommending content to others.
+
+------------------------------------------------------------------------
+
+**DISCLAIMER**: This vignette has been written with help from ChatGPT
+4o. It has been reviewed for correctness and edited for clarity by the
+package author. Please note any issues at
+<https://github.com/christopherkenny/bskyr/issues>.
