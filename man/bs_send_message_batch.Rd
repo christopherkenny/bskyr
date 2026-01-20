@@ -43,7 +43,7 @@ Send multiple messages across different conversations
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) withAutoprint(\{ # examplesIf}
 bs_send_message_batch(
   convo_id = c('3ku7w6h4vog2d', '3lpidxucy2g27'),
   text = c('Hello', 'Hi there')

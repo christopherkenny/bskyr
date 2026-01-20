@@ -37,7 +37,7 @@ Get (Self) Preferences
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) withAutoprint(\{ # examplesIf}
 bs_get_preferences()
 \dontshow{\}) # examplesIf}
 }

@@ -40,7 +40,7 @@ Mute a conversation so you no longer receive notifications.
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) withAutoprint(\{ # examplesIf}
 bs_mute_convo(convo_id = '3ku7w6h4vog2d')
 \dontshow{\}) # examplesIf}
 }

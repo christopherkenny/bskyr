@@ -105,7 +105,7 @@ created and the post is sent as is.
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() & has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() & has_bluesky_user()) withAutoprint(\{ # examplesIf}
 bs_post('Test post from R CMD Check for r package `bskyr`
 via @bskyr.bsky.social (https://christophertkenny.com/bskyr/)')
 bs_post('Test self-reply from r package `bskyr`

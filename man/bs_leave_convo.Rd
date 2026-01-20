@@ -40,7 +40,7 @@ Exit a conversation so you no longer receive messages or see it in your inbox
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) withAutoprint(\{ # examplesIf}
 bs_leave_convo(convo_id = '3lpidxucy2g27')
 \dontshow{\}) # examplesIf}
 }

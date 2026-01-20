@@ -47,7 +47,7 @@ This will create a list representation of an external embed.
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() & has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() & has_bluesky_user()) withAutoprint(\{ # examplesIf}
 bs_new_embed_external(
   uri = 'https://christophertkenny.com/bskyr/',
   title = 'Interact with Bluesky Social',

@@ -20,7 +20,7 @@
 #' `v0.4.0` (2025-05-16)
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
-#' bs_remove_reaction(convo_id = '3ku7w6h4vog2d', message_id = '3lphbnrx7l32l', value = '👍')
+#' bs_remove_reaction(convo_id = '3ku7w6h4vog2d', message_id = '3lphbnrx7l32l', value = '\U0001F44D')
 bs_remove_reaction <- function(convo_id, message_id, value,
                                user = get_bluesky_user(), pass = get_bluesky_pass(),
                                auth = bs_auth(user, pass), clean = TRUE) {

@@ -64,7 +64,7 @@ proc_record2 <- function(l) {
     createdAt = purrr::pluck(l, 'createdAt', .default = NA_character_),
     langs = list(purrr::pluck(l, 'langs', .default = NULL)),
     embed = list(purrr::pluck(l, 'embed', .default = NULL)),
-    facet = list(purrr::pluck(l, 'facet', .default = NULL)),
+    facets = list(purrr::pluck(l, 'facets', .default = NULL)),
     text = purrr::pluck(l, 'text', .default = NA_character_),
   ) |>
     clean_names()
@@ -98,7 +98,7 @@ proc_posts <- function(l) {
     cid = purrr::map_chr(l, .f = function(x) purrr::pluck(x, 'cid', .default = NA_character_)),
     author = purrr::map(l, .f = function(x) purrr::pluck(x, 'author', .default = NULL) |> widen()),
     record = purrr::map(l, .f = function(x) purrr::pluck(x, 'record', .default = NULL) |> proc_record2()),
-    embed = purrr::map(l, .f = function(x) purrr::pluck(x, 'embed', .default = NULL) |> proc_embed2()),
+    embed = purrr::map(l, .f = function(x) purrr::pluck(x, 'embed', .default = NULL)),
     replyCount = purrr::map_int(l, .f = function(x) purrr::pluck(x, 'replyCount', .default = NA_integer_)),
     repostCount = purrr::map_int(l, .f = function(x) purrr::pluck(x, 'repostCount', .default = NA_integer_)),
     likeCount = purrr::map_int(l, .f = function(x) purrr::pluck(x, 'likeCount', .default = NA_integer_)),
@@ -118,7 +118,7 @@ proc_post <- function(l) {
     cid = purrr::pluck(l, 'cid', .default = NA_character_),
     author = purrr::pluck(l, 'author', .default = NULL) |> widen(),
     record = list(purrr::pluck(l, 'record', .default = NULL) |> proc_record2()),
-    embed = list(purrr::pluck(l, 'embed', .default = NULL) |> proc_embed2()),
+    embed = list(purrr::pluck(l, 'embed', .default = NULL)),
     replyCount = purrr::pluck(l, 'replyCount', .default = NA_integer_),
     repostCount = purrr::pluck(l, 'repostCount', .default = NA_integer_),
     likeCount = purrr::pluck(l, 'likeCount', .default = NA_integer_),

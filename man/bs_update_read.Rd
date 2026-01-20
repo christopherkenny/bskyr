@@ -43,7 +43,7 @@ Mark a conversation (optionally up to a specific message) as read
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) withAutoprint(\{ # examplesIf}
 bs_update_read(convo_id = '3ku7w6h4vog2d')
 \dontshow{\}) # examplesIf}
 }

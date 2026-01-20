@@ -46,7 +46,7 @@ Retrieve messages from a conversation, optionally paginated
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) withAutoprint(\{ # examplesIf}
 bs_get_messages(convo_id = '3ku7w6h4vog2d', limit = 10)
 \dontshow{\}) # examplesIf}
 }

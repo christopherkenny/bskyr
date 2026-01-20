@@ -46,7 +46,7 @@ Delete a follow (un-follow someone)
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) withAutoprint(\{ # examplesIf}
 foll <- bs_follow(subject = 'chriskenny.bsky.social')
 bs_delete_follow(bs_extract_record_key(foll$uri))
 # obviously, you deleted this by mistake and want to follow me

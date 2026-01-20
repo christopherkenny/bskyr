@@ -3,6 +3,7 @@
 * Fixes an issue where OpenGraph links with a size hint would fail downloading. (#32)
 * Improves transformations of starter packs into tibbles with cleaner unnesting. (#31)
 * Allows for more than 25 actors in `bs_get_profile()`, (#29, #30).
+* No longer overly widens results in `bs_get_profile()`. (#42)
 * Improves `bs_get_likes()` processing and makes it clear it is self-only.
 * Adds 3 vignettes. (#12)
   * "Creating Records on Bluesky Social"
@@ -25,6 +26,10 @@
   * `bs_leave_convo()` leaves a conversation
   * `bs_get_convo_availability()` retrieves info on if you can chat with another actor
   * `bs_send_message_batch()` sends a batch of messages to different conversations
+* Fixes an issue where actual numbers with a # sign would cause failures in posting (#45).
+* Avoids creating raw version of files for upload where possible (#16).
+* Always returns `embed` for `bs_get_posts()` (#40, #41).
+* Include all returned information in `bs_get_author_feed()`. Note that this requires adding a prefix to `reply` and `reason` information. (#43)
 
 # bskyr 0.3.0
 

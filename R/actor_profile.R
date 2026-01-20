@@ -62,5 +62,10 @@ bs_get_profile <- function(actors,
     lapply(widen) |>
     purrr::list_rbind() |>
     clean_names() |>
+    dplyr::mutate(
+      dplyr::across(dplyr::any_of(c('associated', 'viewer')), function(x) {
+        lapply(x, widen)
+      })
+    ) |>
     add_req_url(req)
 }

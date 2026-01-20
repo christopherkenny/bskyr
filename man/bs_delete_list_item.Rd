@@ -38,7 +38,7 @@ Delete a list item
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) withAutoprint(\{ # examplesIf}
 lst <- bs_new_list(name = 'test list bskyr', purpose = 'curatelist')
 itm <- bs_new_list_item(subject = 'bskyr.bsky.social', uri = lst$uri)
 bs_delete_list_item(bs_extract_record_key(itm$uri))

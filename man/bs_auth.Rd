@@ -33,7 +33,7 @@ Authenticate a user
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) withAutoprint(\{ # examplesIf}
 bs_auth(user = get_bluesky_user(), pass = get_bluesky_pass())
 \dontshow{\}) # examplesIf}
 }

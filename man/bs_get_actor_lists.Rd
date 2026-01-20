@@ -46,7 +46,7 @@ Get a list of lists that belong to an actor.
 }
 
 \examples{
-\dontshow{if (has_bluesky_pass() && has_bluesky_user()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (has_bluesky_pass() && has_bluesky_user()) withAutoprint(\{ # examplesIf}
 bs_get_actor_lists('profmusgrave.bsky.social')
 bs_get_actor_lists('chriskenny.bsky.social')
 bs_get_actor_lists('pfrazee.com')
