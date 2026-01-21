@@ -12,13 +12,13 @@ authors:
     affiliation: 1
 affiliations:
  - name: Princeton University
-   department: Data-Driven Social Sciences
+   department: Data-Driven Social Science
    address: 169 Nassau Street
    city: Princeton
    region: NJ
    postal-code: '08540 '
    index: 1
-date: 1 August 2025
+date: 20 January 2026
 bibliography: paper.bib
 ---
 
@@ -44,7 +44,6 @@ In contrast, existing packages for Twitter, such as `academictwitteR` [@barrie20
 Due to the decentralized nature of Bluesky Social, users can access a wide range of public data without the restrictions often imposed by centralized platforms.
 This is unlikely to be threatened by future changes to the platform, as Bluesky Social is open-source and designed to be accessible, with final control held by a public benefit corporation.
 
-
 `bskyr` offers a consistent and user-friendly interface to nearly all public endpoints of Bluesky Social.
 It handles authentication, pagination, and API structure internally, allowing users to focus on data retrieval and interaction logic rather than protocol details.
 By supporting both reading data from and writing data to Bluesky, `bskyr` enables reproducible workflows that cover data collection, analysis, and programmatic engagement with the platform.
@@ -54,6 +53,37 @@ Finally, `bskyr` offers flexibility in inputs and outputs.
 All core operations are supported with automatic tidying of data into familiar tidy formats from the `tidyverse` [@wickham2019welcome].
 Users can opt out of cleaning returned data, allowing them to read in raw JSON as native R lists.
 Similarly, users can use `bskyr` to handle the uploads, but pass their own list objects.
+
+# Software design
+
+The package attempts to balance tidiness with a light touch to avoid future-proofing.
+The core goals of Bluesky and downstream clients differ greatly.
+Bluesky's overall service and underlying data are designed to support a complete social media service, while clients primarily download data or create data at a much smaller scale.
+
+R packages on CRAN are limited to monthly updates, whereas upstream APIs can change frequently, so the package is designed to be robust to changes in the Bluesky Social API.
+Most, if not all, processing of data is optional, with an explicit opt-out via the `clean` argument.
+For the remainder, columns are processed based on their length and type.
+This avoids hard-coding any specific names or types that may change in the future.
+Of course, these can still break if a column's meaning is changed upstream, though such changes have been rare.
+This choice requires careful, manual updates any time the upstream API changes meaningfully, but will automatically work for any minor updates.
+
+When development started, `bskyr` was the only R package available for interacting with Bluesky Social.
+It has grown to be the most popular R package for using Bluesky, by far.
+
+# Research impact statement
+
+Provide concise evidence of either realized impact (e.g., external use, integrations, enabled results) or credible near-term significance (novel capability with benchmarks, reproducible materials, and community-readiness signals such as documentation, tests, license, releases, and contribution process).   
+
+Bluesky Social is a relatively newer social media, but has already seen significant adoption.
+Due to the decentralizied design, reserchers can use `bskyr` in support of a wide range of social media research, from running experiments to collecting data for observational studies.
+
+`bskyr` is available on CRAN and has been downloaded at least 20,000 times since its release.
+Every function is fully documented and contains examples of function-by-function use.
+The package contains 3 vignettes which provide long-form examples of how to use the package.
+
+The package itself is available under the MIT license.
+All development occurs on GitHub, where users can find latest releases, report issues, and contribute to the codebase.
+Tests are run after every commit and nightly on CRAN via testthat [@testthat].
 
 # Examples
 
@@ -81,6 +111,11 @@ For example, users can get information on a specific user using the `bs_get_user
 ```r
 bs_get_user('chriskenny.bsky.social')
 ```
+
+# AI usage disclosure
+
+No generative AI tools were used in the development of the software or writing of this manuscript.
+ChatGPT 4o was used in a limited capacity to improve the coverage of the R package vignettes and all suggestions were manually reviewed.
 
 # References
 
