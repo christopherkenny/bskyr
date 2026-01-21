@@ -72,10 +72,8 @@ It has grown to be the most popular R package for using Bluesky, by far.
 
 # Research impact statement
 
-Provide concise evidence of either realized impact (e.g., external use, integrations, enabled results) or credible near-term significance (novel capability with benchmarks, reproducible materials, and community-readiness signals such as documentation, tests, license, releases, and contribution process).   
-
 Bluesky Social is a relatively newer social media, but has already seen significant adoption.
-Due to the decentralizied design, reserchers can use `bskyr` in support of a wide range of social media research, from running experiments to collecting data for observational studies.
+Due to the decentralized design, researchers can use `bskyr` in support of a wide range of social media research, from running experiments to collecting data for observational studies.
 
 `bskyr` is available on CRAN and has been downloaded at least 20,000 times since its release.
 Every function is fully documented and contains examples of function-by-function use.
@@ -83,7 +81,7 @@ The package contains 3 vignettes which provide long-form examples of how to use 
 
 The package itself is available under the MIT license.
 All development occurs on GitHub, where users can find latest releases, report issues, and contribute to the codebase.
-Tests are run after every commit and nightly on CRAN via testthat [@testthat].
+Tests are run after every commit on GitHub Actions and nightly on CRAN via testthat [@testthat].
 
 # Examples
 
