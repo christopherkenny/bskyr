@@ -56,7 +56,7 @@ Similarly, users can use `bskyr` to handle the uploads, but pass their own list 
 
 # Software design
 
-The package attempts to balance tidiness with a light touch to avoid future-proofing.
+The package attempts to balance tidiness with a light touch to avoid blocking future features as they become supported by the upstream API.
 The core goals of Bluesky and downstream clients differ greatly.
 Bluesky's overall service and underlying data are designed to support a complete social media service, while clients primarily download data or create data at a much smaller scale.
 
@@ -67,12 +67,22 @@ This avoids hard-coding any specific names or types that may change in the futur
 Of course, these can still break if a column's meaning is changed upstream, though such changes have been rare.
 This choice requires careful, manual updates any time the upstream API changes meaningfully, but will automatically work for any minor updates.
 
+# State of the field
+
 When development started, `bskyr` was the only R package available for interacting with Bluesky Social.
-It has grown to be the most popular R package for using Bluesky, by far.
+It has grown to be the most downloaded R package for using Bluesky Social.
+`atrrr` [@atrrr], another R package, provides similar functionality for the primary posting and data collection features and is built with automatic parsing of Bluesky's lexicons.
+However, it only exports functions for a smaller set of endpoints than those supported by `bskyr`.
+
+Programmatic access to the Bluesky Social API is available in several other languages.
+Notably, Bluesky Social provides its own official Typescript package and python has a popular AT Protocol SDK [@atproto].
+Given the absence of any R alternatives at the beginning of development, `bskyr` was started to provide R users direct access to Bluesky Social.
+Additionally, studies of social media platforms are frequent in social science research, where the R language is most common.
+Further, developing an R package, rather than using packages from other languages, allows the use of `tidyverse`-style data frames with nested columns, which simplify this type of data analysis workflow in R.
 
 # Research impact statement
 
-Bluesky Social is a relatively newer social media, but has already seen significant adoption.
+Bluesky Social is a relatively new social media platform, but has already seen significant adoption.
 Due to the decentralized design, researchers can use `bskyr` in support of a wide range of social media research, from running experiments to collecting data for observational studies.
 
 `bskyr` is available on CRAN and has been downloaded at least 20,000 times since its release.
