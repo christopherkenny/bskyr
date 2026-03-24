@@ -263,12 +263,12 @@ bs_post <- function(text, images, images_alt,
     # 1. list of embeds manually provided
     if (is.list(embed)) {
       card <- list(
-        '$type' = 'app.bsky.embed.external',
+        '$type' = 'app.bsky.embed.external#external',
         external = embed
       )
     } else if (is.character(embed) && is_online_link(embed)) {
       card <- list(
-        '$type' = 'app.bsky.embed.external',
+        '$type' = 'app.bsky.embed.external#external',
         external = bs_new_embed_external(uri = embed, auth = auth)
       )
     } else if (isTRUE(embed)) {
@@ -276,7 +276,7 @@ bs_post <- function(text, images, images_alt,
       tenor_gif <- parse_tenor_gif(text, user = user, pass = pass, auth = auth)
       if (!is.null(tenor_gif)) {
         card <- list(
-          '$type' = 'app.bsky.embed.external',
+          '$type' = 'app.bsky.embed.external#external',
           external = tenor_gif
         )
       } else {
@@ -284,7 +284,7 @@ bs_post <- function(text, images, images_alt,
         link_card <- parse_first_link(text, auth = auth)
         if (!is.null(link_card)) {
           card <- list(
-            '$type' = 'app.bsky.embed.external',
+            '$type' = 'app.bsky.embed.external#external',
             external = link_card
           )
         }
