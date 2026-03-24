@@ -39,22 +39,20 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.4.1" id="bskyr-041">bskyr 0.4.1<a class="anchor" aria-label="anchor" href="#bskyr-041"></a></h2>
-<ul><li>Patch external embed to fix <a href="https://github.com/christopherkenny/bskyr-cran-bot" class="external-link">bskyr-cran-bot</a>.</li>
-<li>Fix <code><a href="../reference/bs_get_actor_suggestions.html">bs_get_actor_suggestions()</a></code> by passing <code>relativeToDid</code> (the authenticated user’s DID), now required by the API.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.4.0" id="bskyr-040">bskyr 0.4.0<a class="anchor" aria-label="anchor" href="#bskyr-040"></a></h2><p class="text-muted">CRAN release: 2025-10-25</p>
-<ul><li>Fixes an issue where OpenGraph links with a size hint would fail downloading. (<a href="https://github.com/christopherkenny/bskyr/issues/32" class="external-link">#32</a>)</li>
-<li>Improves transformations of starter packs into tibbles with cleaner unnesting. (<a href="https://github.com/christopherkenny/bskyr/issues/31" class="external-link">#31</a>)</li>
-<li>Allows for more than 25 actors in <code><a href="../reference/bs_get_profile.html">bs_get_profile()</a></code>, (<a href="https://github.com/christopherkenny/bskyr/issues/29" class="external-link">#29</a>, <a href="https://github.com/christopherkenny/bskyr/issues/30" class="external-link">#30</a>).</li>
-<li>No longer overly widens results in <code><a href="../reference/bs_get_profile.html">bs_get_profile()</a></code>. (<a href="https://github.com/christopherkenny/bskyr/issues/42" class="external-link">#42</a>)</li>
-<li>Improves <code><a href="../reference/bs_get_likes.html">bs_get_likes()</a></code> processing and makes it clear it is self-only.</li>
-<li>Adds 3 vignettes. (<a href="https://github.com/christopherkenny/bskyr/issues/12" class="external-link">#12</a>)
+<ul><li><p>Patch external embed to fix <a href="https://github.com/christopherkenny/bskyr-cran-bot" class="external-link">bskyr-cran-bot</a>. # bskyr 0.4.0</p></li>
+<li><p>Fixes an issue where OpenGraph links with a size hint would fail downloading. (<a href="https://github.com/christopherkenny/bskyr/issues/32" class="external-link">#32</a>)</p></li>
+<li><p>Improves transformations of starter packs into tibbles with cleaner unnesting. (<a href="https://github.com/christopherkenny/bskyr/issues/31" class="external-link">#31</a>)</p></li>
+<li><p>Allows for more than 25 actors in <code><a href="../reference/bs_get_profile.html">bs_get_profile()</a></code>, (<a href="https://github.com/christopherkenny/bskyr/issues/29" class="external-link">#29</a>, <a href="https://github.com/christopherkenny/bskyr/issues/30" class="external-link">#30</a>).</p></li>
+<li><p>No longer overly widens results in <code><a href="../reference/bs_get_profile.html">bs_get_profile()</a></code>. (<a href="https://github.com/christopherkenny/bskyr/issues/42" class="external-link">#42</a>)</p></li>
+<li><p>Improves <code><a href="../reference/bs_get_likes.html">bs_get_likes()</a></code> processing and makes it clear it is self-only.</p></li>
+<li>
+<p>Adds 3 vignettes. (<a href="https://github.com/christopherkenny/bskyr/issues/12" class="external-link">#12</a>)</p>
 <ul><li>“Creating Records on Bluesky Social”</li>
 <li>“Gathering Data from Bluesky Social”</li>
 <li>“Working with Lists and Starter Packs”</li>
 </ul></li>
-<li>Adds support for direct messages or conversations (aka “convos”).
+<li>
+<p>Adds support for direct messages or conversations (aka “convos”).</p>
 <ul><li>
 <code><a href="../reference/bs_list_convos.html">bs_list_convos()</a></code> lists all conversations</li>
 <li>
@@ -88,10 +86,10 @@
 <li>
 <code><a href="../reference/bs_send_message_batch.html">bs_send_message_batch()</a></code> sends a batch of messages to different conversations</li>
 </ul></li>
-<li>Fixes an issue where actual numbers with a # sign would cause failures in posting (<a href="https://github.com/christopherkenny/bskyr/issues/45" class="external-link">#45</a>).</li>
-<li>Avoids creating raw version of files for upload where possible (<a href="https://github.com/christopherkenny/bskyr/issues/16" class="external-link">#16</a>).</li>
-<li>Always returns <code>embed</code> for <code><a href="../reference/bs_get_posts.html">bs_get_posts()</a></code> (<a href="https://github.com/christopherkenny/bskyr/issues/40" class="external-link">#40</a>, <a href="https://github.com/christopherkenny/bskyr/issues/41" class="external-link">#41</a>).</li>
-<li>Include all returned information in <code><a href="../reference/bs_get_author_feed.html">bs_get_author_feed()</a></code>. Note that this requires adding a prefix to <code>reply</code> and <code>reason</code> information. (<a href="https://github.com/christopherkenny/bskyr/issues/43" class="external-link">#43</a>)</li>
+<li><p>Fixes an issue where actual numbers with a # sign would cause failures in posting (<a href="https://github.com/christopherkenny/bskyr/issues/45" class="external-link">#45</a>).</p></li>
+<li><p>Avoids creating raw version of files for upload where possible (<a href="https://github.com/christopherkenny/bskyr/issues/16" class="external-link">#16</a>).</p></li>
+<li><p>Always returns <code>embed</code> for <code><a href="../reference/bs_get_posts.html">bs_get_posts()</a></code> (<a href="https://github.com/christopherkenny/bskyr/issues/40" class="external-link">#40</a>, <a href="https://github.com/christopherkenny/bskyr/issues/41" class="external-link">#41</a>).</p></li>
+<li><p>Include all returned information in <code><a href="../reference/bs_get_author_feed.html">bs_get_author_feed()</a></code>. Note that this requires adding a prefix to <code>reply</code> and <code>reason</code> information. (<a href="https://github.com/christopherkenny/bskyr/issues/43" class="external-link">#43</a>)</p></li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.3.0" id="bskyr-030">bskyr 0.3.0<a class="anchor" aria-label="anchor" href="#bskyr-030"></a></h2><p class="text-muted">CRAN release: 2025-05-02</p>

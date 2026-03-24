@@ -4,37 +4,38 @@
 
 - Patch external embed to fix
   [bskyr-cran-bot](https://github.com/christopherkenny/bskyr-cran-bot).
-- Fix
-  [`bs_get_actor_suggestions()`](http://christophertkenny.com/bskyr/reference/bs_get_actor_suggestions.md)
-  by passing `relativeToDid` (the authenticated user’s DID), now
-  required by the API.
-
-## bskyr 0.4.0
-
-CRAN release: 2025-10-25
+  \# bskyr 0.4.0
 
 - Fixes an issue where OpenGraph links with a size hint would fail
   downloading.
   ([\#32](https://github.com/christopherkenny/bskyr/issues/32))
+
 - Improves transformations of starter packs into tibbles with cleaner
   unnesting.
   ([\#31](https://github.com/christopherkenny/bskyr/issues/31))
+
 - Allows for more than 25 actors in
   [`bs_get_profile()`](http://christophertkenny.com/bskyr/reference/bs_get_profile.md),
   ([\#29](https://github.com/christopherkenny/bskyr/issues/29),
   [\#30](https://github.com/christopherkenny/bskyr/issues/30)).
+
 - No longer overly widens results in
   [`bs_get_profile()`](http://christophertkenny.com/bskyr/reference/bs_get_profile.md).
   ([\#42](https://github.com/christopherkenny/bskyr/issues/42))
+
 - Improves
   [`bs_get_likes()`](http://christophertkenny.com/bskyr/reference/bs_get_likes.md)
   processing and makes it clear it is self-only.
+
 - Adds 3 vignettes.
   ([\#12](https://github.com/christopherkenny/bskyr/issues/12))
+
   - “Creating Records on Bluesky Social”
   - “Gathering Data from Bluesky Social”
   - “Working with Lists and Starter Packs”
+
 - Adds support for direct messages or conversations (aka “convos”).
+
   - [`bs_list_convos()`](http://christophertkenny.com/bskyr/reference/bs_list_convos.md)
     lists all conversations
   - [`bs_get_messages()`](http://christophertkenny.com/bskyr/reference/bs_get_messages.md)
@@ -67,15 +68,19 @@ CRAN release: 2025-10-25
     retrieves info on if you can chat with another actor
   - [`bs_send_message_batch()`](http://christophertkenny.com/bskyr/reference/bs_send_message_batch.md)
     sends a batch of messages to different conversations
+
 - Fixes an issue where actual numbers with a \# sign would cause
   failures in posting
   ([\#45](https://github.com/christopherkenny/bskyr/issues/45)).
+
 - Avoids creating raw version of files for upload where possible
   ([\#16](https://github.com/christopherkenny/bskyr/issues/16)).
+
 - Always returns `embed` for
   [`bs_get_posts()`](http://christophertkenny.com/bskyr/reference/bs_get_posts.md)
   ([\#40](https://github.com/christopherkenny/bskyr/issues/40),
   [\#41](https://github.com/christopherkenny/bskyr/issues/41)).
+
 - Include all returned information in
   [`bs_get_author_feed()`](http://christophertkenny.com/bskyr/reference/bs_get_author_feed.md).
   Note that this requires adding a prefix to `reply` and `reason`
