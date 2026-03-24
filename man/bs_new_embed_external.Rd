@@ -38,7 +38,7 @@ This will create a list representation of an external embed.
 }
 \section{Lexicon references}{
 
-\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/embed/external.json}{embed/external.json (2024-12-05)}
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/embed/external.json}{embed/external.json (2026-03-24)}
 }
 
 \section{Function introduced}{

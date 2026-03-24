@@ -1,3 +1,8 @@
+# bskyr 0.4.1
+
+* Patch external embed to fix [bskyr-cran-bot](https://github.com/christopherkenny/bskyr-cran-bot).
+* Fix `bs_get_actor_suggestions()` by passing `relativeToDid` (the authenticated user's DID), now required by the API.
+
 # bskyr 0.4.0
 
 * Fixes an issue where OpenGraph links with a size hint would fail downloading. (#32)
@@ -12,7 +17,7 @@
 * Adds support for direct messages or conversations (aka "convos").
   * `bs_list_convos()` lists all conversations
   * `bs_get_messages()` retrieves messages from a conversation
-  * `bs_get_convo()` retrieves details on a conversation  
+  * `bs_get_convo()` retrieves details on a conversation
   * `bs_get_convo_log()` retrieves the log on all conversations
   * `bs_update_read()` sets a conversation to read
   * `bs_update_all_read()` sets all conversations to read
@@ -61,7 +66,7 @@
 * Expands support for working with lists (#9)
   * `bs_new_list()` creates a new list
   * `bs_delete_list()` deletes a list
-  * `bs_new_list_item()` adds someone to a list 
+  * `bs_new_list_item()` adds someone to a list
   * `bs_delete_list_item()` removes someone from a list
 * Adds new helper function `bs_extract_record_key()` to extract the record id or key from a URL or URI.
 * Adds support for getting relationships between users with `bs_get_relationships()`.

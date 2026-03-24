@@ -14,7 +14,7 @@
 #' @concept embed
 #'
 #' @section Lexicon references:
-#' [embed/external.json (2024-12-05)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/embed/external.json)
+#' [embed/external.json (2026-03-24)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/embed/external.json)
 #'
 #' @section Function introduced:
 #' `v0.2.0` (2024-12-05)
@@ -32,9 +32,15 @@
 #' bs_new_embed_external(
 #'   uri = 'https://christophertkenny.com/bskyr/'
 #' )
-bs_new_embed_external <- function(uri, title, description, thumb,
-                                  user = get_bluesky_user(), pass = get_bluesky_pass(),
-                                  auth = bs_auth(user, pass)) {
+bs_new_embed_external <- function(
+  uri,
+  title,
+  description,
+  thumb,
+  user = get_bluesky_user(),
+  pass = get_bluesky_pass(),
+  auth = bs_auth(user, pass)
+) {
   if (missing(uri)) {
     cli::cli_abort('{.arg uri} must not be missing.')
   }
@@ -74,7 +80,11 @@ bs_new_embed_external <- function(uri, title, description, thumb,
         curl::curl_download(details[['image']], tfd)
         details[['image']] <- tfd
       }
-      thumb_url <- bs_upload_blob(details[['image']], auth = auth, clean = FALSE)
+      thumb_url <- bs_upload_blob(
+        details[['image']],
+        auth = auth,
+        clean = FALSE
+      )
 
       thumb <- thumb_url[[1]]$blob
       # thumb <- paste0('https://cdn.bsky.app/img/feed_thumbnail/plain/', user_did, '/', thumb_url[[1]]$blob$ref$`$link`)
@@ -92,14 +102,13 @@ bs_new_embed_external <- function(uri, title, description, thumb,
     }
   }
 
-
   rec <- list(
-    `$type` = 'app.bsky.embed.external',
+    `$type` = 'app.bsky.embed.external#external',
     # external = list(
     uri = uri,
     title = title,
     description = description
-    # )
+    #)
   )
 
   if (!is.null(thumb)) {

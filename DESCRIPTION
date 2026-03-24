@@ -1,6 +1,6 @@
 Package: bskyr
 Title: Interact with 'Bluesky' Social
-Version: 0.4.0
+Version: 0.4.1
 Authors@R:
     person(given = "Christopher T.",
            family = "Kenny",
@@ -8,8 +8,8 @@ Authors@R:
            email = "ctkenny@proton.me",
            comment = c(ORCID = "0000-0002-9386-6860"))
 Description: Collect data from and make posts on 'Bluesky' Social
-    via the Hypertext Transfer Protocol (HTTP) Application Programming 
-    Interface (API), as documented at <https://atproto.com/specs/xrpc>. This 
+    via the Hypertext Transfer Protocol (HTTP) Application Programming
+    Interface (API), as documented at <https://atproto.com/specs/xrpc>. This
     further supports broader queries to the Authenticated Transfer (AT) Protocol
     <https://atproto.com/> which 'Bluesky' Social relies on. Data is returned in a
     tidy format and posts can be made using a simple interface.
@@ -46,6 +46,6 @@ URL: https://github.com/christopherkenny/bskyr, http://christophertkenny.com/bsk
 BugReports: https://github.com/christopherkenny/bskyr/issues
 Config/testthat/edition: 3
 Language: en-US
-Depends: 
+Depends:
     R (>= 4.2.0)
 VignetteBuilder: knitr

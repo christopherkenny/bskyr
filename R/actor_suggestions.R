@@ -10,7 +10,7 @@
 #' @concept actor
 #'
 #' @section Lexicon references:
-#' [actor/getSuggestions.json (2023-10-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/actor/getSuggestions.json)
+#' [actor/getSuggestions.json (2026-03-24)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/actor/getSuggestions.json)
 #'
 #' @section Function introduced:
 #' `v0.0.1` (2023-10-01)
@@ -37,7 +37,8 @@ bs_get_actor_suggestions <- function(cursor = NULL, limit = NULL,
   req <- httr2::request('https://bsky.social/xrpc/app.bsky.actor.getSuggestions') |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(
-      limit = limit
+      limit = limit,
+      relativeToDid = auth$did
     )
 
   resp <- repeat_request(req, req_seq, cursor, 'Retrieving suggestions')
