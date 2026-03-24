@@ -1,5 +1,14 @@
 # Changelog
 
+## bskyr 0.4.1
+
+- Patch external embed to fix
+  [bskyr-cran-bot](https://github.com/christopherkenny/bskyr-cran-bot).
+- Fix
+  [`bs_get_actor_suggestions()`](http://christophertkenny.com/bskyr/reference/bs_get_actor_suggestions.md)
+  by passing `relativeToDid` (the authenticated user’s DID), now
+  required by the API.
+
 ## bskyr 0.4.0
 
 CRAN release: 2025-10-25
@@ -31,7 +40,7 @@ CRAN release: 2025-10-25
   - [`bs_get_messages()`](http://christophertkenny.com/bskyr/reference/bs_get_messages.md)
     retrieves messages from a conversation
   - [`bs_get_convo()`](http://christophertkenny.com/bskyr/reference/bs_get_convo.md)
-    retrieves details on a conversation  
+    retrieves details on a conversation
   - [`bs_get_convo_log()`](http://christophertkenny.com/bskyr/reference/bs_get_convo_log.md)
     retrieves the log on all conversations
   - [`bs_update_read()`](http://christophertkenny.com/bskyr/reference/bs_update_read.md)

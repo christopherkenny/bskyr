@@ -53,7 +53,7 @@ of suggested accounts to follow
 ## Lexicon references
 
 [actor/getSuggestions.json
-(2023-10-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/actor/getSuggestions.json)
+(2026-03-24)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/actor/getSuggestions.json)
 
 ## Function introduced
 

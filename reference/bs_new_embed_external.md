@@ -56,7 +56,7 @@ a list representation of an external embed
 ## Lexicon references
 
 [embed/external.json
-(2024-12-05)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/embed/external.json)
+(2026-03-24)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/embed/external.json)
 
 ## Function introduced
 
