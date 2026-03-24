@@ -94,7 +94,7 @@ bs_new_embed_external <- function(uri, title, description, thumb,
 
 
   rec <- list(
-    `$type` = 'app.bsky.embed.external',
+    `$type` = 'app.bsky.embed.external#external',
     # external = list(
     uri = uri,
     title = title,
