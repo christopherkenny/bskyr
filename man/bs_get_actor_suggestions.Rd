@@ -34,7 +34,7 @@ Get a list of actors suggested for following
 }
 \section{Lexicon references}{
 
-\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/actor/getSuggestions.json}{actor/getSuggestions.json (2026-03-24)}
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/actor/getSuggestions.json}{actor/getSuggestions.json (2023-10-01)}
 }
 
 \section{Function introduced}{

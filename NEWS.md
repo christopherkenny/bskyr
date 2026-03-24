@@ -1,8 +1,6 @@
 # bskyr 0.4.1
 
 * Patch external embed to fix [bskyr-cran-bot](https://github.com/christopherkenny/bskyr-cran-bot).
-* Fix `bs_get_actor_suggestions()` by passing `relativeToDid` (the authenticated user's DID), now required by the API.
-
 # bskyr 0.4.0
 
 * Fixes an issue where OpenGraph links with a size hint would fail downloading. (#32)
