@@ -5,7 +5,7 @@ Authenticate a user
 ## Usage
 
 ``` r
-bs_auth(user, pass, save_auth = TRUE)
+bs_auth(user, pass, host = get_bluesky_pds(), save_auth = TRUE)
 ```
 
 ## Arguments
@@ -17,6 +17,11 @@ bs_auth(user, pass, save_auth = TRUE)
 - pass:
 
   Character. App password to log in with.
+
+- host:
+
+  Character. Base URL of the user's Personal Data Server. Defaults to
+  [`get_bluesky_pds()`](http://christophertkenny.com/bskyr/reference/pds.md).
 
 - save_auth:
 

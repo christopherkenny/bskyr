@@ -9,6 +9,7 @@
 <url><loc>http://christophertkenny.com/bskyr/authors.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/index.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/news/index.html</loc></url>
+<url><loc>http://christophertkenny.com/bskyr/reference/appview.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_accept_convo.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_add_reaction.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_auth.html</loc></url>
@@ -91,7 +92,10 @@
 <url><loc>http://christophertkenny.com/bskyr/reference/bs_url_to_uri.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/index.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/pass.html</loc></url>
+<url><loc>http://christophertkenny.com/bskyr/reference/pds.html</loc></url>
+<url><loc>http://christophertkenny.com/bskyr/reference/set_bluesky_appview.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/set_bluesky_pass.html</loc></url>
+<url><loc>http://christophertkenny.com/bskyr/reference/set_bluesky_pds.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/set_bluesky_user.html</loc></url>
 <url><loc>http://christophertkenny.com/bskyr/reference/user.html</loc></url>
 </urlset>

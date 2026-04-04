@@ -38,6 +38,11 @@ Functions related to an actor (a user)
 
 Functions for authenticating `bskyr` users
 
+- [`has_bluesky_appview()`](http://christophertkenny.com/bskyr/reference/appview.md)
+  [`get_bluesky_appview()`](http://christophertkenny.com/bskyr/reference/appview.md)
+  [`bs_get_appview()`](http://christophertkenny.com/bskyr/reference/appview.md)
+  [`bs_has_appview()`](http://christophertkenny.com/bskyr/reference/appview.md)
+  : Check or Get Bluesky AppView
 - [`bs_auth()`](http://christophertkenny.com/bskyr/reference/bs_auth.md)
   : Authenticate a user
 - [`has_bluesky_pass()`](http://christophertkenny.com/bskyr/reference/pass.md)
@@ -45,9 +50,20 @@ Functions for authenticating `bskyr` users
   [`bs_get_pass()`](http://christophertkenny.com/bskyr/reference/pass.md)
   [`bs_has_pass()`](http://christophertkenny.com/bskyr/reference/pass.md)
   : Check or Get Bluesky App Password
+- [`has_bluesky_pds()`](http://christophertkenny.com/bskyr/reference/pds.md)
+  [`get_bluesky_pds()`](http://christophertkenny.com/bskyr/reference/pds.md)
+  [`bs_get_pds()`](http://christophertkenny.com/bskyr/reference/pds.md)
+  [`bs_has_pds()`](http://christophertkenny.com/bskyr/reference/pds.md)
+  : Check or Get Bluesky PDS
+- [`set_bluesky_appview()`](http://christophertkenny.com/bskyr/reference/set_bluesky_appview.md)
+  [`bs_set_appview()`](http://christophertkenny.com/bskyr/reference/set_bluesky_appview.md)
+  : Adds Bluesky AppView to .Renviron.
 - [`set_bluesky_pass()`](http://christophertkenny.com/bskyr/reference/set_bluesky_pass.md)
   [`bs_set_pass()`](http://christophertkenny.com/bskyr/reference/set_bluesky_pass.md)
   : Add Entry to Renviron
+- [`set_bluesky_pds()`](http://christophertkenny.com/bskyr/reference/set_bluesky_pds.md)
+  [`bs_set_pds()`](http://christophertkenny.com/bskyr/reference/set_bluesky_pds.md)
+  : Adds Bluesky PDS to .Renviron.
 - [`set_bluesky_user()`](http://christophertkenny.com/bskyr/reference/set_bluesky_user.md)
   [`bs_set_user()`](http://christophertkenny.com/bskyr/reference/set_bluesky_user.md)
   : Adds Bluesky User to .Renviron.
