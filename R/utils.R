@@ -9,6 +9,15 @@ lrj <- function() { # nocov start
   dplyr::glimpse(x)
 } # nocov end
 
+# service URL helpers ----
+bs_pds <- function(auth) {
+  if (!is.null(auth$bskyr_pds)) {
+    auth$bskyr_pds
+  } else {
+    get_bluesky_pds()
+  }
+}
+
 # general utils ----
 clean_names <- function(x) {
   out <- x |>

@@ -42,7 +42,7 @@ bs_get_post_likes <- function(uri, cursor = NULL, limit = NULL,
     req_seq <- list(NULL)
   }
 
-  req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.getLikes') |>
+  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.feed.getLikes')) |>
     httr2::req_url_query(uri = uri) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(

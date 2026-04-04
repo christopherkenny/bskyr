@@ -43,7 +43,7 @@ bs_get_feed <- function(feed, cursor = NULL, limit = NULL,
   }
 
 
-  req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.getFeed') |>
+  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.feed.getFeed')) |>
     httr2::req_url_query(feed = feed) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(

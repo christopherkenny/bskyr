@@ -49,7 +49,7 @@ bs_search_posts <- function(query,
     req_seq <- list(NULL)
   }
 
-  req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.searchPosts') |>
+  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.feed.searchPosts')) |>
     httr2::req_url_query(
       q = query,
       sort = sort,

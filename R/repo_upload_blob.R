@@ -32,7 +32,7 @@ bs_upload_blob <- function(blob,
   mime_types <- mime::guess_type(blob)
 
   out <- lapply(seq_along(blob), function(i) {
-    req <- httr2::request('https://bsky.social/xrpc/com.atproto.repo.uploadBlob') |>
+    req <- httr2::request(paste0(bs_pds(auth), '/xrpc/com.atproto.repo.uploadBlob')) |>
       httr2::req_auth_bearer_token(token = auth$accessJwt) |>
       httr2::req_headers(
         'Content-Type' = mime_types[[i]]

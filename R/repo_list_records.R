@@ -39,7 +39,7 @@ bs_list_records <- function(repo, collection, cursor = NULL, limit = NULL,
     req_seq <- list(NULL)
   }
 
-  req <- httr2::request('https://bsky.social/xrpc/com.atproto.repo.listRecords') |>
+  req <- httr2::request(paste0(bs_pds(auth), '/xrpc/com.atproto.repo.listRecords')) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(
       repo = repo,

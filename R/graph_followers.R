@@ -41,7 +41,7 @@ bs_get_followers <- function(actor, cursor = NULL, limit = NULL,
     req_seq <- list(NULL)
   }
 
-  req <- httr2::request('https://bsky.social/xrpc/app.bsky.graph.getFollowers') |>
+  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.graph.getFollowers')) |>
     httr2::req_url_query(actor = actor) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(

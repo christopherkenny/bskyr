@@ -35,7 +35,7 @@ bs_get_mutes <- function(
     req_seq <- list(NULL)
   }
 
-  req <- httr2::request('https://bsky.social/xrpc/app.bsky.graph.getMutes') |>
+  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.graph.getMutes')) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(
       limit = limit

@@ -1,6 +1,14 @@
+# bskyr 0.5.0
+
+* Adds support for custom Personal Data Servers (PDS). (#51)
+  * `bs_auth()` gains `host` and `appview` parameters.
+  * New `set_bluesky_pds()`, `get_bluesky_pds()`,`has_bluesky_pds()` functions read from `BLUESKY_APP_PDS`.
+  * There is no change in the default behavior.
+
 # bskyr 0.4.1
 
 * Patch external embed to fix [bskyr-cran-bot](https://github.com/christopherkenny/bskyr-cran-bot).
+
 # bskyr 0.4.0
 
 * Fixes an issue where OpenGraph links with a size hint would fail downloading. (#32)

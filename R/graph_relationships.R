@@ -57,7 +57,7 @@ bs_get_relationships <- function(actor, others,
   }
 
 
-  req <- httr2::request('https://bsky.social/xrpc/app.bsky.graph.getRelationships') |>
+  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.graph.getRelationships')) |>
     httr2::req_url_query(
       actor = actor
     ) |>
@@ -66,7 +66,7 @@ bs_get_relationships <- function(actor, others,
   resp <- lapply(
     others,
     function(x) {
-      req <- httr2::request('https://bsky.social/xrpc/app.bsky.graph.getRelationships') |>
+      req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.graph.getRelationships')) |>
         httr2::req_url_query(
           actor = actor
         )

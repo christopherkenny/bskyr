@@ -34,7 +34,7 @@ bs_resolve_handle <- function(handle,
     }
   }
 
-  req <- httr2::request('https://bsky.social/xrpc/com.atproto.identity.resolveHandle') |>
+  req <- httr2::request(paste0(bs_pds(auth), '/xrpc/com.atproto.identity.resolveHandle')) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_method('GET') |>
     httr2::req_url_query(

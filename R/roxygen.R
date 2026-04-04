@@ -10,6 +10,14 @@ template_var_auth <- function() { # nocov start
   'Authentication information. Defaults to `bs_auth(user, pass)`.'
 } # nocov end
 
+template_var_host <- function() { # nocov start
+  "Character. Base URL of the user's Personal Data Server. Defaults to `get_bluesky_pds()`."
+} # nocov end
+
+template_var_appview <- function() { # nocov start
+  "Character. Base URL of the AppView server. Defaults to `get_bluesky_appview()`."
+} # nocov end
+
 template_var_cursor <- function() { # nocov start
   'Character, length 1. A cursor property from a prior response. Default: `NULL`.'
 } # nocov end

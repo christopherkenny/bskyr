@@ -32,7 +32,7 @@ bs_get_profile <- function(actors,
   }
 
   # base request ----
-  base_url <- 'https://bsky.social/xrpc/app.bsky.actor.getProfiles'
+  base_url <- paste0(get_bluesky_appview(), '/xrpc/app.bsky.actor.getProfiles')
 
   req <- httr2::request(base_url) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt)

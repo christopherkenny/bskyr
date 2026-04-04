@@ -53,7 +53,7 @@ bs_get_record <- function(repo = NULL, collection = NULL, rkey = NULL,
   }
 
   # make the request once we've collected everything
-  req <- httr2::request('https://bsky.social/xrpc/com.atproto.repo.getRecord') |>
+  req <- httr2::request(paste0(bs_pds(auth), '/xrpc/com.atproto.repo.getRecord')) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(
       repo = repo,

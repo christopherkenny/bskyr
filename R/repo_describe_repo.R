@@ -26,7 +26,7 @@ bs_describe_repo <- function(repo,
     repo <- auth$did
   }
 
-  req <- httr2::request('https://bsky.social/xrpc/com.atproto.repo.describeRepo') |>
+  req <- httr2::request(paste0(bs_pds(auth), '/xrpc/com.atproto.repo.describeRepo')) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(
       repo = repo

@@ -39,8 +39,8 @@ bs_search_actors <- function(query, typeahead = FALSE, cursor = NULL, limit = NU
 
   base_url <- ifelse(
     typeahead,
-    'https://bsky.social/xrpc/app.bsky.actor.searchActors',
-    'https://bsky.social/xrpc/app.bsky.actor.searchActorsTypeahead'
+    paste0(get_bluesky_appview(), '/xrpc/app.bsky.actor.searchActors'),
+    paste0(get_bluesky_appview(), '/xrpc/app.bsky.actor.searchActorsTypeahead')
   )
   req <- httr2::request(base_url) |>
     httr2::req_url_query(q = query) |>

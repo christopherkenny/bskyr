@@ -2,6 +2,7 @@
 #'
 #' @param user Character. User name to log in with.
 #' @param pass Character. App password to log in with.
+#' @param host `r template_var_host()`
 #' @param save_auth Logical. Should the authentication information be saved? If
 #' `TRUE`, it tries to reload from the cache. If a file is over 10 minutes old,
 #' it will not be read. Set `save_auth = NULL` to force the token to refresh and
@@ -20,7 +21,7 @@
 #'
 #' @examplesIf has_bluesky_pass() && has_bluesky_user()
 #' bs_auth(user = get_bluesky_user(), pass = get_bluesky_pass())
-bs_auth <- function(user, pass, save_auth = TRUE) {
+bs_auth <- function(user, pass, host = get_bluesky_pds(), save_auth = TRUE) {
   if (missing(user)) {
     cli::cli_abort('{.arg user} must not be missing.')
   }
@@ -42,16 +43,16 @@ bs_auth <- function(user, pass, save_auth = TRUE) {
   validate_pass(pass)
 
   if (save_auth) {
-    auth <- bs_cache_auth(user, pass)
+    auth <- bs_cache_auth(user, pass, host)
   } else {
-    auth <- bs_create_auth(user, pass)
+    auth <- bs_create_auth(user, pass, host)
   }
 
   invisible(auth)
 }
 
-bs_create_auth <- function(user, pass) {
-  req <- httr2::request('https://bsky.social/xrpc/com.atproto.server.createSession') |>
+bs_create_auth <- function(user, pass, host = get_bluesky_pds()) {
+  req <- httr2::request(paste0(host, '/xrpc/com.atproto.server.createSession')) |>
     httr2::req_body_json(
       data = list(
         identifier = user, password = pass
@@ -63,13 +64,14 @@ bs_create_auth <- function(user, pass) {
     httr2::resp_body_json() |>
     invisible()
 
+  out$bskyr_pds <- host
   out$bskyr_created_time <- lubridate::now()
 
   out
 }
 
 # read from existing auth or create if too old
-bs_cache_auth <- function(user, pass) {
+bs_cache_auth <- function(user, pass, host = get_bluesky_pds()) {
   fs::dir_create(fs::path_dir(bs_auth_file()))
   if (fs::file_exists(bs_auth_file())) {
     # if (bs_has_user()) {
@@ -82,7 +84,7 @@ bs_cache_auth <- function(user, pass) {
     }
   }
 
-  auth <- bs_create_auth(user, pass)
+  auth <- bs_create_auth(user, pass, host)
   # if (bs_has_user()) {
   #   httr2::secret_write_rds(auth, path = bs_auth_file(), key = 'BLUESKY_APP_USER')
   # } else {

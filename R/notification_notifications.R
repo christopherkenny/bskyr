@@ -34,7 +34,7 @@ bs_get_notifications <- function(cursor = NULL, limit = NULL,
     req_seq <- list(NULL)
   }
 
-  req <- httr2::request('https://bsky.social/xrpc/app.bsky.notification.listNotifications') |>
+  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.notification.listNotifications')) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(
       limit = limit

@@ -36,7 +36,7 @@ bs_get_feed_generators <- function(feeds,
   }
 
 
-  req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.getFeedGenerators')
+  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.feed.getFeedGenerators'))
 
   feeds <- feeds |>
     as.list() |>

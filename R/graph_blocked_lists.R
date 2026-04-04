@@ -34,7 +34,7 @@ bs_get_blocked_lists <- function(cursor = NULL, limit = NULL,
     req_seq <- list(NULL)
   }
 
-  req <- httr2::request('https://bsky.social/xrpc/app.bsky.graph.getListMutes') |>
+  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.graph.getListMutes')) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(
       limit = limit

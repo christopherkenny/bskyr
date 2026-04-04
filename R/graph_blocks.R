@@ -34,7 +34,7 @@ bs_get_blocks <- function(cursor = NULL, limit = NULL,
     req_seq <- list(NULL)
   }
 
-  req <- httr2::request('https://bsky.social/xrpc/app.bsky.graph.getBlocks') |>
+  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.graph.getBlocks')) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_url_query(
       limit = limit

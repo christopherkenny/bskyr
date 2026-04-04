@@ -41,7 +41,7 @@ bs_get_starter_packs <- function(starter_packs,
     bs_url_to_uri(x, auth = auth)
   })
 
-  req <- httr2::request('https://bsky.social/xrpc/app.bsky.graph.getStarterPacks')
+  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.graph.getStarterPacks'))
 
   uris <- starter_packs |>
     as.list() |>

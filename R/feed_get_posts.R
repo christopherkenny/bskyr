@@ -42,7 +42,7 @@ bs_get_posts <- function(uris,
     as.list() |>
     purrr::set_names('uris')
 
-  req <- httr2::request('https://bsky.social/xrpc/app.bsky.feed.getPosts')
+  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.feed.getPosts'))
   req <- rlang::inject(httr2::req_url_query(req, !!!uris))
   req <- req |>
     httr2::req_auth_bearer_token(token = auth$accessJwt)

@@ -38,7 +38,7 @@ bs_like <- function(post,
   )
 
 
-  req <- httr2::request('https://bsky.social/xrpc/com.atproto.repo.createRecord') |>
+  req <- httr2::request(paste0(bs_pds(auth), '/xrpc/com.atproto.repo.createRecord')) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>
     httr2::req_body_json(
       data = list(

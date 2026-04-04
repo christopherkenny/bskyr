@@ -4,12 +4,14 @@
 \alias{bs_auth}
 \title{Authenticate a user}
 \usage{
-bs_auth(user, pass, save_auth = TRUE)
+bs_auth(user, pass, host = get_bluesky_pds(), save_auth = TRUE)
 }
 \arguments{
 \item{user}{Character. User name to log in with.}
 
 \item{pass}{Character. App password to log in with.}
+
+\item{host}{Character. Base URL of the user's Personal Data Server. Defaults to \code{get_bluesky_pds()}.}
 
 \item{save_auth}{Logical. Should the authentication information be saved? If
 \code{TRUE}, it tries to reload from the cache. If a file is over 10 minutes old,
