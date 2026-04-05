@@ -41,8 +41,9 @@
 <h2 class="pkg-version" data-toc-text="0.5.0" id="bskyr-050">bskyr 0.5.0<a class="anchor" aria-label="anchor" href="#bskyr-050"></a></h2>
 <ul><li>Adds support for custom Personal Data Servers (PDS). (<a href="https://github.com/christopherkenny/bskyr/issues/51" class="external-link">#51</a>)
 <ul><li>
-<code><a href="../reference/bs_auth.html">bs_auth()</a></code> gains <code>host</code> and <code>appview</code> parameters.</li>
-<li>New <code><a href="../reference/set_bluesky_pds.html">set_bluesky_pds()</a></code>, <code><a href="../reference/pds.html">get_bluesky_pds()</a></code>,<code><a href="../reference/pds.html">has_bluesky_pds()</a></code> functions read from <code>BLUESKY_APP_PDS</code>.</li>
+<code><a href="../reference/bs_auth.html">bs_auth()</a></code> gains a <code>host</code> parameter.</li>
+<li>New <code><a href="../reference/set_bluesky_pds.html">set_bluesky_pds()</a></code>, <code><a href="../reference/pds.html">get_bluesky_pds()</a></code>, <code><a href="../reference/pds.html">has_bluesky_pds()</a></code> functions read from <code>BLUESKY_APP_PDS</code>.</li>
+<li>New <code><a href="../reference/set_bluesky_appview.html">set_bluesky_appview()</a></code>, <code><a href="../reference/appview.html">get_bluesky_appview()</a></code>, <code><a href="../reference/appview.html">has_bluesky_appview()</a></code> functions read from <code>BLUESKY_APP_APPVIEW</code>. Users on a custom PDS should set this as well for read operations (e.g. <code><a href="../reference/bs_get_follows.html">bs_get_follows()</a></code>).</li>
 <li>There is no change in the default behavior.</li>
 </ul></li>
 </ul></div>

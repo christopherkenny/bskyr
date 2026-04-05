@@ -5,11 +5,19 @@
 - Adds support for custom Personal Data Servers (PDS).
   ([\#51](https://github.com/christopherkenny/bskyr/issues/51))
   - [`bs_auth()`](http://christophertkenny.com/bskyr/reference/bs_auth.md)
-    gains `host` and `appview` parameters.
+    gains a `host` parameter.
   - New
     [`set_bluesky_pds()`](http://christophertkenny.com/bskyr/reference/set_bluesky_pds.md),
-    [`get_bluesky_pds()`](http://christophertkenny.com/bskyr/reference/pds.md),[`has_bluesky_pds()`](http://christophertkenny.com/bskyr/reference/pds.md)
+    [`get_bluesky_pds()`](http://christophertkenny.com/bskyr/reference/pds.md),
+    [`has_bluesky_pds()`](http://christophertkenny.com/bskyr/reference/pds.md)
     functions read from `BLUESKY_APP_PDS`.
+  - New
+    [`set_bluesky_appview()`](http://christophertkenny.com/bskyr/reference/set_bluesky_appview.md),
+    [`get_bluesky_appview()`](http://christophertkenny.com/bskyr/reference/appview.md),
+    [`has_bluesky_appview()`](http://christophertkenny.com/bskyr/reference/appview.md)
+    functions read from `BLUESKY_APP_APPVIEW`. Users on a custom PDS
+    should set this as well for read operations
+    (e.g. [`bs_get_follows()`](http://christophertkenny.com/bskyr/reference/bs_get_follows.md)).
   - There is no change in the default behavior.
 
 ## bskyr 0.4.1
