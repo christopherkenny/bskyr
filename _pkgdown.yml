@@ -1,6 +1,7 @@
 url: http://christophertkenny.com/bskyr/
 template:
   bootstrap: 5
+  package: ctktemplate
 reference:
 - title: "Interact with posts"
   desc: "Create, edit, and delete records including posts, reposts, and likes"
