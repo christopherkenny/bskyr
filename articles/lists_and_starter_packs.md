@@ -26,6 +26,7 @@ and
 or environment variables), you can authenticate once at the start:
 
 ``` r
+
 library(bskyr)
 auth <- bs_auth(user = bs_get_user(), pass = bs_get_pass())
 ```
@@ -39,6 +40,7 @@ entry includes fields like its `uri` (the unique AT URI for the list
 record), `name`, `purpose`, and any description:
 
 ``` r
+
 # Fetch all lists created by a given user (actor)
 user_lists <- bs_get_actor_lists('bskyr.bsky.social')
 user_lists
@@ -48,6 +50,7 @@ You can inspect the details of a particular list using its URI. For
 example, to get a view of the first list from the above results:
 
 ``` r
+
 first_list_uri <- user_lists$uri[1] # AT URI of the first list
 first_list <- bs_get_list(first_list_uri) # retrieve detailed list info
 first_list
@@ -61,6 +64,7 @@ provides mechanisms to mute or block entire lists. You can retrieve
 lists that the current user has muted or blocked via:
 
 ``` r
+
 bs_get_muted_lists()
 bs_get_blocked_lists()
 ```
@@ -82,6 +86,7 @@ Here we’ll make a list on redistricting experts. My day job is
 redistricting research, so I’ll add some of my colleagues to the list.
 
 ``` r
+
 # Create a new curated list
 new_list <- bs_new_list(
   name = '[vignette] Redistricting Experts',
@@ -97,6 +102,7 @@ specified list. You must provide the `subject` (the account to add) and
 the list’s `uri`:
 
 ``` r
+
 # Add members to the list
 bs_new_list_item(
   subject = 'chriskenny.bsky.social',
@@ -122,6 +128,7 @@ Here, we’ll add a new member to the list and then remove it. I’ll use
 this testing account (`bskyr.bsky.social`) as an example:
 
 ``` r
+
 fourth_item <- bs_new_list_item(
   subject = 'bskyr.bsky.social', uri = new_list$uri
 )
@@ -135,6 +142,7 @@ with the list’s record key. As with items, you can obtain the list’s
 record key from its `uri`:
 
 ``` r
+
 list_rkey <- bs_extract_record_key(new_list$uri)
 bs_delete_list(list_rkey)
 ```
@@ -162,6 +170,7 @@ This is analogous to fetching lists, but for packs. It returns a
 `tibble` of the user’s starter pack records:
 
 ``` r
+
 user_packs <- bs_get_actor_starter_packs('chriskenny.bsky.social')
 user_packs |>
   dplyr::select(record_name, record_description)
@@ -174,6 +183,7 @@ This will return the pack’s metadata along with the contents (the list
 of accounts and any feeds it includes):
 
 ``` r
+
 bs_get_starter_pack('https://bsky.app/starter-pack/jkertzer.bsky.social/3laywns2q2v27') |>
   dplyr::select(record_name, record_description)
 ```
@@ -186,6 +196,7 @@ starter pack URIs to
 to retrieve them all at once:
 
 ``` r
+
 bs_get_starter_packs(c(
   'at://did:plc:bmc56x6ksb7o7sdkq2fgm7se/app.bsky.graph.starterpack/3laywns2q2v27',
   'https://bsky.app/starter-pack/chriskenny.bsky.social/3lb3g5veo2z2r'
@@ -212,6 +223,7 @@ a `feeds` vector of up to 3 feed generator URIs to include.
 Here’s an example:
 
 ``` r
+
 pack <- bs_new_starter_pack(
   name = '[vignette] Redistricting people',
   list = new_list$uri, # use an existing list of accounts
@@ -232,6 +244,7 @@ If a starter pack is no longer needed, you can delete it with
 As with lists, you must supply the record key of the pack. For example:
 
 ``` r
+
 # Delete the starter pack by its record key
 pack_rkey <- bs_extract_record_key(pack$uri)
 bs_delete_starter_pack(pack_rkey)

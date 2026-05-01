@@ -20,6 +20,7 @@ threads, accessing social relationships, and examining likes or reposts.
 Begin by loading the `bskyr` package:
 
 ``` r
+
 library(bskyr)
 ```
 
@@ -34,6 +35,7 @@ and
 authenticated session with:.
 
 ``` r
+
 auth <- bs_auth(user = bs_get_user(), pass = bs_get_pass())
 ```
 
@@ -57,6 +59,7 @@ For instance, to fetch your current preference settings (such as content
 filtering preferences):
 
 ``` r
+
 bs_get_preferences()
 ```
 
@@ -103,6 +106,7 @@ of `chriskenny.bsky.social`, use
 [`bs_get_profile()`](http://christophertkenny.com/bskyr/reference/bs_get_profile.md).
 
 ``` r
+
 profile <- bs_get_profile('chriskenny.bsky.social')
 profile
 ```
@@ -111,6 +115,7 @@ This returns metadata such as the user’s handle, display name,
 description, and follower counts. To retrieve multiple profiles:.
 
 ``` r
+
 bs_get_profile(actors = c('chriskenny.bsky.social', 'simko.bsky.social'))
 ```
 
@@ -121,6 +126,7 @@ To access posts authored by a user, use
 which queries the `app.bsky.feed.getAuthorFeed` lexicon:
 
 ``` r
+
 feed <- bs_get_author_feed('chriskenny.bsky.social')
 feed |>
   dplyr::select(uri, like_count, reply_count)
@@ -138,6 +144,7 @@ If the user has more posts, the `cursor` returned can be used to
 paginate:
 
 ``` r
+
 more_posts <- bs_get_author_feed('chriskenny.bsky.social', cursor = attr(feed, 'cursor')$cursor)
 ```
 
@@ -160,6 +167,7 @@ For example, using a post URL (as you might copy from the Bluesky app or
 web):.
 
 ``` r
+
 thread <- bs_get_post_thread('at://did:plc:ic6zqvuw5ulmfpjiwnhsr2ns/app.bsky.feed.post/3k7qmjev5lr2s')
 thread
 ```
@@ -170,6 +178,7 @@ post URI is known,
 can be used to retrieve it directly:.
 
 ``` r
+
 post <- bs_get_posts('https://bsky.app/profile/chriskenny.bsky.social/post/3loagm2phgk2t')
 post$record[[1]] |>
   dplyr::select(`$type`, text, created_at)
@@ -194,6 +203,7 @@ Both functions query the corresponding lexicons
 For example, to get all followers of `chriskenny.bsky.social`:
 
 ``` r
+
 followers <- bs_get_followers('chriskenny.bsky.social')
 followers
 ```
@@ -212,6 +222,7 @@ Similarly, to get the list of accounts that `chriskenny.bsky.social`
 follows (his “following” list):
 
 ``` r
+
 follows <- bs_get_follows('chriskenny.bsky.social')
 follows
 ```
@@ -237,6 +248,7 @@ instead of posts the user authored, it gives posts the user liked. For
 example:.
 
 ``` r
+
 liked_posts <- bs_get_likes('bskyr.bsky.social')
 liked_posts |>
   dplyr::select(author_handle, record_text)
@@ -258,6 +270,7 @@ URL. For example, if we want to find out who liked one of my posts
 (identified by a known URI):.
 
 ``` r
+
 bs_get_post_likes('at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.feed.post/3lnghukd7vk22')
 ```
 
@@ -276,6 +289,7 @@ reposted that post. For brevity, we won’t show a full example, but it
 works in much the same way.
 
 ``` r
+
 bs_get_reposts('at://did:plc:wpe35pganb6d4pg4ekmfy6u5/app.bsky.feed.post/3lnghukd7vk22')
 ```
 

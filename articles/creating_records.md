@@ -30,6 +30,7 @@ and
 or environment variables), you can authenticate once at the start:
 
 ``` r
+
 library(bskyr)
 auth <- bs_auth(user = bs_get_user(), pass = bs_get_pass())
 ```
@@ -51,6 +52,7 @@ unique URI and other metadata.
 For example, here’s how to create a simple text-only post:
 
 ``` r
+
 bs_post(text = '[vignette] This is a post from R using `bskyr` on Creating Records.')
 ```
 
@@ -73,6 +75,7 @@ quoted record).
 For example, to quote another user’s post while adding your own text:
 
 ``` r
+
 bs_post(
   text = '[vignette] This is a quote from R using `bskyr` on Creating Records',
   quote = 'https://bsky.app/profile/bskyr.bsky.social/post/3lpem3br3qn2z'
@@ -109,6 +112,7 @@ function makes it easy to attach these:
 For example, to create a post with an image attached:
 
 ``` r
+
 bs_post(
   text = '[vignette] This is a post with an image from R using `bskyr` on Creating Records',
   images = system.file('help/figures/logo.png', package = 'bskyr'),
@@ -126,6 +130,7 @@ And here is an example of a post that includes an external link in the
 text:
 
 ``` r
+
 bs_post(
   text = '[vignette] This is a post with a link from R using `bskyr` on Creating Records. Check out the package at https://christophertkenny.com/bskyr/.',
 )
@@ -155,6 +160,7 @@ its parent (setting the appropriate reply thread reference in the
 For example, to reply to someone’s post:
 
 ``` r
+
 bs_post(
   text  = '[vignette] This is a reply from R using `bskyr` on Creating Records',
   reply = 'https://bsky.app/profile/bskyr.bsky.social/post/3lpemxzni4l2m'
@@ -189,6 +195,7 @@ use for quoting or replying.
 For example, to like a particular post:
 
 ``` r
+
 bs_like(post = 'https://bsky.app/profile/chriskenny.bsky.social/post/3lktjjvxvdk2g')
 ```
 
@@ -214,6 +221,7 @@ will create a repost record under your account.
 For example, to repost a given post:
 
 ``` r
+
 bs_repost(post = 'https://bsky.app/profile/chriskenny.bsky.social/post/3lktjjvxvdk2g')
 ```
 
@@ -245,6 +253,7 @@ on the record’s URI. For example, if you saved a post to an object post
 when creating it, you can delete it like so:
 
 ``` r
+
 post <- bs_post(text = '[vignette] This is a post to be deleted from R using `bskyr` on Creating Records.')
 bs_delete_post(bs_extract_record_key(post$uri))
 ```
@@ -260,6 +269,7 @@ indicating success.
 Similarly, if you had saved a like or repost:
 
 ``` r
+
 liked <- bs_like(post = 'https://bsky.app/profile/bskyr.bsky.social/post/3lpemxzni4l2m')
 reposted <- bs_repost(post = 'https://bsky.app/profile/bskyr.bsky.social/post/3lpemxzni4l2m')
 
@@ -321,6 +331,7 @@ is the tool to use. Keep in mind that you must follow the lexicon’s
 schema exactly when constructing the record list.
 
 ``` r
+
 post_record <- list(
   text = '[vignette] Posting via bs_create_record()',
   createdAt = bs_created_at()
@@ -349,6 +360,7 @@ liked, identified by its URI and CID) and a timestamp. If `post_rcd` is
 a post object we fetched or have details for, we could do:
 
 ``` r
+
 post_rcd <- bs_get_record(
   'https://bsky.app/profile/bskyr.bsky.social/post/3lpeonujcdg2q',
   clean = FALSE
