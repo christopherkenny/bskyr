@@ -164,7 +164,7 @@ bs_delete_repost <- function(rkey,
                              user = get_bluesky_user(), pass = get_bluesky_pass(),
                              auth = bs_auth(user, pass)) {
   bs_delete_record(
-    collection = 'app.bsky.feed.like',
+    collection = 'app.bsky.feed.repost',
     rkey = rkey,
     auth = auth
   )
