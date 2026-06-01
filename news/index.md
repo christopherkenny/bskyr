@@ -19,6 +19,10 @@
     should set this as well for read operations
     (e.g. [`bs_get_follows()`](http://christophertkenny.com/bskyr/reference/bs_get_follows.md)).
   - There is no change in the default behavior.
+- Fixes a bug where
+  [`bs_delete_repost()`](http://christophertkenny.com/bskyr/reference/bs_delete_repost.md)
+  was not targetting the correct record type.
+  ([\#53](https://github.com/christopherkenny/bskyr/issues/53))
 
 ## bskyr 0.4.1
 
