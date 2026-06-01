@@ -22,8 +22,8 @@ bs_pds <- function(auth) {
 clean_names <- function(x) {
   out <- x |>
     names() |>
-    stringr::str_replace('\\.', '_') |>
-    stringr::str_replace('([a-z])([A-Z])', '\\1_\\2') |>
+    stringr::str_replace_all('\\.', '_') |>
+    stringr::str_replace_all('([a-z])([A-Z])', '\\1_\\2') |>
     tolower()
   purrr::set_names(x = x, nm = out)
 }

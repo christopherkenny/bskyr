@@ -6,6 +6,8 @@
   * New `set_bluesky_appview()`, `get_bluesky_appview()`, `has_bluesky_appview()` functions read from `BLUESKY_APP_APPVIEW`. Users on a custom PDS should set this as well for read operations (e.g. `bs_get_follows()`).
   * There is no change in the default behavior.
 * Fixes a bug where `bs_delete_repost()` was not targetting the correct record type. (#53)
+* Fixes a bug where `bs_delete_starter_pack()` was not targetting the correct record type. (#54)
+* Fixes a bug where the internal `clean_names()` helper would not handle repeated pattern matches, leading to consistent but unexpected column names. (#55)
 
 # bskyr 0.4.1
 
