@@ -47,8 +47,8 @@ an `httr2` status code
 
 ## Lexicon references
 
-[graph/list.json
-(2024-12-03)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/follow.json)
+[graph/block.json
+(2024-12-03)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/block.json)
 [repo/deleteRecord.json
 (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json)
 
