@@ -36,7 +36,7 @@ Delete a follow (un-follow someone)
 }
 \section{Lexicon references}{
 
-\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/follow.json}{graph/list.json (2024-12-03)}
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/follow.json}{graph/follow.json (2024-12-03)}
 \href{https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json}{repo/deleteRecord.json (2024-12-01)}
 }
 

@@ -43,7 +43,7 @@ bs_delete_list <- function(rkey,
 #' @export
 #'
 #' @section Lexicon references:
-#' [graph/listitem.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/list.json)
+#' [graph/listitem.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/listitem.json)
 #' [repo/deleteRecord.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json)
 #'
 #' @section Function introduced:
@@ -77,7 +77,7 @@ bs_delete_list_item <- function(rkey,
 #' @export
 #'
 #' @section Lexicon references:
-#' [graph/list.json (2024-12-03)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/follow.json)
+#' [graph/follow.json (2024-12-03)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/follow.json)
 #' [repo/deleteRecord.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json)
 #'
 #' @section Function introduced:
@@ -115,7 +115,7 @@ bs_unfollow <- bs_delete_follow
 #' @export
 #'
 #' @section Lexicon references:
-#' [graph/list.json (2024-12-03)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/follow.json)
+#' [feed/like.json (2024-12-03)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/feed/like.json)
 #' [repo/deleteRecord.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json)
 #'
 #' @section Function introduced:
@@ -183,7 +183,7 @@ bs_delete_repost <- function(rkey,
 #' @export
 #'
 #' @section Lexicon references:
-#' [graph/list.json (2024-12-03)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/follow.json)
+#' [graph/block.json (2024-12-03)](https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/block.json)
 #' [repo/deleteRecord.json (2024-12-01)](https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json)
 #'
 #' @section Function introduced:
@@ -232,7 +232,7 @@ bs_delete_starter_pack <- function(rkey,
                                    user = get_bluesky_user(), pass = get_bluesky_pass(),
                                    auth = bs_auth(user, pass)) {
   bs_delete_record(
-    collection = 'app.bsky.graph.block',
+    collection = 'app.bsky.graph.starterpack',
     rkey = rkey,
     auth = auth
   )

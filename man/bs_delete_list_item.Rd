@@ -28,7 +28,7 @@ Delete a list item
 }
 \section{Lexicon references}{
 
-\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/list.json}{graph/listitem.json (2024-12-01)}
+\href{https://github.com/bluesky-social/atproto/blob/main/lexicons/app/bsky/graph/listitem.json}{graph/listitem.json (2024-12-01)}
 \href{https://github.com/bluesky-social/atproto/blob/main/lexicons/com/atproto/repo/deleteRecord.json}{repo/deleteRecord.json (2024-12-01)}
 }
 
