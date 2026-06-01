@@ -23,6 +23,13 @@
   [`bs_delete_repost()`](http://christophertkenny.com/bskyr/reference/bs_delete_repost.md)
   was not targetting the correct record type.
   ([\#53](https://github.com/christopherkenny/bskyr/issues/53))
+- Fixes a bug where
+  [`bs_delete_starter_pack()`](http://christophertkenny.com/bskyr/reference/bs_delete_starter_pack.md)
+  was not targetting the correct record type.
+  ([\#54](https://github.com/christopherkenny/bskyr/issues/54))
+- Fixes a bug where the internal `clean_names()` helper would not handle
+  repeated pattern matches, leading to consistent but unexpected column
+  names. ([\#55](https://github.com/christopherkenny/bskyr/issues/55))
 
 ## bskyr 0.4.1
 
