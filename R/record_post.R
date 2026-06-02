@@ -326,10 +326,7 @@ bs_post <- function(text, images, images_alt,
 
   if (!missing(max_tries) && max_tries > 1) {
     req <- req |>
-      httr2::req_retry(
-        max_tries = max_tries,
-        is_transient = function(x) httr2::resp_status(x) >= 400
-      )
+      httr2::req_retry(max_tries = max_tries)
   }
 
   # return(httr2::req_dry_run(req))

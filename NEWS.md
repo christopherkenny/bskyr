@@ -10,6 +10,7 @@
 * Fixes a bug where the internal `clean_names()` helper would not handle repeated pattern matches, leading to consistent but unexpected column names. (#55)
 * Fixes a bug where `bs_post()` would fail when `video` was provided with a nontrivial video. (#56)
 * Adds `bs_upload_video()` and `bs_get_video_upload_limits()` to interact with video records.
+* Restricts the retry codes from all `>= 400` to default 429 and 503. (#57)
 
 # bskyr 0.4.1
 
