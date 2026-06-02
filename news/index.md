@@ -39,6 +39,8 @@
   and
   [`bs_get_video_upload_limits()`](http://christophertkenny.com/bskyr/reference/bs_get_video_upload_limits.md)
   to interact with video records.
+- Restricts the retry codes from all `>= 400` to default 429 and 503.
+  ([\#57](https://github.com/christopherkenny/bskyr/issues/57))
 
 ## bskyr 0.4.1
 
