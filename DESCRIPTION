@@ -26,6 +26,7 @@ Imports:
     lubridate,
     magick,
     mime,
+    openssl,
     opengraph,
     purrr,
     rlang,

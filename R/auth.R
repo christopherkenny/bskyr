@@ -72,24 +72,17 @@ bs_create_auth <- function(user, pass, host = get_bluesky_pds()) {
 
 # read from existing auth or create if too old
 bs_cache_auth <- function(user, pass, host = get_bluesky_pds()) {
+  key <- openssl::sha256(charToRaw(pass))
   fs::dir_create(fs::path_dir(bs_auth_file()))
   if (fs::file_exists(bs_auth_file())) {
-    # if (bs_has_user()) {
-    #   auth <- httr2::secret_read_rds(bs_auth_file(), key = 'BLUESKY_APP_USER')
-    # } else {
-    auth <- readRDS(bs_auth_file())
-    # }
+    auth <- httr2::secret_read_rds(bs_auth_file(), key = key)
     if (bs_auth_is_valid(auth)) {
       return(auth)
     }
   }
 
   auth <- bs_create_auth(user, pass, host)
-  # if (bs_has_user()) {
-  #   httr2::secret_write_rds(auth, path = bs_auth_file(), key = 'BLUESKY_APP_USER')
-  # } else {
-  saveRDS(auth, bs_auth_file())
-  # }
+  httr2::secret_write_rds(auth, path = bs_auth_file(), key = key)
   auth
 }
 
