@@ -30,6 +30,15 @@
 - Fixes a bug where the internal `clean_names()` helper would not handle
   repeated pattern matches, leading to consistent but unexpected column
   names. ([\#55](https://github.com/christopherkenny/bskyr/issues/55))
+- Fixes a bug where
+  [`bs_post()`](http://christophertkenny.com/bskyr/reference/bs_post.md)
+  would fail when `video` was provided with a nontrivial video.
+  ([\#56](https://github.com/christopherkenny/bskyr/issues/56))
+- Adds
+  [`bs_upload_video()`](http://christophertkenny.com/bskyr/reference/bs_upload_video.md)
+  and
+  [`bs_get_video_upload_limits()`](http://christophertkenny.com/bskyr/reference/bs_get_video_upload_limits.md)
+  to interact with video records.
 
 ## bskyr 0.4.1
 

@@ -184,6 +184,8 @@ Social
   : List records in a repo
 - [`bs_upload_blob()`](http://christophertkenny.com/bskyr/reference/bs_upload_blob.md)
   : Upload a blob to a repo
+- [`bs_upload_video()`](http://christophertkenny.com/bskyr/reference/bs_upload_video.md)
+  : Upload a video to be processed and stored
 
 ## Direct Messages
 
@@ -252,6 +254,8 @@ Other Functions
   : Retrieve the chat event log for the authenticated user
 - [`bs_get_messages()`](http://christophertkenny.com/bskyr/reference/bs_get_messages.md)
   : Retrieve messages from a conversation, optionally paginated
+- [`bs_get_video_upload_limits()`](http://christophertkenny.com/bskyr/reference/bs_get_video_upload_limits.md)
+  : Get Video Upload Limits
 - [`bs_leave_convo()`](http://christophertkenny.com/bskyr/reference/bs_leave_convo.md)
   : Exit a conversation so you no longer receive messages or see it in
   your inbox
