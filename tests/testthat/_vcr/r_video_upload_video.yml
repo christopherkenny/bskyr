@@ -11,23 +11,23 @@ http_interactions:
       vary: Authorization, Accept-Encoding
       ratelimit-limit: '3000'
       ratelimit-reset: '1780354325'
-      ratelimit-remaining: '2999'
+      ratelimit-remaining: '2996'
       ratelimit-policy: 3000;w=300
       content-type: application/json; charset=utf-8
       content-length: '410'
-      etag: W/"19a-CFdC7jBcSllSbCfDzRsX9whCGgk"
-      date: Mon, 01 Jun 2026 22:47:05 GMT
+      etag: W/"19a-dvewla642S1NwuXkRZ1C5SaPjbg"
+      date: Mon, 01 Jun 2026 22:47:10 GMT
       strict-transport-security: max-age=63072000
     body:
-      string: '{"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NksifQ.eyJpYXQiOjE3ODAzNTQwMjUsImlzcyI6ImRpZDpwbGM6NWMycjczZXJobmc0YnN6bXhsZmR0c2NmIiwiYXVkIjoiZGlkOndlYjpwdWZmYmFsbC51cy1lYXN0Lmhvc3QuYnNreS5uZXR3b3JrIiwiZXhwIjoxNzgwMzU0MDg1LCJseG0iOiJjb20uYXRwcm90by5yZXBvLnVwbG9hZEJsb2IiLCJqdGkiOiJmNDI2NjZhYWIyNzllOTk4YzFjMTdlZTJmNTU4NzcxYSJ9.uhfnMcG2AhxOE7wxtZ2fRhtqXm1HqFBJHVn4KHZx-X1AyQzP_5TNK5QXLuiRTkiYtKZEufgl1QQozrOUmbqcrA"}'
-  recorded_at: 2026-06-01 22:47:05
+      string: '{"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NksifQ.eyJpYXQiOjE3ODAzNTQwMzAsImlzcyI6ImRpZDpwbGM6NWMycjczZXJobmc0YnN6bXhsZmR0c2NmIiwiYXVkIjoiZGlkOndlYjpwdWZmYmFsbC51cy1lYXN0Lmhvc3QuYnNreS5uZXR3b3JrIiwiZXhwIjoxNzgwMzU0MDkwLCJseG0iOiJjb20uYXRwcm90by5yZXBvLnVwbG9hZEJsb2IiLCJqdGkiOiJlOGM0NmVmNjNhMjk1NDhmMzIwMWUzN2FhNmQ2NTJjNyJ9.PH8a6XyscRmPtAaAIDxWACmXzfBbE2_RpD7h7qejV35xLRFEDXKPw-wiBQI6BO4uHn4aawmaS0yTheBGrsNQ0w"}'
+  recorded_at: 2026-06-01 22:47:10
 - request:
     method: POST
     uri: https://video.bsky.app/xrpc/app.bsky.video.uploadVideo?did=did%3Aplc%3A5c2r73erhng4bszmxlfdtscf&name=pkgs.mp4
   response:
     status: 409
     headers:
-      date: Mon, 01 Jun 2026 22:47:06 GMT
+      date: Mon, 01 Jun 2026 22:47:11 GMT
       content-type: application/json; charset=UTF-8
       content-length: '165'
       server: BunnyCDN-IL1-1235
@@ -38,14 +38,14 @@ http_interactions:
       cdn-proxyver: '1.55'
       cdn-requestpullsuccess: 'True'
       cdn-requestpullcode: '409'
-      cdn-cachedat: 06/01/2026 22:47:06
+      cdn-cachedat: 06/01/2026 22:47:11
       cdn-edgestorageid: '1235'
-      cdn-requestid: 7e12abdc29f51dcb463448d43d7a26af
+      cdn-requestid: 5fec84c1b24c44b1a27664b121d2f078
       cdn-requesttime: '0'
     body:
       string: |
         {"did":"did:plc:5c2r73erhng4bszmxlfdtscf","error":"already_exists","jobId":"ct5tr8qbh3us72t7ddl0","message":"Video already processed","state":"JOB_STATE_COMPLETED"}
-  recorded_at: 2026-06-01 22:47:06
+  recorded_at: 2026-06-01 22:47:11
 - request:
     method: GET
     uri: https://puffball.us-east.host.bsky.network/xrpc/com.atproto.server.getServiceAuth?aud=did%3Aweb%3Apuffball.us-east.host.bsky.network&lxm=app.bsky.video.getJobStatus
@@ -58,23 +58,23 @@ http_interactions:
       vary: Authorization, Accept-Encoding
       ratelimit-limit: '3000'
       ratelimit-reset: '1780354325'
-      ratelimit-remaining: '2998'
+      ratelimit-remaining: '2995'
       ratelimit-policy: 3000;w=300
       content-type: application/json; charset=utf-8
       content-length: '410'
-      etag: W/"19a-/x5KWsV7ZcNiLgewZyRf5E8IyQk"
-      date: Mon, 01 Jun 2026 22:47:06 GMT
+      etag: W/"19a-rqag9ONBNun2q9eYO0OzeqCaMls"
+      date: Mon, 01 Jun 2026 22:47:11 GMT
       strict-transport-security: max-age=63072000
     body:
-      string: '{"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NksifQ.eyJpYXQiOjE3ODAzNTQwMjYsImlzcyI6ImRpZDpwbGM6NWMycjczZXJobmc0YnN6bXhsZmR0c2NmIiwiYXVkIjoiZGlkOndlYjpwdWZmYmFsbC51cy1lYXN0Lmhvc3QuYnNreS5uZXR3b3JrIiwiZXhwIjoxNzgwMzU0MDg2LCJseG0iOiJhcHAuYnNreS52aWRlby5nZXRKb2JTdGF0dXMiLCJqdGkiOiIzNDQ3MjJlZGYyNjhiMTRmOGRiYmUyYWEyNDUyMGQyMCJ9.mlryE_DVnWzVHo_onu9VJlXAUHciYmMCdGAoZ_LTR3wl2olVftYXjDAzOHfeVACFxJJw_ts18CV3rT0Kne8V_w"}'
-  recorded_at: 2026-06-01 22:47:06
+      string: '{"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NksifQ.eyJpYXQiOjE3ODAzNTQwMzEsImlzcyI6ImRpZDpwbGM6NWMycjczZXJobmc0YnN6bXhsZmR0c2NmIiwiYXVkIjoiZGlkOndlYjpwdWZmYmFsbC51cy1lYXN0Lmhvc3QuYnNreS5uZXR3b3JrIiwiZXhwIjoxNzgwMzU0MDkxLCJseG0iOiJhcHAuYnNreS52aWRlby5nZXRKb2JTdGF0dXMiLCJqdGkiOiIzN2MxOTI5Mjc2MzQwMzJlYmFlZTNkZmFjN2VkYjJkYyJ9.fH8cppRnnQah6w_ylS_g-h_vaQXTS6VdwAH8o55aICMo4r5MUHg59YDQtWAWGslHz95wE9ixBqMbNPLCsH0LZw"}'
+  recorded_at: 2026-06-01 22:47:11
 - request:
     method: GET
     uri: https://video.bsky.app/xrpc/app.bsky.video.getJobStatus?jobId=ct5tr8qbh3us72t7ddl0
   response:
     status: 200
     headers:
-      date: Mon, 01 Jun 2026 22:47:06 GMT
+      date: Mon, 01 Jun 2026 22:47:11 GMT
       content-type: application/json; charset=UTF-8
       vary: Accept-Encoding
       server: BunnyCDN-IL1-1235
@@ -85,9 +85,9 @@ http_interactions:
       cdn-proxyver: '1.55'
       cdn-requestpullsuccess: 'True'
       cdn-requestpullcode: '200'
-      cdn-cachedat: 06/01/2026 22:47:06
+      cdn-cachedat: 06/01/2026 22:47:11
       cdn-edgestorageid: '1234'
-      cdn-requestid: fdc85c8941b3c3da147e7cd27871e682
+      cdn-requestid: fae991bfc267da26a0b81fae0ed93182
       cdn-cache: MISS
       cdn-status: '200'
       cdn-requesttime: '0'
@@ -95,24 +95,5 @@ http_interactions:
     body:
       string: |
         {"jobStatus":{"blob":{"$type":"blob","ref":{"$link":"bafkreidqkcosw4xzd4wniku5wpjyojlgtzp2xp3bry6vzj5ispp6ddyi3m"},"mimeType":"video/mp4","size":178868},"did":"did:plc:5c2r73erhng4bszmxlfdtscf","jobId":"ct5tr8qbh3us72t7ddl0","message":"Video processed successfully","state":"JOB_STATE_COMPLETED"}}
-  recorded_at: 2026-06-01 22:47:06
-- request:
-    method: POST
-    uri: https://bsky.social/xrpc/com.atproto.repo.createRecord
-  response:
-    status: 200
-    headers:
-      date: Mon, 01 Jun 2026 22:47:07 GMT
-      content-type: application/json; charset=utf-8
-      content-length: '276'
-      x-powered-by: Express
-      access-control-allow-origin: '*'
-      ratelimit-limit: '3000'
-      ratelimit-remaining: '2998'
-      ratelimit-reset: '1780354326'
-      ratelimit-policy: 3000;w=300
-      vary: Accept-Encoding
-    body:
-      string: '{"uri":"at://did:plc:5c2r73erhng4bszmxlfdtscf/app.bsky.feed.post/3mnb5wq2yaq22","cid":"bafyreiawofzn5a25gqwrejjc7ysrwayt3qvqtcrla2acnvon6hpqyyem3i","commit":{"cid":"bafyreih6mp5hwocl5auvwrxs4msj573c2f4cei3onzp6guvndbnsveofra","rev":"3mnb5wq373i22"},"validationStatus":"valid"}'
-  recorded_at: 2026-06-01 22:47:07
+  recorded_at: 2026-06-01 22:47:11
 recorded_with: VCR-vcr/2.1.0

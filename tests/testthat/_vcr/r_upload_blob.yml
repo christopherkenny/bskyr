@@ -1,0 +1,21 @@
+http_interactions:
+- request:
+    method: POST
+    uri: https://bsky.social/xrpc/com.atproto.repo.uploadBlob
+  response:
+    status: 200
+    headers:
+      date: Mon, 01 Jun 2026 23:01:16 GMT
+      content-type: application/json; charset=utf-8
+      content-length: '139'
+      x-powered-by: Express
+      access-control-allow-origin: '*'
+      ratelimit-limit: '3000'
+      ratelimit-remaining: '2999'
+      ratelimit-reset: '1780355176'
+      ratelimit-policy: 3000;w=300
+      vary: Accept-Encoding
+    body:
+      string: '{"blob":{"$type":"blob","ref":{"$link":"bafkreiak7tto2scyh6arlg3igu2snhg6fgytn22ett63vvylys2kui2rxq"},"mimeType":"image/png","size":17396}}'
+  recorded_at: 2026-06-01 23:01:15
+recorded_with: VCR-vcr/2.1.0

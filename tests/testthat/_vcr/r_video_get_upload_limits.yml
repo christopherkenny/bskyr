@@ -1,0 +1,51 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://puffball.us-east.host.bsky.network/xrpc/com.atproto.server.getServiceAuth?aud=did%3Aweb%3Avideo.bsky.app&lxm=app.bsky.video.getUploadLimits
+  response:
+    status: 200
+    headers:
+      x-powered-by: Express
+      access-control-allow-origin: '*'
+      cache-control: private
+      vary: Authorization, Accept-Encoding
+      ratelimit-limit: '3000'
+      ratelimit-reset: '1780354771'
+      ratelimit-remaining: '2999'
+      ratelimit-policy: 3000;w=300
+      content-type: application/json; charset=utf-8
+      content-length: '388'
+      etag: W/"184-RDwjlIQc3ThlyZEJn48vPhTRSWo"
+      date: Mon, 01 Jun 2026 22:54:31 GMT
+      strict-transport-security: max-age=63072000
+    body:
+      string: '{"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NksifQ.eyJpYXQiOjE3ODAzNTQ0NzEsImlzcyI6ImRpZDpwbGM6NWMycjczZXJobmc0YnN6bXhsZmR0c2NmIiwiYXVkIjoiZGlkOndlYjp2aWRlby5ic2t5LmFwcCIsImV4cCI6MTc4MDM1NDUzMSwibHhtIjoiYXBwLmJza3kudmlkZW8uZ2V0VXBsb2FkTGltaXRzIiwianRpIjoiZmVjOWNhODlmMjIxYmRiMTI3ZjYwYTA3NmRmOWM5YzQifQ.i5f0-TUev7nWq8uTyFLUd-yLrQtvof6lwb-QQOPTG0k9j1HjkqfaXykfQt_dsgGBq7cThfvcjcXEJvL7wwBXeQ"}'
+  recorded_at: 2026-06-01 22:54:31
+- request:
+    method: GET
+    uri: https://video.bsky.app/xrpc/app.bsky.video.getUploadLimits
+  response:
+    status: 200
+    headers:
+      date: Mon, 01 Jun 2026 22:54:32 GMT
+      content-type: application/json; charset=UTF-8
+      content-length: '108'
+      server: BunnyCDN-IL1-1069
+      cdn-pullzone: '5726081'
+      cdn-requestcountrycode: US
+      cache-control: no-store
+      strict-transport-security: max-age=63072000
+      cdn-proxyver: '1.55'
+      cdn-requestpullsuccess: 'True'
+      cdn-requestpullcode: '200'
+      cdn-cachedat: 06/01/2026 22:54:32
+      cdn-edgestorageid: '871'
+      cdn-requestid: d5d62e209abe6474f739d52b1f6c2dd9
+      cdn-cache: MISS
+      cdn-status: '200'
+      cdn-requesttime: '0'
+    body:
+      string: |
+        {"canUpload":true,"message":"User can upload","remainingDailyBytes":40000000000,"remainingDailyVideos":100}
+  recorded_at: 2026-06-01 22:54:31
+recorded_with: VCR-vcr/2.1.0

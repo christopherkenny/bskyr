@@ -150,7 +150,7 @@ bs_post <- function(text, images, images_alt,
       blob <- video
     } else {
       # otherwise it's a path
-      blob <- bs_upload_blob(video, auth = auth, clean = FALSE)
+      blob <- bs_upload_video(video, auth = auth)
     }
   }
 

@@ -8,6 +8,8 @@
 * Fixes a bug where `bs_delete_repost()` was not targetting the correct record type. (#53)
 * Fixes a bug where `bs_delete_starter_pack()` was not targetting the correct record type. (#54)
 * Fixes a bug where the internal `clean_names()` helper would not handle repeated pattern matches, leading to consistent but unexpected column names. (#55)
+* Fixes a bug where `bs_post()` would fail when `video` was provided with a nontrivial video. (#56)
+* Adds `bs_upload_video()` and `bs_get_video_upload_limits()` to interact with video records.
 
 # bskyr 0.4.1
 

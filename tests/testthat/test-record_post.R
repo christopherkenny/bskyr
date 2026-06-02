@@ -63,12 +63,14 @@ test_that('`bs_post()` with image upload works', {
 
 test_that('`bs_post()` with video upload works', {
   vcr::local_cassette('r_post_video', match_requests_on = c('uri', 'method'))
+  video_auth <- auth
+  video_auth$did <- 'did:plc:5c2r73erhng4bszmxlfdtscf'
   vid <- safe_figures('pkgs.mp4')
   x <- bs_post(
     text = 'testing sending videos from R',
     video = vid,
     video_alt = 'a carousel of package logos, all hexagonal',
-    auth = auth
+    auth = video_auth
   )
   expect_s3_class(x, 'tbl_df')
 })

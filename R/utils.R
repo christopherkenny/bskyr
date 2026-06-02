@@ -52,6 +52,26 @@ list_to_row <- function(l) {
     })
 }
 
+bs_get_service_token <- function(auth, lxm, aud = NULL) {
+  services <- auth$didDoc$service
+  pds_service <- purrr::detect(services, ~ identical(.x$id, '#atproto_pds'))
+  if (is.null(pds_service)) {
+    pds_service <- services[[1]]
+  }
+  pds_url <- pds_service$serviceEndpoint
+  if (is.null(aud)) {
+    aud <- paste0('did:web:', sub('https://', '', pds_url))
+  }
+  req <- httr2::request(paste0(pds_url, '/xrpc/com.atproto.server.getServiceAuth')) |>
+    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
+    httr2::req_url_query(aud = aud, lxm = lxm)
+
+  req |>
+    httr2::req_perform() |>
+    httr2::resp_body_json() |>
+    purrr::pluck('token')
+}
+
 list_hoist <- function(l) {
   dplyr::bind_rows(lapply(l, function(x) dplyr::bind_rows(unlist(x))))
 }
