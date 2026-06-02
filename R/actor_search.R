@@ -26,16 +26,8 @@
 bs_search_actors <- function(query, typeahead = FALSE, cursor = NULL, limit = NULL,
                              user = get_bluesky_user(), pass = get_bluesky_pass(),
                              auth = bs_auth(user, pass), clean = TRUE) {
-  if (!is.null(limit)) {
-    if (!is.numeric(limit)) {
-      cli::cli_abort('{.arg limit} must be numeric.')
-    }
-    limit <- as.integer(limit)
-    limit <- max(limit, 1L)
-    req_seq <- diff(unique(c(seq(0, limit, 100), limit)))
-  } else {
-    req_seq <- list(NULL)
-  }
+  limit <- validate_limit(limit)
+  req_seq <- make_req_seq(limit)
 
   base_url <- ifelse(
     typeahead,

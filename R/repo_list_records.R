@@ -28,16 +28,8 @@ bs_list_records <- function(repo, collection, cursor = NULL, limit = NULL,
   if (missing(repo)) {
     repo <- auth$did
   }
-  if (!is.null(limit)) {
-    if (!is.numeric(limit)) {
-      cli::cli_abort('{.arg limit} must be numeric.')
-    }
-    limit <- as.integer(limit)
-    limit <- max(limit, 1L)
-    req_seq <- diff(unique(c(seq(0, limit, 100), limit)))
-  } else {
-    req_seq <- list(NULL)
-  }
+  limit <- validate_limit(limit)
+  req_seq <- make_req_seq(limit)
 
   req <- httr2::request(paste0(bs_pds(auth), '/xrpc/com.atproto.repo.listRecords')) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt) |>

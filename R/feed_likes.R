@@ -35,16 +35,8 @@ bs_get_likes <- function(actor, cursor = NULL, limit = NULL,
     cli::cli_abort('{.arg actor} must be the authenticated user (self).')
   }
 
-  if (!is.null(limit)) {
-    if (!is.numeric(limit)) {
-      cli::cli_abort('{.arg limit} must be numeric.')
-    }
-    limit <- as.integer(limit)
-    limit <- max(limit, 1L)
-    req_seq <- diff(unique(c(seq(0, limit, 100), limit)))
-  } else {
-    req_seq <- list(NULL)
-  }
+  limit <- validate_limit(limit)
+  req_seq <- make_req_seq(limit)
 
   req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.feed.getActorLikes')) |>
     httr2::req_url_query(actor = actor) |>

@@ -166,6 +166,20 @@ add_req_url <- function(tb, l) {
   `attr<-`(tb, 'request_url', l$url)
 }
 
+validate_limit <- function(limit) {
+  if (is.null(limit)) return(NULL)
+  if (!is.numeric(limit)) cli::cli_abort('{.arg limit} must be numeric.')
+  max(as.integer(limit), 1L)
+}
+
+make_req_seq <- function(limit) {
+  if (!is.null(limit)) {
+    diff(unique(c(seq(0, limit, 100), limit)))
+  } else {
+    list(NULL)
+  }
+}
+
 repeat_request <- function(req, req_seq, cursor, txt = 'Fetching data') {
   resp <- vector(mode = 'list', length = length(req_seq))
   for (i in cli::cli_progress_along(req_seq, txt)) {
