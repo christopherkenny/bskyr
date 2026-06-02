@@ -16,12 +16,7 @@ has_bluesky_pass <- function() {
 #' @rdname pass
 #' @export
 get_bluesky_pass <- function() {
-  pass <- Sys.getenv('BLUESKY_APP_PASS')
-
-  # if (pass == '') {
-  #   cli::cli_abort('Must set a pass as {.val BLUESKY_APP_PASS}.')
-  # }
-  pass
+  invisible(Sys.getenv('BLUESKY_APP_PASS'))
 }
 
 #' Add Entry to Renviron
@@ -47,59 +42,12 @@ set_bluesky_pass <- function(pass, overwrite = FALSE, install = FALSE,
   if (missing(pass)) {
     cli::cli_abort('Input {.arg pass} cannot be missing.')
   }
-  name <- 'BLUESKY_APP_PASS'
-
-  pass <- list(pass)
-  names(pass) <- name
-
-  if (pass == '1234-1234-1234-1234') {
-    cli::cli_inform('No password set when invalid test password is provided.')
-    return(invisible(pass))
-  }
-
-  if (install) {
-    if (is.null(r_env)) {
-      r_env <- file.path(Sys.getenv('HOME'), '.Renviron')
-      if (interactive()) {
-        utils::askYesNo(paste0('Install to', r_env, '?'))
-      } else {
-        cli::cli_abort(c('No path set and not run interactively.',
-          i = 'Rerun with {.arg r_env} set, possibly to {.file {r_env}}'
-        ))
-      }
-    }
-
-    if (!file.exists(r_env)) {
-      file.create(r_env)
-    }
-
-    lines <- readLines(r_env)
-    newline <- paste0(name, "='", pass, "'")
-
-    exists <- grepl(x = lines, paste0(name, '='))
-
-    if (any(exists)) {
-      if (sum(exists) > 1) {
-        cli::cli_abort('Multiple entries in .Renviron found.\nEdit manually with {.fn usethis::edit_r_environ}.')
-      }
-
-      if (overwrite) {
-        lines[exists] <- newline
-        writeLines(lines, r_env)
-        do.call(Sys.setenv, pass)
-      } else {
-        cli::cli_inform('{.arg BLUESKY_APP_PASS} already exists in .Renviron. \nEdit manually with {.fn usethis::edit_r_environ} or set {.code overwrite = TRUE}.')
-      }
-    } else {
-      lines[length(lines) + 1] <- newline
-      writeLines(lines, r_env)
-      do.call(Sys.setenv, pass)
-    }
-  } else {
-    do.call(Sys.setenv, pass)
-  }
-
-  invisible(pass)
+  set_bluesky_env(
+    value = pass, name = 'BLUESKY_APP_PASS', arg = 'pass',
+    test_val = '1234-1234-1234-1234',
+    test_val_msg = 'No password set when invalid test password is provided.',
+    overwrite = overwrite, install = install, r_env = r_env
+  )
 }
 
 #' @rdname pass

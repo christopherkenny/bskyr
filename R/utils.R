@@ -18,6 +18,61 @@ bs_pds <- function(auth) {
   }
 }
 
+# env var helpers ----
+set_bluesky_env <- function(value, name, arg, test_val = NULL, test_val_msg = NULL,
+                            overwrite = FALSE, install = FALSE, r_env = NULL) {
+  value <- list(value)
+  names(value) <- name
+
+  if (!is.null(test_val) && value[[1]] == test_val) {
+    cli::cli_inform(test_val_msg)
+    return(invisible(value))
+  }
+
+  if (install) {
+    if (is.null(r_env)) {
+      r_env <- file.path(Sys.getenv('HOME'), '.Renviron')
+      if (interactive()) {
+        utils::askYesNo(paste0('Install to ', r_env, '?'))
+      } else {
+        cli::cli_abort(c(
+          'No path set and not run interactively.',
+          i = 'Rerun with {.arg r_env} set, possibly to {.file {r_env}}'
+        ))
+      }
+    }
+
+    if (!file.exists(r_env)) {
+      file.create(r_env)
+    }
+
+    lines <- readLines(r_env)
+    newline <- paste0(name, "='", value[[1]], "'")
+    exists <- grepl(x = lines, paste0(name, '='))
+
+    if (any(exists)) {
+      if (sum(exists) > 1) {
+        cli::cli_abort('Multiple entries in .Renviron found.\nEdit manually with {.fn usethis::edit_r_environ}.')
+      }
+      if (overwrite) {
+        lines[exists] <- newline
+        writeLines(lines, r_env)
+        do.call(Sys.setenv, value)
+      } else {
+        cli::cli_inform('{.arg {name}} already exists in .Renviron. \nEdit manually with {.fn usethis::edit_r_environ} or set {.code overwrite = TRUE}.')
+      }
+    } else {
+      lines[length(lines) + 1] <- newline
+      writeLines(lines, r_env)
+      do.call(Sys.setenv, value)
+    }
+  } else {
+    do.call(Sys.setenv, value)
+  }
+
+  invisible(value)
+}
+
 # general utils ----
 clean_names <- function(x) {
   out <- x |>
@@ -167,8 +222,12 @@ add_req_url <- function(tb, l) {
 }
 
 validate_limit <- function(limit) {
-  if (is.null(limit)) return(NULL)
-  if (!is.numeric(limit)) cli::cli_abort('{.arg limit} must be numeric.')
+  if (is.null(limit)) {
+    return(NULL)
+  }
+  if (!is.numeric(limit)) {
+    cli::cli_abort('{.arg limit} must be numeric.')
+  }
   max(as.integer(limit), 1L)
 }
 

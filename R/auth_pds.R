@@ -41,54 +41,10 @@ set_bluesky_pds <- function(pds, overwrite = FALSE, install = FALSE,
   if (missing(pds)) {
     cli::cli_abort('Input {.arg pds} cannot be missing.')
   }
-  name <- 'BLUESKY_APP_PDS'
-
-  pds <- list(pds)
-  names(pds) <- name
-
-  if (install) {
-    if (is.null(r_env)) {
-      r_env <- file.path(Sys.getenv('HOME'), '.Renviron')
-      if (interactive()) {
-        utils::askYesNo(paste0('Install to', r_env, '?'))
-      } else {
-        cli::cli_abort(c('No path set and not run interactively.',
-          i = 'Rerun with {.arg r_env} set, possibly to {.file {r_env}}'
-        ))
-      }
-    }
-
-    if (!file.exists(r_env)) {
-      file.create(r_env)
-    }
-
-    lines <- readLines(r_env)
-    newline <- paste0(name, "='", pds, "'")
-
-    exists <- grepl(x = lines, paste0(name, '='))
-
-    if (any(exists)) {
-      if (sum(exists) > 1) {
-        cli::cli_abort('Multiple entries in .Renviron found.\nEdit manually with {.fn usethis::edit_r_environ}.')
-      }
-
-      if (overwrite) {
-        lines[exists] <- newline
-        writeLines(lines, r_env)
-        do.call(Sys.setenv, pds)
-      } else {
-        cli::cli_inform('{.arg BLUESKY_APP_PDS} already exists in .Renviron. \nEdit manually with {.fn usethis::edit_r_environ} or set {.code overwrite = TRUE}.')
-      }
-    } else {
-      lines[length(lines) + 1] <- newline
-      writeLines(lines, r_env)
-      do.call(Sys.setenv, pds)
-    }
-  } else {
-    do.call(Sys.setenv, pds)
-  }
-
-  invisible(pds)
+  set_bluesky_env(
+    value = pds, name = 'BLUESKY_APP_PDS', arg = 'pds',
+    overwrite = overwrite, install = install, r_env = r_env
+  )
 }
 
 #' @rdname pds
