@@ -54,7 +54,7 @@ list_to_row <- function(l) {
 
 bs_get_service_token <- function(auth, lxm, aud = NULL) {
   services <- auth$didDoc$service
-  pds_service <- purrr::detect(services, ~ identical(.x$id, '#atproto_pds'))
+  pds_service <- purrr::detect(services, function(x) identical(x$id, '#atproto_pds'))
   if (is.null(pds_service)) {
     pds_service <- services[[1]]
   }

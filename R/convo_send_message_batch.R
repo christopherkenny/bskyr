@@ -35,7 +35,9 @@ bs_send_message_batch <- function(convo_id, text,
     cli::cli_abort('`convo_id` and `text` must be the same length.')
   }
 
-  items <- purrr::map2(convo_id, text, ~ list(convoId = .x, message = list(text = .y)))
+  items <- purrr::map2(convo_id, text, function(x, y) {
+    list(convoId = x, message = list(text = y))
+  })
 
   session_url <- auth$didDoc$service[[1]]$serviceEndpoint
   req_url <- paste0(session_url, '/xrpc/chat.bsky.convo.sendMessageBatch')
