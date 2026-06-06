@@ -83,13 +83,46 @@ clean_names <- function(x) {
   purrr::set_names(x = x, nm = out)
 }
 
+pack <- function(v) {
+  if (is.null(v)) {
+    NA
+  } else if (length(v) == 1L) {
+    v
+  } else {
+    list(v)
+  }
+}
+
+widen_field <- function(nm, v, i) {
+  if (!is.list(v)) {
+    purrr::set_names(list(pack(v)), nm)
+  } else if (purrr::pluck_depth(v) + 1L >= i) {
+    purrr::set_names(list(list(v)), nm)
+  } else if (length(v) > 0L) {
+    sub_nms <- names(v)
+    if (is.null(sub_nms)) {
+      sub_nms <- as.character(seq_along(v))
+    }
+    purrr::set_names(lapply(v, pack), paste0(nm, '_', sub_nms))
+  } else {
+    list()
+  }
+}
 
 widen <- function(x, i = 4) {
-  x |>
-    tibble::enframe() |>
-    tidyr::pivot_wider() |>
-    tidyr::unnest_wider(col = where(~ purrr::pluck_depth(.x) < i), simplify = TRUE, names_sep = '_') |>
-    dplyr::rename_with(.fn = function(x) substr(x, start = 1, stop = nchar(x) - 2), .cols = dplyr::ends_with('_1')) |>
+  if (is.null(x) || length(x) == 0L) {
+    return(tibble::tibble())
+  }
+  if (is.null(names(x))) {
+    names(x) <- as.character(seq_along(x))
+  }
+  flat <- purrr::list_flatten(lapply(names(x), function(nm) {
+    widen_field(nm, x[[nm]], i)
+  }))
+  if (length(flat) == 0L) {
+    return(tibble::tibble())
+  }
+  tibble::as_tibble_row(flat) |>
     clean_names()
 }
 
