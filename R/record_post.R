@@ -178,17 +178,19 @@ bs_post <- function(text, images, images_alt,
   if (!missing(images)) {
     asp_rat <- lapply(images, function(img) {
       out <- NULL
-      out <- try(
-        { # use try bc not all types that atproto accepts are magick supported
-          info <- magick::image_read(img) |>
-            magick::image_info()
-          list(
-            width = as.integer(info$width[1]),
-            height = as.integer(info$height[1])
-          )
-        },
-        silent = TRUE
-      )
+      if (rlang::is_installed('magick')) {
+        out <- try(
+          { # use try bc not all types that atproto accepts are magick supported
+            info <- magick::image_read(img) |>
+              magick::image_info()
+            list(
+              width = as.integer(info$width[1]),
+              height = as.integer(info$height[1])
+            )
+          },
+          silent = TRUE
+        )
+      }
       out
     })
 

@@ -245,6 +245,9 @@ parse_tenor_gif <- function(txt,
   curl::curl_download(og[['image']], tfd)
 
   # convert first frame to png as the thumbnail
+  if (!rlang::is_installed('magick')) {
+    return(NULL)
+  }
   thumb <- fs::file_temp(ext = '.png')
   magick::image_read(tfd) |>
     magick::image_convert(format = 'png') |>

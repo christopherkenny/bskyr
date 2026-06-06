@@ -11,6 +11,8 @@
 * Fixes a bug where `bs_post()` would fail when `video` was provided with a nontrivial video. (#56)
 * Adds `bs_upload_video()` and `bs_get_video_upload_limits()` to interact with video records.
 * Restricts the retry codes from all `>= 400` to default 429 and 503. (#57)
+* Support parallel requests for `bs_get_profile()` and `bs_get_relationships()`. (#59)
+* `magick` is now suggested and `lubridate` has been replaced with base R equivalents. (#62)
 
 # bskyr 0.4.1
 

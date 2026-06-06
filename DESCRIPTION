@@ -22,9 +22,7 @@ Imports:
     curl,
     dplyr,
     fs,
-    httr2,
-    lubridate,
-    magick,
+    httr2 (>= 1.0.0),
     mime,
     openssl,
     opengraph,
@@ -36,6 +34,7 @@ Imports:
     tidyr
 Suggests:
     emoji,
+    magick,
     jsonlite,
     knitr,
     rmarkdown,

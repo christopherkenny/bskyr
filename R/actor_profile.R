@@ -41,12 +41,13 @@ bs_get_profile <- function(actors,
   actors <- split(actors, ceiling(seq_along(actors) / 25)) |>
     unname()
 
-  resps <- lapply(actors, function(x) {
+  reqs <- lapply(actors, function(x) {
     req |>
-      httr2::req_url_query(actors = x, .multi = 'explode') |>
-      httr2::req_perform() |>
-      httr2::resp_body_json()
+      httr2::req_url_query(actors = x, .multi = 'explode')
   })
+
+  resps <- httr2::req_perform_parallel(reqs) |>
+    lapply(httr2::resp_body_json)
 
   resp <- resps |>
     unlist(recursive = FALSE) |>

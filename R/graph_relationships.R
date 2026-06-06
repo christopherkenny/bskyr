@@ -63,27 +63,15 @@ bs_get_relationships <- function(actor, others,
     ) |>
     httr2::req_auth_bearer_token(token = auth$accessJwt)
 
-  resp <- lapply(
-    others,
-    function(x) {
-      req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.graph.getRelationships')) |>
-        httr2::req_url_query(
-          actor = actor
-        )
+  reqs <- lapply(others, function(x) {
+    others_q <- x |>
+      as.list() |>
+      purrr::set_names('others')
+    rlang::inject(httr2::req_url_query(req, !!!others_q))
+  })
 
-      others <- x |>
-        as.list() |>
-        purrr::set_names('others')
-      req <- rlang::inject(httr2::req_url_query(req, !!!others))
-
-      req <- req |>
-        httr2::req_auth_bearer_token(token = auth$accessJwt)
-
-      req |>
-        httr2::req_perform() |>
-        httr2::resp_body_json()
-    }
-  ) |>
+  resp <- httr2::req_perform_parallel(reqs) |>
+    lapply(httr2::resp_body_json) |>
     unname()
 
   if (!clean) {

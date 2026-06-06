@@ -65,7 +65,7 @@ bs_create_auth <- function(user, pass, host = get_bluesky_pds()) {
     invisible()
 
   out$bskyr_pds <- host
-  out$bskyr_created_time <- lubridate::now()
+  out$bskyr_created_time <- Sys.time()
 
   out
 }
@@ -92,11 +92,11 @@ bs_auth_file <- function() {
 }
 
 bs_auth_is_valid <- function(auth) {
-  now <- lubridate::now()
+  now <- Sys.time()
   created <- auth$bskyr_created_time
   if (is.null(created)) {
     return(FALSE)
   }
   diff <- now - created
-  diff < lubridate::dminutes(10)
+  diff < as.difftime(10, units = 'mins')
 }
