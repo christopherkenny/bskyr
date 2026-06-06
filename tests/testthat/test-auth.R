@@ -42,7 +42,7 @@ test_that('`bs_auth()` forces refresh when save_auth = NULL', {
 
   # manually overwrite timestamp to expire it
   auth <- readRDS(bs_auth_file())
-  auth$bskyr_created_time <- lubridate::now() - lubridate::dminutes(15)
+  auth$bskyr_created_time <- Sys.time() - as.difftime(15, units = 'mins')
   saveRDS(auth, bs_auth_file())
 
   # now refresh it
