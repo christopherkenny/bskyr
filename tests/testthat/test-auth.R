@@ -78,8 +78,8 @@ test_that('`bs_auth()` bypasses cache with save_auth = FALSE', {
 })
 
 test_that('`bs_auth_is_valid()` returns TRUE for fresh auth and FALSE for expired', {
-  fresh <- list(bskyr_created_time = lubridate::now())
-  old   <- list(bskyr_created_time = lubridate::now() - lubridate::dminutes(15))
+  fresh <- list(bskyr_created_time = Sys.time())
+  old   <- list(bskyr_created_time = Sys.time() - as.difftime(15, units = 'mins'))
   none  <- list()
   expect_true(bs_auth_is_valid(fresh))
   expect_false(bs_auth_is_valid(old))
