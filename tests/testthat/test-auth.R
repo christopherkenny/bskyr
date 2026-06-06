@@ -41,9 +41,10 @@ test_that('`bs_auth()` forces refresh when save_auth = NULL', {
   expect_true(fs::file_exists(bs_auth_file()))
 
   # manually overwrite timestamp to expire it
-  auth <- readRDS(bs_auth_file())
+  key <- openssl::sha256(charToRaw(get_bluesky_pass()))
+  auth <- httr2::secret_read_rds(bs_auth_file(), key = key)
   auth$bskyr_created_time <- Sys.time() - as.difftime(15, units = 'mins')
-  saveRDS(auth, bs_auth_file())
+  httr2::secret_write_rds(auth, path = bs_auth_file(), key = key)
 
   # now refresh it
   new_auth <- bs_auth(
@@ -60,11 +61,11 @@ test_that('`bs_auth()` bypasses cache with save_auth = FALSE', {
   skip_if_not(bs_has_pass())
   skip_if_not(bs_has_user())
 
-  time <- NULL
-  time <- try({readRDS(bs_auth_file())$bskyr_created_time})
-  if (is.null(time)) {
+  if (!fs::file_exists(bs_auth_file())) {
     skip('No cached auth found, skipping test')
   }
+  key <- openssl::sha256(charToRaw(get_bluesky_pass()))
+  time <- httr2::secret_read_rds(bs_auth_file(), key = key)$bskyr_created_time
 
   vcr::local_cassette('repo_auth_direct', match_requests_on = c('uri', 'method'))
   auth <- bs_auth(
