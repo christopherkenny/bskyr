@@ -49,6 +49,10 @@
 - `magick` is now suggested and `lubridate` has been replaced with base
   R equivalents.
   ([\#62](https://github.com/christopherkenny/bskyr/issues/62))
+- Adds internal request helpers to reduce code duplication for
+  authentication, setting a User-Agent, using a retry policy, and
+  handling error messages.
+  ([\#58](https://github.com/christopherkenny/bskyr/issues/58))
 
 ## bskyr 0.4.1
 
