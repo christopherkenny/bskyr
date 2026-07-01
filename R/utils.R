@@ -150,13 +150,16 @@ bs_get_service_token <- function(auth, lxm, aud = NULL) {
   if (is.null(aud)) {
     aud <- paste0('did:web:', sub('https://', '', pds_url))
   }
-  req <- httr2::request(paste0(pds_url, '/xrpc/com.atproto.server.getServiceAuth')) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_url_query(aud = aud, lxm = lxm)
+  req <- bs_xrpc_request(
+    endpoint = 'com.atproto.server.getServiceAuth',
+    query = list(aud = aud, lxm = lxm),
+    auth = auth,
+    host = pds_url
+  )
 
   req |>
     httr2::req_perform() |>
-    httr2::resp_body_json() |>
+    bs_xrpc_response() |>
     purrr::pluck('token')
 }
 
@@ -281,7 +284,7 @@ repeat_request <- function(req, req_seq, cursor, txt = 'Fetching data') {
         limit = req_seq[[i]]
       ) |>
       httr2::req_perform() |>
-      httr2::resp_body_json()
+      bs_xrpc_response()
     cursor <- resp[[i]]$cursor
     if (is.null(cursor)) {
       break

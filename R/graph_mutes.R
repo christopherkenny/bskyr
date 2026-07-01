@@ -27,11 +27,11 @@ bs_get_mutes <- function(
   limit <- validate_limit(limit)
   req_seq <- make_req_seq(limit)
 
-  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.graph.getMutes')) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_url_query(
-      limit = limit
-    )
+  req <- bs_xrpc_request(
+    endpoint = 'app.bsky.graph.getMutes',
+    query = list(limit = limit),
+    auth = auth
+  )
   resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching mutes')
 
   if (!clean) {

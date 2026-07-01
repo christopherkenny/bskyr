@@ -23,20 +23,22 @@ bs_get_convo_availability <- function(actors,
                                       user = get_bluesky_user(), pass = get_bluesky_pass(),
                                       auth = bs_auth(user, pass), clean = TRUE) {
   session_url <- auth$didDoc$service[[1]]$serviceEndpoint
-  req_url <- paste0(session_url, '/xrpc/chat.bsky.convo.getConvoAvailability')
 
   actors <- actors |>
     purrr::map_chr(function(x) bs_resolve_handle(x, auth = auth)$did) |>
     purrr::set_names(rep('members', length(actors)))
 
-  req <- httr2::request(req_url) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_headers('Atproto-Proxy' = 'did:web:api.bsky.chat#bsky_chat') |>
+  req <- bs_xrpc_request(
+    endpoint = 'chat.bsky.convo.getConvoAvailability',
+    auth = auth,
+    host = session_url,
+    headers = list('Atproto-Proxy' = 'did:web:api.bsky.chat#bsky_chat')
+  ) |>
     httr2::req_url_query(members = actors, .multi = 'explode')
 
   resp <- req |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
+    bs_xrpc_response()
 
   if (!clean) {
     return(resp)

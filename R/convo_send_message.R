@@ -24,21 +24,21 @@ bs_send_message <- function(convo_id, text,
                             user = get_bluesky_user(), pass = get_bluesky_pass(),
                             auth = bs_auth(user, pass), clean = TRUE) {
   session_url <- auth$didDoc$service[[1]]$serviceEndpoint
-  req_url <- paste0(session_url, '/xrpc/chat.bsky.convo.sendMessage')
 
-  req <- httr2::request(req_url) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_headers('Atproto-Proxy' = 'did:web:api.bsky.chat#bsky_chat') |>
-    httr2::req_body_json(
-      data = list(
-        convoId = convo_id,
-        message = list(text = text)
-      )
-    )
+  req <- bs_xrpc_request(
+    endpoint = 'chat.bsky.convo.sendMessage',
+    body = list(
+      convoId = convo_id,
+      message = list(text = text)
+    ),
+    auth = auth,
+    host = session_url,
+    headers = list('Atproto-Proxy' = 'did:web:api.bsky.chat#bsky_chat')
+  )
 
   resp <- req |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
+    bs_xrpc_response()
 
   if (!clean) {
     return(resp)

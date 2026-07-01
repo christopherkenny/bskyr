@@ -57,11 +57,11 @@ bs_get_relationships <- function(actor, others,
   }
 
 
-  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.graph.getRelationships')) |>
-    httr2::req_url_query(
-      actor = actor
-    ) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt)
+  req <- bs_xrpc_request(
+    endpoint = 'app.bsky.graph.getRelationships',
+    query = list(actor = actor),
+    auth = auth
+  )
 
   reqs <- lapply(others, function(x) {
     others_q <- x |>
@@ -71,7 +71,7 @@ bs_get_relationships <- function(actor, others,
   })
 
   resp <- httr2::req_perform_parallel(reqs) |>
-    lapply(httr2::resp_body_json) |>
+    lapply(bs_xrpc_response) |>
     unname()
 
   if (!clean) {

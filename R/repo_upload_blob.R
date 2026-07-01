@@ -32,8 +32,11 @@ bs_upload_blob <- function(blob,
   mime_types <- mime::guess_type(blob)
 
   out <- lapply(seq_along(blob), function(i) {
-    req <- httr2::request(paste0(bs_pds(auth), '/xrpc/com.atproto.repo.uploadBlob')) |>
-      httr2::req_auth_bearer_token(token = auth$accessJwt) |>
+    req <- bs_xrpc_request(
+      endpoint = 'com.atproto.repo.uploadBlob',
+      auth = auth,
+      host = bs_pds(auth)
+    ) |>
       httr2::req_headers(
         'Content-Type' = mime_types[[i]]
       ) |>
@@ -42,7 +45,7 @@ bs_upload_blob <- function(blob,
       )
     resp <- req |>
       httr2::req_perform() |>
-      httr2::resp_body_json()
+      bs_xrpc_response()
     if (!clean) {
       return(resp)
     }

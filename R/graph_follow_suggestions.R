@@ -22,13 +22,15 @@
 bs_get_follow_suggestions <- function(actor,
                                       user = get_bluesky_user(), pass = get_bluesky_pass(),
                                       auth = bs_auth(user, pass), clean = TRUE) {
-  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.graph.getSuggestedFollowsByActor')) |>
-    httr2::req_url_query(actor = actor) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt)
+  req <- bs_xrpc_request(
+    endpoint = 'app.bsky.graph.getSuggestedFollowsByActor',
+    query = list(actor = actor),
+    auth = auth
+  )
 
   resp <- req |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
+    bs_xrpc_response()
 
   if (!clean) {
     return(resp)

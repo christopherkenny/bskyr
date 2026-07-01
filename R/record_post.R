@@ -316,15 +316,15 @@ bs_post <- function(text, images, images_alt,
     }
   }
 
-  req <- httr2::request(paste0(bs_pds(auth), '/xrpc/com.atproto.repo.createRecord')) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_body_json(
-      data = list(
-        repo = auth$did,
-        collection = 'app.bsky.feed.post',
-        record = post
-      )
-    )
+  req <- bs_xrpc_request(
+    endpoint = 'com.atproto.repo.createRecord',
+    body = list(
+      repo = auth$did,
+      collection = 'app.bsky.feed.post',
+      record = post
+    ),
+    auth = auth
+  )
 
   if (!missing(max_tries) && max_tries > 1) {
     req <- req |>
@@ -335,7 +335,7 @@ bs_post <- function(text, images, images_alt,
 
   resp <- req |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
+    bs_xrpc_response()
 
   if (!clean) {
     return(resp)

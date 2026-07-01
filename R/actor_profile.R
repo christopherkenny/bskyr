@@ -31,11 +31,10 @@ bs_get_profile <- function(actors,
     cli::cli_abort('{.arg actors} must be a character vector.')
   }
 
-  # base request ----
-  base_url <- paste0(get_bluesky_appview(), '/xrpc/app.bsky.actor.getProfiles')
-
-  req <- httr2::request(base_url) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt)
+  req <- bs_xrpc_request(
+    endpoint = 'app.bsky.actor.getProfiles',
+    auth = auth
+  )
 
   # split actors into groups of up to 25
   actors <- split(actors, ceiling(seq_along(actors) / 25)) |>
@@ -47,7 +46,7 @@ bs_get_profile <- function(actors,
   })
 
   resps <- httr2::req_perform_parallel(reqs) |>
-    lapply(httr2::resp_body_json)
+    lapply(bs_xrpc_response)
 
   resp <- resps |>
     unlist(recursive = FALSE) |>

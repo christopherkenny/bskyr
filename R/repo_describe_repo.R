@@ -26,15 +26,16 @@ bs_describe_repo <- function(repo,
     repo <- auth$did
   }
 
-  req <- httr2::request(paste0(bs_pds(auth), '/xrpc/com.atproto.repo.describeRepo')) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_url_query(
-      repo = repo
-    )
+  req <- bs_xrpc_request(
+    endpoint = 'com.atproto.repo.describeRepo',
+    query = list(repo = repo),
+    auth = auth,
+    host = bs_pds(auth)
+  )
 
   resp <- req |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
+    bs_xrpc_response()
 
   if (!clean) {
     return(resp)

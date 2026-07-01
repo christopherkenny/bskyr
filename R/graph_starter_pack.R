@@ -33,13 +33,15 @@ bs_get_starter_pack <- function(starter_pack,
 
   starter_pack <- bs_url_to_uri(starter_pack, auth = auth)
 
-  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.graph.getStarterPack')) |>
-    httr2::req_url_query(starterPack = starter_pack) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt)
+  req <- bs_xrpc_request(
+    endpoint = 'app.bsky.graph.getStarterPack',
+    query = list(starterPack = starter_pack),
+    auth = auth
+  )
 
   resp <- req |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
+    bs_xrpc_response()
 
   if (!clean) {
     return(resp)

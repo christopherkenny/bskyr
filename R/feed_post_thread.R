@@ -49,16 +49,18 @@ bs_get_post_thread <- function(uri, depth = NULL, parent_height = NULL,
     parent_height <- min(parent_height, 1000L)
   }
 
-  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.feed.getPostThread')) |>
-    httr2::req_url_query(uri = uri) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_url_query(
+  req <- bs_xrpc_request(
+    endpoint = 'app.bsky.feed.getPostThread',
+    query = list(
+      uri = uri,
       depth = depth,
       parentHeight = parent_height
-    )
+    ),
+    auth = auth
+  )
   resp <- req |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
+    bs_xrpc_response()
 
   if (!clean) {
     return(resp)

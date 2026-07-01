@@ -20,11 +20,13 @@
 #' bs_get_muted_lists()
 bs_get_muted_lists <- function(user = get_bluesky_user(), pass = get_bluesky_pass(),
                                auth = bs_auth(user, pass), clean = TRUE) {
-  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.graph.getListMutes')) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt)
+  req <- bs_xrpc_request(
+    endpoint = 'app.bsky.graph.getListMutes',
+    auth = auth
+  )
   resp <- req |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
+    bs_xrpc_response()
 
   if (!clean) {
     return(resp)

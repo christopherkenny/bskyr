@@ -42,14 +42,15 @@ bs_get_posts <- function(uris,
     as.list() |>
     purrr::set_names('uris')
 
-  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.feed.getPosts'))
-  req <- rlang::inject(httr2::req_url_query(req, !!!uris))
-  req <- req |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt)
+  req <- bs_xrpc_request(
+    endpoint = 'app.bsky.feed.getPosts',
+    query = uris,
+    auth = auth
+  )
 
   resp <- req |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
+    bs_xrpc_response()
 
   if (!clean) {
     return(resp)

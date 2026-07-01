@@ -53,16 +53,19 @@ bs_get_record <- function(repo = NULL, collection = NULL, rkey = NULL,
   }
 
   # make the request once we've collected everything
-  req <- httr2::request(paste0(bs_pds(auth), '/xrpc/com.atproto.repo.getRecord')) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_url_query(
+  req <- bs_xrpc_request(
+    endpoint = 'com.atproto.repo.getRecord',
+    query = list(
       repo = repo,
       collection = collection,
       rkey = rkey
-    )
+    ),
+    auth = auth,
+    host = bs_pds(auth)
+  )
   resp <- req |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
+    bs_xrpc_response()
   if (!clean) {
     return(resp)
   }

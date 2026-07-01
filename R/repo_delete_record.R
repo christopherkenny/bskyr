@@ -37,15 +37,15 @@
 bs_delete_record <- function(collection, rkey,
                              user = get_bluesky_user(), pass = get_bluesky_pass(),
                              auth = bs_auth(user, pass)) {
-  req <- httr2::request(paste0(bs_pds(auth), '/xrpc/com.atproto.repo.deleteRecord')) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_body_json(
-      data = list(
-        repo = auth$did,
-        collection = collection,
-        rkey = rkey
-      )
-    )
+  req <- bs_xrpc_request(
+    endpoint = 'com.atproto.repo.deleteRecord',
+    body = list(
+      repo = auth$did,
+      collection = collection,
+      rkey = rkey
+    ),
+    auth = auth
+  )
 
   resp <- req |>
     httr2::req_perform()

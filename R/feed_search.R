@@ -41,8 +41,9 @@ bs_search_posts <- function(query,
   limit <- validate_limit(limit)
   req_seq <- make_req_seq(limit)
 
-  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.feed.searchPosts')) |>
-    httr2::req_url_query(
+  req <- bs_xrpc_request(
+    endpoint = 'app.bsky.feed.searchPosts',
+    query = list(
       q = query,
       sort = sort,
       since = since,
@@ -52,12 +53,11 @@ bs_search_posts <- function(query,
       lang = lang,
       domain = domain,
       url = url,
-      tag = tag
-    ) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_url_query(
+      tag = tag,
       limit = limit
-    )
+    ),
+    auth = auth
+  )
 
   resp <- repeat_request(req, req_seq, cursor, txt = 'Searching posts')
 

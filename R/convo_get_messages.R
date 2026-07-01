@@ -30,16 +30,18 @@ bs_get_messages <- function(convo_id,
   req_seq <- make_req_seq(limit)
 
   session_url <- auth$didDoc$service[[1]]$serviceEndpoint
-  req_url <- paste0(session_url, '/xrpc/chat.bsky.convo.getMessages')
 
-  req <- httr2::request(req_url) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_headers('Atproto-Proxy' = 'did:web:api.bsky.chat#bsky_chat') |>
-    httr2::req_url_query(
+  req <- bs_xrpc_request(
+    endpoint = 'chat.bsky.convo.getMessages',
+    query = list(
       convoId = convo_id,
       cursor = cursor,
       limit = limit
-    )
+    ),
+    auth = auth,
+    host = session_url,
+    headers = list('Atproto-Proxy' = 'did:web:api.bsky.chat#bsky_chat')
+  )
 
   resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching messages')
 

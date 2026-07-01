@@ -38,19 +38,19 @@ bs_like <- function(post,
   )
 
 
-  req <- httr2::request(paste0(bs_pds(auth), '/xrpc/com.atproto.repo.createRecord')) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_body_json(
-      data = list(
-        repo = auth$did,
-        collection = 'app.bsky.feed.like',
-        record = like
-      )
-    )
+  req <- bs_xrpc_request(
+    endpoint = 'com.atproto.repo.createRecord',
+    body = list(
+      repo = auth$did,
+      collection = 'app.bsky.feed.like',
+      record = like
+    ),
+    auth = auth
+  )
 
   resp <- req |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
+    bs_xrpc_response()
 
   if (!clean) {
     return(resp)

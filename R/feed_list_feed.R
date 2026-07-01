@@ -34,9 +34,11 @@ bs_get_list_feed <- function(list, cursor = NULL, limit = NULL,
   limit <- validate_limit(limit)
   req_seq <- make_req_seq(limit)
 
-  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.feed.getListFeed')) |>
-    httr2::req_url_query(list = list) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt)
+  req <- bs_xrpc_request(
+    endpoint = 'app.bsky.feed.getListFeed',
+    query = list(list = list),
+    auth = auth
+  )
 
   resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching list feed')
 

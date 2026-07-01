@@ -34,12 +34,11 @@ bs_get_author_feed <- function(actor, cursor = NULL, limit = NULL,
   limit <- validate_limit(limit)
   req_seq <- make_req_seq(limit)
 
-  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.feed.getAuthorFeed')) |>
-    httr2::req_url_query(actor = actor) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_url_query(
-      limit = limit
-    )
+  req <- bs_xrpc_request(
+    endpoint = 'app.bsky.feed.getAuthorFeed',
+    query = list(actor = actor, limit = limit),
+    auth = auth
+  )
 
   resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching author feed')
 

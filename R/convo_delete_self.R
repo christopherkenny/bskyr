@@ -24,21 +24,21 @@ bs_delete_message_for_self <- function(convo_id, message_id,
                                        user = get_bluesky_user(), pass = get_bluesky_pass(),
                                        auth = bs_auth(user, pass), clean = TRUE) {
   session_url <- auth$didDoc$service[[1]]$serviceEndpoint
-  req_url <- paste0(session_url, '/xrpc/chat.bsky.convo.deleteMessageForSelf')
 
-  req <- httr2::request(req_url) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_headers('Atproto-Proxy' = 'did:web:api.bsky.chat#bsky_chat') |>
-    httr2::req_body_json(
-      data = list(
-        convoId = convo_id,
-        messageId = message_id
-      )
-    )
+  req <- bs_xrpc_request(
+    endpoint = 'chat.bsky.convo.deleteMessageForSelf',
+    body = list(
+      convoId = convo_id,
+      messageId = message_id
+    ),
+    auth = auth,
+    host = session_url,
+    headers = list('Atproto-Proxy' = 'did:web:api.bsky.chat#bsky_chat')
+  )
 
   resp <- req |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
+    bs_xrpc_response()
 
   if (!clean) {
     return(resp)

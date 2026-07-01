@@ -25,20 +25,18 @@ bs_update_all_read <- function(status = c('accepted', 'request'),
   status <- rlang::arg_match(status)
 
   session_url <- auth$didDoc$service[[1]]$serviceEndpoint
-  req_url <- paste0(session_url, '/xrpc/chat.bsky.convo.updateAllRead')
 
-  req <- httr2::request(req_url) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_headers('Atproto-Proxy' = 'did:web:api.bsky.chat#bsky_chat') |>
-    httr2::req_body_json(
-      data = list(
-        status = status
-      )
-    )
+  req <- bs_xrpc_request(
+    endpoint = 'chat.bsky.convo.updateAllRead',
+    body = list(status = status),
+    auth = auth,
+    host = session_url,
+    headers = list('Atproto-Proxy' = 'did:web:api.bsky.chat#bsky_chat')
+  )
 
   resp <- req |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
+    bs_xrpc_response()
 
   if (!clean) {
     return(resp)

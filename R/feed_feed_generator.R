@@ -32,13 +32,15 @@ bs_get_feed_generator <- function(feed,
   }
 
 
-  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.feed.getFeedGenerator')) |>
-    httr2::req_url_query(feed = feed) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt)
+  req <- bs_xrpc_request(
+    endpoint = 'app.bsky.feed.getFeedGenerator',
+    query = list(feed = feed),
+    auth = auth
+  )
 
   resp <- req |>
     httr2::req_perform() |>
-    httr2::resp_body_json()
+    bs_xrpc_response()
 
   if (!clean) {
     return(resp)

@@ -35,12 +35,11 @@ bs_get_list <- function(list, cursor = NULL, limit = NULL,
   limit <- validate_limit(limit)
   req_seq <- make_req_seq(limit)
 
-  req <- httr2::request(paste0(get_bluesky_appview(), '/xrpc/app.bsky.graph.getList')) |>
-    httr2::req_url_query(list = list) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_url_query(
-      limit = limit
-    )
+  req <- bs_xrpc_request(
+    endpoint = 'app.bsky.graph.getList',
+    query = list(list = list, limit = limit),
+    auth = auth
+  )
 
   resp <- repeat_request(req, req_seq, cursor, txt = 'Fetching list views')
 

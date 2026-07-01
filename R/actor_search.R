@@ -29,17 +29,16 @@ bs_search_actors <- function(query, typeahead = FALSE, cursor = NULL, limit = NU
   limit <- validate_limit(limit)
   req_seq <- make_req_seq(limit)
 
-  base_url <- ifelse(
+  endpoint <- ifelse(
     typeahead,
-    paste0(get_bluesky_appview(), '/xrpc/app.bsky.actor.searchActors'),
-    paste0(get_bluesky_appview(), '/xrpc/app.bsky.actor.searchActorsTypeahead')
+    'app.bsky.actor.searchActors',
+    'app.bsky.actor.searchActorsTypeahead'
   )
-  req <- httr2::request(base_url) |>
-    httr2::req_url_query(q = query) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_url_query(
-      limit = limit
-    )
+  req <- bs_xrpc_request(
+    endpoint = endpoint,
+    query = list(q = query, limit = limit),
+    auth = auth
+  )
 
   resp <- repeat_request(req, req_seq, cursor, 'Searching actors')
 

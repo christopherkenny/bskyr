@@ -31,13 +31,16 @@ bs_list_records <- function(repo, collection, cursor = NULL, limit = NULL,
   limit <- validate_limit(limit)
   req_seq <- make_req_seq(limit)
 
-  req <- httr2::request(paste0(bs_pds(auth), '/xrpc/com.atproto.repo.listRecords')) |>
-    httr2::req_auth_bearer_token(token = auth$accessJwt) |>
-    httr2::req_url_query(
+  req <- bs_xrpc_request(
+    endpoint = 'com.atproto.repo.listRecords',
+    query = list(
       repo = repo,
       collection = collection,
       limit = limit
-    )
+    ),
+    auth = auth,
+    host = bs_pds(auth)
+  )
 
   resp <- repeat_request(req, req_seq, cursor, txt = 'Listing records')
 
