@@ -13,6 +13,7 @@
 * Restricts the retry codes from all `>= 400` to default 429 and 503. (#57)
 * Support parallel requests for `bs_get_profile()` and `bs_get_relationships()`. (#59)
 * `magick` is now suggested and `lubridate` has been replaced with base R equivalents. (#62)
+* Adds internal request helpers to reduce code duplication for authentication, setting a User-Agent, using a retry policy, and handling error messages. (#58)
 
 # bskyr 0.4.1
 
